@@ -765,7 +765,18 @@ function setupPwa() {
   net();
 
   if ("serviceWorker" in navigator && (location.protocol === "https:" || location.hostname === "localhost")) {
-    navigator.serviceWorker.register("sw.js").catch(() => { /* la app funciona igual online */ });
+    // Aviso de versión nueva: solo si la app ya estaba instalada y se descargó una actualización.
+    const hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (hadController) $("update-banner").hidden = false;
+    });
+    $("btn-update").addEventListener("click", () => location.reload());
+    $("btn-update-later").addEventListener("click", () => ($("update-banner").hidden = true));
+    navigator.serviceWorker.register("sw.js").then((reg) => {
+      const check = () => reg.update().catch(() => {});
+      document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") check(); });
+      setInterval(check, 30 * 60 * 1000);
+    }).catch(() => { /* la app funciona igual online */ });
   }
 }
 
