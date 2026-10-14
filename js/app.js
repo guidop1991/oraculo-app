@@ -89,10 +89,13 @@ function el(tag, cls, text) {
 }
 
 // ---------- mazos ----------
+const earlyDecks = new Map(); // pedidos adelantados (en paralelo) durante el arranque
+
 async function loadDeck(id) {
   if (deckCache.has(id)) return deckCache.get(id);
   if (!decksMetaById(id)) throw new Error("mazo desconocido");
-  const d = await getJSON(deckPath(id));
+  let d = earlyDecks.has(id) ? await earlyDecks.get(id) : null;
+  if (!d) d = await getJSON(deckPath(id));
   if (!validDeck(d) || d.id !== id) throw new Error("mazo inválido");
   deckCache.set(id, d);
   return d;
@@ -152,7 +155,7 @@ async function prefetchDeck(deck) {
       try { await fetch(u); } catch { /* sin conexión: se reintenta otro día */ }
     }
   };
-  await Promise.all([worker(), worker(), worker()]);
+  await Promise.all([worker(), worker()]);
 }
 
 // Opciones de mazo (radios) para el selector de tirada y para "Mazo favorito".
@@ -172,6 +175,7 @@ function renderDeckOptions(container, selectedId, onPick) {
 // ---------- vistas ----------
 function showView(name, keepScroll = false) {
   hidePickers();
+  $("install-box").hidden = !(name === "menu" || name === "user");
   const group = current?.spread?.group && spreads.find((s) => s.id === current.spread.group);
   for (const b of document.querySelectorAll("[data-go='origin']")) b.textContent = group ? `← ${group.name}` : "← Inicio";
   for (const v of ["menu", "group", "deck", "result", "profile", "user", "year", "admin"]) $("view-" + v).hidden = v !== name;
@@ -471,8 +475,24 @@ function renderUser() {
 }
 
 function renderFavorite() {
-  renderDeckOptions($("fav-options"), defaultDeckId, async (id) => {
-    if (id === defaultDeckId) return;
+  const box = $("fav-options");
+  const m = metaOf(defaultDeckId);
+  const toggle = el("button", "deck-option deck-select");
+  toggle.type = "button";
+  toggle.id = "fav-toggle";
+  toggle.setAttribute("aria-haspopup", "true");
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", "fav-list");
+  toggle.append(el("span", "deck-option-name", m.short), el("span", "deck-option-desc", m.description || ""), el("span", "select-chev"));
+  const list = el("div", "deck-options");
+  list.id = "fav-list";
+  list.hidden = true;
+  toggle.addEventListener("click", () => {
+    list.hidden = !list.hidden;
+    toggle.setAttribute("aria-expanded", String(!list.hidden));
+  });
+  renderDeckOptions(list, defaultDeckId, async (id) => {
+    if (id === defaultDeckId) { list.hidden = true; toggle.setAttribute("aria-expanded", "false"); return; }
     try {
       const d = await loadDeck(id);
       defaultDeckId = id;
@@ -483,6 +503,7 @@ function renderFavorite() {
       showError("No pudimos cargar ese mazo. Probá de nuevo con conexión.");
     }
   });
+  box.replaceChildren(toggle, list);
 }
 
 // Arcano del año: sin barajar. La carta, su palabra y un mensaje fijo para todo el año.
@@ -597,6 +618,11 @@ function draw() {
 
   setTimeout(() => {
     deckEl.classList.remove("shuffling");
+    if (current?.spread?.cut === false) { // tirada sin corte: la carta aparece directo al terminar de barajar
+      current.picks = drawPicks(current.spread.positions.length);
+      renderResult(true);
+      return;
+    }
     deckEl.hidden = true;
     btn.hidden = true;
     $("deck-lead").textContent = "Elegí uno.";
@@ -767,6 +793,10 @@ async function init() {
   document.querySelectorAll("[data-go='origin']").forEach((b) => b.addEventListener("click", goBack));
 
   try {
+    const guess = readFavoriteDeck();
+    const guessId = typeof guess === "string" && /^[\w\-]+$/.test(guess) ? guess : "rider-waite";
+    earlyDecks.set(guessId, getJSON(deckPath(guessId), true));
+    loadMessages("tarot").catch(() => {});
     const [meta, sp, arAi, arHuman] = await Promise.all([
       getJSON(DECKS_PATH), getJSON(SPREADS_PATH), getJSON(ARCANOS_PATH, true), getJSON(ARCANOS_HUMAN_PATH, true)
     ]);
@@ -785,7 +815,7 @@ async function init() {
     spreads = sp.spreads;
     arcanos = { ai: arAi, human: arHuman };
     applyDeckLook(d);
-    setTimeout(() => prefetchDeck(d), 2500);
+    setTimeout(() => prefetchDeck(d), 8000); // en segundo plano, sin competir con lo que estás viendo
   } catch {
     showError("No pudimos cargar el mazo. Revisá tu conexión y volvé a intentar.");
     return;

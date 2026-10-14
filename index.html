@@ -12,6 +12,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="modulepreload" href="js/app.js">
+  <link rel="modulepreload" href="js/config.js">
+  <link rel="modulepreload" href="js/storage.js">
+  <link rel="modulepreload" href="js/natal.js">
+  <link rel="modulepreload" href="js/messages.js">
+  <link rel="modulepreload" href="js/admin.js">
+  <link rel="preload" href="fonts/CinzelDecorative-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/CormorantGaramond.woff" as="font" type="font/woff" crossorigin>
 </head>
 <body>
   <div class="stars" aria-hidden="true"></div>
@@ -190,8 +198,10 @@
   </main>
 
   <footer class="foot">
-    <button id="btn-install" class="link" type="button" hidden>Instalar app</button>
-    <p id="ios-hint" class="hint" hidden>Para instalarla: tocá Compartir y luego “Agregar a pantalla de inicio”.</p>
+    <div id="install-box" hidden>
+      <button id="btn-install" class="link" type="button" hidden>Instalar app</button>
+      <p id="ios-hint" class="hint" hidden>Para instalarla: tocá Compartir y luego “Agregar a pantalla de inicio”.</p>
+    </div>
     <p class="legal">Mensajes orientativos y de entretenimiento. No predicen el futuro ni reemplazan consejo médico, legal o financiero.</p>
     <p id="net" class="net" hidden>Sin conexión: funcionando offline</p>
   </footer>

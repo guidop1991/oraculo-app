@@ -36,7 +36,8 @@
           "key": "respuesta",
           "label": "Respuesta"
         }
-      ]
+      ],
+      "cut": false
     },
     {
       "id": "tirada-del-dia",

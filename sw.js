@@ -1,6 +1,6 @@
 // Service worker: la app funciona sin conexión.
 // IMPORTANTE: cada vez que publiques cambios, subí el número de VERSION.
-const VERSION = "v15";
+const VERSION = "v16";
 const CACHE = `oraculo-${VERSION}`;
 
 const PRECACHE = [
@@ -29,10 +29,8 @@ const PRECACHE = [
   "fonts/CormorantGaramond.woff",
   "fonts/CormorantGaramond-Italic.woff",
   "img/back.webp",
-  ...Array.from({ length: 22 }, (_, i) => `img/decks/rider-waite/${String(i).padStart(2, "0")}.webp`),
-  ...["b", "c", "e", "o"].flatMap((s) =>
-    [...Array.from({ length: 10 }, (_, i) => String(i + 1).padStart(2, "0")), "pj", "cb", "rn", "ry"].map((r) => `img/decks/rider-waite/${s}${r}.webp`)
-  ),
+  // Las imágenes de las cartas NO se descargan al instalar (así la app abre más rápido):
+  // se guardan solas a medida que se usan y el mazo elegido se baja en segundo plano.
   "icons/icon-192.png",
   "icons/icon-512.png",
   "icons/icon-maskable-512.png",
@@ -41,7 +39,11 @@ const PRECACHE = [
 ];
 
 self.addEventListener("install", (e) => {
-  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)).then(() => self.skipWaiting()));
+  e.waitUntil(
+    caches.open(CACHE)
+      .then((c) => c.addAll(PRECACHE.map((u) => new Request(u, { cache: "reload" }))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("activate", (e) => {
@@ -57,9 +59,20 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(req.url);
   if (req.method !== "GET" || url.origin !== self.location.origin) return; // nunca tocamos terceros
 
-  // Navegación: red primero con respaldo offline.
+  // Navegación: la página guardada abre al instante y se actualiza en segundo plano.
   if (req.mode === "navigate") {
-    e.respondWith(fetch(req).catch(() => caches.match("index.html")));
+    e.respondWith(
+      caches.match("index.html").then((hit) => {
+        const net = fetch("index.html", { cache: "no-cache" })
+          .then((res) => {
+            if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put("index.html", copy)); }
+            return res;
+          })
+          .catch(() => hit || Response.error());
+        if (hit) { e.waitUntil(net.catch(() => {})); return hit; }
+        return net;
+      })
+    );
     return;
   }
 
@@ -76,13 +89,18 @@ self.addEventListener("fetch", (e) => {
     return;
   }
 
-  // Código y datos: red primero (así ves tus cambios al instante) y, sin conexión, el caché.
+  // Código y datos: del caché al instante y, en segundo plano, se actualiza para la próxima vez
+  // (cada publicación sube VERSION, y eso renueva todo de una).
   e.respondWith(
-    fetch(req, { cache: "no-cache" })
-      .then((res) => {
-        if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
-        return res;
-      })
-      .catch(() => caches.match(req).then((hit) => hit || Response.error()))
+    caches.match(req).then((hit) => {
+      const net = fetch(req, { cache: "no-cache" })
+        .then((res) => {
+          if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
+          return res;
+        })
+        .catch(() => hit || Response.error());
+      if (hit) { e.waitUntil(net.catch(() => {})); return hit; }
+      return net;
+    })
   );
 });

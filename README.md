@@ -142,3 +142,11 @@ Si tu sistema tiene desactivadas las animaciones (Windows: Configuración → Ac
 - Herramientas: reiniciar la carta del día, cambiar PIN, cerrar sesión. Con la sesión abierta, la carta del día muestra "Barajar de nuevo" (se quitó el modo `?dev=1`).
 - El PIN se guarda con hash (PBKDF2-SHA256, sal propia) y hay espera tras 5 intentos fallidos. Es una protección local: no reemplaza cuentas reales con servidor.
 - sw.js VERSION v15.
+
+
+## v13
+- Carga más rápida: las imágenes de las cartas ya no se descargan todas al instalar; se guardan a medida que se usan y el mazo elegido se baja en segundo plano. Código y datos abren desde el caché y se actualizan solos. Se piden en paralelo el mazo y los mensajes, y se precargan módulos y fuentes.
+- "Para instalarla..." y "Instalar app" solo aparecen en la pantalla principal y en Usuario.
+- Mazo favorito (Usuario) ahora es un desplegable: muestra solo el elegido con una flecha.
+- Sí o No: la carta aparece directo al terminar de barajar (sin cortar el mazo). Se controla con `"cut": false` en data/spreads.json.
+- sw.js VERSION v16.

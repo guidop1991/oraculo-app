@@ -418,6 +418,14 @@ body::before {
 .answer-maybe { color: #cdb6f2; text-shadow: 0 0 18px rgba(160, 120, 230, .45); }
 .answer-no { color: var(--ruby); text-shadow: 0 0 18px rgba(226, 122, 166, .4); }
 
+
+/* ===== Mazo favorito desplegable ===== */
+.deck-select { position: relative; padding-right: 42px; }
+.select-chev { position: absolute; right: 16px; top: 50%; margin-top: -7px; width: 9px; height: 9px;
+  border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(45deg); transition: transform .25s ease; }
+.deck-select[aria-expanded="true"] .select-chev { transform: rotate(-135deg); margin-top: -2px; }
+#fav-options { gap: 10px; }
+
 /* Si el sistema pide "reducir movimiento" (en Windows: Efectos de animación desactivados),
    no apagamos todo: usamos una versión suave, sin desplazamientos ni giros, solo fundidos. */
 @media (prefers-reduced-motion: reduce) {
@@ -432,7 +440,7 @@ body::before {
   .deck:hover .l8, .deck:focus-visible .l8 { translate: none; }
   .cut.split .pile:nth-child(1), .cut.split .pile:nth-child(2) { animation: fadeIn 1s both; }
   .pile.chosen { animation: none !important; filter: brightness(1.25); }
-  .acc-chev { transition: none; }
+  .acc-chev, .select-chev { transition: none; }
   .card-flip, .card-flip.flipped { transform: none; transition: none; }
   .card-face { backface-visibility: visible; -webkit-backface-visibility: visible; transition: opacity 1s ease; }
   .card-face.front { transform: none; opacity: 0; }
