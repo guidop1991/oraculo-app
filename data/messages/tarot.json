@@ -1,0 +1,1255 @@
+{
+ "deck": "tarot",
+ "version": 3,
+ "source": "ia-pregenerado",
+ "messages": {
+  "rw-00": {
+   "upright": [
+    "Hay algo que querés y ya lo sabés. No hace falta tener el mapa: alcanza con dar el primer paso confiando en que el camino te va a ir asistiendo.",
+    "Hoy te toca animarte como un niño: con ganas y sin tanta armadura. Tu deseo es una brújula más confiable de lo que creés.",
+    "Soltá un poco de equipaje. Empezar de cero no es perder, es volver a mirar con curiosidad.",
+    "Los zapatos rojos de esta carta avisan: esto es acción, no teoría. Hoy tu deseo pide cuerpo, así que hacé algo chico que lo ponga en movimiento.",
+    "Elegí algo que venís postergando porque no sabés cómo hacerlo, y empezalo mal. Empezar torpe también es empezar."
+   ],
+   "reversed": [
+    "Quizás venís dando vueltas sobre el mismo punto. Preguntate qué querés de verdad y a qué te animás a comprometerte, aunque sea con algo chiquito.",
+    "Moverse no es lo mismo que avanzar. Frená un segundo, elegí una dirección y recién ahí confiá.",
+    "La libertad también pide un destino. Si todo te suena a 'después veo', quizá algo te está pidiendo que te quedes.",
+    "Esta carta se lanza porque confía, no porque ande perdida. Si hoy sentís que girás en falso, fijate si te falta confianza o te falta decisión.",
+    "Anotá una sola cosa a la que te querés comprometer esta semana. Concreta y con fecha."
+   ]
+  },
+  "rw-01": {
+   "upright": [
+    "Ya tenés sobre la mesa todo lo que necesitás. Falta elegir una cosa y ponerle tu intención entera.",
+    "Hoy es buen día para pasar de la idea a la acción. Algo pequeño y concreto vale más que un plan perfecto.",
+    "No hace falta saber cómo: el potencial se descubre usándolo. Empezá y los recursos se ordenan en el camino.",
+    "Mirá la mesa de esta carta: tiene todos los elementos a la vista. Lo que buscás afuera, probablemente ya esté a tu alcance.",
+    "Hacé una lista de tres recursos que ya tenés (una habilidad, un contacto, una idea) y usá uno hoy."
+   ],
+   "reversed": [
+    "Tenés talento repartido en demasiados frentes. Elegí uno y juntá tu energía ahí.",
+    "Si algo te sale a medias, revisá si estás claro o clara en lo que querés. La claridad llega antes que la acción.",
+    "Dejarse el permiso de ser principiante es parte de la magia. No hace falta saberlas todas.",
+    "En esta carta la mesa y los pies se ven inestables: el potencial todavía busca equilibrio. Cuidado con prometer más de lo que podés sostener.",
+    "Elegí una sola cosa para hacer bien hoy. Lo demás puede esperar su turno."
+   ]
+  },
+  "rw-02": {
+   "upright": [
+    "No todo se resuelve haciendo. Lo que necesitás ya está adentro tuyo: quedate en silencio y escuchá lo que sabés.",
+    "Es tiempo de gestar. Lo que esperás se está armando en silencio, y apurarlo puede arruinar su momento.",
+    "Confiá en tu intuición aunque no tenga explicación. Ese saber callado suele tener razón antes que las palabras.",
+    "En esta carta el libro está en las manos y no se lee: lo que sabe ya vive en ella. Hoy no busques afuera lo que se responde adentro.",
+    "Date un rato de silencio hoy, sin pantallas ni opiniones ajenas. Lo que aparezca ahí es la respuesta."
+   ],
+   "reversed": [
+    "Guardar y guardar también pesa. Quizás es hora de dejar salir algo de eso que venís gestando en soledad.",
+    "La espera tiene su punto justo: si te pasás, se vuelve excusa. Preguntate si estás gestando o escondiéndote.",
+    "Ojo con encerrarte en la cabeza o en el silencio por miedo. Compartir una sola de tus intuiciones puede ordenarte mucho.",
+    "Callar para gestar es sabiduría, y callar para no incomodar es acumular. Hoy fijate cuál de las dos estás haciendo.",
+    "Elegí a una persona de confianza y contale eso que venís guardando. Con una frase alcanza."
+   ]
+  },
+  "rw-03": {
+   "upright": [
+    "Algo tuyo está brotando y mira hacia adelante. Dejalo crecer sin pedirle permiso a nadie.",
+    "Es un momento de creatividad en flor: ideas, proyectos, vínculos. Lo que cuidás con cariño empieza a dar forma.",
+    "Hay fuerza de reina en vos hoy: la que crea, nutre y hace que las cosas pasen.",
+    "Esta carta mira al frente, no hacia atrás: es la que cambia las reglas con la frescura de quien empieza. Hoy animate a ser un poco revolucionaria o revolucionario.",
+    "Elegí algo que quieras hacer nacer y dedicale hoy un rato de atención real. Cuidar es crear."
+   ],
+   "reversed": [
+    "Cuidado con querer mandar sobre todo. Aflojá un poco el capricho y escuchá qué necesita cada cosa para crecer.",
+    "No necesitás de nadie, y eso puede ser tu fuerza o tu aislamiento. Fijate si hoy te conviene pedir una mano.",
+    "La creatividad también se bloquea cuando exigís resultados antes de tiempo. Dale lugar al proceso.",
+    "Esta carta puede ser caprichosa cuando se desequilibra: todo gira alrededor de lo propio. Mirá si hoy te estás poniendo en el centro de más.",
+    "Antes de decidir por otros, preguntales qué piensan. Después decidí vos."
+   ]
+  },
+  "rw-04": {
+   "upright": [
+    "Es tiempo de poner orden y construir sobre terreno firme. La estabilidad que armás ahora te sostiene después.",
+    "Tenés autoridad para guiar tu propio rumbo. Asumir responsabilidad no es peso: es tomar el timón.",
+    "Lo sólido se construye con constancia. Un paso firme hoy vale más que mil impulsos.",
+    "Las piernas cruzadas de esta carta dibujan un cuatro: estabilidad, cuatro patas bien apoyadas. Hoy buscá tu apoyo firme antes de avanzar.",
+    "Armá una rutina simple para esta semana: tres cosas fijas que te den estructura. Cumplila sin vueltas."
+   ],
+   "reversed": [
+    "Tanta estructura puede volverse rigidez. Preguntate qué regla tuya ya no deja entrar nada nuevo.",
+    "Ser firme no es ser duro. Escuchar otras ideas no te quita autoridad: te da más.",
+    "El orden que no se renueva se endurece. Dejá un hueco para que algo cambie.",
+    "El cetro bien agarrado es poder, pero apretado de más es control. Hoy aflojá un poco la mano.",
+    "Elegí una norma propia que sea demasiado estricta y flexibilizala por un día. Mirá qué pasa."
+   ]
+  },
+  "rw-05": {
+   "upright": [
+    "Aparece alguien o algo que te enseña. Escuchá con respeto, pero chequeá que resuene con vos.",
+    "Es un momento de buscar sentido y de abrirte a otro que piensa distinto. Preguntar es un acto de fe.",
+    "Hay una guía que te acompaña, a veces en una persona y a veces en tu propia voz serena.",
+    "En esta carta ya no hay un solo personaje, hay tres: aparece el otro y con él un orden. Hoy contá con quien sabe más de lo que vos sabés.",
+    "Pedile consejo a alguien en quien confíes sobre algo que te trabe. Y después decidí vos."
+   ],
+   "reversed": [
+    "Cuidado con repetir reglas sin sentirlas. Preguntate qué creencia heredada seguís solo por costumbre.",
+    "Una guía vale lo que hace, no lo que dice. Fijate si lo que escuchás coincide con cómo actúa quien lo dice.",
+    "Seguir por inercia no es fe. Volvé a tu intuición y escuchá qué te dice hoy.",
+    "Esta carta es un puente, y un puente no es un lugar para quedarse a vivir. Si estás atascado en una norma, es hora de cruzar.",
+    "Anotá una creencia que te limita y escribí al lado una versión más amable. Probala hoy."
+   ]
+  },
+  "rw-06": {
+   "upright": [
+    "Hay una decisión que se acerca. Alineá mente y corazón: si los dos miran para el mismo lado, ya sabés.",
+    "Es la carta de sostener la duda sin apuro. Elegir con el corazón también es elegir con claridad.",
+    "Enamorarte de algo, de alguien o de un proyecto es una forma de saber qué te importa.",
+    "En esta carta los pies y la mirada del personaje central van para lados distintos: la duda se ve en el cuerpo. Hoy fijate hacia dónde apuntan los tuyos.",
+    "Escribí tus dos opciones y, al lado de cada una, cómo se siente en el cuerpo. Después, elegí."
+   ],
+   "reversed": [
+    "Mucha opinión, mucho ruido. Apagá un rato las voces ajenas y escuchá la tuya.",
+    "No elegir también es una elección. Si la duda dura de más, se lleva tu energía.",
+    "Ojo con enamorarte de la idea y no de la realidad. Mirá lo que hay, además de lo que soñás.",
+    "Acá nadie está por encima: todos son iguales, y por eso nadie decide por vos. La responsabilidad de elegir es tuya.",
+    "Hoy no consultes a más gente. Tomá una decisión chica de esa lista, aunque sea tentativa."
+   ]
+  },
+  "rw-07": {
+   "upright": [
+    "Ya sabés lo que querés, entonces es hora de moverte. La acción sostenida te acerca más que cualquier plan.",
+    "Hay empuje y rumbo a tu favor. Alineá lo que hacés con a dónde querés llegar.",
+    "El movimiento es una forma de decirle al mundo quién sos.",
+    "En esta carta los dos animales parecen tirar hacia lados opuestos y aun así avanza. El control no es forzar, es alinear las fuerzas.",
+    "Elegí un objetivo concreto y avanzá hoy en él al menos una hora, sin distracciones."
+   ],
+   "reversed": [
+    "Cuidado con hacer solo para el aplauso. Preguntate si lo que hacés te lleva a donde querés ir o a donde te miran.",
+    "Acelerar sin rumbo no es avanzar. Frená un segundo y chequeá hacia dónde apunta el volante.",
+    "La acción necesita un para qué. Si no lo encontrás, esperá antes de salir a toda velocidad.",
+    "Las ruedas están clavadas en la tierra: el movimiento nace del suelo, no del vehículo. Hoy revisá si tenés pie firme antes de acelerar.",
+    "Antes de empezar, escribí en una frase para qué hacés lo que estás por hacer."
+   ]
+  },
+  "rw-08": {
+   "upright": [
+    "Hoy te toca ser justo o justa con vos. Si podés serlo con vos, podés serlo con los demás.",
+    "Es momento de evaluar con calma: qué sigue sumando y qué ya no. Elegir con honestidad es crecer.",
+    "El equilibrio no es perfección, es encontrar tu justa medida.",
+    "En esta carta la espada y la balanza están apenas inclinadas: lo perfecto también es imperfecto. Hoy no busques la exactitud, buscá lo razonable.",
+    "Anotá una cosa que ya no suma y otra que sí. Quedate con la segunda y soltá la primera."
+   ],
+   "reversed": [
+    "Cuidado con la dureza. Exigirte de más no te hace más justo, solo más cansado.",
+    "El perfeccionismo es una balanza trabada. Aflojá el estándar y fijate qué se acomoda.",
+    "A veces la frialdad es una defensa. Preguntate qué emoción estás dejando afuera de la cuenta.",
+    "La espada corta lo que sobra, pero no es para lastimar. Revisá si tus palabras de hoy cortan para ordenar o para herir.",
+    "Hoy, antes de juzgar algo, imaginá cómo lo vería alguien que te quiere bien."
+   ]
+  },
+  "rw-09": {
+   "upright": [
+    "Es tiempo de hacer una pausa y mirar tu camino. Lo que viviste te hizo quien sos, y ahí hay sabiduría.",
+    "Retirarte un rato no es huir: es volver a vos. Del silencio sale claridad.",
+    "A paso lento, con un farolito propio, se llega igual. Cuidá tu luz.",
+    "La luz que lleva esta figura ilumina solo unos pasos: alcanza para el próximo. No necesitás ver todo el camino.",
+    "Reservate una hora hoy para estar a solas con tus pensamientos. Sin pantallas, sin tareas."
+   ],
+   "reversed": [
+    "Cuidado con la soledad que no elegiste. Si te aislás por cansancio o dejadez, buscá una puerta abierta.",
+    "El retiro sin fin se vuelve ausencia. Fijate si te estás preservando o escondiendo.",
+    "No hay sabiduría en cargar solo con todo. Pedí compañía cuando la necesites.",
+    "El farol está para iluminar, no para mirarse el ombligo. Hoy usá lo que sabés para ayudar a alguien.",
+    "Mandale un mensaje a alguien que hace tiempo no saludás. Un 'cómo andás' alcanza."
+   ]
+  },
+  "rw-10": {
+   "upright": [
+    "Un ciclo se mueve y vos no manejás la rueda. Aceptar el cambio te deja flotar en vez de hundirte.",
+    "Lo que fue ya no es y lo que será todavía no llegó. Ese espacio en el medio también es parte del viaje.",
+    "Todo gira: lo que hoy está abajo mañana sube. Esperá sin apuro.",
+    "Esta carta tiene la rueda, pero no se ve quién la gira. Parte del cambio simplemente no depende de vos.",
+    "Anotá qué cosa de hoy depende de vos y qué cosa no. Ocupate solo de la primera."
+   ],
+   "reversed": [
+    "Si te sentís dando vueltas, quizá te estás aferrando a lo que ya terminó. Mirá qué soltar.",
+    "La rueda se mueve pero no avanza si te resistís al cambio. Entregarse no es perder: es fluir.",
+    "A veces repetir una historia es la manera de no cerrarla. Hoy buscá el aprendizaje, no el culpable.",
+    "Hasta la rueda tiene patas que la sostienen: eso da sensación de estabilidad aunque no avance. Revisá en qué estás quieto aunque parezca que te movés.",
+    "Cerrá hoy algo chiquito que dejaste a medias. Un cierre abre espacio."
+   ]
+  },
+  "rw-11": {
+   "upright": [
+    "Tu fuerza de verdad no grita, abraza. Hoy la compasión te sirve más que la voluntad dura.",
+    "Podés domar tu impulso sin matarlo. Escucharlo y guiarlo te da poder sobre vos.",
+    "La valentía más grande es la tranquila: la que se queda cuando podría escapar.",
+    "En esta carta la figura toca al animal sin miedo y sin violencia. Hoy, frente a lo que te intimida, probá con ternura antes que con pelea.",
+    "Si algo te enoja hoy, respirá hondo tres veces antes de responder. Después elegí tu respuesta."
+   ],
+   "reversed": [
+    "Mucha energía sin cauce puede devorarte. Dale una tarea concreta o se va a salir sola.",
+    "Si te cuesta ser amable con vos, empezá por ahí. La fuerza interior arranca por la autocompasión.",
+    "Reprimir el instinto no lo apaga. Reconocelo y elegí qué hacer con él.",
+    "Esta carta enseña que la fuerza física no alcanza: la que importa es la interior. Hoy fijate cómo te hablás.",
+    "Hacé algo que te descargue de forma sana: caminar, bailar, escribir. Y después retomá lo pendiente."
+   ]
+  },
+  "rw-12": {
+   "upright": [
+    "Hay una pausa que te pide quedarte quieto. Mirar las cosas desde otro ángulo es parte de avanzar.",
+    "Hoy no es de hacer: es de escuchar. Lo que ves cuando te detenés no se ve en movimiento.",
+    "Si te relajás, el nudo se suelta solo.",
+    "Esta figura cuelga al revés, con el rostro en calma: lo que parece sacrificio es un cambio de perspectiva. Hoy dalo vuelta todo y mirá qué cambia.",
+    "Elegí una situación que te trabe y miralo hoy como lo vería alguien de afuera. Anotá qué ves distinto."
+   ],
+   "reversed": [
+    "Quizás estás cómodo en una incomodidad conocida. Preguntate si estás realmente atado o si podés soltarte solo.",
+    "Esperar con sentido es una cosa y quedarse inmóvil por miedo es otra. Fijate cuál es la tuya hoy.",
+    "A veces el 'todavía no' se vuelve un 'no me animo'. Revisalo con honestidad.",
+    "La escucha es el sentido de esta carta: la oreja se ve, la boca no. Hoy hablá menos y preguntá más.",
+    "Postergá una decisión que no es urgente un día más. Y observá qué te pide el cuerpo."
+   ]
+  },
+  "rw-13": {
+   "upright": [
+    "Algo está cambiando de raíz, aunque no haga ruido. Dejá que lo viejo termine para que nazca otra cosa.",
+    "No es un final literal: es una transformación profunda. Lo que se va libera espacio para lo nuevo.",
+    "Para que algo nuevo brote, hay que remover un poco el piso.",
+    "Esta carta no tiene nombre: lo que se transforma no cabe en una palabra. Hoy dejá que algo se vuelva otra cosa sin ponerle etiqueta.",
+    "Elegí algo que ya cumplió su ciclo (un hábito, un objeto, una idea) y dejalo ir hoy con gratitud."
+   ],
+   "reversed": [
+    "Aferrarte a lo que pide transformarse duele más que soltarlo. Preguntate qué estás sosteniendo por miedo.",
+    "A veces el cambio no llega porque no te animás al duelo. Permitite sentirlo.",
+    "Lo que se resiste, persiste. Mirá lo que ya terminó y dale permiso de irse.",
+    "Esta carta es lenta y silenciosa: su cambio ocurre por dentro. Si sentís que algo ya se movió, confiá en ese proceso.",
+    "Escribí qué pierde sentido en tu vida hoy. Después, escribí qué te gustaría que ocupe ese lugar."
+   ]
+  },
+  "rw-14": {
+   "upright": [
+    "Es tiempo de calma y de integrar. Mezclar con paciencia, de a poco, da el punto justo.",
+    "Algo en vos empieza a sanar y a equilibrarse. No lo apures: la armonía también lleva su tiempo.",
+    "Entre dos extremos, hay un camino del medio. Hoy encontralo.",
+    "Esta figura vierte agua de una copa a otra sin derramar: equilibrio y flujo. Hoy fijate dónde podés ajustar un poquito para que todo fluya.",
+    "Hacé hoy una pausa de diez minutos para respirar y bajar revoluciones. Sin objetivo, solo para templar."
+   ],
+   "reversed": [
+    "Querer controlar tus emociones las vuelve más rígidas. Dejalas fluir en vez de contenerlas.",
+    "Si todo te parece mucho o poco, quizás te falta la medida. Revisá qué desequilibra tu día.",
+    "No siempre se puede mantener la calma, y está bien. Volvé a ella cuando puedas.",
+    "El equilibrio no es quietud, es movimiento fino. Hoy preguntate dónde te estás yendo a un extremo.",
+    "Elegí una cosa en la que exageraste esta semana y bajale un 20 por ciento hoy."
+   ]
+  },
+  "rw-15": {
+   "upright": [
+    "Hay un deseo o una atadura que pide ser mirada de frente. Lo que no se mira, se repite.",
+    "Es una carta de tentaciones y de sombra: no para temerle, sino para entenderte mejor.",
+    "Lo que te encadena muchas veces se puede soltar solo con darte cuenta.",
+    "En esta carta las cadenas del cuello están flojas: nadie las sostiene. Muchas ataduras son más un hábito que una fuerza real.",
+    "Anotá hoy qué cosa te cuesta soltar o dejar de hacer. Mirala sin juzgarte."
+   ],
+   "reversed": [
+    "Cuidado con dominar o con dejarte dominar. Preguntate dónde cedés tu poder sin darte cuenta.",
+    "Si algo te molesta mucho en otros, quizás refleja algo tuyo. Hoy mirá hacia adentro.",
+    "Negar un deseo lo vuelve más intenso. Reconocelo y elegí qué hacer con él.",
+    "Esta carta muestra figuras abajo que no parecen sufrir: a veces la jaula es cómoda. Pensá en qué hábito te quedás por comodidad.",
+    "Cuestioná hoy una creencia que te limita. ¿Quién te la dijo? ¿Es cierta para vos?"
+   ]
+  },
+  "rw-16": {
+   "upright": [
+    "Algo que ya no podía sostenerse se sacude y, aunque incomode, abre espacio. Lo que es tuyo de verdad queda en pie.",
+    "No es un castigo, es un quiebre que venía pidiendo paso. Si te mantenés flexible, se parece más a una liberación que a una caída.",
+    "Hoy tus planes pueden cambiar sin aviso. Soltá la idea de controlarlo todo y confiá en que algo te va a asistir cuando des el salto.",
+    "En esta carta vuela la corona, pero la estructura queda. Hoy se afloja lo que pensabas, no lo que sos.",
+    "Si algo se desarma hoy, no lo arregles en el acto. Dejá que se acomode y mirá qué espacio libre queda."
+   ],
+   "reversed": [
+    "Estás sosteniendo con las dos manos algo que pide cambiar. Aflojar el control puede doler menos que aferrarse.",
+    "Quizás ya sentís la grieta y mirás para otro lado. Prestale atención ahora, con calma, antes de que lo haga el ruido.",
+    "Resistir el cambio gasta mucha energía. Preguntate qué creencia sostenés solo por costumbre y qué pasaría si la soltás.",
+    "Los que caen en esta carta no van rígidos sino sueltos. Cuanto más te agarrás, más cuesta: probá aflojar el cuerpo y la idea.",
+    "Hacé una lista corta de lo que intentás controlar y tachá lo que en realidad no depende de vos."
+   ]
+  },
+  "rw-17": {
+   "upright": [
+    "Es tiempo de mostrarte como sos, sin armaduras. Ahí encontrás tu lugar y tu brillo.",
+    "Hay esperanza y calma después de la tormenta. Lo que das con ganas vuelve a nutrirte.",
+    "Una luz chiquita también guía. Seguila aunque todavía no entiendas a dónde va.",
+    "En esta carta la figura está desnuda y vierte agua en la tierra y en el río: se entrega sin pedir nada. Hoy dar sin cálculo te hace bien.",
+    "Hacé algo hoy que te haga sentir de verdad vos: una canción, un paseo, una charla honesta."
+   ],
+   "reversed": [
+    "Cuidado con darte tanto que te quedes vacío o vacía. Cuidar a otros empieza por cuidarte.",
+    "Idealizar el mundo perfecto puede alejarte del que tenés. Mirá lo bueno de lo real.",
+    "Si te sentís sin guía, buscá una señal pequeña a tu alrededor. Siempre hay alguna.",
+    "Primero me sano yo, después me entrego. Hoy ponete en el orden: llená tu propia jarra antes de verter.",
+    "Hoy decí que no a algo que te drena y que no querés sostener."
+   ]
+  },
+  "rw-18": {
+   "upright": [
+    "Hay cosas que se sienten antes de entenderse. Prestá atención a tus sueños, a tu piel y a tus corazonadas.",
+    "Es un momento sensible y profundo. Estar confundido o confundida no es un error: es parte de descubrir.",
+    "La claridad llega después de cruzar la neblina. Caminá despacio.",
+    "En esta carta la langosta sale del agua hacia el camino: lo profundo sube a la superficie. Lo que sentís hoy sin explicación puede traer un mensaje.",
+    "Anotá hoy qué soñaste o qué emoción te acompañó. Aunque no entiendas, anotala."
+   ],
+   "reversed": [
+    "Cuidado con proyectar tus miedos en lo que ves. No todo lo que imaginás es verdad.",
+    "Si sentís que te absorben las emociones de otros, poné distancia. Tu propio mar también necesita calma.",
+    "La timidez o el encierro pueden ser una forma de resguardo. Hoy animate a mostrar un pedacito.",
+    "Esta luz no es propia: viene del Sol y se refleja. Si te sentís apagado, quizás te falta conectar con tu propia fuente.",
+    "Hoy no tomes decisiones grandes basadas solo en lo que sentiste de noche. Dejalas para la mañana."
+   ]
+  },
+  "rw-19": {
+   "upright": [
+    "Hay calidez y alegría para compartir. Disfrutá sin culpa lo que te sale bien.",
+    "Es un momento de luz, claridad y aceptación. Lo que antes te ataba ahora te impulsa.",
+    "Brillar no le quita luz a nadie. Dejá que tu calor se note.",
+    "En esta carta el sol mira de frente y ilumina a todos por igual. Hoy compartí lo que tenés con quien tengas cerca.",
+    "Salí un rato a tomar luz natural y contale a alguien algo que te alegre."
+   ],
+   "reversed": [
+    "Cuidado con querer brillar más que el otro. Compartir luz suma más que competir.",
+    "Si hoy sentís que ardés de más, bajá un cambio. Hasta el sol necesita atardecer.",
+    "A veces la alegría se apaga cuando se exige. Dejala volver sola.",
+    "El calor es bueno hasta que encandila. Hoy fijate si tu entusiasmo deja lugar a otros.",
+    "Agradecé hoy tres cosas concretas que salieron bien. Anotalas."
+   ]
+  },
+  "rw-20": {
+   "upright": [
+    "Algo te está llamando. Prestá atención a señales, coincidencias y a esa voz que insiste.",
+    "Es un momento de renacer y de ordenar tu lugar en tu propia historia.",
+    "Te despertás a una verdad que ya sabías. Escuchala sin miedo.",
+    "En esta carta suena una trompeta enorme y todos se levantan: no se despierta uno solo. Hoy mirá qué vínculos o historias familiares también te llaman.",
+    "Escuchá hoy una señal que venís ignorando y hacé algo con ella, aunque sea chiquito."
+   ],
+   "reversed": [
+    "Quizás oís el llamado pero no querés atenderlo. Preguntate qué te da miedo.",
+    "Seguir en piloto automático también es una elección. Hoy pausá y revisá qué pide tu atención.",
+    "Algunas verdades se postergan porque duelen. Pueden esperar, pero no desaparecer.",
+    "Esta carta habla también de mandatos familiares. Revisá cuáles te ayudan y cuáles es hora de soltar.",
+    "Escribí un mandato que heredaste y marcalo: ¿me sirve o lo dejo?"
+   ]
+  },
+  "rw-21": {
+   "upright": [
+    "Un ciclo se completa y hay motivo de festejo. Mirá lo que lograste, es tuyo.",
+    "Sentís plenitud y sentido. Disfrutalo sin apuro.",
+    "Cerrar bien es tan importante como empezar. Despedite con gratitud.",
+    "En esta carta, los laureles forman un círculo: una cosa terminada y a la vez un huevo por romperse. Todo cierre trae un principio.",
+    "Hacé hoy un pequeño ritual para festejar un logro, aunque sea tomar algo rico o escribir una nota."
+   ],
+   "reversed": [
+    "Los laureles pueden volverse jaula si no te animás a volver a empezar. Preguntate qué te toca a continuación.",
+    "Algo todavía no cierra del todo. Revisá qué falta para que termine con paz.",
+    "La zona de confort es cálida y por eso cuesta dejarla. Mirá qué te pide crecer.",
+    "Esta carta nace de El Loco y vuelve a él: el viaje no termina, cambia. Hoy considerá un nuevo comienzo.",
+    "Hacé hoy una lista de lo que te falta cerrar. Elegí una cosa y terminala."
+   ]
+  },
+  "rw-b01": {
+   "upright": [
+    "Una chispa se enciende hoy. No hace falta que sea enorme: alcanza con que te entusiasme.",
+    "Algo te da ganas de empezar. Dale aire de a poquito y mirá cómo crece.",
+    "Toda fogata empezó con una chispa frágil. Cuidala.",
+    "Un solo basto: el fuego en su forma más simple, la semilla de todo. Hoy lo importante no es el tamaño, sino que prenda.",
+    "Anotá una idea que te encienda y dale hoy diez minutos de atención."
+   ],
+   "reversed": [
+    "Tenés mucha energía y poco cauce. Probá canalizarla en una sola cosa concreta.",
+    "Cuidado con que el apuro apague la chispa. Alimentá el fuego de a poco.",
+    "Si andás irritable, quizás es energía sin salida. Movete, creá, descargá.",
+    "Un solo basto necesita leña para sostener la llama. Hoy fijate qué te falta para sostener lo que arrancaste.",
+    "Salí a caminar o a moverte un rato antes de responder algo que te irrite."
+   ]
+  },
+  "rw-b02": {
+   "upright": [
+    "Hoy te toca mirar hacia adentro: ¿qué querés hacer con esas ganas? Planificar también es avanzar.",
+    "Podés estar a un paso de compartir un objetivo con alguien. Hablalo con claridad.",
+    "Ya sabés más de lo que creés sobre tu próximo paso. Parate a mirar el horizonte.",
+    "Dos bastos: dos llamas frente a frente. Es el momento justo antes de salir: hoy elegí el rumbo.",
+    "Escribí tu objetivo en una frase y dos primeros pasos posibles. No los hagas todavía, solo definilos."
+   ],
+   "reversed": [
+    "El miedo te frena en el umbral. Nombralo y fijate cuál es el primer paso posible.",
+    "Retener lo que querés decir te cansa. Hoy compartilo con alguien de confianza.",
+    "Si no te animás todavía, no pasa nada. Mientras tanto, dejá la puerta entreabierta.",
+    "Dos fuegos que no se juntan se enfrían. Hoy fijate qué estás guardando por temor a mostrarlo.",
+    "Contale a una persona de confianza una idea que tenés guardada."
+   ]
+  },
+  "rw-b03": {
+   "upright": [
+    "Tu creatividad está lista para salir. Mostrá lo que hiciste, aunque todavía le falte pulir.",
+    "Hay ganas de expandir y perfeccionar. Disfrutá del encuentro con tu propia obra.",
+    "Lo que nace sin forma perfecta igual vale. Dejalo existir.",
+    "Tres bastos forman una base firme: lo que era chispa se vuelve estructura. Hoy tu idea puede mirar lejos.",
+    "Compartí hoy algo que hiciste, un dibujo, un texto, una idea, con una persona."
+   ],
+   "reversed": [
+    "Si la ira o la ansiedad te tapan, hay energía creativa sin salida. Descargala con algo constructivo.",
+    "Demasiada fuerza sin dirección puede pisar a otros. Frená un segundo y elegí el tono.",
+    "A veces lo que no se expresa se transforma en enojo. Dale una vía sana.",
+    "El tres expande, y expandir sin cauce dispersa. Hoy ponele un marco a tus ideas antes de que se pierdan.",
+    "Anotá en una hoja todo lo que tengas en la cabeza sin filtro. Después elegí una sola cosa."
+   ]
+  },
+  "rw-b04": {
+   "upright": [
+    "Hay motivos para festejar. Reconocé lo que lograste con tu fuego y disfrutalo.",
+    "Algo que creaste tomó forma y es hora de compartirlo con quienes querés.",
+    "La alegría compartida es doble. Brindá por lo que ya está.",
+    "Cuatro bastos: cuatro columnas, un lugar firme para celebrar. Hoy mirá el cuadro completo, no solo lo que falta.",
+    "Armá hoy un festejo chiquito por algo que lograste. Aunque sea con una persona."
+   ],
+   "reversed": [
+    "Cuidado con que la comodidad se vuelva monotonía. Pensá qué podés renovar sin romper lo que funciona.",
+    "Una celebración que se repite igual puede aburrir. Hoy sumale algo nuevo.",
+    "Si sentís rutina, quizás es hora de un pequeño riesgo.",
+    "Una celebración que no cambia se vuelve rutina. Hoy abrí una ventana y dejá entrar algo nuevo.",
+    "Cambiá hoy un detalle de tu rutina: otro camino, otra música, otro horario."
+   ]
+  },
+  "rw-b05": {
+   "upright": [
+    "Hay ganas de probar y de arriesgarse en lo que te apasiona. Animate a jugar sin miedo.",
+    "El deseo te habla al oído. Escuchá qué quiere antes de decidir.",
+    "No toda pelea es mala: a veces es energía buscando forma. Elegí tus batallas.",
+    "Cinco bastos que se cruzan: energías distintas chocando, sin ganador claro. Hoy tomá el roce como práctica, no como guerra.",
+    "Probá hoy algo nuevo que te dé curiosidad, aunque no lo domines."
+   ],
+   "reversed": [
+    "Cuidado con discusiones intensas pero superficiales. Preguntate si vale la pena el desgaste.",
+    "Mucho ruido y poco foco. Elegí una sola cosa por la que valga la pena empujar.",
+    "Si todo te irrita, quizás estás sobrecargado o sobrecargada. Descansá un poco.",
+    "Cuando todos empujan para su lado, nadie avanza. Hoy escuchá antes de contestar.",
+    "Antes de discutir algo, pausá y preguntate: ¿esto importa dentro de una semana?"
+   ]
+  },
+  "rw-b06": {
+   "upright": [
+    "Hay satisfacción por haberte animado. Lo que probaste te dio algo bueno: disfrutalo.",
+    "Es un momento de reconocimiento. Lo que hacés con pasión se nota.",
+    "Entregarte a lo que te gusta es el camino más corto a sentirte vivo.",
+    "Seis bastos: la entrega dio fruto y se nota. Hoy dejá que te vean y que te celebren.",
+    "Aceptá un elogio hoy sin minimizarlo. Decí solo 'gracias'."
+   ],
+   "reversed": [
+    "Cuidado con quedarte solo con lo que te da placer y perder el vínculo con otros.",
+    "El aplauso cansa si se vuelve necesidad. Hacé algo hoy sin que nadie lo vea.",
+    "Si te sentís desgastado o desgastada, quizás le diste demasiada vida a la imagen.",
+    "El aplauso cansa si se vuelve necesidad. Hoy hacé algo bueno sin contarlo.",
+    "Hoy hacé algo por el simple placer de hacerlo, sin mostrarlo."
+   ]
+  },
+  "rw-b07": {
+   "upright": [
+    "Hay fuerza en defender lo que querés y lo que te apasiona. Hacelo con sentido, no por orgullo.",
+    "Tu toque personal se nota. Hoy ponelo en lo que hacés.",
+    "La pasión con rumbo se vuelve arte.",
+    "Siete bastos: una posición que se defiende con convicción. Hoy sostené la tuya con calma, sin atacar.",
+    "Elegí algo que de verdad te importa y defendelo hoy con una frase firme y amable."
+   ],
+   "reversed": [
+    "Hacer todo el tiempo sin saber para qué te desgasta. Frená y buscá el sentido.",
+    "Si te sentís a la defensiva, quizás estás viendo ataques donde no los hay.",
+    "Ojo con pensar solo en tu deseo: hay otros alrededor que también cuentan.",
+    "Pelear contra todos es agotador. Hoy elegí una sola batalla y dejá el resto.",
+    "Hoy no respondas de inmediato a una crítica: esperá a la tarde y volvé a leerla."
+   ]
+  },
+  "rw-b08": {
+   "upright": [
+    "Lo que antes costaba ahora fluye. Seguí con ese ritmo, ya encontraste tu método.",
+    "Las cosas se mueven rápido a tu favor. Aprovechá sin forzar.",
+    "Cuando el camino está limpio, avanzar es liviano.",
+    "Ocho bastos, todos en un mismo sentido: todo se alinea. Hoy dejá que lo que ya está en marcha siga su curso.",
+    "Respondé hoy mensajes o tareas pendientes en una tanda corta. Aprovechá el envión."
+   ],
+   "reversed": [
+    "Demasiados frentes a la vez. Elegí dos y dejá el resto para después.",
+    "Querés decir que sí a todo y no podés con todo. Aprender a decir 'ahora no' también es madurez.",
+    "A veces la velocidad nos distrae del objetivo. Frená y mirá hacia dónde vas.",
+    "Cuando todas las puertas se abren a la vez, conviene elegir una. Hoy priorizá.",
+    "Escribí tus pendientes y marcá solo los tres más importantes de la semana."
+   ]
+  },
+  "rw-b09": {
+   "upright": [
+    "Venís recorriendo un camino largo y es normal sentir cansancio. Descansá sin culpa y seguí cuando puedas.",
+    "Hay un cierre a la vista y es natural dudar de qué viene después. Confiá en lo que ya aprendiste.",
+    "Hasta el fuego necesita brasas. Descansar también es parte del viaje.",
+    "Nueve bastos: casi todo el camino recorrido y el último tramo por delante. Hoy reconocé lo que ya atravesaste.",
+    "Hoy tomate una pausa real: un rato sin tareas, sin pantallas, sin exigencias."
+   ],
+   "reversed": [
+    "Te aferrás a algo que ya terminó. Soltar es parte del cierre.",
+    "Negar el cansancio no lo hace desaparecer. Escuchalo antes de que te frene.",
+    "Cuesta despedirse cuando no sabés qué viene. Aun así, soltá un poco.",
+    "Estar siempre en guardia agota. Preguntate si hoy hace falta defenderte tanto.",
+    "Decí que no a un compromiso que no es imprescindible y reservate tiempo propio."
+   ]
+  },
+  "rw-b10": {
+   "upright": [
+    "Llevás una carga grande porque te comprometiste con muchas cosas. Ya casi llegás: repartí el peso.",
+    "Es un momento de responsabilidad y esfuerzo compartido. Pedí ayuda si hace falta.",
+    "Todo camino tiene un último tramo. Respirá y seguí.",
+    "Diez bastos: el máximo peso, el cierre del ciclo. Hoy mirá qué podés dejar en el suelo.",
+    "Delegá o pospone hoy una de tus tareas. Aliviá un poco la carga."
+   ],
+   "reversed": [
+    "Si llegás agotado o agotada, quizás te comprometiste con más de lo que podías. Revisá qué soltar.",
+    "No hace falta cargar todo solo. Pedí una mano concreta.",
+    "El esfuerzo sin descanso no es virtud. Pausá antes de seguir.",
+    "Una carga pesada no siempre es tuya. Fijate cuáles de esas cosas no te corresponden.",
+    "Elegí un compromiso para cancelar o renegociar esta semana."
+   ]
+  },
+  "rw-bpj": {
+   "upright": [
+    "Una energía joven y curiosa te impulsa. Animate a explorar aunque no tengas experiencia.",
+    "Hay entusiasmo y valentía. Lo que te falta de práctica lo suplís con ganas.",
+    "El principiante tiene una ventaja: no sabe lo que no se puede.",
+    "Esta carta es el principiante del fuego: todo es posible porque todavía no sabe lo que no se puede. Hoy mirá lo tuyo como si fuera la primera vez.",
+    "Probá hoy una idea nueva, sin pedir permiso y sin garantías."
+   ],
+   "reversed": [
+    "Cuidado con la impulsividad: las ganas sin paciencia se queman rápido.",
+    "Querer ir demasiado rápido puede dejarte sin energía a mitad de camino.",
+    "La rebeldía sin rumbo cansa. Hoy preguntate contra qué estás peleando.",
+    "Esta carta puede mostrar a alguien inagotable que no sabe poner límites. Fijate si es tu caso.",
+    "Antes de lanzarte a algo hoy, esperá una hora y volvé a decidir."
+   ]
+  },
+  "rw-bcb": {
+   "upright": [
+    "Avanzás con convicción y sabés usar tu instinto. Seguí ese impulso con inteligencia.",
+    "Tenés energía y rumbo. Aprovechalos sin atropellar.",
+    "El instinto bien guiado se vuelve sabiduría.",
+    "El caballero avanza: fuego con dirección. Hoy usá tu energía con cabeza.",
+    "Elegí una meta para la semana y movete hacia ella hoy con una acción concreta."
+   ],
+   "reversed": [
+    "Por momentos pasás de mucha energía a ninguna. Buscá un ritmo más parejo.",
+    "No conectar con tu vulnerabilidad también te cansa. Permitite sentir.",
+    "Querer demostrar fuerza puede esconder cansancio. Descansá.",
+    "Esta energía a veces se apaga sola si no se cuida. Hoy fijate qué te nutre.",
+    "Hoy tomate un rato para algo que te recargue de verdad, sin culpa."
+   ]
+  },
+  "rw-brn": {
+   "upright": [
+    "Tu creatividad está madura y tu deseo claro. Sé generosa o generoso con lo que sabés.",
+    "Mirás hacia adelante con seguridad. Podés inspirar a otros sin esfuerzo.",
+    "Quien se conoce brilla sin forzar.",
+    "La reina conoce su fuego y lo sostiene con calma, mirando al frente. Hoy mostrá tu energía sin apuro.",
+    "Compartí hoy algo que sabés con alguien que lo necesite. Enseñar también es crear."
+   ],
+   "reversed": [
+    "Cuidado con avasallar o con bloquearte creativamente. Revisá si te estás exigiendo de más.",
+    "La generosidad sin límites cansa. Poné un borde amable.",
+    "Si no sentís inspiración, no la fuerces. Dejala volver.",
+    "El fuego que se contiene demasiado puede apagarse. Dale salida.",
+    "Hacé hoy algo creativo sin objetivo: dibujar, escribir, cocinar distinto."
+   ]
+  },
+  "rw-bry": {
+   "upright": [
+    "Tu carisma y tu intuición te ponen al frente. Liderá con alegría y compasión.",
+    "Es un momento de inspirar y de dejar huella. Hacelo con humor.",
+    "El mejor líder es el que contagia ganas.",
+    "El rey apoya su fuego en la tierra: el entusiasmo se vuelve base firme. Hoy tu energía puede sostener algo concreto.",
+    "Animá a alguien hoy con una palabra honesta. Marcá la diferencia en su día."
+   ],
+   "reversed": [
+    "Cuidado con manipular con tu encanto. Usá tu fuerza con transparencia.",
+    "Si no sentís el dominio de tu energía, pedí orientación. No hace falta saberlo todo.",
+    "El carisma sin responsabilidad deja heridas. Hoy pensá cómo caen tus palabras.",
+    "Un líder que no escucha pierde a su gente. Preguntá antes de decidir.",
+    "Hoy preguntale a alguien qué necesita de vos antes de ofrecer una solución."
+   ]
+  },
+  "rw-c01": {
+   "upright": [
+    "Un nuevo comienzo emocional se abre. Es el momento de tratarte con más cariño y dejar entrar lo bueno.",
+    "Algo en vos quiere renovarse y sanar. No hace falta apurar: la copa se llena de a poco.",
+    "El amor empieza siempre por casa: por cómo te tratás a vos.",
+    "Una sola copa: el corazón en su forma más simple, todavía por llenar. Hoy dejá espacio para lo que viene.",
+    "Hacé hoy algo que te haga bien a vos sin pedirle nada a nadie: un baño, un paseo, una comida rica."
+   ],
+   "reversed": [
+    "Hay algo emocional que se traba y no avanza. Preguntate qué falta para poder perdonarte.",
+    "Si te cuesta recibir cariño, empezá por darte un poco a vos.",
+    "Una copa cerrada no se llena ni se vacía. Animate a abrir un poquito.",
+    "A veces el corazón necesita tiempo antes de abrirse. No te exijas.",
+    "Escribite una frase amable, como se la dirías a un amigo en tu lugar, y leela en voz alta."
+   ]
+  },
+  "rw-c02": {
+   "upright": [
+    "Hay un encuentro o una unión genuina. Ya sea con otra persona, un proyecto o con vos misma o mismo: dejate llevar.",
+    "Dos energías se reconocen y se complementan. Es buen día para conectar.",
+    "Cuando dos corazones se miran sin apuro, lo demás se acomoda.",
+    "Dos copas frente a frente: una da y otra recibe. Hoy fijate qué estás dando y qué estás dejando entrar.",
+    "Escribile hoy a alguien que te hace bien y decile algo concreto que valorás de esa persona."
+   ],
+   "reversed": [
+    "Cuidado con idealizar. Mirá lo que realmente hay, además de lo que te imaginás.",
+    "No toda unión es equilibrada. Fijate si das más de lo que recibís.",
+    "A veces el vínculo que falta es con uno mismo. Reconectá con tu propia compañía.",
+    "Dos copas que no se tocan no comparten nada. Hoy animate a abrir un tema pendiente.",
+    "Hoy decí en voz alta algo que sentís pero te cuesta nombrar."
+   ]
+  },
+  "rw-c03": {
+   "upright": [
+    "Hay motivo para celebrar con quienes querés. Disfrutá la compañía sin pensar en lo que falta.",
+    "Es un momento de unión afectiva. Compartir alegría la multiplica.",
+    "Un brindis a tiempo cura más de lo que creés.",
+    "Tres copas que se levantan juntas: la alegría es mejor en compañía. Hoy buscá un encuentro con gente que te sume.",
+    "Juntate hoy con alguien querido, aunque sea por un rato, y celebren algo simple."
+   ],
+   "reversed": [
+    "Cuidado con depender de otros para animarte. Tu alegría también puede nacer sola.",
+    "Si hoy la fiesta se te hace pesada, no pasa nada. Retirarte a tiempo también es cuidarte.",
+    "Sobrevalorar un vínculo puede ocultar lo que falta. Mirá todo el cuadro.",
+    "La compañía suma cuando no apaga tu propia voz. Revisá si te estás adaptando de más.",
+    "Hacé hoy algo que te guste, aunque nadie más quiera acompañarte."
+   ]
+  },
+  "rw-c04": {
+   "upright": [
+    "Estás rodeado o rodeada de más cariño del que ves. Mirá a tu alrededor con calma.",
+    "Es un momento de estabilidad emocional. Disfrutá lo que hay sin buscar más.",
+    "A veces lo que buscás ya está servido, esperando que lo notes.",
+    "Cuatro copas: un círculo firme de afecto disponible. Hoy fijate qué te están ofreciendo y no estás tomando.",
+    "Agradecé hoy a alguien por algo que hizo por vos y que pasaste por alto."
+   ],
+   "reversed": [
+    "Quizás el aburrimiento te tapa lo que sí tenés. Probá mirarlo con ojos nuevos.",
+    "Negarte a ver lo bueno también es una forma de protegerte. Preguntate de qué.",
+    "No todo tiene que emocionarte para ser valioso. Revisá tus expectativas.",
+    "Una puerta cerrada por costumbre no deja pasar nada. Dale una chance a lo nuevo.",
+    "Aceptá hoy una invitación o una propuesta que normalmente rechazarías."
+   ]
+  },
+  "rw-c05": {
+   "upright": [
+    "Hay expectativas y emociones en juego. Respirá hondo: no todo salió como pensabas, y eso también deja algo.",
+    "Es un momento de abrirte con vos y con otros, aunque no sea perfecto.",
+    "Lo que se pierde enseña. Lo que queda también acompaña.",
+    "Cinco copas: algunas ya se vaciaron y otras todavía están llenas. Hoy mirá lo que queda, no solo lo que se perdió.",
+    "Anotá tres cosas que sí tenés hoy. Mirala cuando te cueste ver lo bueno."
+   ],
+   "reversed": [
+    "La ansiedad por cómo deberían ser las cosas te hiere. Aflojá la expectativa.",
+    "Quedarte pensando en lo que no fue te impide ver lo que hay. Mirá hacia adelante.",
+    "Si te sentís herido o herida, dale tiempo. No tenés que superarlo hoy.",
+    "Los estándares muy altos duelen cuando no se alcanzan. Fijate qué es razonable.",
+    "Permitite llorar o desahogarte hoy con alguien de confianza. No lo guardes."
+   ]
+  },
+  "rw-c06": {
+   "upright": [
+    "Hay recuerdos, hogar y afecto que te acompañan. Mirar hacia atrás con cariño puede darte fuerza.",
+    "Un vínculo o una memoria te devuelve algo de tu origen. Dejate ablandar.",
+    "Lo vivido es raíz, no ancla.",
+    "Seis copas: la ternura de lo conocido y del regalo compartido. Hoy buscá algo que te recuerde quién sos.",
+    "Mirá hoy una foto o escuchá una canción que te lleve a un buen recuerdo y compartilo con alguien."
+   ],
+   "reversed": [
+    "La nostalgia te puede llevar a querer quedarte en lo que ya fue. Valorá el pasado sin vivir en él.",
+    "Querer controlar cómo era antes te quita lo de hoy. Soltá un poco.",
+    "No todo lo que se fue vuelve igual, y está bien.",
+    "Si un vínculo viejo te pesa, preguntate si es cariño o costumbre.",
+    "Elegí algo de tu presente que quieras cuidar y dedicale hoy tiempo real."
+   ]
+  },
+  "rw-c07": {
+   "upright": [
+    "Hay muchas posibilidades soñadas. Elegí una y llevala a lo concreto con amor genuino.",
+    "Tu imaginación está activa. Dejá que te inspire y después bajala a tierra.",
+    "Lo que se hace desde el corazón no necesita aplausos.",
+    "Siete copas: muchas opciones, muchos deseos. Hoy elegí cuál de ellos merece tu energía.",
+    "Escribí tres cosas que soñás y marcá la que está más a tu alcance. Hacé hoy el primer paso."
+   ],
+   "reversed": [
+    "Cuidado con las ilusiones: no todo lo que brilla es real. Chequeá con la realidad.",
+    "Escaparte a la fantasía puede ser una manera de evitar decidir. Volvé al presente.",
+    "Si lo hacés por interés más que por cariño, el vínculo se nota. Revisá tus motivos.",
+    "Muchas opciones pueden paralizar. No hace falta elegir la perfecta, alcanza con la próxima.",
+    "Hoy sacá una decisión chica que venías evitando por querer elegir bien."
+   ]
+  },
+  "rw-c08": {
+   "upright": [
+    "Hay un amor que va más allá de la forma. A veces el crecimiento pide dejar atrás lo conocido.",
+    "Estás eligiendo lo que de verdad te nutre. Seguí a tu corazón sin culpa.",
+    "Soltar con amor es también una manera de cuidar.",
+    "Ocho copas: has acumulado mucho y algo te pide ir más allá. Hoy escuchá si tu corazón quiere otro rumbo.",
+    "Hacé hoy una pausa para preguntarte: ¿esto me nutre todavía? Anotá la respuesta sincera."
+   ],
+   "reversed": [
+    "Cuesta abrirte a un amor sin condiciones. Hoy permitite recibir un poco.",
+    "Quizás algo no es como parecía. Revisá tus límites y tus valores.",
+    "Irte de un lugar no siempre es huir; a veces es cuidarte.",
+    "No todo vínculo merece tu energía para siempre. Preguntate cuál ya cumplió.",
+    "Poné hoy un límite amable en una situación donde te venís sobreexigiendo."
+   ]
+  },
+  "rw-c09": {
+   "upright": [
+    "Hay satisfacción emocional y gratitud. Disfrutá lo que construiste, te lo ganaste.",
+    "Algo termina y a la vez te deja plenitud. Quedate con lo bueno que dejó.",
+    "Agradecer es una manera de seguir sintiendo.",
+    "Nueve copas: la abundancia emocional se nota en el aire. Hoy celebrá lo que sí salió bien.",
+    "Hoy agradecé en voz alta a alguien que estuvo en tu camino."
+   ],
+   "reversed": [
+    "Resistirte a una despedida alarga el dolor. Dale su momento y dejalo ir.",
+    "Si no podés agradecer, quizá todavía no terminaste de procesar. Dale tiempo.",
+    "A veces nos aferramos a lo que ya no es porque nos dio algo bueno. Reconocelo y soltá.",
+    "La satisfacción que depende de otros se escapa. Buscá una fuente propia.",
+    "Hoy hacé algo por vos que te dé gusto, sin esperar nada a cambio."
+   ]
+  },
+  "rw-c10": {
+   "upright": [
+    "Hay armonía contigo y con quienes te rodean. Es un buen momento para disfrutar lo compartido.",
+    "El amor se vuelve algo tangible: un proyecto, un hogar, un vínculo sólido. Cuidalo.",
+    "Cuando adentro estás en paz, afuera también se nota.",
+    "Diez copas: la plenitud emocional completa un ciclo. Hoy mirá lo que construiste y reconocelo.",
+    "Compartí hoy una comida o un momento con tu gente y soltá el celular."
+   ],
+   "reversed": [
+    "Si te aferrás a una imagen perfecta, el cambio asusta. Aceptá que la armonía también se mueve.",
+    "A veces el miedo a perder lo logrado te impide disfrutarlo.",
+    "Una familia o un grupo no siempre es lo que sueña la cabeza. Mirá lo real con ternura.",
+    "Si algo se resiente, hablalo con calma antes de que se vuelva distancia.",
+    "Hoy abrí una conversación pendiente con alguien querido, sin buscar tener razón."
+   ]
+  },
+  "rw-cpj": {
+   "upright": [
+    "Una energía curiosa y creativa se abre paso. Dejate sorprender como un niño o una niña.",
+    "Hay inspiración nueva en el aire. Seguila aunque parezca rara.",
+    "Lo distinto no es un error: es una forma nueva de mirar.",
+    "Esta carta es el principiante del agua: siente todo con asombro. Hoy permitite emocionarte con algo simple.",
+    "Hacé hoy algo creativo sin juzgarte: dibujar, escribir, cantar, aunque salga torpe."
+   ],
+   "reversed": [
+    "Cuidado con la ingenuidad: no todo es tan bonito como parece. Chequeá con la realidad.",
+    "Si te cuesta abrirte, empezá por el amor propio. Desde ahí te vinculás con otros.",
+    "La sensibilidad sin límites cansa. Cuidá tus bordes.",
+    "A veces la emoción se queda en idea. Hoy llevala a un gesto concreto.",
+    "Preguntate hoy qué necesitás para sentirte seguro o segura antes de abrirte."
+   ]
+  },
+  "rw-ccb": {
+   "upright": [
+    "Tu corazón te guía y tu generosidad se nota. Seguí lo que sentís y llevalo a la acción.",
+    "Estás por plantar una semilla afectiva. Hacelo con paciencia y cariño.",
+    "Lo que nace del amor se sostiene solo.",
+    "El caballero de las copas avanza despacio, con el corazón en la mano. Hoy no corras: sentí cada paso.",
+    "Ofrecé hoy una ayuda concreta a alguien, sin esperar nada."
+   ],
+   "reversed": [
+    "Cuidado con escaparte de lo emocional refugiándote en lo práctico. Mirá lo que sentís.",
+    "Ser demasiado generoso puede agotar. Poné un límite amable.",
+    "Si evitás hablar de lo que importa, el malestar se acumula.",
+    "A veces el corazón necesita un rato de silencio antes de actuar.",
+    "Hoy decí en voz alta algo que sentís y venías callando, con calma."
+   ]
+  },
+  "rw-crn": {
+   "upright": [
+    "Tu intuición y tu sensibilidad están afinadas. Escuchalas con confianza.",
+    "Es un momento de amor y calidez hacia vos y hacia otros. Dejate cuidar.",
+    "Quien se conoce por dentro puede abrirse sin perderse.",
+    "La reina de las copas sostiene la suya con cuidado: abrirse tiene su tiempo. Hoy cuidá tu propio ritmo.",
+    "Tomate hoy un rato de silencio y preguntate qué necesitás sentir."
+   ],
+   "reversed": [
+    "Cuidado con perder tu identidad en los vínculos. Seguí siendo vos.",
+    "Si te cerrás, quizá te falta sentirte segura o seguro. Hoy buscá un espacio de calma.",
+    "Depender de otros para saber quién sos te confunde. Reconectá con lo tuyo.",
+    "La sensibilidad no es debilidad, pero necesita cuidado. Poné un límite si hace falta.",
+    "Anotá tres cosas que te definen más allá de tus vínculos."
+   ]
+  },
+  "rw-cry": {
+   "upright": [
+    "Estás en contacto con tus emociones y con tu creatividad. Dejá que fluyan con calma.",
+    "Tenés profundidad y serenidad para acompañar a otros. Ofrecé tu escucha.",
+    "La calma que sentís es también un regalo para los demás.",
+    "El rey de las copas se sostiene en medio de aguas movidas: está en calma entre la emoción. Hoy no te dejes arrastrar.",
+    "Escuchá hoy con atención plena a alguien, sin aconsejar. Solo estar."
+   ],
+   "reversed": [
+    "Cuidado con enfriarte o desconectarte de lo que sentís. Volvé a vos.",
+    "Si te cuesta expresar lo que pasa por dentro, empezá por escribirlo.",
+    "La distancia emocional puede ser un escudo. Fijate de qué te protege.",
+    "El control demasiado fuerte apaga la creatividad. Dejá un poco de caos.",
+    "Contale hoy a alguien cómo te sentís de verdad, con una frase simple."
+   ]
+  },
+  "rw-e01": {
+   "upright": [
+    "Te cae una ficha: una idea o una verdad se aclara de golpe. Usá esa claridad con cuidado y con honestidad.",
+    "Hay una mente fresca y una palabra nueva disponible. Es buen día para ordenar lo que pensás.",
+    "La verdad dicha con cariño corta sin lastimar.",
+    "Una sola espada: la claridad en su forma más pura, filosa y liviana. Hoy elegí con qué la vas a usar.",
+    "Escribí en una frase qué verdad se te aclaró hoy y no la discutas: solo anotala."
+   ],
+   "reversed": [
+    "Cuidado con palabras que cortan de más. Pensá dos veces antes de decirlas.",
+    "Si algo suena a verdad a medias, revisalo antes de actuar. La claridad no tiene apuro.",
+    "Manipular o esconder la verdad pesa. Hoy elegí la honestidad.",
+    "Una espada sin cuidado hiere a quien la sostiene. Hoy bajale el filo a un comentario.",
+    "Antes de enviar un mensaje fuerte hoy, esperá diez minutos y releelo."
+   ]
+  },
+  "rw-e02": {
+   "upright": [
+    "Hay una idea que todavía no sale a la luz. Está bien: tomate un tiempo antes de decidir.",
+    "Es un alto el fuego mental. Parar a pensar no es dudar, es elegir con calma.",
+    "A veces el silencio de la mente es el mejor consejero.",
+    "Dos espadas cruzadas: dos ideas en equilibrio, sin decidirse. Hoy no hace falta resolver, solo observar.",
+    "Hoy tomate cinco minutos de silencio mental sin responder nada. Después elegí."
+   ],
+   "reversed": [
+    "Estás dándote vueltas en la cabeza y eso te bloquea. Escribí tus opciones para verlas afuera.",
+    "Cerrar los ojos a lo que pasa no lo hace desaparecer. Mirá con honestidad.",
+    "Cuando no podés expresar algo, probá con una sola palabra. Alcanza para empezar.",
+    "El autoengaño es cómodo pero cansa. Preguntate qué verdad estás esquivando.",
+    "Anotá tu duda en una frase concreta y hacela una pregunta a alguien de confianza."
+   ]
+  },
+  "rw-e03": {
+   "upright": [
+    "Algo guardado sale a la superficie. Expresate aunque no tengas todas las palabras: es el comienzo.",
+    "Es un momento de soltar pensamientos y ordenarlos de a poco. Hablar o escribir te alivia.",
+    "Lo que se dice a tiempo libera el espacio para lo que sigue.",
+    "Tres espadas: la mente se despliega sin freno. Hoy dejá que tus ideas salgan antes de editarlas.",
+    "Escribí sin filtro durante cinco minutos todo lo que te pasa por la cabeza."
+   ],
+   "reversed": [
+    "Demasiados pensamientos juntos duelen. Elegí uno por vez y dejá el resto.",
+    "Cuidado con las palabras que lastiman sin querer. Hablá con más calma.",
+    "Si te sentís desbordado o desbordada mentalmente, pará y respirá antes de decir algo.",
+    "El desorden de la mente se siente como desorden emocional. Hoy ordená un rincón y mirá cómo cambia.",
+    "Elegí una preocupación y escribí qué parte depende de vos."
+   ]
+  },
+  "rw-e04": {
+   "upright": [
+    "Tus ideas empiezan a tomar forma y a ordenarse. Aprovechá la calma para descansar la mente.",
+    "Es un momento de rendición sana: dejar de pelear con tus pensamientos y soltarlos.",
+    "La mente descansa cuando deja de pelear.",
+    "Cuatro espadas: el pensamiento ordenado, en reposo. Hoy no necesitás usar tu intelecto: alcanza con quedarte quieto.",
+    "Tomate hoy una pausa real de la mente: una siesta, una meditación, un paseo sin objetivo."
+   ],
+   "reversed": [
+    "Tanta estructura mental puede volverse rigidez. Preguntate qué idea tuya ya no deja entrar nada nuevo.",
+    "Si todo es cabeza, la intuición se queda afuera. Escuchá qué te dice el cuerpo.",
+    "Ser inflexible no es ser firme. Dejá un margen para cambiar de opinión.",
+    "Una mente que no descansa se agota. Cortá un rato con lo que te preocupa.",
+    "Hoy escuchá una opinión distinta a la tuya sin responder. Solo escuchá."
+   ]
+  },
+  "rw-e05": {
+   "upright": [
+    "Una idea nueva irrumpe y sacude lo que creías. Dejá que te haga dudar: es parte de crecer.",
+    "Un cambio de mirada abre un camino que no veías. Atrevete a cuestionar.",
+    "Hasta las certezas viejas necesitan un repaso.",
+    "Cinco espadas: ideas que chocan y se cruzan sin ganador seguro. Hoy tomá el desacuerdo como material, no como guerra.",
+    "Elegí una creencia y preguntate hoy en qué situación podría no ser cierta."
+   ],
+   "reversed": [
+    "Cuidado con las palabras duras: pueden herirte a vos y a otros. Elegí con cuidado.",
+    "Ganar una discusión no siempre es ganar. Preguntate qué querés realmente.",
+    "Un pensamiento cruel hacia vos mismo también corta. Hoy hablate con más ternura.",
+    "Cuando todos hablan para ganar, nadie escucha. Hoy elegí callar un momento.",
+    "Pedí disculpas hoy por una palabra que dijiste de más, aunque sea breve."
+   ]
+  },
+  "rw-e06": {
+   "upright": [
+    "Hay un cambio de aires y de perspectiva. Tomar distancia te da paz y claridad.",
+    "Es un momento de calma mental después del conflicto. Dejá que la palabra fluya sin apuro.",
+    "A veces alejarse es la forma más sabia de cuidarte.",
+    "Seis espadas: se cruza un puente hacia aguas más tranquilas. Hoy permitite avanzar sin mirar tanto atrás.",
+    "Alejate hoy de una conversación o un lugar que te agota, aunque sea por una hora."
+   ],
+   "reversed": [
+    "Si no podés soltar un pensamiento, quizás necesitás hablarlo con alguien. No cargues solo.",
+    "Las palabras lindas sin sentido no sanan. Buscá lo que de verdad querés decir.",
+    "Irte sin resolver lo pendiente te lo trae a cuestas. Cerralo con calma.",
+    "El cambio llega cuando dejás de aferrarte a una idea. Hoy soltá una.",
+    "Escribí lo que no podés soltar en un papel y guardalo. Dejalo ahí por hoy."
+   ]
+  },
+  "rw-e07": {
+   "upright": [
+    "Tu mente está aguda y práctica. Usá esa astucia para avanzar con estrategia, no con prisa.",
+    "Es un buen momento para planificar y actuar con inteligencia. Pensá antes de mover.",
+    "La claridad también es una forma de valentía.",
+    "Siete espadas: la inteligencia al servicio de la acción. Hoy elegí con astucia dónde poner tu energía.",
+    "Armá hoy un plan simple de tres pasos para algo que querés lograr."
+   ],
+   "reversed": [
+    "Cuidado con engañarte o con engañar. La mentira piadosa cansa más que la verdad.",
+    "Los pensamientos que castigan te desgastan. Preguntate si lo que te decís es justo.",
+    "Una obsesión mental te aleja de vos. Dejá de darle vueltas por hoy.",
+    "Si te cuesta ser sincero o sincera, empezá por serlo con vos.",
+    "Contale hoy a alguien una verdad pequeña que venías evitando."
+   ]
+  },
+  "rw-e08": {
+   "upright": [
+    "Escuchá tu voz interna: hoy habla bajito pero con claridad. El silencio ayuda a oírla.",
+    "Es un momento para acallar la mente y decir lo justo. Menos palabras, más presencia.",
+    "Cuando la mente se aquieta, las respuestas aparecen solas.",
+    "Ocho espadas: ideas que parecen rodearte, pero las ataduras suelen ser más flojas de lo que parecen. Hoy buscá la salida más simple.",
+    "Hacé hoy diez minutos de silencio o meditación. Sin objetivo, solo estar."
+   ],
+   "reversed": [
+    "Si te sentís atrapado o atrapada por tus miedos, fijate qué puerta está abierta.",
+    "Victimizarte te quita poder. Preguntate qué sí podés hacer hoy.",
+    "Las ideas rígidas encierran. Dejá espacio para otra mirada.",
+    "Demasiada estructura mental puede apagar tu originalidad. Hoy permitite pensar distinto.",
+    "Anotá un miedo y al lado una acción mínima que lo desafíe."
+   ]
+  },
+  "rw-e09": {
+   "upright": [
+    "Algo se quiebra en tu forma de pensar y eso puede doler. Es el primer paso para transformarlo.",
+    "Es un momento de revisar ideas viejas. Lo que ya no sirve puede dejarse ir.",
+    "Cuando dejás de pelear con tus pensamientos, ellos se calman.",
+    "Nueve espadas: la mente está muy activa, sobre todo de noche. Hoy recordá que un pensamiento no es un hecho.",
+    "Antes de dormir, anotá lo que te preocupa en un papel y dejalo afuera de la cama."
+   ],
+   "reversed": [
+    "La preocupación crece cuando la alimentás. Preguntate qué parte de eso depende de vos.",
+    "Si la ansiedad te rodea, hablalo con alguien de confianza. No hace falta cargarlo solo.",
+    "Tu mente construye tu realidad: elegí con qué ideas querés vivir hoy.",
+    "Una idea rota puede repararse o reemplazarse. No te quedes mirando los pedazos.",
+    "Pedí hoy ayuda concreta por algo que te preocupa. Una conversación alcanza."
+   ]
+  },
+  "rw-e10": {
+   "upright": [
+    "Una idea o un ciclo mental termina. Dejá que caiga lo que ya no sirve y respirá.",
+    "Es un buen momento para compartir tu palabra y escuchar la de otros. De ahí nace algo más sentido.",
+    "Cuando lo peor pasó, el amanecer ya asoma.",
+    "Diez espadas: el máximo de pensamiento, el final del ciclo. Hoy soltá lo que ya diste por terminado.",
+    "Cerrá hoy una conversación o una duda pendiente con una frase clara."
+   ],
+   "reversed": [
+    "Si te sentís derrotado por tus propias ideas, quizás hace falta escuchar otras voces.",
+    "Pensar demasiado puede dejar poco lugar para sentir. Dale espacio a la emoción.",
+    "Seguir dándole vueltas a lo que terminó te cansa. Dejalo ir.",
+    "No todo hay que resolverlo con la cabeza. Hoy permitite sentir sin analizar.",
+    "Hoy hacé algo con el cuerpo en vez de con la cabeza: caminar, estirarte, bailar."
+   ]
+  },
+  "rw-epj": {
+   "upright": [
+    "Tu mente está curiosa y atenta. Hacé preguntas: eso te acerca a lo que querés saber.",
+    "Es un momento de observar y aprender. No hace falta saberlo todo para empezar a pensar.",
+    "El que pregunta bien ya está a medio camino.",
+    "Esta carta es la mente joven del aire: aguda pero todavía sin práctica. Hoy aprendé más de lo que opinás.",
+    "Investigá hoy una duda concreta y anotá lo que descubrís."
+   ],
+   "reversed": [
+    "Cuidado con darle demasiadas vueltas a todo. Pensar de más te frena.",
+    "El perfeccionismo crítico se vuelve contra vos. Aflojá un poco.",
+    "Si dudás de cada paso, probá con uno chico y mirá qué pasa.",
+    "La mente sin cauce se dispersa. Elegí un tema por hoy.",
+    "Hoy tomá una decisión rápida y sencilla que venías postergando."
+   ]
+  },
+  "rw-ecb": {
+   "upright": [
+    "Pensás con claridad y actuás con decisión. Movete hacia lo que querés con constancia.",
+    "Hay empuje mental y ganas de avanzar. Canalizalo con un objetivo claro.",
+    "La acción lleva la idea a la realidad.",
+    "El caballero de las espadas va de frente, sin dudar: la mente en movimiento. Hoy confiá en tu criterio.",
+    "Elegí una idea que venís pensando y hacé hoy un movimiento concreto."
+   ],
+   "reversed": [
+    "Cuidado con la dureza. Exigir demasiado aleja a los demás.",
+    "Si te sentís apagado o apagada, quizás necesitás motivarte con algo que te guste.",
+    "El que no comunica se aísla. Decí hoy lo que pensás con calma.",
+    "Más autoconocimiento puede ayudarte a entender qué te mueve de verdad.",
+    "Preguntale hoy a alguien cómo lo ven a vos. Escuchá sin defenderte."
+   ]
+  },
+  "rw-ern": {
+   "upright": [
+    "Tenés las ideas claras y la fuerza para ponerlas en marcha. Tomá la iniciativa.",
+    "Tu inteligencia y tu criterio se notan. Ocupá tu lugar con seguridad.",
+    "Pensar con claridad es una forma de poder.",
+    "La reina de las espadas sostiene su filo con calma: sabe qué decir y cuándo. Hoy hablá con precisión.",
+    "Planificá hoy tu semana con tres prioridades claras y empezá por una."
+   ],
+   "reversed": [
+    "Cuidado con volverte muy dura o fría. Dejá que entre un poco de calidez.",
+    "Desconfiar de todo cansa. Hoy dale una oportunidad a alguien.",
+    "El control excesivo apaga la espontaneidad. Soltá un poco.",
+    "Ser demasiado mental te aísla de lo que sentís. Conectá con una emoción hoy.",
+    "Decile a alguien algo amable y sincero hoy, sin esperar nada."
+   ]
+  },
+  "rw-ery": {
+   "upright": [
+    "Combinás inteligencia y acción: sabés qué hacer y cómo. Usá tu criterio con justicia.",
+    "Es un momento de decidir con la cabeza fría y el corazón presente.",
+    "Un buen juicio es el que tiene en cuenta a todos.",
+    "El rey de las espadas sostiene el filo con firmeza serena: la ley de la claridad. Hoy decidí con justicia.",
+    "Ponele palabras hoy a algo que sentís por alguien y decíselo."
+   ],
+   "reversed": [
+    "A veces das amor con acciones pero te cuesta decirlo. Probá con palabras.",
+    "Mucha inteligencia y poca emoción puede dejar frío al otro. Mostrate un poco.",
+    "La rigidez de juicio aleja. Escuchá antes de opinar.",
+    "No todo se resuelve con lógica. Dejá lugar a lo que sentís.",
+    "Preguntale a alguien cómo se siente hoy y escuchá sin dar soluciones."
+   ]
+  },
+  "rw-o01": {
+   "upright": [
+    "Una semilla nueva está en tus manos. No esperes un jardín hoy: plantala y cuidala con paciencia.",
+    "Se abre una oportunidad concreta. Lo sólido se construye de a poco, con constancia.",
+    "Lo que se siembra con paciencia da frutos que duran.",
+    "Un solo oro: la materia en su forma inicial, todavía por trabajar. Hoy valorá lo pequeño que tenés a mano.",
+    "Elegí un proyecto o hábito chico y dale hoy veinte minutos concretos."
+   ],
+   "reversed": [
+    "Una semilla que no germina todavía no está perdida. Quizás solo necesita más tiempo o más cuidado.",
+    "El potencial queda en posibilidad si no lo trabajás. Elegí un primer paso concreto.",
+    "Querés resultados enseguida y la tierra tiene su ritmo. Respetalo.",
+    "Si algo no arranca, revisá si lo estás regando o solo mirando.",
+    "Hacé hoy una cosa concreta por ese proyecto que venís postergando."
+   ]
+  },
+  "rw-o02": {
+   "upright": [
+    "Estás equilibrando dos cosas a la vez y lo hacés bien. Buscá el ritmo justo entre ambas.",
+    "Es un momento de adaptabilidad. Poner límites también ayuda a sostener el equilibrio.",
+    "Dos fuerzas en movimiento se acompañan si encontrás el compás.",
+    "Dos oros unidos por una cinta: el equilibrio es un movimiento, no una quietud. Hoy fluí entre tus prioridades.",
+    "Hacé hoy una lista de tus dos prioridades y repartí tu tiempo entre ellas."
+   ],
+   "reversed": [
+    "Si todo te parece mucho, quizás estás cargando demasiado. Priorizá.",
+    "Algo no termina de unirse. Probá revisar qué lo frena.",
+    "Cuidado con cambiar de rumbo tantas veces que no avances.",
+    "Decir que no también es equilibrar. Hoy elegí con qué te quedás.",
+    "Elegí una tarea para dejar pendiente sin culpa y soltala por hoy."
+   ]
+  },
+  "rw-o03": {
+   "upright": [
+    "Tu aporte suma y el de otros también. Trabajar en equipo hoy da buenos resultados.",
+    "Reconocé en qué sos bueno o buena: eso es lo que le das al grupo.",
+    "Cuando cada uno pone lo suyo, el resultado supera a la suma.",
+    "Tres oros: una base firme que se levanta entre varios. Hoy buscá a quien complemente lo que te falta.",
+    "Pedile a alguien hoy una colaboración concreta en algo que querés lograr."
+   ],
+   "reversed": [
+    "Querés hacerlo todo solo o sola y te drenás. Pedí una mano.",
+    "Si no te sentís parte del equipo, preguntate qué te frena de participar.",
+    "Hacer de más sin coordinar agota. Hoy revisá quién hace qué.",
+    "No tener paciencia con otros cuesta. Probá escuchar su ritmo.",
+    "Delegá hoy una tarea que normalmente hacés solo o sola."
+   ]
+  },
+  "rw-o04": {
+   "upright": [
+    "Tenés una base firme y eso te da seguridad. Disfrutala sin dejar de moverte.",
+    "Es un momento de estabilidad. Cuidá lo que construiste con orden y constancia.",
+    "La estabilidad es un lugar para volver, no para quedarse atrapado.",
+    "Cuatro oros: una estructura sólida, bien apoyada. Hoy valorá lo que ya construiste.",
+    "Ordená hoy un rincón de tu casa o de tu espacio de trabajo y sentí cómo cambia."
+   ],
+   "reversed": [
+    "Aferrarte a lo que tenés puede volverse miedo a soltar. Hoy dejá que algo circule.",
+    "Acumular sin compartir endurece. Preguntate qué podés dar sin perderte.",
+    "El apego a lo conocido te quita flexibilidad. Probá algo diferente.",
+    "Lo que no se mueve se estanca. Hoy hacé un pequeño cambio en tu rutina.",
+    "Regalá o prestá hoy algo que hace tiempo no usás."
+   ]
+  },
+  "rw-o05": {
+   "upright": [
+    "Se abre una nueva realidad en lo concreto: un lugar, un recurso, una forma de verte. Dejala entrar.",
+    "Es un momento de empezar de nuevo en el plano práctico. Hacelo con ánimo abierto.",
+    "Lo nuevo también necesita tiempo para sentirse tuyo.",
+    "Cinco oros: la materia busca una forma distinta. Hoy dejá que algo cambie de lugar.",
+    "Probá hoy una forma distinta de organizar algo cotidiano: tu agenda, tu espacio o tu ropa."
+   ],
+   "reversed": [
+    "Si te cuesta aceptar una forma nueva, mirá qué estás defendiendo. Quizás es hora de adaptarte.",
+    "Sentirte con poco te cierra a lo que sí hay. Mirá lo disponible.",
+    "Dar más de lo que recibís desgasta. Revisá el equilibrio.",
+    "La carencia a veces es una sensación más que un hecho. Contrastá con lo concreto.",
+    "Anotá cinco cosas que sí tenés a tu alcance hoy y usá una."
+   ]
+  },
+  "rw-o06": {
+   "upright": [
+    "Disfrutás de lo que sembraste y eso se nota. Es un momento de armonía y completud.",
+    "La generosidad vuelve multiplicada. Compartí lo que tenés con gusto.",
+    "Dar y recibir son el mismo movimiento.",
+    "Seis oros: hay equilibrio entre dar y recibir. Hoy mirá cómo circula lo que tenés.",
+    "Hacele hoy un gesto generoso a alguien: tiempo, ayuda o atención."
+   ],
+   "reversed": [
+    "Cuidado con aferrarte a lo lindo cuando pide cambiar. Dejá que fluya.",
+    "Querer más y más puede quitarte el disfrute de lo que ya tenés.",
+    "Si dar se vuelve obligación, revisá tus motivos.",
+    "El consumo no llena lo que falta por dentro. Preguntate qué necesitás de verdad.",
+    "Hoy disfrutá de algo simple sin comprar nada nuevo."
+   ]
+  },
+  "rw-o07": {
+   "upright": [
+    "Es momento de revisar tu esfuerzo. Lo que sembraste crece a su ritmo, y eso está bien.",
+    "Podés poner tu creatividad al servicio de algo concreto. Tomá la responsabilidad con calma.",
+    "Lo que nace del interés genuino da frutos más duraderos.",
+    "Siete oros: se mira lo cultivado antes de seguir. Hoy tomate un rato para evaluar tu camino.",
+    "Anotá qué estás construyendo y qué paso concreto sigue."
+   ],
+   "reversed": [
+    "Si no encontrás qué te gusta construir, probá cosas pequeñas sin presión.",
+    "Querés ver resultados rápido y la tierra no apura. Respetá el tiempo.",
+    "Hacer algo solo por obligación se nota. Buscá algo que te importe de verdad.",
+    "Cuidado con abandonar algo justo antes de que dé fruto. Revisá si te falta poco.",
+    "Dedicá hoy treinta minutos sin interrupciones a algo que querés construir."
+   ]
+  },
+  "rw-o08": {
+   "upright": [
+    "Tu constancia da frutos. Seguí practicando, te estás volviendo mejor en lo que hacés.",
+    "Es un momento de concentración y trabajo bien hecho. Disfrutá el proceso.",
+    "El oficio se aprende repitiendo con atención.",
+    "Ocho oros: una pieza trabajada una y otra vez. Hoy elegí algo para pulir con paciencia.",
+    "Dedicá hoy una hora a practicar algo que querés mejorar. Sin distracciones."
+   ],
+   "reversed": [
+    "Exigirte de más te quita el disfrute. Nada es nunca perfecto: aflojá.",
+    "Si sentís que todo pesa, quizás estás haciendo demasiado. Frená y descansá.",
+    "Cuidado con el trabajo sin pausa. Hasta lo valioso necesita aire.",
+    "El perfeccionismo te impide celebrar lo que ya lograste. Mirá lo hecho.",
+    "Terminá hoy algo que venías pulimentando y dalo por listo."
+   ]
+  },
+  "rw-o09": {
+   "upright": [
+    "Disfrutás de lo que construiste con tus propias manos. Es un momento de independencia y calma.",
+    "Mirar tu camino con gratitud te da fuerza para el que viene.",
+    "Lo cultivado con paciencia da paz.",
+    "Nueve oros: un espacio propio bien cuidado, hecho a tu medida. Hoy valorá tu independencia.",
+    "Tomate un rato hoy para disfrutar de tu espacio: música, plantas, un té."
+   ],
+   "reversed": [
+    "Quedarte solo en lo conocido puede volverse monotonía. Probá algo distinto.",
+    "Cuesta soltar lo que tanto costó lograr. Preguntate qué ya cumplió su ciclo.",
+    "Aferrarte a lo que construiste puede impedirte seguir creciendo.",
+    "Si todo te parece igual, quizás es hora de renovar algo.",
+    "Hoy hacé algo distinto en tu rutina, aunque sea un detalle."
+   ]
+  },
+  "rw-o10": {
+   "upright": [
+    "Un ciclo se completa con plenitud y abundancia. Disfrutá lo que lograste con tu gente.",
+    "Lo construido tiene raíz y sostén. Reconocé cuánto camino hiciste.",
+    "Lo que se cuida con tiempo se vuelve herencia.",
+    "Diez oros: la plenitud completa de la tierra. Hoy mirá lo que tenés con gratitud.",
+    "Compartí hoy un momento con tu familia o tus afectos y agradecé lo que hay."
+   ],
+   "reversed": [
+    "Olvidar el camino recorrido te vuelve ingrato. Mirá cuánto hiciste.",
+    "Resistir un cierre prolonga la incomodidad. Aceptá que algo terminó.",
+    "No todos los finales son armoniosos, y aun así abren espacio. Dejá que sea.",
+    "La plenitud no depende de cosas: fijate qué te hace sentir pleno de verdad.",
+    "Cerrá hoy un pendiente material (un papel, un trámite, un orden) y sentí el alivio."
+   ]
+  },
+  "rw-opj": {
+   "upright": [
+    "Hay muchas ganas de construir algo concreto. Dejá que la curiosidad te guíe y aprendé mientras hacés.",
+    "Es un buen momento para estudiar o practicar algo nuevo. Cada paso cuenta.",
+    "Todo experto fue alguna vez principiante.",
+    "Esta carta mira su oro con asombro: el potencial está en sus manos. Hoy mirá lo que tenés como un tesoro por descubrir.",
+    "Elegí hoy una habilidad que quieras aprender y dedicale media hora."
+   ],
+   "reversed": [
+    "Cuidado con obsesionarte con el resultado. El proceso también cuenta.",
+    "Parecer maduro o madura sin serlo te frena. Aceptá que estás aprendiendo.",
+    "Querer todo ya te impide disfrutar el camino. Respirá.",
+    "La falta de experiencia no es un defecto, pero hay que reconocerla.",
+    "Pedí hoy un consejo a alguien con más experiencia sobre algo concreto."
+   ]
+  },
+  "rw-ocb": {
+   "upright": [
+    "Avanzás con paso lento y seguro. La constancia te lleva más lejos que cualquier apuro.",
+    "Es un momento de trabajo perseverante. Confiá en el proceso.",
+    "El que camina despacio y sin parar llega lejos.",
+    "El caballero de oros avanza sin apuro, sosteniendo su moneda: la paciencia hecha movimiento. Hoy mantené tu ritmo.",
+    "Hacé hoy una tarea pendiente con calma, sin saltearte pasos."
+   ],
+   "reversed": [
+    "Cuidado con aferrarte a lo viejo cuando hay que cambiar de método.",
+    "Si no sos constante, revisá qué te distrae. A veces es cansancio.",
+    "Ir lento no es lo mismo que no avanzar. Fijate cuál es tu caso.",
+    "Un método que ya no funciona merece una revisión sincera.",
+    "Probá hoy una forma distinta de hacer una tarea rutinaria."
+   ]
+  },
+  "rw-orn": {
+   "upright": [
+    "Estás en contacto con lo práctico y con lo natural. Cuidar tu entorno te da bienestar.",
+    "Es un momento de seguridad y de generosidad práctica. Compartí lo que sabés hacer.",
+    "El que cuida la tierra y la casa se cuida a sí mismo.",
+    "La reina de oros está rodeada de naturaleza y calma: la abundancia es un estado, no una cifra. Hoy buscá un rato de verde.",
+    "Salí hoy a tocar tierra o a estar entre plantas, aunque sea cinco minutos."
+   ],
+   "reversed": [
+    "Cuidado con apegarte demasiado a lo material. Mirá qué te da paz de verdad.",
+    "Derrochar o acaparar son dos caras del mismo miedo. Buscá el punto medio.",
+    "La obsesión por controlar lo concreto te quita disfrute. Aflojá.",
+    "Si te sentís incómodo en tu espacio, un pequeño cambio puede ayudar.",
+    "Ordená hoy un espacio de tu casa y dejalo más amable."
+   ]
+  },
+  "rw-ory": {
+   "upright": [
+    "Tenés una seguridad tranquila que se nota. Disfrutá lo que construiste sin ostentar.",
+    "Es un momento de abundancia serena. Compartilo con generosidad.",
+    "La verdadera riqueza no hace ruido.",
+    "El rey de oros no necesita corona para sentirse sostenido: tiene raíces. Hoy valorá tu base.",
+    "Hacé hoy un gesto simple de gratitud hacia lo que tenés."
+   ],
+   "reversed": [
+    "Cuidado con el miedo a perder lo que tenés. Respirá y confiá en tu capacidad.",
+    "Quedarte cómodo o cómoda por temor te impide crecer. Probá un riesgo chico.",
+    "La avaricia se disfraza de prudencia. Fijate si cuidás o si acaparás.",
+    "Si te preocupás por lo material, recordá que tu valor no depende de eso.",
+    "Compartí hoy algo con alguien, sin esperar nada."
+   ]
+  }
+ }
+}

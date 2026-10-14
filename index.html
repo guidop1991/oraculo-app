@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#1a1030">
+  <meta name="description" content="Barajá, sacá cartas y recibí un mensaje para reflexionar.">
+  <title>Oráculo</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+
+  <header class="top">
+    <h1 class="brand">Oráculo</h1>
+    <p class="tagline">Cartas para reflexionar</p>
+  </header>
+
+  <main id="app" aria-live="polite">
+    <!-- Inicio: menú de tiradas -->
+    <section id="view-menu" class="view" hidden>
+      <p class="lead">¿Qué te trae por acá hoy?</p>
+      <ul id="menu" class="menu"></ul>
+    </section>
+
+    <!-- Submenú de un grupo (ej. Tiradas) -->
+    <section id="view-group" class="view" hidden>
+      <button class="back" type="button" data-go="menu">← Inicio</button>
+      <h2 id="group-title" class="spread-title"></h2>
+      <p id="group-lead" class="lead"></p>
+      <ul id="group-menu" class="menu"></ul>
+    </section>
+
+    <!-- Mazo para barajar -->
+    <section id="view-deck" class="view" hidden>
+      <button class="back" type="button" data-go="origin">← Inicio</button>
+      <h2 id="deck-title" class="spread-title"></h2>
+      <p id="deck-lead" class="lead"></p>
+      <button id="btn-deck" class="chip" type="button" aria-expanded="false" aria-controls="deck-picker"></button>
+      <div id="deck-picker" class="picker" hidden>
+        <p class="picker-title">Elegí el mazo para esta tirada</p>
+        <div id="deck-options" class="deck-options" role="radiogroup" aria-label="Mazo"></div>
+      </div>
+      <button id="deck" class="deck" type="button" aria-label="Barajar y sacar cartas">
+        <span class="deck-card l1"></span>
+        <span class="deck-card l2"></span>
+        <span class="deck-card l3"></span>
+        <span class="deck-card l4"></span>
+        <span class="deck-card l5"></span>
+        <span class="deck-card l6"></span>
+        <span class="deck-card l7"></span>
+        <span class="deck-card l8"></span>
+      </button>
+      <div id="cut" class="cut" hidden>
+        <button type="button" class="pile" data-pile="0" aria-label="Elegir el mazo de la izquierda">
+          <span class="pile-card pc1"></span><span class="pile-card pc2"></span><span class="pile-card pc3"></span><span class="pile-card pc4"></span><span class="pile-card pc5"></span>
+        </button>
+        <button type="button" class="pile" data-pile="1" aria-label="Elegir el mazo de la derecha">
+          <span class="pile-card pc1"></span><span class="pile-card pc2"></span><span class="pile-card pc3"></span><span class="pile-card pc4"></span><span class="pile-card pc5"></span>
+        </button>
+      </div>
+      <button id="btn-draw" class="btn" type="button">Barajar y sacar carta</button>
+    </section>
+
+    <!-- Resultado -->
+    <section id="view-result" class="view" hidden>
+      <button class="back" type="button" data-go="origin">← Inicio</button>
+      <h2 id="result-title" class="spread-title"></h2>
+      <button id="btn-deck-result" class="chip" type="button" aria-expanded="false" aria-controls="result-picker"></button>
+      <div id="result-picker" class="picker" hidden>
+        <p class="picker-title">Cambiá el diseño: la carta y el mensaje se mantienen</p>
+        <div id="result-options" class="deck-options" role="radiogroup" aria-label="Mazo"></div>
+      </div>
+      <div id="slots" class="slots"></div>
+      <div class="actions">
+        <button id="btn-share" class="btn" type="button">Compartir</button>
+        <button id="btn-again" class="btn ghost" type="button" hidden>Barajar de nuevo</button>
+      </div>
+      <p id="come-back" class="come-back"></p>
+    </section>
+
+    <!-- Datos personales (solo en este dispositivo) -->
+    <section id="view-profile" class="view" hidden>
+      <button class="back" type="button" data-go="menu">← Inicio</button>
+      <h2 class="spread-title">Tus datos</h2>
+      <p class="lead">Para armar tu carta natal y tu Arcano del Año necesito tu nombre y tu fecha de nacimiento. Quedan guardados solo en este dispositivo.</p>
+      <form id="profile-form" class="form" novalidate autocomplete="off">
+        <label for="profile-name">Nombre</label>
+        <input id="profile-name" name="nombre" type="text" maxlength="40" autocomplete="given-name" required>
+        <label for="profile-birth">Fecha de nacimiento</label>
+        <input id="profile-birth" name="nacimiento" type="date" min="1900-01-01" required>
+        <p id="profile-error" class="form-error" role="alert" hidden></p>
+        <button class="btn" type="submit">Guardar</button>
+      </form>
+    </section>
+
+    <!-- Usuario: datos fijos, mazo favorito y carta natal -->
+    <section id="view-user" class="view" hidden>
+      <button class="back" type="button" data-go="menu">← Inicio</button>
+      <h2 class="spread-title">Usuario</h2>
+
+      <div id="user-profile" class="user-block" hidden>
+        <div class="user-card">
+          <p id="user-name" class="user-name"></p>
+          <p id="user-birth" class="user-birth"></p>
+        </div>
+        <h3 class="user-sub">Carta natal</h3>
+        <p class="user-hint">Tocá un arcano para leerlo completo.</p>
+        <div id="natal-list" class="acc-list"></div>
+        <p id="natal-repeat" class="natal-note" hidden></p>
+      </div>
+
+      <div id="user-empty" class="user-block" hidden>
+        <p class="lead">Todavía no cargaste tus datos. Con tu nombre y tu fecha de nacimiento armo tu carta natal y tu Arcano del Año.</p>
+        <button id="btn-add-profile" class="btn" type="button">Cargar mis datos</button>
+      </div>
+
+      <div class="user-block">
+        <h3 class="user-sub">Mazo favorito</h3>
+        <p class="user-hint">Es el que se usa por defecto. En cada tirada podés cambiarlo.</p>
+        <div id="fav-options" class="deck-options" role="radiogroup" aria-label="Mazo favorito"></div>
+        <details class="credits">
+          <summary>Créditos de los mazos</summary>
+          <ul id="credits-list" class="credits-list"></ul>
+        </details>
+      </div>
+
+      <div id="user-actions" class="actions" hidden>
+        <button id="btn-edit-profile" class="btn ghost" type="button">Editar mis datos</button>
+        <button id="btn-delete-profile" class="btn ghost" type="button">Borrar mis datos</button>
+      </div>
+      <p class="come-back">Tus datos quedan solo en este dispositivo.</p>
+    </section>
+
+    <!-- Arcano del año -->
+    <section id="view-year" class="view" hidden>
+      <button class="back" type="button" data-go="menu">← Inicio</button>
+      <h2 id="year-title" class="spread-title"></h2>
+      <p id="year-sub" class="lead"></p>
+      <button id="btn-deck-year" class="chip" type="button" aria-expanded="false" aria-controls="year-picker"></button>
+      <div id="year-picker" class="picker" hidden>
+        <p class="picker-title">Cambiá el diseño: la carta y el mensaje se mantienen</p>
+        <div id="year-options" class="deck-options" role="radiogroup" aria-label="Mazo"></div>
+      </div>
+      <div id="year-slot" class="slots"></div>
+      <p class="come-back">Este arcano te acompaña todo el año. Se renueva cuando arranque el próximo.</p>
+    </section>
+
+    <p id="error" class="error" role="alert" hidden></p>
+  </main>
+
+  <footer class="foot">
+    <button id="btn-install" class="link" type="button" hidden>Instalar app</button>
+    <p id="ios-hint" class="hint" hidden>Para instalarla: tocá Compartir y luego “Agregar a pantalla de inicio”.</p>
+    <p class="legal">Mensajes orientativos y de entretenimiento. No predicen el futuro ni reemplazan consejo médico, legal o financiero.</p>
+    <p id="net" class="net" hidden>Sin conexión: funcionando offline</p>
+  </footer>
+
+  <noscript><p class="error">Esta app necesita JavaScript para funcionar.</p></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "deck": "tarot",
+  "version": 1,
+  "source": "humano",
+  "_ayuda": "Acá van TUS mensajes. Valen para todos los mazos de tarot (Rider-Waite, Marsella, Viéville): cada carta tiene el mismo id en todos. Si una carta tiene mensaje acá, reemplaza al de la IA. Formato: \"rw-00\": { \"upright\": [\"mensaje 1\", \"mensaje 2\"], \"reversed\": [\"mensaje 1\"] }. Dejá las listas vacías o borrá la carta para usar los de la IA. Las combinaciones (Fase 3) irán en 'combos' con la clave \"rw-00+rw-01\".",
+  "messages": {},
+  "combos": {}
+}

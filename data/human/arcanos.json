@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "source": "humano",
+  "_ayuda": "Tus textos para la Carta natal. Pisan a los de data/arcanos.json. Formato: \"8\": { \"esencia\": \"...\", \"luz\": \"...\", \"sombra\": \"...\" } (numeración de Marsella; El Loco es \"22\"). Podés completar solo los campos que quieras. También podés pisar las introducciones de cada rol en \"roles\": { \"alma\": { \"intro\": \"...\" } }.",
+  "roles": {},
+  "arcanos": {}
+}

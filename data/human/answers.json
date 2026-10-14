@@ -1,0 +1,6 @@
+{
+  "deck": "tarot",
+  "version": 1,
+  "_ayuda": "Tus respuestas pisan a las de la IA. Formato: \"rw-00\": {\"upright\": \"si\", \"reversed\": \"q\"}. Códigos: si, ps, qs, q, pn, n, tn.",
+  "answers": {}
+}

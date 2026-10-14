@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "source": "ia-pregenerado",
+  "_ayuda": "Numeración de Marsella (8 = Justicia, 11 = Fuerza; El Loco es 22). Tus textos van en data/human/arcanos.json y pisan a estos.",
+  "roles": {
+    "alma": {
+      "title": "Arcano del Alma",
+      "intro": "Es lo que sos de verdad, sin personajes ni máscaras. Se va descubriendo de a poco, a medida que te conocés."
+    },
+    "personalidad": {
+      "title": "Arcano de Personalidad",
+      "intro": "Es cómo te mostrás y cómo te ven los demás. Entenderlo te ayuda a ver por qué se te acercan ciertas personas y situaciones."
+    },
+    "don": {
+      "title": "Arcano del Don Divino",
+      "intro": "Un talento que te sale natural, casi sin esfuerzo. Quizás ya lo usás, quizás todavía te está esperando."
+    },
+    "vidaPasada": {
+      "title": "Arcano de Vidas Pasadas",
+      "intro": "Todo lo que ya aprendiste y llevás con vos. Es una fuerza que ya tenés disponible cuando la necesites."
+    },
+    "mision": {
+      "title": "Arcano de Misión de Vida · Arcano Personal",
+      "intro": "Lo que viniste a vivir y a dar. Cuando lo tenés presente, las cosas fluyen con más naturalidad; se parece al ascendente en la astrología."
+    },
+    "anio": {
+      "title": "Arcano del Año",
+      "intro": "La energía que te acompaña durante todo el año. Se renueva cuando arranca uno nuevo."
+    }
+  },
+  "arcanos": {
+    "22": {
+      "esencia": "Sos libre y original, y necesitás ir más allá de lo establecido.",
+      "luz": "Tenés intuición viva e ideas nuevas que te abren caminos. Confiás en lo que viene.",
+      "sombra": "A veces te ganan los impulsos o la rebeldía porque sí, y cuesta sostener lo que empezás.",
+      "anio": "Año para empezar de cero con el corazón liviano. Animate a dar un paso sin tenerlo todo resuelto: la curiosidad es tu mejor equipaje."
+    },
+    "1": {
+      "esencia": "Tenés la voluntad de darle forma a tus ideas.",
+      "luz": "Te comunicás bien, sabés usar lo que tenés y te animás a crear.",
+      "sombra": "Te podés dispersar, exagerar o desanimar, o usar tu talento para convencer en vez de construir.",
+      "anio": "Este año tenés las herramientas sobre la mesa. Elegí un proyecto, ponele intención y empezá, aunque no sea perfecto: la acción te va a ir mostrando el camino."
+    },
+    "2": {
+      "esencia": "Mirás en silencio y sabés más de lo que mostrás.",
+      "luz": "Tenés prudencia e intuición, y sabés esperar el momento justo. Los secretos están seguros con vos.",
+      "sombra": "Te podés cerrar tanto que nadie llega a conocerte, o alejarte cuando algo te desanima.",
+      "anio": "Un año para escuchar más de lo que hablás. Confiá en tu intuición, dejá que las respuestas maduren en silencio y guardá para vos lo que todavía se está gestando."
+    },
+    "3": {
+      "esencia": "Creás y cuidás: de vos nace vida que crece.",
+      "luz": "Sos de dar, disfrutás las cosas simples y tenés fuerza para crear y cuidar lo que te rodea.",
+      "sombra": "Te podés pasar de rosca, tener caprichos o enojarte como una tormenta que arrasa.",
+      "anio": "Año de crear y de cuidar. Dale espacio a lo que querés hacer crecer, ya sea un proyecto, un vínculo o un lugar, y disfrutá del proceso con los sentidos abiertos."
+    },
+    "4": {
+      "esencia": "Ponés orden y sostenés lo que construís.",
+      "luz": "Liderás con calma, armás cosas concretas y das apoyo a otros.",
+      "sombra": "Se te puede endurecer el control, y te cuesta improvisar.",
+      "anio": "Es tiempo de ordenar y construir bases firmes. Definí tus límites, sostené tus decisiones con constancia y conducí tu propia vida con calma."
+    },
+    "5": {
+      "esencia": "Enseñás, guiás y cuidás lo que aprendiste.",
+      "luz": "Compartís lo que sabés, das confianza y orientás a otros desde tus valores.",
+      "sombra": "Te podés poner terco o creer que tenés la única verdad.",
+      "anio": "Año para aprender, enseñar y volver a tus valores. Buscá un guía o una tradición que te inspire, y compartí lo que ya sabés con quien lo necesite."
+    },
+    "6": {
+      "esencia": "Elegís con el corazón y con la cabeza: es el amor en todas sus formas.",
+      "luz": "Te comprometés con lo que sentís, tenés vínculos sinceros y decidís con libertad.",
+      "sombra": "Te cuesta decidir, te exigís de más, o sostenés vínculos solo por costumbre.",
+      "anio": "Año de elecciones del corazón. Vas a mirar qué vínculos y caminos van con vos: elegí con honestidad y animate a decir lo que querés de verdad."
+    },
+    "7": {
+      "esencia": "Tenés ganas de avanzar y empuje para hacerlo.",
+      "luz": "Tenés carisma, iniciativa y te adaptás cuando los planes cambian.",
+      "sombra": "Te podés lanzar sin rumbo, o cerrarte en vos cuando algo no sale.",
+      "anio": "Año para ponerte en movimiento. Tenés empuje y dirección: elegí un rumbo, sostené el timón con firmeza y avanzá sin dejar que la dispersión te frene."
+    },
+    "8": {
+      "esencia": "Buscás el equilibrio y lo justo.",
+      "luz": "Sos imparcial, firme en tus convicciones y te gusta servir a una causa o a otros.",
+      "sombra": "Te podés poner duro, perfeccionista, o usar tu poder en tu propio beneficio.",
+      "anio": "Un año para equilibrar. Revisá qué pesa de más en tu balanza, actuá con coherencia y hacete cargo de lo que dijiste que ibas a hacer: lo justo te ordena."
+    },
+    "9": {
+      "esencia": "Vas hacia adentro, y tu sabiduría madura con el tiempo.",
+      "luz": "Tenés paciencia, profundidad y buen criterio: guiás a otros mientras seguís aprendiendo.",
+      "sombra": "Te podés aislar, enfriar, o quedar en una soledad que no elegiste.",
+      "anio": "Año de recogimiento y claridad. Hacete tiempo para estar a solas, repasar lo vivido y encender tu propia linterna. No hace falta apurarse."
+    },
+    "10": {
+      "esencia": "Todo cambia, y vos cambiás con los ciclos.",
+      "luz": "Te adaptás: fluís con lo inesperado y evolucionás con cada vuelta.",
+      "sombra": "Te podés resistir al cambio o repetir una lección sin darte cuenta.",
+      "anio": "Todo gira, y este año te invita a moverte con el ciclo. Soltá lo que ya cumplió su vuelta, recibí los cambios con curiosidad y buscá qué te enseña cada giro."
+    },
+    "11": {
+      "esencia": "Tenés una fuerza tranquila que se impone con suavidad.",
+      "luz": "Tenés autocontrol, diplomacia y coraje para mirar tu propia sombra.",
+      "sombra": "Los impulsos se pueden desbordar, o querés dominar al otro en vez de dominarte a vos.",
+      "anio": "Año de fortaleza amable. Tu poder viene del coraje tranquilo: tratá con paciencia tus impulsos y tus miedos, que la suavidad también es potencia."
+    },
+    "12": {
+      "esencia": "Hacés una pausa para mirar las cosas distinto.",
+      "luz": "Tenés paciencia, podés ver desde otro ángulo y sentís que tenés una misión.",
+      "sombra": "Te podés trabar, sentirte víctima o sentir que todo te ata.",
+      "anio": "Año para cambiar de mirada. Pará un poco, soltá el control y probá ver las cosas desde otro lado: lo que parece una pausa puede ser un giro."
+    },
+    "13": {
+      "esencia": "Transformás y renovás desde lo profundo.",
+      "luz": "Dejás ir lo viejo, te adaptás y convertís lo gastado en algo útil.",
+      "sombra": "Te aferrás a lo conocido o te da miedo que algo cambie.",
+      "anio": "Año de cerrar etapas con respeto. Dejá ir lo que ya no te representa para hacer lugar a lo nuevo: cada final despeja el terreno para empezar distinto."
+    },
+    "14": {
+      "esencia": "Buscás equilibrio entre los extremos.",
+      "luz": "Tenés moderación y paciencia, y sabés integrar los opuestos. Aprendés probando.",
+      "sombra": "Te impacientás, tenés vaivenes emocionales o ves todo blanco o negro.",
+      "anio": "Año de equilibrio y paciencia. Mezclá con medida, avanzá a tu ritmo y buscá el punto medio entre lo que sentís y lo que hacés."
+    },
+    "15": {
+      "esencia": "Hay deseo, instinto y apego a lo material.",
+      "luz": "Tenés vitalidad, los sentidos despiertos y la chance de elegir qué te ata y qué no.",
+      "sombra": "Te podés atar, ambicionar sin mirar o depender de placeres y de poder.",
+      "anio": "Año para mirar de frente tus apegos. Notá qué hábitos o ataduras te quitan libertad: ponerles nombre es el primer paso para elegir distinto."
+    },
+    "16": {
+      "esencia": "Se rompe lo viejo y se renuevan las estructuras.",
+      "luz": "Tenés coraje para derribar lo que ya no sirve y abrir camino a lo nuevo.",
+      "sombra": "Hay cambios bruscos, o te resistís hasta que algo se derrumba solo.",
+      "anio": "Año de sacudones que despejan. Lo que no se sostiene se cae para que armes algo más verdadero: dejate guiar por lo que se revela."
+    },
+    "17": {
+      "esencia": "Hay esperanza y renovación después de las crisis.",
+      "luz": "Te recuperás, inspirás a otros y buscás belleza y orden en tu mundo.",
+      "sombra": "Podés idealizar, o dar tanto que te quedás sin energía.",
+      "anio": "Año de esperanza y renovación. Volvé a confiar, cuidá tus sueños y compartí tu luz. Avanzá con calma, recordando qué es lo que te inspira."
+    },
+    "18": {
+      "esencia": "Tenés sensibilidad, intuición y un mundo interior profundo.",
+      "luz": "Tenés empatía profunda, creatividad y conexión con tus sueños.",
+      "sombra": "La sensibilidad se te puede desbordar, tener vaivenes emocionales o sentir que no te entienden.",
+      "anio": "Año de sensibilidad y sueños. Prestale atención a lo que sentís aunque no tenga explicación, y avanzá con cuidado en lo que todavía no se ve claro."
+    },
+    "19": {
+      "esencia": "Hay alegría, vitalidad y claridad.",
+      "luz": "Tu entusiasmo contagia, te expresás directo y disfrutás lo que hacés.",
+      "sombra": "Se te puede inflar el ego, impacientarte o querer brillar más que los demás.",
+      "anio": "Año de claridad y alegría. Mostrate tal como sos, celebrá los logros chicos y compartí tu entusiasmo: hay lugar para brillar."
+    },
+    "20": {
+      "esencia": "Renacés y sentís un llamado a evolucionar.",
+      "luz": "Cerrás ciclos, te liberás de ataduras y escuchás las señales que te invitan a empezar de nuevo.",
+      "sombra": "No querés ver que algo terminó, o te quedás en lo cómodo y conocido.",
+      "anio": "Año de despertar y de responder a un llamado interno. Hacé las paces con tu historia, perdonate lo que haga falta y levantate con una versión más honesta de vos."
+    },
+    "21": {
+      "esencia": "Te realizás e integrás todo lo que viviste.",
+      "luz": "Cerrás ciclos con sabiduría y sos ejemplo para quienes te siguen.",
+      "sombra": "Te presionás por lograr, ambicionás de más o creés que todo tiene que plegarse a tu voluntad.",
+      "anio": "Año de cierre de ciclo y de plenitud. Reconocé todo lo que recorriste, integrá lo aprendido y disfrutá de sentir que algo se completa."
+    }
+  }
+}

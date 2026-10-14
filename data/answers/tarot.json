@@ -1,0 +1,321 @@
+{
+ "deck": "tarot",
+ "version": 2,
+ "source": "ia-pregenerado",
+ "_criterio": "Cada respuesta sale del significado de la carta (TAROT - RESUMEN): al derecho = aspecto fluido; invertida = aspecto estancado. Cartas de impulso, logro o apertura: sí; de pausa, espera o gestación: todavía no; de duda o aviso: quizás; de rigidez, ruptura o freno: no. No se ajustó a ninguna proporción.",
+ "_codigos": "si=Sí, ps=Probablemente sí, qs=Quizás sí, q=Quizás, tn=Todavía no, pn=Probablemente no, n=No",
+ "answers": {
+  "rw-00": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-01": {
+   "upright": "si",
+   "reversed": "pn"
+  },
+  "rw-02": {
+   "upright": "tn",
+   "reversed": "pn"
+  },
+  "rw-03": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-04": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-05": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-06": {
+   "upright": "ps",
+   "reversed": "q"
+  },
+  "rw-07": {
+   "upright": "si",
+   "reversed": "pn"
+  },
+  "rw-08": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-09": {
+   "upright": "tn",
+   "reversed": "pn"
+  },
+  "rw-10": {
+   "upright": "qs",
+   "reversed": "pn"
+  },
+  "rw-11": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-12": {
+   "upright": "tn",
+   "reversed": "pn"
+  },
+  "rw-13": {
+   "upright": "qs",
+   "reversed": "pn"
+  },
+  "rw-14": {
+   "upright": "ps",
+   "reversed": "q"
+  },
+  "rw-15": {
+   "upright": "q",
+   "reversed": "pn"
+  },
+  "rw-16": {
+   "upright": "n",
+   "reversed": "pn"
+  },
+  "rw-17": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-18": {
+   "upright": "q",
+   "reversed": "pn"
+  },
+  "rw-19": {
+   "upright": "si",
+   "reversed": "qs"
+  },
+  "rw-20": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-21": {
+   "upright": "si",
+   "reversed": "qs"
+  },
+  "rw-b01": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-b02": {
+   "upright": "ps",
+   "reversed": "tn"
+  },
+  "rw-b03": {
+   "upright": "si",
+   "reversed": "pn"
+  },
+  "rw-b04": {
+   "upright": "si",
+   "reversed": "qs"
+  },
+  "rw-b05": {
+   "upright": "qs",
+   "reversed": "pn"
+  },
+  "rw-b06": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-b07": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-b08": {
+   "upright": "si",
+   "reversed": "tn"
+  },
+  "rw-b09": {
+   "upright": "q",
+   "reversed": "pn"
+  },
+  "rw-b10": {
+   "upright": "q",
+   "reversed": "pn"
+  },
+  "rw-bpj": {
+   "upright": "qs",
+   "reversed": "q"
+  },
+  "rw-bcb": {
+   "upright": "ps",
+   "reversed": "q"
+  },
+  "rw-brn": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-bry": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-c01": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-c02": {
+   "upright": "si",
+   "reversed": "pn"
+  },
+  "rw-c03": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-c04": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-c05": {
+   "upright": "q",
+   "reversed": "pn"
+  },
+  "rw-c06": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-c07": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-c08": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-c09": {
+   "upright": "qs",
+   "reversed": "pn"
+  },
+  "rw-c10": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-cpj": {
+   "upright": "qs",
+   "reversed": "q"
+  },
+  "rw-ccb": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-crn": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-cry": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-e01": {
+   "upright": "si",
+   "reversed": "pn"
+  },
+  "rw-e02": {
+   "upright": "tn",
+   "reversed": "pn"
+  },
+  "rw-e03": {
+   "upright": "q",
+   "reversed": "pn"
+  },
+  "rw-e04": {
+   "upright": "tn",
+   "reversed": "pn"
+  },
+  "rw-e05": {
+   "upright": "q",
+   "reversed": "n"
+  },
+  "rw-e06": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-e07": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-e08": {
+   "upright": "qs",
+   "reversed": "pn"
+  },
+  "rw-e09": {
+   "upright": "q",
+   "reversed": "pn"
+  },
+  "rw-e10": {
+   "upright": "qs",
+   "reversed": "pn"
+  },
+  "rw-epj": {
+   "upright": "q",
+   "reversed": "pn"
+  },
+  "rw-ecb": {
+   "upright": "qs",
+   "reversed": "pn"
+  },
+  "rw-ern": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-ery": {
+   "upright": "ps",
+   "reversed": "q"
+  },
+  "rw-o01": {
+   "upright": "ps",
+   "reversed": "tn"
+  },
+  "rw-o02": {
+   "upright": "qs",
+   "reversed": "tn"
+  },
+  "rw-o03": {
+   "upright": "si",
+   "reversed": "pn"
+  },
+  "rw-o04": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-o05": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-o06": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-o07": {
+   "upright": "ps",
+   "reversed": "tn"
+  },
+  "rw-o08": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-o09": {
+   "upright": "ps",
+   "reversed": "q"
+  },
+  "rw-o10": {
+   "upright": "si",
+   "reversed": "q"
+  },
+  "rw-opj": {
+   "upright": "qs",
+   "reversed": "q"
+  },
+  "rw-ocb": {
+   "upright": "ps",
+   "reversed": "tn"
+  },
+  "rw-orn": {
+   "upright": "ps",
+   "reversed": "pn"
+  },
+  "rw-ory": {
+   "upright": "si",
+   "reversed": "q"
+  }
+ }
+}

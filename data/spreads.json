@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "_ayuda": "Cada tirada define sus posiciones. Para activar una, poné \"enabled\": true. 'daily': true guarda el resultado hasta medianoche (solo la Carta del día). 'kind' year/user son pantallas especiales y 'group' es un submenú: las tiradas con \"group\": \"<id del grupo>\" aparecen dentro de ese submenú en vez de en el menú principal.",
+  "spreads": [
+    {
+      "id": "carta-del-dia",
+      "name": "Carta del día",
+      "description": "Un mensaje para acompañar tu día.",
+      "enabled": true,
+      "daily": true,
+      "positions": [
+        {
+          "key": "general",
+          "label": "Mensaje general"
+        }
+      ]
+    },
+    {
+      "id": "tiradas",
+      "name": "Tiradas",
+      "description": "Distintas formas de consultar las cartas.",
+      "kind": "group",
+      "enabled": true
+    },
+    {
+      "id": "si-o-no",
+      "name": "Sí o No",
+      "description": "Una pregunta, una respuesta directa.",
+      "enabled": true,
+      "daily": false,
+      "group": "tiradas",
+      "answer": true,
+      "lead": "Pensá una pregunta que se conteste con sí o no y tocá el mazo.",
+      "positions": [
+        {
+          "key": "respuesta",
+          "label": "Respuesta"
+        }
+      ]
+    },
+    {
+      "id": "tirada-del-dia",
+      "name": "Tirada del día",
+      "description": "Luz, sombra y un consejo para hoy.",
+      "enabled": false,
+      "daily": true,
+      "positions": [
+        {
+          "key": "luz",
+          "label": "Luz · ¿Qué necesito saber?"
+        },
+        {
+          "key": "sombra",
+          "label": "Sombra · ¿Qué necesito dejar atrás?"
+        },
+        {
+          "key": "consejo",
+          "label": "Consejo · ¿Qué necesito hacer?"
+        }
+      ],
+      "group": "tiradas"
+    },
+    {
+      "id": "pasado-presente-futuro",
+      "name": "Pasado · Presente · Futuro",
+      "description": "Tres cartas para mirar el camino de una situación.",
+      "enabled": false,
+      "daily": false,
+      "positions": [
+        {
+          "key": "pasado",
+          "label": "Pasado"
+        },
+        {
+          "key": "presente",
+          "label": "Presente"
+        },
+        {
+          "key": "futuro",
+          "label": "Futuro · energía para asimilar"
+        }
+      ],
+      "group": "tiradas"
+    },
+    {
+      "id": "tirada-de-situacion",
+      "name": "Tirada de situación",
+      "description": "Una mirada completa sobre eso que estás viviendo.",
+      "enabled": false,
+      "daily": false,
+      "positions": [
+        {
+          "key": "general-1",
+          "label": "General 1"
+        },
+        {
+          "key": "general-2",
+          "label": "General 2"
+        },
+        {
+          "key": "sombra",
+          "label": "Sombra · ¿Qué hay que transformar?"
+        },
+        {
+          "key": "luz",
+          "label": "Luz"
+        },
+        {
+          "key": "consejo-1",
+          "label": "Consejo 1"
+        },
+        {
+          "key": "consejo-2",
+          "label": "Consejo 2"
+        }
+      ],
+      "group": "tiradas"
+    },
+    {
+      "id": "tirada-del-mes",
+      "name": "Tirada del mes",
+      "description": "Foco, apoyo y metas para este mes.",
+      "enabled": false,
+      "daily": false,
+      "positions": [
+        {
+          "key": "foco",
+          "label": "¿A qué le pongo foco?"
+        },
+        {
+          "key": "apoyo",
+          "label": "¿En qué energía me apoyo?"
+        },
+        {
+          "key": "objetivo-1",
+          "label": "Objetivo 1"
+        },
+        {
+          "key": "objetivo-2",
+          "label": "Objetivo 2"
+        },
+        {
+          "key": "objetivo-3",
+          "label": "Objetivo 3"
+        },
+        {
+          "key": "consejo-1",
+          "label": "Consejo 1"
+        },
+        {
+          "key": "consejo-2",
+          "label": "Consejo 2"
+        }
+      ],
+      "group": "tiradas"
+    },
+    {
+      "id": "arcano-del-anio",
+      "kind": "year",
+      "name": "Arcano del año",
+      "description": "La energía que te acompaña durante todo el año.",
+      "enabled": true
+    },
+    {
+      "id": "usuario",
+      "kind": "user",
+      "name": "Usuario",
+      "description": "Tus datos y tu carta natal.",
+      "enabled": true
+    }
+  ]
+}

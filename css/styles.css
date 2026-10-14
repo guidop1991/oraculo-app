@@ -1,0 +1,445 @@
+/* Fuentes propias (licencia OFL, guardadas en la app para que funcionen sin conexión) */
+@font-face { font-family: "Cinzel Decorative"; src: url("../fonts/CinzelDecorative-Bold.woff") format("woff"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../fonts/CormorantGaramond.woff") format("woff"); font-weight: 300 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Cormorant Garamond"; src: url("../fonts/CormorantGaramond-Italic.woff") format("woff"); font-weight: 300 700; font-style: italic; font-display: swap; }
+
+:root {
+  --bg: #120a24;
+  --bg2: #1d1238;
+  --ink: #f1eaff;
+  --muted: #b9acd6;
+  --gold: #d4af5f;
+  --gold-soft: #e9d49a;
+  --violet: #6b4aa8;
+  --radius: 14px;
+  --card-w: min(62vw, 250px);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { background: #120a24; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: radial-gradient(120% 80% at 50% 0%, var(--bg2), var(--bg) 70%) fixed;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: env(safe-area-inset-top) 16px env(safe-area-inset-bottom);
+  overflow-x: hidden;
+}
+
+.stars {
+  position: fixed; inset: 0; pointer-events: none; opacity: .55;
+  background-image:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff, transparent),
+    radial-gradient(1px 1px at 78% 12%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 30% 62%, #e9d49a, transparent),
+    radial-gradient(1px 1px at 88% 48%, #fff, transparent),
+    radial-gradient(1px 1px at 55% 85%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 8% 90%, #e9d49a, transparent),
+    radial-gradient(1px 1px at 66% 30%, #fff, transparent);
+  animation: twinkle 6s ease-in-out infinite alternate;
+}
+@keyframes twinkle { from { opacity: .35; } to { opacity: .7; } }
+
+.top { text-align: center; padding: 22px 0 6px; position: relative; }
+.brand {
+  margin: 0; font-family: var(--serif); font-weight: 400;
+  font-size: 2rem; letter-spacing: .28em; text-transform: uppercase;
+  color: var(--gold-soft); text-indent: .28em;
+}
+.tagline { margin: 4px 0 0; color: var(--muted); font-size: .95rem; }
+
+main { width: 100%; max-width: 520px; flex: 1; position: relative; padding: 8px 0 18px; }
+.view { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; }
+.view[hidden] { display: none; }
+
+.lead { margin: 6px 0 0; color: var(--muted); max-width: 32ch; line-height: 1.45; font-size: 1.05rem; }
+.spread-title { margin: 4px 0 0; font-family: var(--serif); font-weight: 400; font-size: 1.35rem; color: var(--gold-soft); }
+.back {
+  align-self: flex-start; background: none; border: 0; color: var(--gold-soft);
+  font: inherit; font-size: .95rem; cursor: pointer; padding: 8px 4px; min-height: 40px;
+}
+
+/* ----- menú ----- */
+.menu { list-style: none; margin: 8px 0 0; padding: 0; width: 100%; display: grid; gap: 12px; }
+.menu-item {
+  width: 100%; display: grid; gap: 2px; text-align: left; cursor: pointer; font: inherit;
+  padding: 16px 18px; border-radius: var(--radius); color: var(--ink);
+  background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+  border: 1px solid rgba(212, 175, 95, .55);
+}
+.menu-item:hover:not(:disabled) { background: rgba(212, 175, 95, .12); }
+.menu-item:disabled { cursor: default; opacity: .5; border-color: rgba(212, 175, 95, .2); }
+.menu-name { font-family: var(--serif); font-size: 1.2rem; color: var(--gold-soft); }
+.menu-desc { color: var(--muted); font-size: .92rem; }
+.menu-meta { color: var(--gold); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; margin-top: 4px; }
+.menu-item:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+/* ----- mazo (pila de cartas) ----- */
+.deck {
+  position: relative; width: var(--card-w); aspect-ratio: var(--card-ar, 250 / 429);
+  border: 0; background: none; padding: 0; cursor: pointer; margin: 14px 12px 22px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.deck-card {
+  position: absolute; inset: 0; border-radius: 10px;
+  background: #1a1030 url("../img/back.webp") center / cover no-repeat;
+  box-shadow: 0 0 0 1px rgba(212, 175, 95, .5), 0 3px 5px rgba(0, 0, 0, .45);
+}
+/* l8 es la de arriba; las de abajo salen hacia abajo-derecha y se oscurecen: se ve el grosor del mazo */
+.l1 { transform: translate(9.8px, 14px) rotate(.5deg); filter: brightness(.55); }
+.l2 { transform: translate(8.4px, 12px) rotate(-.4deg); filter: brightness(.62); }
+.l3 { transform: translate(7px, 10px) rotate(.3deg); filter: brightness(.7); }
+.l4 { transform: translate(5.6px, 8px) rotate(-.3deg); filter: brightness(.77); }
+.l5 { transform: translate(4.2px, 6px) rotate(.4deg); filter: brightness(.84); }
+.l6 { transform: translate(2.8px, 4px) rotate(-.2deg); filter: brightness(.9); }
+.l7 { transform: translate(1.4px, 2px) rotate(.2deg); filter: brightness(.95); }
+.l8 { box-shadow: 0 0 0 1px rgba(212, 175, 95, .65), 0 12px 26px rgba(0, 0, 0, .55); }
+.deck:hover .l8, .deck:focus-visible .l8 { translate: 0 -5px; }
+.deck:focus-visible { outline: 2px solid var(--gold); outline-offset: 12px; border-radius: 12px; }
+
+/* barajado: la pila se parte en dos mitades que se entrecruzan (riffle), dos veces, y se corta */
+.deck.shuffling .deck-card { animation-duration: 1.65s; animation-timing-function: ease-in-out; animation-fill-mode: both; }
+.deck.shuffling .deck-card:nth-child(odd) { animation-name: riffleL; }
+.deck.shuffling .deck-card:nth-child(even) { animation-name: riffleR; }
+.deck.shuffling .l1 { animation-delay: 0s; }
+.deck.shuffling .l2 { animation-delay: .03s; }
+.deck.shuffling .l3 { animation-delay: .06s; }
+.deck.shuffling .l4 { animation-delay: .09s; }
+.deck.shuffling .l5 { animation-delay: .12s; }
+.deck.shuffling .l6 { animation-delay: .15s; }
+.deck.shuffling .l7 { animation-delay: .18s; }
+.deck.shuffling .l8 { animation-delay: .21s; }
+@keyframes riffleL {
+  0%   { translate: 0 0; rotate: 0deg; }
+  16%  { translate: -34% 0; rotate: -7deg; }
+  34%  { translate: -5% 0; rotate: -1deg; }
+  50%  { translate: -27% 0; rotate: -5deg; }
+  68%  { translate: -4% 0; rotate: 0deg; }
+  82%  { translate: 0 0; rotate: 0deg; }
+  100% { translate: 0 0; rotate: 0deg; }
+}
+@keyframes riffleR {
+  0%   { translate: 0 0; rotate: 0deg; }
+  16%  { translate: 34% 0; rotate: 7deg; }
+  34%  { translate: 5% 0; rotate: 1deg; }
+  50%  { translate: 27% 0; rotate: 5deg; }
+  68%  { translate: 4% 0; rotate: 0deg; }
+  82%  { translate: 0 0; rotate: 0deg; }
+  100% { translate: 0 0; rotate: 0deg; }
+}
+
+/* ----- corte: dos mazos para elegir ----- */
+.cut {
+  --pile-w: min(38vw, 185px);
+  display: flex; justify-content: center; align-items: center; gap: 26px;
+  width: 100%; min-height: calc(var(--card-w) * 1.716); margin: 14px 0 22px;
+}
+.cut[hidden] { display: none; }
+.pile {
+  position: relative; width: var(--pile-w); aspect-ratio: var(--card-ar, 250 / 429); border: 0; background: none; padding: 0;
+  cursor: pointer; -webkit-tap-highlight-color: transparent; transition: opacity .5s ease, filter .3s ease;
+}
+.pile-card {
+  position: absolute; inset: 0; border-radius: 9px;
+  background: #1a1030 url("../img/back.webp") center / cover no-repeat;
+  box-shadow: 0 0 0 1px rgba(212, 175, 95, .5), 0 3px 5px rgba(0, 0, 0, .45);
+}
+.pc1 { transform: translate(5px, 8px) rotate(.5deg); filter: brightness(.6); }
+.pc2 { transform: translate(3.8px, 6px) rotate(-.4deg); filter: brightness(.7); }
+.pc3 { transform: translate(2.6px, 4px) rotate(.3deg); filter: brightness(.8); }
+.pc4 { transform: translate(1.3px, 2px) rotate(-.2deg); filter: brightness(.9); }
+.pc5 { box-shadow: 0 0 0 1px rgba(212, 175, 95, .65), 0 12px 26px rgba(0, 0, 0, .55); }
+.pile:not(:disabled):hover, .pile:not(:disabled):focus-visible { filter: brightness(1.15) drop-shadow(0 0 14px rgba(212, 175, 95, .45)); }
+.pile:focus-visible { outline: 2px solid var(--gold); outline-offset: 10px; border-radius: 12px; }
+/* el mazo se parte: cada mitad sale desde el centro hacia su lado */
+.cut.split .pile:nth-child(1) { animation: splitL .9s cubic-bezier(.2, .7, .2, 1) both; }
+.cut.split .pile:nth-child(2) { animation: splitR .9s cubic-bezier(.2, .7, .2, 1) both; }
+@keyframes splitL { from { translate: calc(var(--pile-w) * .58 + 13px) 0; } to { translate: 0 0; } }
+@keyframes splitR { from { translate: calc(var(--pile-w) * -.58 - 13px) 0; } to { translate: 0 0; } }
+.pile.other { opacity: .18; }
+.pile.chosen { animation: lift .7s ease-out both !important; }
+@keyframes lift { 0% { translate: 0 0; scale: 1; } 100% { translate: 0 -10px; scale: 1.06; } }
+
+/* ----- carta revelada ----- */
+.slots { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 26px; }
+.slot { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+.slot-label { margin: 0; color: var(--gold); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; }
+
+.card-scene { width: var(--card-w); aspect-ratio: var(--card-ar, 250 / 429); perspective: 1100px; }
+.card-flip { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; transition: transform .9s cubic-bezier(.2, .7, .2, 1); }
+.card-flip.flipped { transform: rotateY(180deg); }
+.card-flip.instant { transition: none; }
+.card-face {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  border-radius: 10px; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .6), 0 0 0 1px rgba(212, 175, 95, .45);
+  background: #1a1030;
+}
+.card-face.front { transform: rotateY(180deg); }
+.card-face.front.reversed { transform: rotateY(180deg) rotate(180deg); }
+
+.card-name { margin: 4px 0 0; font-family: var(--serif); font-weight: 400; font-size: 1.7rem; color: var(--gold-soft); }
+.card-word { margin: 0; }
+.card-word span {
+  display: inline-block; padding: 5px 18px; border-radius: 999px; font-size: .95rem; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--gold-soft);
+  border: 1px solid rgba(212, 175, 95, .55); background: rgba(212, 175, 95, .08);
+}
+.card-orientation { margin: -4px 0 0; color: var(--muted); font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; }
+.message {
+  margin: 4px 0 0; padding: 18px 20px; max-width: 44ch;
+  font-family: var(--serif); font-size: 1.2rem; line-height: 1.55; font-style: italic;
+  background: rgba(255, 255, 255, .05); border-radius: var(--radius);
+  border-left: 3px solid var(--gold); text-align: left;
+  animation: rise .8s .5s both ease-out;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* tiradas de varias cartas: carta a la izquierda, texto a la derecha */
+.slots.multi .slot {
+  display: grid; grid-template-columns: minmax(104px, 34%) 1fr; gap: 6px 14px;
+  align-items: start; text-align: left; justify-items: start;
+}
+.slots.multi .slot-label { grid-column: 1 / -1; }
+.slots.multi .card-scene { grid-column: 1; grid-row: 2 / span 5; width: 100%; }
+.slots.multi .card-name, .slots.multi .card-word, .slots.multi .card-orientation, .slots.multi .message { grid-column: 2; }
+.slots.multi .card-name { font-size: 1.25rem; margin-top: 0; }
+.slots.multi .message { font-size: 1.02rem; padding: 12px 14px; }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 4px; }
+.btn {
+  appearance: none; border: 0; cursor: pointer; font: inherit; font-weight: 600;
+  padding: 13px 24px; min-height: 48px; border-radius: 999px;
+  color: #1a1030; background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+  box-shadow: 0 6px 18px rgba(212, 175, 95, .25);
+}
+.btn:hover:not(:disabled) { filter: brightness(1.06); }
+.btn:disabled { opacity: .6; cursor: default; }
+.btn.ghost { background: transparent; color: var(--gold-soft); box-shadow: none; border: 1px solid rgba(212, 175, 95, .5); }
+.btn:focus-visible, .link:focus-visible, .back:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+.come-back { color: var(--muted); font-size: .9rem; max-width: 34ch; margin: 2px 0 0; }
+.error { color: #ffb4b4; text-align: center; padding: 20px; }
+
+/* ----- formulario de datos ----- */
+.form { width: 100%; max-width: 360px; display: grid; gap: 8px; text-align: left; margin-top: 4px; }
+.form label { color: var(--gold-soft); font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; margin-top: 6px; }
+.form input {
+  font: inherit; font-size: 1.05rem; color: var(--ink); min-height: 48px; padding: 10px 14px;
+  background: rgba(255, 255, 255, .07); border: 1px solid rgba(212, 175, 95, .5); border-radius: 12px;
+  color-scheme: dark;
+}
+.form input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.form .btn { margin-top: 14px; }
+.form-error { margin: 2px 0 0; color: #ffb4b4; font-size: .9rem; }
+
+/* ----- usuario y carta natal ----- */
+.menu-user { border-style: dashed; }
+.user-card {
+  width: 100%; padding: 14px 18px; border-radius: var(--radius); text-align: left;
+  background: rgba(255, 255, 255, .05); border: 1px solid rgba(212, 175, 95, .35);
+}
+.user-card p { margin: 0; }
+.user-name { font-family: var(--serif); font-size: 1.4rem; color: var(--gold-soft); }
+.user-birth { color: var(--muted); font-size: .92rem; margin-top: 2px !important; }
+.user-sub { width: 100%; margin: 8px 0 0; text-align: left; font-family: var(--serif); font-weight: 400; font-size: 1.15rem; color: var(--gold-soft); }
+.user-hint { width: 100%; margin: -8px 0 0; text-align: left; color: var(--muted); font-size: .85rem; }
+
+.acc-list { width: 100%; display: grid; gap: 10px; text-align: left; }
+.acc { border-radius: var(--radius); background: rgba(255, 255, 255, .05); border: 1px solid rgba(212, 175, 95, .35); overflow: hidden; }
+.acc[open] { border-color: rgba(212, 175, 95, .7); background: rgba(255, 255, 255, .07); }
+.acc-sum {
+  display: grid; grid-template-columns: 1fr 18px; gap: 14px; align-items: center;
+  padding: 10px 14px; cursor: pointer; list-style: none; min-height: 64px;
+}
+.acc-sum::-webkit-details-marker { display: none; }
+.acc-sum:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; border-radius: var(--radius); }
+.acc-txt { display: grid; gap: 2px; min-width: 0; }
+.acc-name { font-family: var(--serif); font-size: 1.12rem; color: var(--gold-soft); line-height: 1.25; }
+.acc-chev { width: 9px; height: 9px; border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(45deg); transition: transform .25s ease; justify-self: center; }
+.acc[open] .acc-chev { transform: rotate(-135deg); }
+.acc-panel { display: grid; gap: 8px; padding: 2px 16px 16px; }
+.acc-panel > p { margin: 0; }
+.natal-role { color: var(--gold); font-size: .7rem; letter-spacing: .14em; text-transform: uppercase; }
+.natal-intro { color: var(--muted); font-size: .85rem; line-height: 1.4; }
+.natal-essence { font-family: var(--serif); font-style: italic; line-height: 1.45; }
+.natal-line { font-size: .92rem; line-height: 1.45; margin: 0; }
+.natal-line strong { color: var(--gold-soft); font-weight: 600; }
+.natal-note { margin: 0; padding: 10px 14px; border-radius: 12px; background: rgba(212, 175, 95, .1); color: var(--gold-soft); font-size: .9rem; text-align: left; width: 100%; }
+.year-line { max-width: 44ch; text-align: left; width: 100%; }
+
+/* ----- pie ----- */
+.foot { width: 100%; max-width: 520px; text-align: center; padding: 8px 0 18px; color: var(--muted); font-size: .8rem; line-height: 1.5; position: relative; }
+.legal { margin: 8px 0; }
+.link { background: none; border: 0; color: var(--gold-soft); font: inherit; text-decoration: underline; cursor: pointer; padding: 6px; }
+.hint { margin: 6px 0; }
+.net { margin: 4px 0 0; color: var(--gold-soft); }
+[hidden] { display: none !important; }
+
+/* ===== Tema terciopelo: violeta, dorado y negro ===== */
+:root {
+  --bg: #0b0518;
+  --bg2: #2a1050;
+  --gold: #e2bf6a;
+  --gold-soft: #f6e2a8;
+  --muted: #c4aee6;
+  --ruby: #e27aa6;
+  --display: "Cinzel Decorative", "Iowan Old Style", Georgia, serif;
+  --text: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --msg: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --velvet: linear-gradient(180deg, #3a1568, #2a0f4d 55%, #1d0a38);
+}
+html { background: #0b0518; }
+body {
+  font-family: var(--text); font-size: 1.1rem;
+  background: radial-gradient(120% 60% at 50% -5%, #4a1a86 0%, #241047 38%, #0c0518 78%) fixed, #0c0518;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(115deg, rgba(255, 255, 255, .022) 0 2px, transparent 2px 7px);
+}
+/* títulos: Cinzel Decorative */
+.brand, .spread-title, .menu-name, .card-name, .user-name, .user-sub, .acc-name {
+  font-family: var(--display); font-weight: 700;
+}
+.brand { text-transform: none; font-size: 3rem; letter-spacing: .06em; text-indent: .06em; line-height: 1.1; text-shadow: 0 0 18px rgba(226, 191, 106, .35); }
+.spread-title { font-size: 1.3rem; }
+.menu-name { font-size: 1.1rem; }
+.card-name { font-size: 1.45rem; }
+.slots.multi .card-name { font-size: 1.1rem; }
+.user-name { font-size: 1.3rem; }
+.user-sub { font-size: 1.05rem; }
+.acc-name { font-size: 1rem; }
+/* textos de apoyo: Cormorant Garamond (más grande, porque es una letra chica) */
+.tagline { font-size: 1.15rem; font-style: italic; }
+.lead { font-size: 1.3rem; max-width: 30ch; }
+.menu-desc { font-size: 1.1rem; }
+.natal-intro { font-size: 1.05rem; }
+.natal-line { font-size: 1.1rem; }
+.natal-note { font-size: 1.05rem; }
+.user-birth { font-size: 1.05rem; }
+.user-hint { font-size: 1.05rem; }
+.come-back { font-size: 1.1rem; }
+.foot { font-size: .98rem; }
+.form-error { font-size: 1.05rem; }
+.back, .link { font-family: var(--text); font-size: 1.1rem; }
+/* etiquetas y botones: sans-serif chica */
+.menu-meta, .slot-label, .card-orientation, .card-word span, .natal-role, .btn, .form label {
+  font-family: var(--sans);
+}
+.menu-meta { color: var(--ruby); }
+.card-word span { border-color: #c0407f; background: rgba(192, 64, 127, .18); }
+/* mensajes: Cormorant Garamond, recuadro violeta translúcido y claro */
+.message {
+  font-family: var(--msg); font-style: normal; font-weight: 500; font-size: 1.3rem; line-height: 1.5;
+  background: linear-gradient(180deg, rgba(150, 100, 225, .26), rgba(105, 58, 180, .22));
+}
+.slots.multi .message { font-size: 1.12rem; }
+.natal-essence { font-family: var(--msg); font-style: normal; font-weight: 500; font-size: 1.15rem; line-height: 1.5; }
+/* recuadros de terciopelo: sin brillo blanco, borde dorado */
+.menu-item, .acc, .user-card {
+  border: 1px solid transparent;
+  background: var(--velvet) padding-box, linear-gradient(135deg, #e2bf6a, #8f6b24 50%, #d4af5f) border-box;
+  box-shadow: inset 0 -14px 24px rgba(0, 0, 0, .35), 0 8px 18px rgba(0, 0, 0, .5);
+}
+.menu-item:hover:not(:disabled) { filter: brightness(1.12); background: var(--velvet) padding-box, linear-gradient(135deg, #e2bf6a, #8f6b24 50%, #d4af5f) border-box; }
+.menu-item:disabled { opacity: .5; }
+.menu-item { text-align: center; justify-items: center; }
+.acc[open] { background: var(--velvet) padding-box, linear-gradient(135deg, #e2bf6a, #8f6b24 50%, #d4af5f) border-box; filter: brightness(1.1); }
+.btn.ghost { border-color: rgba(226, 191, 106, .6); }
+
+
+/* ===== Mazos: selector en la tirada y mazo favorito ===== */
+.card-face.back { object-fit: fill; }
+.chip {
+  font-family: var(--sans); font-size: .82rem; letter-spacing: .06em; cursor: pointer;
+  padding: 7px 16px; min-height: 36px; border-radius: 999px; color: var(--gold-soft);
+  background: rgba(226, 191, 106, .08); border: 1px solid rgba(226, 191, 106, .55);
+}
+.chip:hover { background: rgba(226, 191, 106, .16); }
+.chip:focus-visible, .deck-option:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+.chip[hidden] { display: none; }
+.picker { width: 100%; max-width: 420px; display: grid; gap: 10px; }
+.picker[hidden] { display: none; }
+.picker-title { margin: 0; color: var(--muted); font-size: 1.05rem; }
+.deck-options { width: 100%; display: grid; gap: 10px; }
+.deck-option {
+  width: 100%; display: grid; gap: 2px; justify-items: center; text-align: center; cursor: pointer; font: inherit;
+  padding: 12px 16px; border-radius: var(--radius); color: var(--ink);
+  border: 1px solid transparent;
+  background: var(--velvet) padding-box, linear-gradient(135deg, rgba(226, 191, 106, .55), rgba(143, 107, 36, .45)) border-box;
+  opacity: .85;
+}
+.deck-option[aria-checked="true"] {
+  opacity: 1;
+  background: var(--velvet) padding-box, linear-gradient(135deg, #f6e2a8, #b8902f 50%, #e2bf6a) border-box;
+  box-shadow: 0 0 16px rgba(226, 191, 106, .3), inset 0 -14px 24px rgba(0, 0, 0, .35);
+}
+.deck-option-name { font-family: var(--display); font-weight: 700; font-size: 1rem; color: var(--gold-soft); }
+.deck-option[aria-checked="true"] .deck-option-name::before { content: "✓ "; font-family: var(--sans); }
+.deck-option-desc { color: var(--muted); font-size: 1rem; line-height: 1.3; }
+.result-deck { margin: -6px 0 0; color: var(--muted); font-size: 1.05rem; font-style: italic; }
+.user-block { width: 100%; display: grid; gap: 12px; justify-items: center; }
+.user-block .user-sub, .user-block .user-hint, .user-block .user-card { justify-self: stretch; }
+.credits { width: 100%; text-align: left; color: var(--muted); font-size: 1rem; }
+.credits summary { cursor: pointer; color: var(--gold-soft); padding: 6px 2px; }
+.credits-list { margin: 6px 0 0; padding-left: 18px; line-height: 1.4; }
+.credits-list li { margin-bottom: 6px; }
+.credits-list strong { color: var(--gold-soft); font-weight: 600; }
+
+
+/* ===== Usuario centrado + miniatura del arcano al desplegar ===== */
+#view-user { text-align: center; }
+#view-user .user-card, #view-user .user-sub, #view-user .user-hint, #view-user .acc-list,
+#view-user .natal-note, #view-user .credits, #view-user .credits-list { text-align: center; }
+.acc-sum { grid-template-columns: 1fr; position: relative; padding: 10px 40px; text-align: center; }
+.acc-chev { position: absolute; right: 16px; top: 50%; margin-top: -7px; }
+.acc-panel { justify-items: center; text-align: center; }
+.acc-art {
+  width: 128px; height: auto; border-radius: 6px; margin: 2px auto 6px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .55), 0 0 0 1px rgba(226, 191, 106, .5);
+}
+.credits-list { list-style: none; padding-left: 0; }
+.credits summary { text-align: center; }
+
+
+/* ===== Sí o No ===== */
+.answer {
+  margin: 10px 0 2px; font-family: var(--display); font-size: clamp(1.7rem, 8vw, 2.4rem);
+  font-weight: 700; letter-spacing: .06em; line-height: 1.15; text-align: center; text-transform: uppercase;
+}
+.answer-yes { color: var(--gold-soft); text-shadow: 0 0 18px rgba(226, 191, 106, .45); }
+.answer-maybe { color: #cdb6f2; text-shadow: 0 0 18px rgba(160, 120, 230, .45); }
+.answer-no { color: var(--ruby); text-shadow: 0 0 18px rgba(226, 122, 166, .4); }
+
+/* Si el sistema pide "reducir movimiento" (en Windows: Efectos de animación desactivados),
+   no apagamos todo: usamos una versión suave, sin desplazamientos ni giros, solo fundidos. */
+@media (prefers-reduced-motion: reduce) {
+  .stars { animation: none; }
+  .deck.shuffling .deck-card:nth-child(odd),
+  .deck.shuffling .deck-card:nth-child(even) { animation-name: softShuffle; animation-duration: 1.4s; }
+  @keyframes softShuffle {
+    0%, 100% { translate: 0 0; opacity: 1; }
+    30% { translate: -3% 0; opacity: .5; }
+    65% { translate: 2% 0; opacity: .85; }
+  }
+  .deck:hover .l8, .deck:focus-visible .l8 { translate: none; }
+  .cut.split .pile:nth-child(1), .cut.split .pile:nth-child(2) { animation: fadeIn 1s both; }
+  .pile.chosen { animation: none !important; filter: brightness(1.25); }
+  .acc-chev { transition: none; }
+  .card-flip, .card-flip.flipped { transform: none; transition: none; }
+  .card-face { backface-visibility: visible; -webkit-backface-visibility: visible; transition: opacity 1s ease; }
+  .card-face.front { transform: none; opacity: 0; }
+  .card-face.front.reversed { transform: rotate(180deg); }
+  .card-flip.flipped .front { opacity: 1; }
+  .card-flip.flipped .back { opacity: 0; }
+  .card-flip.instant .card-face { transition: none; }
+  .message { animation-name: fadeIn; }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+}

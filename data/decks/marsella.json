@@ -1,0 +1,1419 @@
+{
+ "id": "marsella",
+ "name": "Tarot de Marsella",
+ "family": "tarot",
+ "license": "Dominio público. Tarot de Marsella (siglos XVII-XVIII). Wikimedia Commons. Textos originales de este proyecto.",
+ "version": 3,
+ "back": "img/back.webp",
+ "aspect": [
+  813,
+  1536
+ ],
+ "premium": false,
+ "cards": [
+  {
+   "id": "rw-00",
+   "name": "El Loco",
+   "number": 0,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/00.webp",
+   "meaning": "Un comienzo con la mochila liviana: confianza, curiosidad y ganas de animarte a lo nuevo sin tener todo resuelto.",
+   "reversed": "Ojo con tirarte sin mirar, o con quedarte clavado en el borde por miedo. Pedí un poco de equilibrio entre impulso y cuidado.",
+   "keywords": [
+    "comienzo",
+    "confianza",
+    "libertad",
+    "salto"
+   ],
+   "word": "comienzo",
+   "wordReversed": "prudencia"
+  },
+  {
+   "id": "rw-01",
+   "name": "El Mago",
+   "number": 1,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/01.webp",
+   "meaning": "Tenés a mano todo lo que necesitás. Es momento de enfocar la voluntad y convertir una idea en algo concreto.",
+   "reversed": "Energía dispersa o talento sin dirección. Revisá si estás postergando o si te falta claridad sobre lo que querés.",
+   "keywords": [
+    "voluntad",
+    "recursos",
+    "iniciativa",
+    "creación"
+   ],
+   "word": "acción",
+   "wordReversed": "dispersión"
+  },
+  {
+   "id": "rw-02",
+   "name": "La Papisa",
+   "number": 2,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/02.webp",
+   "meaning": "La respuesta está en el silencio y la intuición. Escuchá lo que sabés por dentro antes de salir a buscar afuera.",
+   "reversed": "Estás ignorando tu voz interna o acallando algo que ya sentís. Volvé a tu centro y dale lugar a lo que no se dice.",
+   "keywords": [
+    "intuición",
+    "silencio",
+    "misterio",
+    "interior"
+   ],
+   "word": "intuición",
+   "wordReversed": "escucha"
+  },
+  {
+   "id": "rw-03",
+   "name": "La Emperatriz",
+   "number": 3,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/03.webp",
+   "meaning": "Abundancia de cuidado, creatividad y disfrute. Un tiempo para nutrir lo que querés ver crecer, empezando por vos.",
+   "reversed": "Descuido propio o exceso de dar sin recibir. Volvé a ocuparte de lo que te sostiene y te hace bien.",
+   "keywords": [
+    "cuidado",
+    "creatividad",
+    "fertilidad",
+    "disfrute"
+   ],
+   "word": "cuidado",
+   "wordReversed": "autocuidado"
+  },
+  {
+   "id": "rw-04",
+   "name": "El Emperador",
+   "number": 4,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/04.webp",
+   "meaning": "Estructura, orden y firmeza. Poné límites claros y construí sobre bases sólidas con paciencia.",
+   "reversed": "Rigidez, necesidad de controlarlo todo o autoridad mal llevada. Aflojá un poco sin perder el rumbo.",
+   "keywords": [
+    "orden",
+    "estructura",
+    "liderazgo",
+    "límites"
+   ],
+   "word": "orden",
+   "wordReversed": "flexibilidad"
+  },
+  {
+   "id": "rw-05",
+   "name": "El Papa",
+   "number": 5,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/05.webp",
+   "meaning": "Tradición, aprendizaje y guía. Puede aparecer un maestro, un ritual o un valor compartido que te ordena.",
+   "reversed": "Ganas de salirte del molde o cuestionar lo que se da por hecho. Elegí qué reglas te sirven y cuáles ya no.",
+   "keywords": [
+    "tradición",
+    "enseñanza",
+    "valores",
+    "guía"
+   ],
+   "word": "guía",
+   "wordReversed": "criterio"
+  },
+  {
+   "id": "rw-06",
+   "name": "Los Enamorados",
+   "number": 6,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/06.webp",
+   "meaning": "Vínculo, armonía y elecciones que salen del corazón. Elegir con coherencia entre lo que sentís y lo que hacés.",
+   "reversed": "Desencuentro o duda entre dos caminos. Preguntate qué es verdaderamente tuyo y qué elegís por costumbre.",
+   "keywords": [
+    "vínculo",
+    "elección",
+    "armonía",
+    "coherencia"
+   ],
+   "word": "elección",
+   "wordReversed": "coherencia"
+  },
+  {
+   "id": "rw-07",
+   "name": "El Carro",
+   "number": 7,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/07.webp",
+   "meaning": "Avance con determinación. Si sostenés el foco y unís tus fuerzas, el rumbo se despeja.",
+   "reversed": "Fuerzas en direcciones opuestas o falta de rumbo. Frená un instante, tomá las riendas y elegí hacia dónde ir.",
+   "keywords": [
+    "avance",
+    "determinación",
+    "foco",
+    "victoria"
+   ],
+   "word": "avance",
+   "wordReversed": "rumbo"
+  },
+  {
+   "id": "rw-08",
+   "name": "La Fuerza",
+   "number": 11,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/08.webp",
+   "meaning": "Fortaleza amable: dominar el impulso con paciencia, ternura y confianza en vos.",
+   "reversed": "Dudas sobre tu propio valor o desborde emocional. Tratate con la misma paciencia que le darías a alguien querido.",
+   "keywords": [
+    "coraje",
+    "paciencia",
+    "ternura",
+    "autodominio"
+   ],
+   "word": "calma",
+   "wordReversed": "paciencia"
+  },
+  {
+   "id": "rw-09",
+   "name": "El Ermitaño",
+   "number": 9,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/09.webp",
+   "meaning": "Tiempo de recogimiento y búsqueda interior. Un poco de soledad elegida te aclara el camino.",
+   "reversed": "Aislamiento que ya no te hace bien o resistencia a mirar para adentro. Buscá un punto medio con los demás.",
+   "keywords": [
+    "introspección",
+    "sabiduría",
+    "soledad",
+    "búsqueda"
+   ],
+   "word": "introspección",
+   "wordReversed": "conexión"
+  },
+  {
+   "id": "rw-10",
+   "name": "La Rueda de la Fortuna",
+   "number": 10,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/10.webp",
+   "meaning": "Los ciclos giran. Algo se mueve, cambia el panorama y aparece una oportunidad si te mantenés atento.",
+   "reversed": "Sensación de estancamiento o de que todo se repite. Es un giro más: observá qué patrón podés cambiar vos.",
+   "keywords": [
+    "ciclos",
+    "cambio",
+    "destino",
+    "oportunidad"
+   ],
+   "word": "cambio",
+   "wordReversed": "patrón"
+  },
+  {
+   "id": "rw-11",
+   "name": "La Justicia",
+   "number": 8,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/11.webp",
+   "meaning": "Equilibrio, claridad y responsabilidad. Cada acción tiene su consecuencia: obrá con honestidad.",
+   "reversed": "Desequilibrio o evasión de una responsabilidad. Revisá con honestidad dónde necesitás poner las cosas en su lugar.",
+   "keywords": [
+    "equilibrio",
+    "verdad",
+    "responsabilidad",
+    "causa y efecto"
+   ],
+   "word": "equilibrio",
+   "wordReversed": "responsabilidad"
+  },
+  {
+   "id": "rw-12",
+   "name": "El Colgado",
+   "number": 12,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/12.webp",
+   "meaning": "Pausa que cambia la mirada. Soltar el apuro y ver desde otro lugar te muestra lo que no veías.",
+   "reversed": "Resistencia a la espera o sacrificios que ya no tienen sentido. Preguntate qué te está frenando de verdad.",
+   "keywords": [
+    "pausa",
+    "entrega",
+    "nueva mirada",
+    "espera"
+   ],
+   "word": "pausa",
+   "wordReversed": "perspectiva"
+  },
+  {
+   "id": "rw-13",
+   "name": "La Muerte",
+   "number": 13,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/13.webp",
+   "meaning": "Cierre de una etapa y transformación. No es un final literal: es dejar ir lo que cumplió su ciclo para que algo nuevo entre.",
+   "reversed": "Cuesta soltar o aceptar un cambio que ya está en marcha. El apego puede alargar lo que ya pide terminar.",
+   "keywords": [
+    "transformación",
+    "cierre",
+    "renacer",
+    "soltar"
+   ],
+   "word": "transformación",
+   "wordReversed": "desapego"
+  },
+  {
+   "id": "rw-14",
+   "name": "La Templanza",
+   "number": 14,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/14.webp",
+   "meaning": "Mezcla justa, paciencia y armonía. Avanzá con calma y buscá el punto medio entre extremos.",
+   "reversed": "Exceso, apuro o desbalance. Probá bajar un cambio y volver a tu ritmo.",
+   "keywords": [
+    "equilibrio",
+    "paciencia",
+    "armonía",
+    "moderación"
+   ],
+   "word": "armonía",
+   "wordReversed": "moderación"
+  },
+  {
+   "id": "rw-15",
+   "name": "El Diablo",
+   "number": 15,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/15.webp",
+   "meaning": "Ataduras, hábitos o deseos que tiran fuerte. Verlos con claridad es el primer paso para recuperar tu libertad.",
+   "reversed": "Empezás a soltar una cadena. Hay ganas de liberarte de algo que te tenía agarrado: confiá en ese impulso.",
+   "keywords": [
+    "ataduras",
+    "deseo",
+    "sombra",
+    "liberación"
+   ],
+   "word": "ataduras",
+   "wordReversed": "liberación"
+  },
+  {
+   "id": "rw-16",
+   "name": "La Torre",
+   "number": 16,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/16.webp",
+   "meaning": "Un sacudón que derriba lo que no era firme. Incómodo, pero abre espacio para reconstruir sobre algo más verdadero.",
+   "reversed": "Cambio que venís evitando o una sacudida que se siente más suave. Mejor adelantarse y soltar antes de que se caiga solo.",
+   "keywords": [
+    "sacudón",
+    "revelación",
+    "ruptura",
+    "reconstrucción"
+   ],
+   "word": "sacudón",
+   "wordReversed": "aviso"
+  },
+  {
+   "id": "rw-17",
+   "name": "La Estrella",
+   "number": 17,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/17.webp",
+   "meaning": "Esperanza y renovación después de la tormenta. Confiá: hay una luz que te guía suave.",
+   "reversed": "Cansancio o falta de fe momentánea. Buscá algo pequeño que te devuelva ilusión y volvé a regarlo.",
+   "keywords": [
+    "esperanza",
+    "inspiración",
+    "calma",
+    "renovación"
+   ],
+   "word": "esperanza",
+   "wordReversed": "ilusión"
+  },
+  {
+   "id": "rw-18",
+   "name": "La Luna",
+   "number": 18,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/18.webp",
+   "meaning": "Terreno de sueños, dudas e intuiciones. No todo se ve claro todavía: andá despacio y escuchá lo que sentís.",
+   "reversed": "Algo se va aclarando. Miedos o confusión pierden fuerza cuando los mirás de frente.",
+   "keywords": [
+    "intuición",
+    "sueños",
+    "incertidumbre",
+    "misterio"
+   ],
+   "word": "incertidumbre",
+   "wordReversed": "claridad"
+  },
+  {
+   "id": "rw-19",
+   "name": "El Sol",
+   "number": 19,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/19.webp",
+   "meaning": "Claridad, alegría y vitalidad. Un día para disfrutar, mostrarte tal cual sos y celebrar lo simple.",
+   "reversed": "Un nubarrón pasajero o un entusiasmo apagado. La luz sigue ahí: permitite descansar y volver a disfrutar.",
+   "keywords": [
+    "alegría",
+    "claridad",
+    "éxito",
+    "vitalidad"
+   ],
+   "word": "alegría",
+   "wordReversed": "descanso"
+  },
+  {
+   "id": "rw-20",
+   "name": "El Juicio",
+   "number": 20,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/20.webp",
+   "meaning": "Un llamado a despertar y reconciliarte con tu historia. Es momento de responder a lo que de verdad te convoca.",
+   "reversed": "Autocrítica dura o dificultad para perdonar. Soltá el reproche y escuchá el llamado con más compasión.",
+   "keywords": [
+    "despertar",
+    "llamado",
+    "perdón",
+    "renovación"
+   ],
+   "word": "llamado",
+   "wordReversed": "compasión"
+  },
+  {
+   "id": "rw-21",
+   "name": "El Mundo",
+   "number": 21,
+   "arcana": "mayor",
+   "suit": null,
+   "image": "img/decks/marsella/21.webp",
+   "meaning": "Cierre de ciclo con sensación de plenitud. Lo vivido se integra y se abre un horizonte nuevo.",
+   "reversed": "Falta un último paso para cerrar. Revisá qué detalle está pendiente antes de pasar a lo que sigue.",
+   "keywords": [
+    "plenitud",
+    "cierre",
+    "integración",
+    "logro"
+   ],
+   "word": "plenitud",
+   "wordReversed": "cierre"
+  },
+  {
+   "id": "rw-b01",
+   "name": "As de Bastos",
+   "number": 1,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b01.webp",
+   "meaning": "La chispa de algo que te apasiona. Una idea, un deseo o un proyecto que recién nace y pide que lo avives.",
+   "reversed": "Energía que no encuentra cauce: impaciencia, enojo o ganas que se queman antes de tiempo. Dale una salida sana.",
+   "keywords": [
+    "chispa",
+    "inicio",
+    "pasión",
+    "impulso"
+   ],
+   "word": "chispa",
+   "wordReversed": "contención"
+  },
+  {
+   "id": "rw-b02",
+   "name": "2 de Bastos",
+   "number": 2,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b02.webp",
+   "meaning": "Un momento de planear hacia adentro: ¿qué hago con esta chispa? Puede aparecer un objetivo compartido.",
+   "reversed": "Miedo a animarte o a compartir lo que querés. La energía queda retenida esperando permiso.",
+   "keywords": [
+    "planificar",
+    "visión",
+    "decisión",
+    "compartir"
+   ],
+   "word": "proyecto",
+   "wordReversed": "temor"
+  },
+  {
+   "id": "rw-b03",
+   "name": "3 de Bastos",
+   "number": 3,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b03.webp",
+   "meaning": "Estallido creativo. Te encontrás con tu obra, te gusta, y sentís ganas de expandirla.",
+   "reversed": "Demasiada energía sin forma o enojo guardado. Ordená el impulso antes de soltarlo.",
+   "keywords": [
+    "creatividad",
+    "expansión",
+    "obra",
+    "deseo"
+   ],
+   "word": "expansión",
+   "wordReversed": "tensión"
+  },
+  {
+   "id": "rw-b04",
+   "name": "4 de Bastos",
+   "number": 4,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b04.webp",
+   "meaning": "Celebrar lo logrado. Disfrute y estabilidad en aquello que te apasiona.",
+   "reversed": "La comodidad puede volverse monotonía. Pedile un poco de novedad a lo que ya funciona.",
+   "keywords": [
+    "celebración",
+    "disfrute",
+    "hogar",
+    "estabilidad"
+   ],
+   "word": "celebración",
+   "wordReversed": "rutina"
+  },
+  {
+   "id": "rw-b05",
+   "name": "5 de Bastos",
+   "number": 5,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b05.webp",
+   "meaning": "Ganas de probar, de medirte y de arriesgarte. Diferentes ideas chocan y eso mueve las cosas.",
+   "reversed": "Discusiones intensas pero superficiales. Quizás hay demasiada energía de combate.",
+   "keywords": [
+    "desafío",
+    "competencia",
+    "roce",
+    "movimiento"
+   ],
+   "word": "desafío",
+   "wordReversed": "conflicto"
+  },
+  {
+   "id": "rw-b06",
+   "name": "6 de Bastos",
+   "number": 6,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b06.webp",
+   "meaning": "Entregarte a lo que te dio placer al animarte. El reconocimiento llega por haberlo intentado.",
+   "reversed": "Cuidado con el ego o con quedarte solo en lo que te aplaude. Volvé a conectar con otros.",
+   "keywords": [
+    "logro",
+    "reconocimiento",
+    "entrega",
+    "orgullo"
+   ],
+   "word": "logro",
+   "wordReversed": "ego"
+  },
+  {
+   "id": "rw-b07",
+   "name": "7 de Bastos",
+   "number": 7,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b07.webp",
+   "meaning": "Actuar desde lo que te apasiona y le da sentido a lo que hacés. Defender tu lugar con convicción.",
+   "reversed": "Hacer sin un para qué, o ponerte a la defensiva por todo. Frená y recordá qué querés proteger.",
+   "keywords": [
+    "convicción",
+    "defensa",
+    "sentido",
+    "postura"
+   ],
+   "word": "convicción",
+   "wordReversed": "dispersión"
+  },
+  {
+   "id": "rw-b08",
+   "name": "8 de Bastos",
+   "number": 8,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b08.webp",
+   "meaning": "Lo que antes costaba ahora fluye. Hay un método y las cosas se mueven rápido.",
+   "reversed": "Muchos frentes abiertos a la vez. Elegí a qué le decís que sí.",
+   "keywords": [
+    "fluidez",
+    "rapidez",
+    "método",
+    "avance"
+   ],
+   "word": "fluidez",
+   "wordReversed": "saturación"
+  },
+  {
+   "id": "rw-b09",
+   "name": "9 de Bastos",
+   "number": 9,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b09.webp",
+   "meaning": "Cansancio de tanto camino recorrido. Es hora de descansar un poco y seguir con lo que queda.",
+   "reversed": "Aferrarte a algo que ya terminó o negarte a cerrarlo. Soltar también es avanzar.",
+   "keywords": [
+    "resistencia",
+    "cansancio",
+    "persistencia",
+    "cierre"
+   ],
+   "word": "resistencia",
+   "wordReversed": "aferramiento"
+  },
+  {
+   "id": "rw-b10",
+   "name": "10 de Bastos",
+   "number": 10,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/b10.webp",
+   "meaning": "El deseo se hace compartido. Cerrás una etapa cargando lo que construiste, y empezás a elegir qué soltar.",
+   "reversed": "Llegás con la mochila muy cargada. Revisá qué compromisos ya no te corresponden.",
+   "keywords": [
+    "compromiso",
+    "carga",
+    "responsabilidad",
+    "cierre"
+   ],
+   "word": "compromiso",
+   "wordReversed": "carga"
+  },
+  {
+   "id": "rw-bpj",
+   "name": "Sota de Bastos",
+   "number": 11,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/bpj.webp",
+   "meaning": "Entusiasmo de principiante. Poca experiencia, mucha valentía y ganas de explorar tu creatividad.",
+   "reversed": "Impulsividad y poca paciencia. Las ganas se van por donde pueden: poné algunos límites.",
+   "keywords": [
+    "entusiasmo",
+    "exploración",
+    "audacia",
+    "novedad"
+   ],
+   "word": "entusiasmo",
+   "wordReversed": "impaciencia"
+  },
+  {
+   "id": "rw-bcb",
+   "name": "Caballero de Bastos",
+   "number": 12,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/bcb.webp",
+   "meaning": "Energía en movimiento que ya aprendió a usar su instinto. Avanza con perseverancia y objetivos claros.",
+   "reversed": "Pasás de tener mucha energía a quedarte sin nada. Cuidá tu ritmo y reconocé tu vulnerabilidad.",
+   "keywords": [
+    "empuje",
+    "aventura",
+    "movimiento",
+    "objetivo"
+   ],
+   "word": "empuje",
+   "wordReversed": "desequilibrio"
+  },
+  {
+   "id": "rw-brn",
+   "name": "Reina de Bastos",
+   "number": 13,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/brn.webp",
+   "meaning": "Creatividad madura, generosa y segura. Conectás con tu deseo sin reprimirte ni avasallar.",
+   "reversed": "Bloqueo creativo o necesidad de imponerte. Volvé a lo que te da vida sin exigencias.",
+   "keywords": [
+    "magnetismo",
+    "creatividad",
+    "calidez",
+    "seguridad"
+   ],
+   "word": "magnetismo",
+   "wordReversed": "bloqueo"
+  },
+  {
+   "id": "rw-bry",
+   "name": "Rey de Bastos",
+   "number": 14,
+   "arcana": "menor",
+   "suit": "Bastos",
+   "image": "img/decks/marsella/bry.webp",
+   "meaning": "Carisma y liderazgo con alegría. Dominás tu energía y la ponés al servicio de otros.",
+   "reversed": "Exceso de control o falta de dominio sobre tu propia potencia. Buscá medida.",
+   "keywords": [
+    "carisma",
+    "liderazgo",
+    "visión",
+    "compasión"
+   ],
+   "word": "carisma",
+   "wordReversed": "exceso"
+  },
+  {
+   "id": "rw-c01",
+   "name": "As de Copas",
+   "number": 1,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c01.webp",
+   "meaning": "Un nuevo comienzo en el mundo emocional: amor propio, renovación, sanación. Es la esperanza de que algo se llene.",
+   "reversed": "Un proceso emocional que no logra avanzar. Quizás cuesta perdonarte o abrirte con vulnerabilidad.",
+   "keywords": [
+    "apertura",
+    "renovación",
+    "amor",
+    "sanación"
+   ],
+   "word": "apertura",
+   "wordReversed": "bloqueo"
+  },
+  {
+   "id": "rw-c02",
+   "name": "2 de Copas",
+   "number": 2,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c02.webp",
+   "meaning": "Unión entre dos personas, o con vos mismo. Un vínculo que se encuentra con respeto y reciprocidad.",
+   "reversed": "Desencuentro o ilusión engañosa. Revisá si lo que sentís es mutuo y real.",
+   "keywords": [
+    "unión",
+    "reciprocidad",
+    "vínculo",
+    "encuentro"
+   ],
+   "word": "unión",
+   "wordReversed": "desencuentro"
+  },
+  {
+   "id": "rw-c03",
+   "name": "3 de Copas",
+   "number": 3,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c03.webp",
+   "meaning": "Celebrar los vínculos que te quieren y a los que querés. Festejo y alegría compartida.",
+   "reversed": "Depender de otros para animarte a algo, o dar demasiada importancia a la mirada ajena.",
+   "keywords": [
+    "festejo",
+    "amistad",
+    "comunidad",
+    "alegría"
+   ],
+   "word": "amistad",
+   "wordReversed": "dependencia"
+  },
+  {
+   "id": "rw-c04",
+   "name": "4 de Copas",
+   "number": 4,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c04.webp",
+   "meaning": "Mirar a tu alrededor con amabilidad: hay cariño y apoyo que quizás no estabas viendo.",
+   "reversed": "Aburrimiento emocional o cerrarte a lo que se ofrece. Preguntate qué te cuesta aceptar.",
+   "keywords": [
+    "contemplación",
+    "atención",
+    "apoyo",
+    "gratitud"
+   ],
+   "word": "gratitud",
+   "wordReversed": "apatía"
+  },
+  {
+   "id": "rw-c05",
+   "name": "5 de Copas",
+   "number": 5,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c05.webp",
+   "meaning": "Empezás a abrirte, pero todavía no hay equilibrio. Las expectativas pesan y hay algo de tristeza por lo que no fue.",
+   "reversed": "Ansiedad porque las cosas no salen como las planeaste. Soltá la vara y mirá lo que sí queda.",
+   "keywords": [
+    "expectativa",
+    "pérdida",
+    "apertura",
+    "aprendizaje"
+   ],
+   "word": "expectativa",
+   "wordReversed": "ansiedad"
+  },
+  {
+   "id": "rw-c06",
+   "name": "6 de Copas",
+   "number": 6,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c06.webp",
+   "meaning": "Los recuerdos y los vínculos de siempre vuelven a visitarte. Hogar, infancia, ternura compartida.",
+   "reversed": "La nostalgia te ancla al pasado. Honrá lo que fue sin quedarte a vivir ahí.",
+   "keywords": [
+    "nostalgia",
+    "recuerdo",
+    "hogar",
+    "ternura"
+   ],
+   "word": "nostalgia",
+   "wordReversed": "apego"
+  },
+  {
+   "id": "rw-c07",
+   "name": "7 de Copas",
+   "number": 7,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c07.webp",
+   "meaning": "Imaginación y muchas opciones. También una acción nacida del amor, más allá de lo racional.",
+   "reversed": "Mucho humo o ilusión: venderte algo que no es, o escaparte de la realidad. Elegí con los pies en la tierra.",
+   "keywords": [
+    "imaginación",
+    "opciones",
+    "sueños",
+    "fantasía"
+   ],
+   "word": "imaginación",
+   "wordReversed": "ilusión"
+  },
+  {
+   "id": "rw-c08",
+   "name": "8 de Copas",
+   "number": 8,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c08.webp",
+   "meaning": "Amor más allá de la forma. A veces implica alejarte de algo para quedarte con lo esencial.",
+   "reversed": "Desilusión o dificultad para abrirte. Revisá tus límites y qué querés de verdad.",
+   "keywords": [
+    "desapego",
+    "búsqueda",
+    "valores",
+    "partida"
+   ],
+   "word": "desapego",
+   "wordReversed": "desilusión"
+  },
+  {
+   "id": "rw-c09",
+   "name": "9 de Copas",
+   "number": 9,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c09.webp",
+   "meaning": "Disfrute y gozo: hay una forma que te hace sentir bien aunque tenga que transformarse.",
+   "reversed": "Resistencia a despedir algo o falta de agradecimiento por lo que ya tenés.",
+   "keywords": [
+    "gozo",
+    "satisfacción",
+    "plenitud",
+    "gratitud"
+   ],
+   "word": "disfrute",
+   "wordReversed": "resistencia"
+  },
+  {
+   "id": "rw-c10",
+   "name": "10 de Copas",
+   "number": 10,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/c10.webp",
+   "meaning": "Amor evolucionado y en armonía con tu entorno. Un ciclo emocional que se vuelve algo tangible, casi siempre en compañía.",
+   "reversed": "Apego o miedo a cambiar lo que ya está bien. Cuidá la armonía sin forzarla.",
+   "keywords": [
+    "armonía",
+    "familia",
+    "plenitud",
+    "comunidad"
+   ],
+   "word": "armonía",
+   "wordReversed": "apego"
+  },
+  {
+   "id": "rw-cpj",
+   "name": "Sota de Copas",
+   "number": 11,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/cpj.webp",
+   "meaning": "Asombro y sensibilidad. Una mirada ingenua y creativa que se anima a lo distinto.",
+   "reversed": "Ingenuidad o inmadurez emocional. Prestale atención a cómo te tratás antes de vincularte.",
+   "keywords": [
+    "asombro",
+    "sensibilidad",
+    "inspiración",
+    "ternura"
+   ],
+   "word": "asombro",
+   "wordReversed": "ingenuidad"
+  },
+  {
+   "id": "rw-ccb",
+   "name": "Caballero de Copas",
+   "number": 12,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/ccb.webp",
+   "meaning": "Un corazón que guía con generosidad. Sabe equilibrar lo emocional y lo concreto.",
+   "reversed": "Escaparte de lo emocional hacia lo práctico. Quedate un rato con lo que sentís.",
+   "keywords": [
+    "generosidad",
+    "propuesta",
+    "romance",
+    "sensibilidad"
+   ],
+   "word": "generosidad",
+   "wordReversed": "evasión"
+  },
+  {
+   "id": "rw-crn",
+   "name": "Reina de Copas",
+   "number": 13,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/crn.webp",
+   "meaning": "Intuición, ternura y profundidad. Una energía cálida que sabe cuidar sin perderse.",
+   "reversed": "Codependencia o cerrarte en vos. Recordá quién sos incluso cuando estás con otros.",
+   "keywords": [
+    "ternura",
+    "intuición",
+    "empatía",
+    "calidez"
+   ],
+   "word": "ternura",
+   "wordReversed": "codependencia"
+  },
+  {
+   "id": "rw-cry",
+   "name": "Rey de Copas",
+   "number": 14,
+   "arcana": "menor",
+   "suit": "Copas",
+   "image": "img/decks/marsella/cry.webp",
+   "meaning": "Madurez emocional: sentir sin desbordarte y acompañar con serenidad.",
+   "reversed": "Frialdad, ausencia o emociones que se esconden. Permitite sentir un poco más.",
+   "keywords": [
+    "profundidad",
+    "serenidad",
+    "contención",
+    "empatía"
+   ],
+   "word": "profundidad",
+   "wordReversed": "frialdad"
+  },
+  {
+   "id": "rw-e01",
+   "name": "As de Espadas",
+   "number": 1,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e01.webp",
+   "meaning": "Un momento de claridad: te cae la ficha. Una idea nueva, una verdad que se muestra con nitidez.",
+   "reversed": "Palabras duras o confusas. Usá la mente para aclarar, no para herir.",
+   "keywords": [
+    "claridad",
+    "verdad",
+    "idea",
+    "corte"
+   ],
+   "word": "claridad",
+   "wordReversed": "dureza"
+  },
+  {
+   "id": "rw-e02",
+   "name": "2 de Espadas",
+   "number": 2,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e02.webp",
+   "meaning": "Un alto el fuego mental. Una decisión que todavía necesita su tiempo antes de salir a la luz.",
+   "reversed": "Bloqueo por no querer mirar algo. Evitar decidir también es una decisión.",
+   "keywords": [
+    "tregua",
+    "pausa",
+    "equilibrio",
+    "indecisión"
+   ],
+   "word": "tregua",
+   "wordReversed": "bloqueo"
+  },
+  {
+   "id": "rw-e03",
+   "name": "3 de Espadas",
+   "number": 3,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e03.webp",
+   "meaning": "Sale lo que estaba guardado: palabras, ideas, un dolor que necesita expresarse.",
+   "reversed": "Palabras que lastiman o demasiados pensamientos juntos. Contá lo que te pasa con cuidado.",
+   "keywords": [
+    "expresión",
+    "dolor",
+    "verdad",
+    "liberación"
+   ],
+   "word": "expresión",
+   "wordReversed": "dolor"
+  },
+  {
+   "id": "rw-e04",
+   "name": "4 de Espadas",
+   "number": 4,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e04.webp",
+   "meaning": "Mente en calma, momento de descanso y orden. No hace falta usar la espada ahora.",
+   "reversed": "Rigidez o dejar solo a la mente al mando. Escuchá también tu intuición.",
+   "keywords": [
+    "calma",
+    "descanso",
+    "orden",
+    "recogimiento"
+   ],
+   "word": "calma",
+   "wordReversed": "rigidez"
+  },
+  {
+   "id": "rw-e05",
+   "name": "5 de Espadas",
+   "number": 5,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e05.webp",
+   "meaning": "Una idea nueva se abre paso y genera dudas sobre creencias anteriores.",
+   "reversed": "Palabras crueles, con otros o con vos. Preguntate si querés ganar o entenderte.",
+   "keywords": [
+    "replanteo",
+    "conflicto",
+    "ideas",
+    "distancia"
+   ],
+   "word": "replanteo",
+   "wordReversed": "reproche"
+  },
+  {
+   "id": "rw-e06",
+   "name": "6 de Espadas",
+   "number": 6,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e06.webp",
+   "meaning": "Un momento de paz mental: tomar distancia del conflicto y dejar fluir lo que se aclaró.",
+   "reversed": "Cuesta soltar un pensamiento o encontrar paz. La mente da vueltas sobre lo mismo.",
+   "keywords": [
+    "serenidad",
+    "transición",
+    "distancia",
+    "alivio"
+   ],
+   "word": "serenidad",
+   "wordReversed": "rumiación"
+  },
+  {
+   "id": "rw-e07",
+   "name": "7 de Espadas",
+   "number": 7,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e07.webp",
+   "meaning": "Estrategia y astucia con buena intención: pensar bien antes de actuar.",
+   "reversed": "Engaños o pensamientos que se castigan. Revisá tu relato antes de actuar.",
+   "keywords": [
+    "estrategia",
+    "astucia",
+    "discreción",
+    "plan"
+   ],
+   "word": "estrategia",
+   "wordReversed": "autoengaño"
+  },
+  {
+   "id": "rw-e08",
+   "name": "8 de Espadas",
+   "number": 8,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e08.webp",
+   "meaning": "Contacto con la voz interna. A veces el silencio es la respuesta más precisa.",
+   "reversed": "Miedo, victimismo o ideas muy rígidas. Probablemente tenés más salidas de las que ves.",
+   "keywords": [
+    "silencio",
+    "percepción",
+    "calma",
+    "límite"
+   ],
+   "word": "quietud",
+   "wordReversed": "miedo"
+  },
+  {
+   "id": "rw-e09",
+   "name": "9 de Espadas",
+   "number": 9,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e09.webp",
+   "meaning": "Un quiebre mental: tus ideas ya no son las de antes y necesitan transformarse.",
+   "reversed": "Preocupación y ansiedad que crecen de noche. Contale a alguien de confianza lo que pensás.",
+   "keywords": [
+    "revisión",
+    "inquietud",
+    "cansancio",
+    "transformación"
+   ],
+   "word": "revisión",
+   "wordReversed": "preocupación"
+  },
+  {
+   "id": "rw-e10",
+   "name": "10 de Espadas",
+   "number": 10,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/e10.webp",
+   "meaning": "Encuentro de palabras compartidas: cerrás una etapa mental con claridad.",
+   "reversed": "Sentirte derrotado por tus propias ideas. Dejá espacio para lo que sentís.",
+   "keywords": [
+    "cierre",
+    "diálogo",
+    "final",
+    "alivio"
+   ],
+   "word": "diálogo",
+   "wordReversed": "agotamiento"
+  },
+  {
+   "id": "rw-epj",
+   "name": "Sota de Espadas",
+   "number": 11,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/epj.webp",
+   "meaning": "Curiosidad y mente ágil, con ganas de aprender. Todavía no sabés cuándo usar tu filo.",
+   "reversed": "Indecisión, críticas y demasiadas vueltas. No todo hay que analizarlo.",
+   "keywords": [
+    "curiosidad",
+    "aprendizaje",
+    "observación",
+    "alerta"
+   ],
+   "word": "curiosidad",
+   "wordReversed": "indecisión"
+  },
+  {
+   "id": "rw-ecb",
+   "name": "Caballero de Espadas",
+   "number": 12,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/ecb.webp",
+   "meaning": "Acción rápida al servicio de una idea. Motivación y foco para ir hacia adelante.",
+   "reversed": "Apatía o dureza. Quizás te falta conectar con lo que realmente te mueve.",
+   "keywords": [
+    "decisión",
+    "velocidad",
+    "foco",
+    "exigencia"
+   ],
+   "word": "decisión",
+   "wordReversed": "apatía"
+  },
+  {
+   "id": "rw-ern",
+   "name": "Reina de Espadas",
+   "number": 13,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/ern.webp",
+   "meaning": "Lucidez, claridad y firmeza. Ideas fuertes que se llevan a la acción.",
+   "reversed": "Frialdad o desconfianza. Probá sumar un poco de calidez a tu criterio.",
+   "keywords": [
+    "lucidez",
+    "independencia",
+    "criterio",
+    "honestidad"
+   ],
+   "word": "lucidez",
+   "wordReversed": "frialdad"
+  },
+  {
+   "id": "rw-ery",
+   "name": "Rey de Espadas",
+   "number": 14,
+   "arcana": "menor",
+   "suit": "Espadas",
+   "image": "img/decks/marsella/ery.webp",
+   "meaning": "Criterio justo y práctico: convertir ideas en acciones con orden.",
+   "reversed": "Dificultad para poner en palabras lo que sentís. Animate a decirlo.",
+   "keywords": [
+    "criterio",
+    "justicia",
+    "orden",
+    "autoridad"
+   ],
+   "word": "criterio",
+   "wordReversed": "distancia"
+  },
+  {
+   "id": "rw-o01",
+   "name": "As de Oros",
+   "number": 1,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o01.webp",
+   "meaning": "Una semilla: un comienzo concreto en lo material, el cuerpo, el hogar o el trabajo. Pide paciencia y cuidado.",
+   "reversed": "Una semilla que todavía no germinó. No es un no: es un todavía no.",
+   "keywords": [
+    "semilla",
+    "inicio",
+    "oportunidad",
+    "base"
+   ],
+   "word": "semilla",
+   "wordReversed": "paciencia"
+  },
+  {
+   "id": "rw-o02",
+   "name": "2 de Oros",
+   "number": 2,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o02.webp",
+   "meaning": "Equilibrar dos cosas a la vez: lo personal y lo laboral, lo que empieza y lo que ya tenés.",
+   "reversed": "Desajuste entre lo que querés hacer y lo que podés. Poné límites.",
+   "keywords": [
+    "equilibrio",
+    "adaptación",
+    "flexibilidad",
+    "malabar"
+   ],
+   "word": "equilibrio",
+   "wordReversed": "desajuste"
+  },
+  {
+   "id": "rw-o03",
+   "name": "3 de Oros",
+   "number": 3,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o03.webp",
+   "meaning": "Trabajo en equipo: cada uno aporta lo suyo y juntos construyen algo nuevo.",
+   "reversed": "Cuesta colaborar o te estás exigiendo de más. Pedí ayuda y delegá.",
+   "keywords": [
+    "colaboración",
+    "oficio",
+    "equipo",
+    "aporte"
+   ],
+   "word": "colaboración",
+   "wordReversed": "desconexión"
+  },
+  {
+   "id": "rw-o04",
+   "name": "4 de Oros",
+   "number": 4,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o04.webp",
+   "meaning": "Estabilidad y seguridad. Cuidar lo que ya construiste con calma.",
+   "reversed": "Apego o miedo a perder. Quedarte demasiado quieto también desgasta.",
+   "keywords": [
+    "estabilidad",
+    "seguridad",
+    "orden",
+    "conservar"
+   ],
+   "word": "estabilidad",
+   "wordReversed": "apego"
+  },
+  {
+   "id": "rw-o05",
+   "name": "5 de Oros",
+   "number": 5,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o05.webp",
+   "meaning": "Una apertura a una nueva realidad, sabiendo que aún falta acomodar recursos.",
+   "reversed": "Sensación de carencia o de dar más de lo que recibís. Pedí apoyo.",
+   "keywords": [
+    "apertura",
+    "esfuerzo",
+    "apoyo",
+    "transición"
+   ],
+   "word": "apertura",
+   "wordReversed": "carencia"
+  },
+  {
+   "id": "rw-o06",
+   "name": "6 de Oros",
+   "number": 6,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o06.webp",
+   "meaning": "Generosidad y disfrute de lo cosechado. Dar y recibir en armonía.",
+   "reversed": "Exceso, desequilibrio al dar o conservar algo que ya debería cambiar.",
+   "keywords": [
+    "generosidad",
+    "reciprocidad",
+    "cosecha",
+    "armonía"
+   ],
+   "word": "generosidad",
+   "wordReversed": "exceso"
+  },
+  {
+   "id": "rw-o07",
+   "name": "7 de Oros",
+   "number": 7,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o07.webp",
+   "meaning": "Un momento de pausa para observar lo sembrado y organizarte. Constancia y madurez.",
+   "reversed": "Desánimo o impaciencia con el proceso. Los frutos necesitan su tiempo.",
+   "keywords": [
+    "constancia",
+    "paciencia",
+    "proceso",
+    "evaluación"
+   ],
+   "word": "constancia",
+   "wordReversed": "desánimo"
+  },
+  {
+   "id": "rw-o08",
+   "name": "8 de Oros",
+   "number": 8,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o08.webp",
+   "meaning": "Trabajo dedicado: foco en algo hasta sentirte cómodo. Aprendés a fuerza de práctica.",
+   "reversed": "Exigirte tanto que no disfrutás lo que hacés. Nada es nunca suficiente.",
+   "keywords": [
+    "dedicación",
+    "oficio",
+    "práctica",
+    "foco"
+   ],
+   "word": "dedicación",
+   "wordReversed": "exigencia"
+  },
+  {
+   "id": "rw-o09",
+   "name": "9 de Oros",
+   "number": 9,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o09.webp",
+   "meaning": "Independencia y bienestar logrados con tu propio esfuerzo. Disfrutar de lo creado.",
+   "reversed": "Rutina o monotonía en lo que te costó lograr. Abrí una ventana a la novedad.",
+   "keywords": [
+    "autonomía",
+    "bienestar",
+    "logro",
+    "elegancia"
+   ],
+   "word": "autonomía",
+   "wordReversed": "rutina"
+  },
+  {
+   "id": "rw-o10",
+   "name": "10 de Oros",
+   "number": 10,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/o10.webp",
+   "meaning": "Plenitud material y familiar: un ciclo que da paso a uno nuevo.",
+   "reversed": "Resistirte a cerrar o no valorar el recorrido que te trajo hasta acá.",
+   "keywords": [
+    "plenitud",
+    "herencia",
+    "familia",
+    "cierre"
+   ],
+   "word": "plenitud",
+   "wordReversed": "resistencia"
+  },
+  {
+   "id": "rw-opj",
+   "name": "Sota de Oros",
+   "number": 11,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/opj.webp",
+   "meaning": "Deseo de materializar algo, todavía sin saber cómo. Ganas de aprender.",
+   "reversed": "Obsesión con el resultado o impaciencia. Empezá por lo pequeño.",
+   "keywords": [
+    "aprendizaje",
+    "semilla",
+    "estudio",
+    "proyecto"
+   ],
+   "word": "aprendizaje",
+   "wordReversed": "obsesión"
+  },
+  {
+   "id": "rw-ocb",
+   "name": "Caballero de Oros",
+   "number": 12,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/ocb.webp",
+   "meaning": "Perseverancia a paso lento y seguro. Constancia hasta alcanzar lo que te proponés.",
+   "reversed": "Rigidez o inercia: aferrarte a la forma vieja o dejar de ser constante.",
+   "keywords": [
+    "perseverancia",
+    "rutina",
+    "responsabilidad",
+    "método"
+   ],
+   "word": "perseverancia",
+   "wordReversed": "inercia"
+  },
+  {
+   "id": "rw-orn",
+   "name": "Reina de Oros",
+   "number": 13,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/orn.webp",
+   "meaning": "Contacto con la naturaleza y el cuerpo. Sabe cuidar y cuidarse; vive con comodidad sin ostentar.",
+   "reversed": "Apego excesivo a lo material o descuido propio. Volvé a lo esencial.",
+   "keywords": [
+    "bienestar",
+    "cuidado",
+    "naturaleza",
+    "hogar"
+   ],
+   "word": "bienestar",
+   "wordReversed": "apego"
+  },
+  {
+   "id": "rw-ory",
+   "name": "Rey de Oros",
+   "number": 14,
+   "arcana": "menor",
+   "suit": "Oros",
+   "image": "img/decks/marsella/ory.webp",
+   "meaning": "Seguridad tranquila: asentado en lo que construyó, sin necesidad de aparentar.",
+   "reversed": "Miedo a arriesgar o a perder lo conseguido. Aflojá el puño.",
+   "keywords": [
+    "seguridad",
+    "solidez",
+    "calma",
+    "generosidad"
+   ],
+   "word": "seguridad",
+   "wordReversed": "aferramiento"
+  }
+ ]
+}

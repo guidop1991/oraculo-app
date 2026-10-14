@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "_ayuda": "Lista de mazos del selector. 'default' es el mazo por defecto si la persona no eligió otro. Cada mazo vive en data/decks/<id>.json.",
+  "default": "rider-waite",
+  "decks": [
+    {
+      "id": "rider-waite",
+      "name": "Rider-Waite-Smith",
+      "short": "Rider-Waite",
+      "description": "El clásico ilustrado de 1909. Escenas en cada carta.",
+      "credit": "Pamela Colman Smith (1909). Escaneos restaurados por Steve P., steve-p.org.",
+      "license": "Dominio público",
+      "aspect": [
+        1086,
+        1810
+      ],
+      "premium": false
+    },
+    {
+      "id": "marsella",
+      "name": "Tarot de Marsella",
+      "short": "Marsella",
+      "description": "El tarot tradicional francés. Imágenes simbólicas y numeración histórica.",
+      "credit": "Tarot de Marsella (siglos XVII-XVIII). Wikimedia Commons.",
+      "license": "Dominio público",
+      "aspect": [
+        813,
+        1536
+      ],
+      "premium": false
+    },
+    {
+      "id": "vieville",
+      "name": "Tarot de Viéville (1650)",
+      "short": "Viéville",
+      "description": "Uno de los tarots franceses más antiguos, anterior al Marsella.",
+      "credit": "Jacques Viéville, París, c. 1650. BnF Gallica, vía Wikimedia Commons.",
+      "license": "Dominio público",
+      "aspect": [
+        1735,
+        3051
+      ],
+      "premium": false
+    }
+  ]
+}
