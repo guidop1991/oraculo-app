@@ -5,7 +5,7 @@
     {
       "id": "vida",
       "name": "Vida",
-      "description": "Pasado, presente y futuro de tu momento.",
+      "description": "Cómo se encadena tu momento.",
       "positions": [
         {
           "key": "pasado",
@@ -34,15 +34,21 @@
       ],
       "join": "Del pasado «{w1}», pasando por el presente «{w2}», hacia «{w3}».",
       "closing": {
-        "fluid": ["Las tres cartas van en el mismo sentido: tu historia viene encadenada y fluye. Confiá en el hilo que ya venís tejiendo."],
-        "mixed": ["Hay tramos que fluyen y tramos que piden una pausa. Fijate en cuál de las tres te cuesta más: ahí está la puerta."],
-        "tense": ["Las tres piden mirar hacia adentro antes de moverte. No es un mal presagio: es una invitación a ir más despacio y revisar."]
+        "fluid": [
+          "Las tres cartas van en el mismo sentido: tu historia viene encadenada y fluye. Confiá en el hilo que ya venís tejiendo."
+        ],
+        "mixed": [
+          "Hay tramos que fluyen y tramos que piden una pausa. Fijate en cuál de las tres te cuesta más: ahí está la puerta."
+        ],
+        "tense": [
+          "Las tres piden mirar hacia adentro antes de moverte. No es un mal presagio: es una invitación a ir más despacio y revisar."
+        ]
       }
     },
     {
       "id": "amor",
       "name": "Amor",
-      "description": "Tu energía, la del vínculo y la de la otra parte.",
+      "description": "El vínculo visto desde sus tres puntas.",
       "positions": [
         {
           "key": "yo",
@@ -71,15 +77,21 @@
       ],
       "join": "Vos desde «{w1}», el vínculo desde «{w2}» y la otra parte desde «{w3}».",
       "closing": {
-        "fluid": ["Las tres energías se acompañan entre sí. Hay base para conversar con honestidad y disfrutar lo que se está construyendo."],
-        "mixed": ["Hay puntos de encuentro y puntos de roce. Hablar con claridad sobre lo que cada uno necesita puede destrabar lo que está quieto."],
-        "tense": ["Las tres energías piden cuidado y escucha. Antes de sacar conclusiones, preguntate qué necesitás vos y animate a decirlo con calma."]
+        "fluid": [
+          "Las tres energías se acompañan entre sí. Hay base para conversar con honestidad y disfrutar lo que se está construyendo."
+        ],
+        "mixed": [
+          "Hay puntos de encuentro y puntos de roce. Hablar con claridad sobre lo que cada uno necesita puede destrabar lo que está quieto."
+        ],
+        "tense": [
+          "Las tres energías piden cuidado y escucha. Antes de sacar conclusiones, preguntate qué necesitás vos y animate a decirlo con calma."
+        ]
       }
     },
     {
       "id": "trabajo",
       "name": "Trabajo",
-      "description": "Tu energía, la de la relación laboral y la de la empresa.",
+      "description": "El clima de tu vida laboral.",
       "positions": [
         {
           "key": "yo",
@@ -108,15 +120,21 @@
       ],
       "join": "Vos desde «{w1}», la relación desde «{w2}» y la empresa desde «{w3}».",
       "closing": {
-        "fluid": ["Las tres energías van en la misma dirección. Es buen momento para proponer, ordenar ideas y mostrar lo que sabés hacer."],
-        "mixed": ["Hay cosas que acompañan y otras que frenan. Elegí una sola para trabajar esta semana y empezá por ahí."],
-        "tense": ["Las tres piden revisar. Antes de decidir nada, ordená qué querés vos de este lugar y qué estás dispuesto a sostener."]
+        "fluid": [
+          "Las tres energías van en la misma dirección. Es buen momento para proponer, ordenar ideas y mostrar lo que sabés hacer."
+        ],
+        "mixed": [
+          "Hay cosas que acompañan y otras que frenan. Elegí una sola para trabajar esta semana y empezá por ahí."
+        ],
+        "tense": [
+          "Las tres piden revisar. Antes de decidir nada, ordená qué querés vos de este lugar y qué estás dispuesto a sostener."
+        ]
       }
     },
     {
       "id": "autoconocimiento",
       "name": "Autoconocimiento",
-      "description": "Cómo te ves, cómo te ven y qué trabajar.",
+      "description": "Tu imagen, por dentro y por fuera.",
       "positions": [
         {
           "key": "me-veo",
@@ -145,15 +163,21 @@
       ],
       "join": "Te ves desde «{w1}», te ven desde «{w2}» y el foco está en «{w3}».",
       "closing": {
-        "fluid": ["Lo que ves de vos y lo que ven los demás se parecen bastante. Eso es un buen punto de apoyo para el próximo paso."],
-        "mixed": ["Hay una distancia entre cómo te ves y cómo te ven. Mirar esa distancia con curiosidad, sin juzgarte, ya es un avance."],
-        "tense": ["La imagen propia y la ajena difieren bastante. Tratate con paciencia: conocerse es un proceso, no un examen."]
+        "fluid": [
+          "Lo que ves de vos y lo que ven los demás se parecen bastante. Eso es un buen punto de apoyo para el próximo paso."
+        ],
+        "mixed": [
+          "Hay una distancia entre cómo te ves y cómo te ven. Mirar esa distancia con curiosidad, sin juzgarte, ya es un avance."
+        ],
+        "tense": [
+          "La imagen propia y la ajena difieren bastante. Tratate con paciencia: conocerse es un proceso, no un examen."
+        ]
       }
     },
     {
       "id": "armonizacion",
       "name": "Mente, cuerpo y espíritu",
-      "description": "Armonizá tus tres planos: mente, cuerpo y espíritu.",
+      "description": "El equilibrio entre tus tres planos.",
       "positions": [
         {
           "key": "mente",
@@ -182,9 +206,15 @@
       ],
       "join": "Tu mente va por «{w1}», tu cuerpo por «{w2}» y tu espíritu por «{w3}».",
       "closing": {
-        "fluid": ["Mente, cuerpo y espíritu se alinean. Hacé algo simple que los junte: una caminata, respirar hondo, un rato en silencio."],
-        "mixed": ["Alguno de los tres planos va a otro ritmo. Dale hoy un gesto de cuidado a ese: un descanso, una pausa, una charla con vos."],
-        "tense": ["Los tres planos piden cuidado y pausa. Bajá un cambio, descansá y hacé una sola cosa por vez."]
+        "fluid": [
+          "Mente, cuerpo y espíritu se alinean. Hacé algo simple que los junte: una caminata, respirar hondo, un rato en silencio."
+        ],
+        "mixed": [
+          "Alguno de los tres planos va a otro ritmo. Dale hoy un gesto de cuidado a ese: un descanso, una pausa, una charla con vos."
+        ],
+        "tense": [
+          "Los tres planos piden cuidado y pausa. Bajá un cambio, descansá y hacé una sola cosa por vez."
+        ]
       }
     }
   ]

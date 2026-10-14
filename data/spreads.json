@@ -23,6 +23,37 @@
       "enabled": true
     },
     {
+      "id": "arcano-del-anio",
+      "kind": "year",
+      "name": "Arcano del año",
+      "description": "La energía que te acompaña durante todo el año.",
+      "enabled": true
+    },
+    {
+      "id": "usuario",
+      "kind": "user",
+      "name": "Usuario",
+      "description": "Tus datos y tu carta natal.",
+      "enabled": true
+    },
+    {
+      "id": "si-o-no",
+      "name": "Sí o No",
+      "description": "Una pregunta, una respuesta directa.",
+      "enabled": true,
+      "daily": false,
+      "group": "tiradas",
+      "answer": true,
+      "lead": "Pensá una pregunta que se conteste con sí o no y tocá el mazo.",
+      "positions": [
+        {
+          "key": "respuesta",
+          "label": "Respuesta"
+        }
+      ],
+      "cut": false
+    },
+    {
       "id": "tres-cartas",
       "name": "Tirada de 3 cartas",
       "description": "Elegí un tema y sacá tres cartas del abanico.",
@@ -48,21 +79,34 @@
       ]
     },
     {
-      "id": "si-o-no",
-      "name": "Sí o No",
-      "description": "Una pregunta, una respuesta directa.",
-      "enabled": true,
+      "id": "tirada-de-5-cartas",
+      "name": "Tirada de 5 cartas",
+      "description": "Una mirada más profunda sobre tu consulta.",
+      "enabled": false,
       "daily": false,
       "group": "tiradas",
-      "answer": true,
-      "lead": "Pensá una pregunta que se conteste con sí o no y tocá el mazo.",
       "positions": [
         {
-          "key": "respuesta",
-          "label": "Respuesta"
+          "key": "c1",
+          "label": "Carta 1"
+        },
+        {
+          "key": "c2",
+          "label": "Carta 2"
+        },
+        {
+          "key": "c3",
+          "label": "Carta 3"
+        },
+        {
+          "key": "c4",
+          "label": "Carta 4"
+        },
+        {
+          "key": "c5",
+          "label": "Carta 5"
         }
-      ],
-      "cut": false
+      ]
     },
     {
       "id": "tirada-del-dia",
@@ -82,62 +126,6 @@
         {
           "key": "consejo",
           "label": "Consejo · ¿Qué necesito hacer?"
-        }
-      ],
-      "group": "tiradas"
-    },
-    {
-      "id": "pasado-presente-futuro",
-      "name": "Pasado · Presente · Futuro",
-      "description": "Tres cartas para mirar el camino de una situación.",
-      "enabled": false,
-      "daily": false,
-      "positions": [
-        {
-          "key": "pasado",
-          "label": "Pasado"
-        },
-        {
-          "key": "presente",
-          "label": "Presente"
-        },
-        {
-          "key": "futuro",
-          "label": "Futuro · energía para asimilar"
-        }
-      ],
-      "group": "tiradas"
-    },
-    {
-      "id": "tirada-de-situacion",
-      "name": "Tirada de situación",
-      "description": "Una mirada completa sobre eso que estás viviendo.",
-      "enabled": false,
-      "daily": false,
-      "positions": [
-        {
-          "key": "general-1",
-          "label": "General 1"
-        },
-        {
-          "key": "general-2",
-          "label": "General 2"
-        },
-        {
-          "key": "sombra",
-          "label": "Sombra · ¿Qué hay que transformar?"
-        },
-        {
-          "key": "luz",
-          "label": "Luz"
-        },
-        {
-          "key": "consejo-1",
-          "label": "Consejo 1"
-        },
-        {
-          "key": "consejo-2",
-          "label": "Consejo 2"
         }
       ],
       "group": "tiradas"
@@ -179,20 +167,6 @@
         }
       ],
       "group": "tiradas"
-    },
-    {
-      "id": "arcano-del-anio",
-      "kind": "year",
-      "name": "Arcano del año",
-      "description": "La energía que te acompaña durante todo el año.",
-      "enabled": true
-    },
-    {
-      "id": "usuario",
-      "kind": "user",
-      "name": "Usuario",
-      "description": "Tus datos y tu carta natal.",
-      "enabled": true
     }
   ]
 }
