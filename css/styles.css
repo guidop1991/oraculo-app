@@ -438,10 +438,47 @@ body::before {
 .update[hidden] { display: none; }
 .update .btn { padding: 8px 16px; min-height: 0; font-size: .95rem; }
 
+/* Tirada de 3 cartas: abanico y cierre */
+.fan-wrap { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 16px; margin: 8px 0 4px; }
+.fan-tray { list-style: none; margin: 0; padding: 0; display: flex; gap: 12px; justify-content: center; }
+.fan-slot {
+  position: relative; width: min(24vw, 84px); aspect-ratio: var(--card-ar, 250 / 429);
+  border: 1px dashed rgba(212, 175, 95, .55); border-radius: 8px; display: flex; align-items: flex-end; justify-content: center;
+}
+.fan-slot-back { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 8px; opacity: 0; transform: scale(.7); transition: opacity .3s, transform .3s; }
+.fan-slot.filled { border-style: solid; }
+.fan-slot.filled .fan-slot-back { opacity: 1; transform: none; }
+.fan-slot-label { position: absolute; top: 100%; margin-top: 5px; width: 120%; text-align: center; font-size: .66rem; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); line-height: 1.2; }
+.fan-tray { margin-bottom: 22px; }
+.fan {
+  position: relative; width: min(100%, 460px); touch-action: none; user-select: none; -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent; cursor: grab; border-radius: 12px; margin-bottom: 18px;
+}
+.fan:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
+.fan-card {
+  position: absolute; bottom: 8px; left: 50%; width: var(--cw); height: var(--ch); margin-left: calc(var(--cw) / -2);
+  border-radius: 7px; object-fit: cover; pointer-events: none; -webkit-user-drag: none;
+  box-shadow: 0 0 0 1px rgba(212, 175, 95, .55), 0 2px 5px rgba(0, 0, 0, .5);
+  transform-origin: var(--o); transform: rotate(var(--a)) translateY(0);
+  transition: transform .7s cubic-bezier(.2, .8, .2, 1), opacity .35s; transition-delay: var(--d, 0ms);
+}
+.fan.ready .fan-card { transition: transform .16s ease-out, opacity .35s; transition-delay: 0ms; }
+.fan-card.up { transform: rotate(var(--a)) translateY(var(--ty)); z-index: 2; box-shadow: 0 0 0 2px var(--gold), 0 10px 22px rgba(0, 0, 0, .6); }
+.fan-card.gone { opacity: 0; transform: rotate(var(--a)) translateY(calc(var(--ty) * 2)); }
+.overall {
+  width: 100%; max-width: 44ch; margin: 22px auto 0; padding: 18px 20px; text-align: left;
+  border: 1px solid rgba(212, 175, 95, .45); border-radius: var(--radius); background: rgba(255, 255, 255, .04);
+  animation: rise .8s .6s both ease-out;
+}
+.overall-title { margin: 0 0 8px; font-family: var(--serif); font-weight: 400; font-size: 1.3rem; color: var(--gold-soft); }
+.overall-hilo { margin: 0 0 8px; color: var(--gold); font-size: .95rem; line-height: 1.45; }
+.overall-text { margin: 0; font-family: var(--serif); font-style: italic; font-size: 1.12rem; line-height: 1.55; }
+
 /* Si el sistema pide "reducir movimiento" (en Windows: Efectos de animación desactivados),
    no apagamos todo: usamos una versión suave, sin desplazamientos ni giros, solo fundidos. */
 @media (prefers-reduced-motion: reduce) {
   .stars { animation: none; }
+  .fan-card { transition-delay: 0ms !important; }
   .deck.shuffling .deck-card:nth-child(odd),
   .deck.shuffling .deck-card:nth-child(even) { animation-name: softShuffle; animation-duration: 1.4s; }
   @keyframes softShuffle {

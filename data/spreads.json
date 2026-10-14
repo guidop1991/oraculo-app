@@ -23,6 +23,31 @@
       "enabled": true
     },
     {
+      "id": "tres-cartas",
+      "name": "Tirada de 3 cartas",
+      "description": "Elegí un tema y sacá tres cartas del abanico.",
+      "enabled": true,
+      "daily": false,
+      "group": "tiradas",
+      "themesFile": "data/tiradas/tres-cartas.json",
+      "fan": true,
+      "meta": "5 temas · 3 cartas",
+      "positions": [
+        {
+          "key": "c1",
+          "label": "Carta 1"
+        },
+        {
+          "key": "c2",
+          "label": "Carta 2"
+        },
+        {
+          "key": "c3",
+          "label": "Carta 3"
+        }
+      ]
+    },
+    {
       "id": "si-o-no",
       "name": "Sí o No",
       "description": "Una pregunta, una respuesta directa.",

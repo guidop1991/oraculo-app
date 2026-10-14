@@ -107,6 +107,11 @@
           <span class="pile-card pc1"></span><span class="pile-card pc2"></span><span class="pile-card pc3"></span><span class="pile-card pc4"></span><span class="pile-card pc5"></span>
         </button>
       </div>
+      <div id="fan-wrap" class="fan-wrap" hidden>
+        <ol id="fan-tray" class="fan-tray" aria-label="Cartas elegidas"></ol>
+        <div id="fan" class="fan" tabindex="0" role="group" aria-label="Abanico de cartas. Deslizá el dedo para levantar una carta y soltá para elegirla. Con teclado: flechas para moverte y Enter para elegir."></div>
+        <button id="btn-fan-random" class="btn ghost" type="button">Que elija el azar</button>
+      </div>
       <button id="btn-draw" class="btn" type="button">Barajar y sacar carta</button>
     </section>
 
@@ -120,6 +125,7 @@
         <div id="result-options" class="deck-options" role="radiogroup" aria-label="Mazo"></div>
       </div>
       <div id="slots" class="slots"></div>
+      <section id="overall" class="overall" aria-live="polite" hidden></section>
       <div class="actions">
         <button id="btn-share" class="btn" type="button">Compartir</button>
         <button id="btn-again" class="btn ghost" type="button" hidden>Barajar de nuevo</button>

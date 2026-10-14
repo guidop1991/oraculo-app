@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "_ayuda": "Textos de la Tirada de 3 cartas. Cada tema tiene 3 posiciones. En 'up' (carta derecha) y 'rev' (invertida) se reemplaza {carta} y {palabra}. Después va el significado de la carta y la frase 'lens'. 'join' arma el hilo de las tres ({w1} {w2} {w3}). 'closing' se elige según cuántas cartas salieron invertidas: fluid (0), mixed (1 o 2), tense (3). Tus textos propios van en data/human/tres-cartas.json y pisan a estos.",
+  "themes": [
+    {
+      "id": "vida",
+      "name": "Vida",
+      "description": "Pasado, presente y futuro de tu momento.",
+      "positions": [
+        {
+          "key": "pasado",
+          "label": "Pasado",
+          "hint": "La energía cercana en el tiempo",
+          "up": "En tu pasado aparece {carta}, con la palabra «{palabra}».",
+          "rev": "En tu pasado aparece {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es energía cercana en el tiempo: mirala como lo que te trajo hasta acá."
+        },
+        {
+          "key": "presente",
+          "label": "Presente",
+          "hint": "Lo que está vivo ahora",
+          "up": "En tu presente aparece {carta}, con la palabra «{palabra}».",
+          "rev": "En tu presente aparece {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es lo que está vivo hoy: lo que podés ver, sentir y tocar."
+        },
+        {
+          "key": "futuro",
+          "label": "Futuro",
+          "hint": "Energía disponible para asimilar",
+          "up": "Hacia adelante se abre {carta}, con la palabra «{palabra}».",
+          "rev": "Hacia adelante se abre {carta} invertida, con la palabra «{palabra}».",
+          "lens": "No es una predicción: es la energía disponible para que la asimiles y decidas qué hacer con ella."
+        }
+      ],
+      "join": "Del pasado «{w1}», pasando por el presente «{w2}», hacia «{w3}».",
+      "closing": {
+        "fluid": ["Las tres cartas van en el mismo sentido: tu historia viene encadenada y fluye. Confiá en el hilo que ya venís tejiendo."],
+        "mixed": ["Hay tramos que fluyen y tramos que piden una pausa. Fijate en cuál de las tres te cuesta más: ahí está la puerta."],
+        "tense": ["Las tres piden mirar hacia adentro antes de moverte. No es un mal presagio: es una invitación a ir más despacio y revisar."]
+      }
+    },
+    {
+      "id": "amor",
+      "name": "Amor",
+      "description": "Tu energía, la del vínculo y la de la otra parte.",
+      "positions": [
+        {
+          "key": "yo",
+          "label": "Mi energía",
+          "hint": "Lo que aportás y sentís vos",
+          "up": "Tu energía en el vínculo la expresa {carta}, con la palabra «{palabra}».",
+          "rev": "Tu energía en el vínculo la expresa {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es lo que traés vos: lo que sentís, lo que das y lo que esperás."
+        },
+        {
+          "key": "vinculo",
+          "label": "La energía del vínculo",
+          "hint": "Lo que se crea entre ustedes",
+          "up": "La energía que se crea entre ustedes aparece en {carta}, con la palabra «{palabra}».",
+          "rev": "La energía que se crea entre ustedes aparece en {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es el espacio compartido, más allá de cada uno: cómo se mueven juntos."
+        },
+        {
+          "key": "otro",
+          "label": "La energía de la otra parte",
+          "hint": "Lo que aporta la otra persona",
+          "up": "La energía de la otra parte la muestra {carta}, con la palabra «{palabra}».",
+          "rev": "La energía de la otra parte la muestra {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es una lectura de su energía, no de lo que piensa o decide: nadie puede leerle la cabeza a otra persona."
+        }
+      ],
+      "join": "Vos desde «{w1}», el vínculo desde «{w2}» y la otra parte desde «{w3}».",
+      "closing": {
+        "fluid": ["Las tres energías se acompañan entre sí. Hay base para conversar con honestidad y disfrutar lo que se está construyendo."],
+        "mixed": ["Hay puntos de encuentro y puntos de roce. Hablar con claridad sobre lo que cada uno necesita puede destrabar lo que está quieto."],
+        "tense": ["Las tres energías piden cuidado y escucha. Antes de sacar conclusiones, preguntate qué necesitás vos y animate a decirlo con calma."]
+      }
+    },
+    {
+      "id": "trabajo",
+      "name": "Trabajo",
+      "description": "Tu energía, la de la relación laboral y la de la empresa.",
+      "positions": [
+        {
+          "key": "yo",
+          "label": "Mi energía",
+          "hint": "Lo que aportás y sentís vos",
+          "up": "Tu energía en lo laboral la expresa {carta}, con la palabra «{palabra}».",
+          "rev": "Tu energía en lo laboral la expresa {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es lo que traés vos: tus ganas, tu forma de trabajar y lo que necesitás."
+        },
+        {
+          "key": "relacion",
+          "label": "La energía de la relación laboral",
+          "hint": "Cómo se vinculan en el trabajo",
+          "up": "La energía de la relación laboral aparece en {carta}, con la palabra «{palabra}».",
+          "rev": "La energía de la relación laboral aparece en {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es el clima con tus compañeros, jefes o clientes: cómo se mueven juntos."
+        },
+        {
+          "key": "empresa",
+          "label": "La energía de la empresa",
+          "hint": "El ambiente y el rumbo del lugar",
+          "up": "La energía de la empresa o del proyecto la muestra {carta}, con la palabra «{palabra}».",
+          "rev": "La energía de la empresa o del proyecto la muestra {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es el ambiente general y el rumbo del lugar. Es una lectura de energía, no una promesa sobre resultados."
+        }
+      ],
+      "join": "Vos desde «{w1}», la relación desde «{w2}» y la empresa desde «{w3}».",
+      "closing": {
+        "fluid": ["Las tres energías van en la misma dirección. Es buen momento para proponer, ordenar ideas y mostrar lo que sabés hacer."],
+        "mixed": ["Hay cosas que acompañan y otras que frenan. Elegí una sola para trabajar esta semana y empezá por ahí."],
+        "tense": ["Las tres piden revisar. Antes de decidir nada, ordená qué querés vos de este lugar y qué estás dispuesto a sostener."]
+      }
+    },
+    {
+      "id": "autoconocimiento",
+      "name": "Autoconocimiento",
+      "description": "Cómo te ves, cómo te ven y qué trabajar.",
+      "positions": [
+        {
+          "key": "me-veo",
+          "label": "Cómo me veo",
+          "hint": "Tu mirada sobre vos",
+          "up": "Cuando te mirás a vos, aparece {carta}, con la palabra «{palabra}».",
+          "rev": "Cuando te mirás a vos, aparece {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es la imagen que tenés de vos hoy, con sus luces y sus puntos ciegos."
+        },
+        {
+          "key": "me-ven",
+          "label": "Cómo me ve el resto",
+          "hint": "La imagen que dejás en los demás",
+          "up": "Lo que los demás perciben de vos lo muestra {carta}, con la palabra «{palabra}».",
+          "rev": "Lo que los demás perciben de vos lo muestra {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es la imagen que llega a otros. No siempre coincide con lo que sos, pero dice algo de cómo te mostrás."
+        },
+        {
+          "key": "consejo",
+          "label": "Consejo · qué trabajar",
+          "hint": "Hacia dónde poner el foco",
+          "up": "Como consejo para trabajar aparece {carta}, con la palabra «{palabra}».",
+          "rev": "Como consejo para trabajar aparece {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Tomalo como una invitación: un punto en el que poner atención, a tu ritmo."
+        }
+      ],
+      "join": "Te ves desde «{w1}», te ven desde «{w2}» y el foco está en «{w3}».",
+      "closing": {
+        "fluid": ["Lo que ves de vos y lo que ven los demás se parecen bastante. Eso es un buen punto de apoyo para el próximo paso."],
+        "mixed": ["Hay una distancia entre cómo te ves y cómo te ven. Mirar esa distancia con curiosidad, sin juzgarte, ya es un avance."],
+        "tense": ["La imagen propia y la ajena difieren bastante. Tratate con paciencia: conocerse es un proceso, no un examen."]
+      }
+    },
+    {
+      "id": "armonizacion",
+      "name": "Mente, cuerpo y espíritu",
+      "description": "Armonizá tus tres planos: mente, cuerpo y espíritu.",
+      "positions": [
+        {
+          "key": "mente",
+          "label": "Mente",
+          "hint": "Pensamientos y mirada",
+          "up": "Tu mente hoy la refleja {carta}, con la palabra «{palabra}».",
+          "rev": "Tu mente hoy la refleja {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Mirá qué pensamientos se repiten y cuáles te harían bien soltar."
+        },
+        {
+          "key": "cuerpo",
+          "label": "Cuerpo",
+          "hint": "Energía, descanso y sensaciones",
+          "up": "Tu cuerpo y tu energía los refleja {carta}, con la palabra «{palabra}».",
+          "rev": "Tu cuerpo y tu energía los refleja {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Escuchá cómo te sentís: descanso, movimiento, ritmo. Esto no reemplaza la consulta con profesionales de la salud."
+        },
+        {
+          "key": "espiritu",
+          "label": "Espíritu",
+          "hint": "Sentido, intuición y conexión",
+          "up": "Tu espíritu hoy lo refleja {carta}, con la palabra «{palabra}».",
+          "rev": "Tu espíritu hoy lo refleja {carta} invertida, con la palabra «{palabra}».",
+          "lens": "Es tu sentido interno: lo que te inspira, lo que intuís y lo que te conecta."
+        }
+      ],
+      "join": "Tu mente va por «{w1}», tu cuerpo por «{w2}» y tu espíritu por «{w3}».",
+      "closing": {
+        "fluid": ["Mente, cuerpo y espíritu se alinean. Hacé algo simple que los junte: una caminata, respirar hondo, un rato en silencio."],
+        "mixed": ["Alguno de los tres planos va a otro ritmo. Dale hoy un gesto de cuidado a ese: un descanso, una pausa, una charla con vos."],
+        "tense": ["Los tres planos piden cuidado y pausa. Bajá un cambio, descansá y hacé una sola cosa por vez."]
+      }
+    }
+  ]
+}

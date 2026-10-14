@@ -1,4 +1,4 @@
-import { CONFIG, answersPaths, DECKS_PATH, deckPath, messagePaths, SPREADS_PATH, ARCANOS_PATH, ARCANOS_HUMAN_PATH } from "./config.js";
+import { CONFIG, answersPaths, DECKS_PATH, deckPath, messagePaths, SPREADS_PATH, ARCANOS_PATH, ARCANOS_HUMAN_PATH, TRES_HUMAN_PATH } from "./config.js";
 import {
   readDaily, writeDaily, clearDaily, readFavoriteDeck, writeFavoriteDeck,
   readProfile, writeProfile, clearProfile, cleanName
@@ -22,6 +22,8 @@ let spreads = [];
 let arcanos = { ai: null, human: null }; // textos de la Carta natal (humano > IA)
 let current = null; // { spread, deck, data, picks }
 let answersData = null; // { ai, human } respuestas sí/no (se cargan al abrir esa tirada)
+let tresData = null;  // { ai, human } textos de la Tirada de 3 cartas (se cargan al abrirla)
+let fanState = null;  // estado del abanico mientras se eligen las cartas
 let yearState = null; // { profile, deck } del Arcano del año
 
 // ---------- utilidades ----------
@@ -65,7 +67,8 @@ const validSpreads = (s) =>
   s && Array.isArray(s.spreads) && s.spreads.length > 0 &&
   s.spreads.every((x) => x && typeof x.id === "string" && /^[\w\-]+$/.test(x.id) &&
     typeof x.name === "string" &&
-    (x.kind === "year" || x.kind === "user" || x.kind === "group" || (Array.isArray(x.positions) && x.positions.length > 0 &&
+    (x.kind === "year" || x.kind === "user" || x.kind === "group" ||
+      (typeof x.themesFile === "string" && /^data\/[\w\-\/]+\.json$/.test(x.themesFile)) || (Array.isArray(x.positions) && x.positions.length > 0 &&
       x.positions.length <= 78 &&
       x.positions.every((p) => p && typeof p.label === "string"))));
 
@@ -193,6 +196,7 @@ function menuItem(s) {
     : s.kind === "year" ? `Todo ${new Date().getFullYear()}`
     : s.kind === "user" ? "Guardado solo en tu dispositivo"
     : s.kind === "group" ? `${count} ${count === 1 ? "tirada" : "tiradas"}`
+    : typeof s.meta === "string" ? s.meta
     : `${n} ${n === 1 ? "carta" : "cartas"}`;
   if (s.kind === "user") b.classList.add("menu-user");
   b.append(
@@ -281,7 +285,60 @@ function goBack() {
   if (group) openGroup(group); else renderMenu();
 }
 
+// ---------- Tirada de 3 cartas: primero se elige el tema ----------
+const validTres = (t) =>
+  t && Array.isArray(t.themes) && t.themes.length > 0 && t.themes.every((th) =>
+    th && ID_OK.test(th.id) && typeof th.name === "string" && typeof th.join === "string" &&
+    Array.isArray(th.positions) && th.positions.length > 0 && th.positions.length <= 12 &&
+    th.positions.every((p) => p && ID_OK.test(p.key) && ["label", "up", "rev", "lens"].every((k) => typeof p[k] === "string")) &&
+    th.closing && ["fluid", "mixed", "tense"].every((k) => Array.isArray(th.closing[k]) && th.closing[k].length > 0 &&
+      th.closing[k].every((x) => typeof x === "string")));
+
+async function loadTres(path) {
+  if (tresData) return tresData;
+  const [ai, human] = await Promise.all([getJSON(path), getJSON(TRES_HUMAN_PATH, true)]);
+  if (!validTres(ai)) throw new Error("tirada inválida");
+  tresData = { ai, human };
+  return tresData;
+}
+
+async function openThemes(spread) {
+  current = { spread, deck: deckCache.get(defaultDeckId), data: null, picks: null };
+  try { await loadTres(spread.themesFile); }
+  catch { showError("No pudimos cargar esta tirada. Revisá tu conexión y volvé a intentar."); return; }
+  $("group-title").textContent = spread.name;
+  $("group-lead").textContent = "Elegí el tema de tu consulta.";
+  $("group-menu").replaceChildren(...tresData.ai.themes.map((th) => {
+    const li = el("li");
+    const b = el("button", "menu-item");
+    b.type = "button";
+    b.append(
+      el("span", "menu-name", th.name),
+      el("span", "menu-desc", th.description || ""),
+      el("span", "menu-meta", th.positions.map((p) => p.label).join(" · "))
+    );
+    b.addEventListener("click", () => startTheme(spread, th));
+    li.append(b);
+    return li;
+  }));
+  showView("group");
+}
+
+function startTheme(spread, theme) {
+  const { themesFile, meta, ...rest } = spread;
+  openSpread({
+    ...rest,
+    id: `${spread.id}-${theme.id}`,
+    name: `${spread.name} · ${theme.name}`,
+    theme,
+    cut: false,
+    lead: "Pensá en tu consulta y tocá el mazo. Después vas a elegir tus cartas del abanico.",
+    positions: theme.positions.map((p) => ({ key: p.key, label: p.label }))
+  });
+}
+
 async function openSpread(spread) {
+  if (spread.themesFile) return openThemes(spread);
   const defaultDeck = deckCache.get(defaultDeckId);
   current = { spread, deck: defaultDeck, data: null, picks: null };
 
@@ -311,7 +368,7 @@ async function openSpread(spread) {
   $("deck-lead").textContent = typeof spread.lead === "string" ? spread.lead : n === 1
     ? "Respirá, pensá en tu día y tocá el mazo."
     : `Pensá en lo que querés consultar y tocá el mazo. Vas a sacar ${n} cartas.`;
-  $("btn-draw").textContent = n === 1 ? "Barajar y sacar carta" : `Barajar y sacar ${n} cartas`;
+  $("btn-draw").textContent = n === 1 ? "Barajar y sacar carta" : spread.fan ? `Barajar y elegir ${n} cartas` : `Barajar y sacar ${n} cartas`;
   setChip("deck", current.deck.id);
   showView("deck");
 }
@@ -602,6 +659,8 @@ function resetDeckView() {
   $("btn-draw").disabled = false;
   $("btn-deck").hidden = false;
   $("cut").hidden = true;
+  $("fan-wrap").hidden = true;
+  fanState = null;
   $("cut").classList.remove("split", "picked");
   document.querySelectorAll(".pile").forEach((p) => { p.classList.remove("chosen", "other"); p.disabled = false; });
 }
@@ -616,8 +675,11 @@ function draw() {
   $("btn-deck").hidden = true; // no se cambia de mazo en medio del barajado
   deckEl.classList.add("shuffling");
 
+  const cur = current;
   setTimeout(() => {
     deckEl.classList.remove("shuffling");
+    if (current !== cur) return; // la persona salió de la tirada mientras se barajaba
+    if (cur.spread.fan) { startFan(); return; }
     if (current?.spread?.cut === false) { // tirada sin corte: la carta aparece directo al terminar de barajar
       current.picks = drawPicks(current.spread.positions.length);
       renderResult(true);
@@ -646,7 +708,33 @@ function pickPile(i) {
   }, reduceMotion ? 900 : 750);
 }
 
-function messageFor(pick) {
+// Tirada de 3 cartas: tu texto (si existe) > encuadre de la posición + significado de la carta.
+function slotText(spread, i, pick) {
+  const theme = spread.theme;
+  const pos = theme.positions[i];
+  const card = cardIn(current.deck, pick.cardId);
+  const h = tresData?.human?.slots?.[`${theme.id}.${pos.key}.${card.id}.${pick.reversed ? "rev" : "up"}`];
+  if (typeof h === "string" && h.trim()) return h;
+  const frame = (pick.reversed ? pos.rev : pos.up)
+    .replaceAll("{carta}", card.name).replaceAll("{palabra}", wordFor(card, pick.reversed));
+  return `${frame} ${pick.reversed ? card.reversed : card.meaning} ${pos.lens}`;
+}
+
+// Cierre de las tres cartas: tu texto para esa combinación > hilo + cierre según cuántas salieron invertidas.
+function overallFor(spread, picks) {
+  const theme = spread.theme;
+  const h = tresData?.human?.conjunto?.[`${theme.id}:${picks.map((p) => p.cardId).join(",")}`];
+  if (typeof h === "string" && h.trim()) return { hilo: "", text: h };
+  let hilo = theme.join;
+  picks.forEach((p, i) => { hilo = hilo.replaceAll(`{w${i + 1}}`, wordFor(cardIn(current.deck, p.cardId), p.reversed)); });
+  const rev = picks.filter((p) => p.reversed).length;
+  const tone = rev === 0 ? "fluid" : rev === picks.length ? "tense" : "mixed";
+  const arr = theme.closing[tone];
+  return { hilo, text: arr[picks[0].idx % arr.length] };
+}
+
+function messageFor(pick, i = 0) {
+  if (current.spread.theme) return slotText(current.spread, i, pick);
   const card = cardIn(current.deck, pick.cardId);
   const m = resolveMessage(current.data, card.id, pick.reversed, pick.idx);
   return m.text || (pick.reversed ? card.reversed : card.meaning);
@@ -681,7 +769,7 @@ function makeSlot(spread, pos, pick, i, animate) {
     const word = el("p", "card-word");
     word.append(el("span", "", wordFor(card, pick.reversed)));
     slot.insertBefore(word, meta);
-    slot.append(el("blockquote", "message", messageFor(pick)));
+    slot.append(el("blockquote", "message", messageFor(pick, i)));
   }
 
   if (animate) {
@@ -699,7 +787,15 @@ function renderResult(animate, keepScroll = false) {
   setChip("result", deck.id);
   $("slots").className = "slots" + (multi ? " multi" : "");
   $("slots").replaceChildren(...spread.positions.map((pos, i) => makeSlot(spread, pos, picks[i], i, animate)));
-  $("come-back").textContent = spread.answer
+  const ov = $("overall");
+  if (spread.theme) {
+    const o = overallFor(spread, picks);
+    ov.replaceChildren(el("h3", "overall-title", "En conjunto"), ...(o.hilo ? [el("p", "overall-hilo", o.hilo)] : []), el("p", "overall-text", o.text));
+    ov.hidden = false;
+  } else ov.hidden = true;
+  $("come-back").textContent = spread.theme
+    ? "Lectura orientativa y de entretenimiento. No reemplaza la consulta con profesionales de la salud, legales ni financieros."
+    : spread.answer
     ? "Respuesta orientativa y de entretenimiento. No la uses para decidir sobre salud, dinero o temas legales."
     : spread.daily
     ? "Mañana te espera una nueva. Volvé a leerla cuando quieras."
@@ -722,8 +818,9 @@ async function share() {
   const lines = picks.map((p, i) => {
     const c = cardIn(deck, p.cardId);
     const head = `${multi ? spread.positions[i].label + ": " : ""}${c.name}${p.reversed ? " (invertida)" : ""} · ${wordFor(c, p.reversed)}`;
-    return spread.answer ? `${c.name}${p.reversed ? " (invertida)" : ""} · ${answerFor(p).text}` : `${head}\n“${messageFor(p)}”`;
+    return spread.answer ? `${c.name}${p.reversed ? " (invertida)" : ""} · ${answerFor(p).text}` : `${head}\n“${messageFor(p, i)}”`;
   });
+  if (spread.theme) { const o = overallFor(spread, picks); lines.push(`En conjunto\n${o.hilo ? o.hilo + " " : ""}${o.text}`); }
   const title = `${spread.name} · Oráculo`;
   const text = `${title}\nMazo: ${metaOf(deck.id).name}\n\n${lines.join("\n\n")}`;
   const url = location.origin + location.pathname;
@@ -736,6 +833,167 @@ async function share() {
       setTimeout(() => ($("btn-share").textContent = "Compartir"), 1800);
     }
   } catch { /* el usuario canceló */ }
+}
+
+// ---------- Abanico: se eligen las cartas deslizando el dedo ----------
+function startFan() {
+  const { deck, spread } = current;
+  const n = spread.positions.length;
+  const order = deck.cards.map((c) => c.id);
+  for (let i = order.length - 1; i > 0; i--) { const j = randInt(i + 1); [order[i], order[j]] = [order[j], order[i]]; }
+
+  $("deck").hidden = true;
+  $("btn-draw").hidden = true;
+  $("cut").hidden = true;
+  $("fan-wrap").hidden = false;
+
+  const tray = $("fan-tray");
+  tray.replaceChildren(...spread.positions.map((pos) => {
+    const li = el("li", "fan-slot");
+    const img = el("img", "fan-slot-back");
+    img.src = IMG_OK.test(deck.back) ? deck.back : "";
+    img.alt = "";
+    li.append(img, el("span", "fan-slot-label", pos.label));
+    return li;
+  }));
+
+  const fan = $("fan");
+  const W = fan.clientWidth || 320;
+  const [aw, ah] = validAspect(deck.aspect) ? deck.aspect : DEFAULT_AR;
+  const cw = Math.min(92, Math.round(W * 0.2));
+  const ch = Math.round(cw * ah / aw);
+  const P = ch * 1.2;                       // distancia del pivote al borde inferior de las cartas
+  const R = P + ch * 0.6;                   // radio donde "toca" el dedo
+  const A = Math.asin(Math.min(0.95, (W / 2 - cw / 2 - 6) / (P + ch))); // media apertura (rad)
+  const lift = Math.round(ch * 0.3);
+  const N = order.length;
+  fan.style.setProperty("--cw", `${cw}px`);
+  fan.style.setProperty("--ch", `${ch}px`);
+  fan.style.setProperty("--ty", `${-lift}px`);
+  fan.style.height = `${ch + lift + 16}px`;
+  fan.className = "fan";
+
+  const els = order.map((_, i) => {
+    const im = el("img", "fan-card");
+    im.src = IMG_OK.test(deck.back) ? deck.back : "";
+    im.alt = "";
+    im.draggable = false;
+    im.style.setProperty("--o", `50% ${ch + P}px`);
+    im.style.setProperty("--d", `${reduceMotion ? 0 : Math.round(i * 7)}ms`);
+    im.style.setProperty("--a", "0deg");
+    return im;
+  });
+  fan.replaceChildren(...els);
+  fanState = { cur: current, order, els, gone: new Set(), chosen: [], lifted: -1, ptr: null, busy: false, N, A, R, n };
+  fanPrompt();
+
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    els.forEach((im, i) => im.style.setProperty("--a", `${((-A + (2 * A * i) / (N - 1)) * 180 / Math.PI).toFixed(3)}deg`));
+    setTimeout(() => fan.classList.add("ready"), reduceMotion ? 0 : 1100);
+  }));
+}
+
+function fanPrompt() {
+  const f = fanState;
+  const k = f.chosen.length;
+  $("deck-lead").textContent = `Carta ${k + 1} de ${f.n} · ${current.spread.positions[k].label}. Deslizá el dedo sobre el abanico y soltá para elegirla.`;
+}
+
+function fanNearest(clientX) {
+  const f = fanState;
+  const rect = $("fan").getBoundingClientRect();
+  const dx = clientX - (rect.left + rect.width / 2);
+  const ang = Math.asin(Math.max(-1, Math.min(1, dx / f.R)));
+  const idx = ((ang + f.A) / (2 * f.A)) * (f.N - 1);
+  let best = -1, bd = Infinity;
+  for (let i = 0; i < f.N; i++) {
+    if (f.gone.has(i)) continue;
+    const d = Math.abs(i - idx);
+    if (d < bd) { bd = d; best = i; }
+  }
+  return best;
+}
+
+function fanLift(i) {
+  const f = fanState;
+  if (!f || f.lifted === i) return;
+  if (f.lifted >= 0) f.els[f.lifted].classList.remove("up");
+  f.lifted = i;
+  if (i >= 0) f.els[i].classList.add("up");
+}
+
+function fanChoose(i) {
+  const f = fanState;
+  if (!f || f.busy || i < 0 || f.gone.has(i)) return;
+  const k = f.chosen.length;
+  f.gone.add(i);
+  f.chosen.push(f.order[i]);
+  f.els[i].classList.remove("up");
+  f.els[i].classList.add("gone");
+  f.lifted = -1;
+  $("fan-tray").children[k].classList.add("filled");
+  if (f.chosen.length < f.n) { fanPrompt(); return; }
+  f.busy = true;
+  $("btn-fan-random").hidden = true;
+  $("deck-lead").textContent = "Listo. Las cartas están elegidas.";
+  const { data } = current;
+  const pct = Math.round(CONFIG.reversedChance * 100);
+  setTimeout(() => {
+    if (current !== f.cur) return;
+    current.picks = f.chosen.map((cardId) => {
+      const reversed = randInt(100) < pct;
+      return { cardId, reversed, idx: randInt(variantCount(data, cardId, reversed)) };
+    });
+    renderResult(true);
+  }, reduceMotion ? 500 : 900);
+}
+
+function setupFan() {
+  const fan = $("fan");
+  const end = (e, choose) => {
+    const f = fanState;
+    if (!f || f.ptr !== e.pointerId) return;
+    f.ptr = null;
+    if (choose) fanChoose(f.lifted); else fanLift(-1);
+  };
+  fan.addEventListener("pointerdown", (e) => {
+    const f = fanState;
+    if (!f || f.busy || !fan.classList.contains("ready")) return;
+    f.ptr = e.pointerId;
+    try { fan.setPointerCapture(e.pointerId); } catch { /* ya no está activo */ }
+    fanLift(fanNearest(e.clientX));
+  });
+  fan.addEventListener("pointermove", (e) => {
+    const f = fanState;
+    if (!f || f.busy || !fan.classList.contains("ready")) return;
+    if (f.ptr === e.pointerId || (f.ptr === null && e.pointerType === "mouse")) fanLift(fanNearest(e.clientX));
+  });
+  fan.addEventListener("pointerup", (e) => end(e, true));
+  fan.addEventListener("pointercancel", (e) => end(e, false));
+  fan.addEventListener("pointerleave", (e) => { if (e.pointerType === "mouse" && fanState?.ptr === null) fanLift(-1); });
+  fan.addEventListener("keydown", (e) => {
+    const f = fanState;
+    if (!f || f.busy || !fan.classList.contains("ready")) return;
+    const alive = [...Array(f.N).keys()].filter((i) => !f.gone.has(i));
+    if (!alive.length) return;
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      const pos = alive.indexOf(f.lifted);
+      const nx = pos < 0 ? Math.floor(alive.length / 2) : Math.max(0, Math.min(alive.length - 1, pos + (e.key === "ArrowRight" ? 1 : -1)));
+      fanLift(alive[nx]);
+    } else if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      if (f.lifted < 0) fanLift(alive[Math.floor(alive.length / 2)]); else fanChoose(f.lifted);
+    }
+  });
+  $("btn-fan-random").addEventListener("click", () => {
+    const f = fanState;
+    if (!f || f.busy || !fan.classList.contains("ready")) return;
+    const alive = [...Array(f.N).keys()].filter((i) => !f.gone.has(i));
+    const i = alive[randInt(alive.length)];
+    fanLift(i);
+    setTimeout(() => { if (fanState === f) fanChoose(i); }, reduceMotion ? 120 : 380);
+  });
 }
 
 // ---------- instalación, estado de red, service worker ----------
@@ -788,6 +1046,7 @@ async function init() {
   for (const key of Object.keys(PICKERS)) $(PICKERS[key].btn).addEventListener("click", () => togglePicker(key));
   $("btn-share").addEventListener("click", share);
   $("btn-again").addEventListener("click", again);
+  setupFan();
   document.querySelectorAll(".pile").forEach((p) => p.addEventListener("click", () => pickPile(Number(p.dataset.pile))));
   $("profile-form").addEventListener("submit", submitProfile);
   $("btn-add-profile").addEventListener("click", () => showProfileForm(null, "user"));

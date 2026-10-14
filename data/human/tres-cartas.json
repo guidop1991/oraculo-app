@@ -1,0 +1,5 @@
+{
+  "_ayuda": "Tus textos propios para la Tirada de 3 cartas. Pisan a los automáticos. 'slots': clave '<tema>.<posición>.<id de carta>.<up|rev>' con el texto completo de esa carta en esa posición. 'conjunto': clave '<tema>:<id1>,<id2>,<id3>' con el cierre de esas 3 cartas en ese orden. Ejemplo: \"vida.pasado.rw-13.up\": \"Tu texto...\"",
+  "slots": {},
+  "conjunto": {}
+}

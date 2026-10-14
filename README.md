@@ -153,3 +153,8 @@ Si tu sistema tiene desactivadas las animaciones (Windows: Configuración → Ac
 
 ## v14
 - Mazo favorito: la lista del desplegable muestra solo los mazos que no están elegidos. sw.js VERSION v17.
+
+## v19 · Tirada de 3 cartas con abanico
+- Tiradas → "Tirada de 3 cartas": se elige el tema (Vida, Amor, Trabajo, Autoconocimiento, Mente cuerpo y espíritu), se baraja y aparece un abanico con las 78 cartas. Se desliza el dedo (o el mouse) para levantar una carta y al soltar queda elegida; se repite 3 veces. También hay botón "Que elija el azar" y control con teclado (flechas + Enter).
+- Textos en `data/tiradas/tres-cartas.json` (posiciones, encuadres y cierres). Tus textos propios van en `data/human/tres-cartas.json` y pisan a los automáticos.
+- Aviso "versión nueva": banner cuando el service worker se actualiza.

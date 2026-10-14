@@ -30,3 +30,5 @@ export const answersPaths = (family) => ({
   ai: `data/answers/${family}.json`,
   human: "data/human/answers.json"
 });
+
+export const TRES_HUMAN_PATH = "data/human/tres-cartas.json";
