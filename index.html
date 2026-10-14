@@ -84,6 +84,10 @@
       <button class="back" type="button" data-go="origin">← Inicio</button>
       <h2 id="deck-title" class="spread-title"></h2>
       <p id="deck-lead" class="lead"></p>
+      <div id="kind-switch" class="kind-switch" role="radiogroup" aria-label="Tipo de mazo" hidden>
+        <button type="button" role="radio" class="kind-opt" data-kind="tarot">Tarot</button>
+        <button type="button" role="radio" class="kind-opt" data-kind="lenormand">Lenormand</button>
+      </div>
       <button id="btn-deck" class="chip" type="button" aria-expanded="false" aria-controls="deck-picker"></button>
       <div id="deck-picker" class="picker" hidden>
         <p class="picker-title">Elegí el mazo para esta tirada</p>

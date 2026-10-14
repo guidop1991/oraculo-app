@@ -416,8 +416,36 @@ function showDeckView() {
     : `Pensá en lo que querés consultar y tocá el mazo. Vas a sacar ${n} cartas.`;
   $("btn-draw").textContent = n === 1 ? "Barajar y sacar carta" : spread.fan ? `Barajar y elegir ${n} cartas` : `Barajar y sacar ${n} cartas`;
   setChip("deck", deck.id);
-  $("btn-deck").hidden = !!spread.fixedDeck;
+  syncKindSwitch();
   showView("deck");
+}
+
+// Carta del día y Sí o No pueden hacerse con tarot o con Lenormand (otro tipo de mazo, con su propia lógica).
+// El Lenormand no se elige en el selector de mazos: se elige acá.
+function syncKindSwitch() {
+  const { spread, deck } = current;
+  const sw = $("kind-switch");
+  sw.hidden = !spread.altDeck;
+  for (const b of sw.querySelectorAll(".kind-opt")) b.setAttribute("aria-checked", String((b.dataset.kind === "lenormand") === (deck.family === "lenormand")));
+  $("btn-deck").hidden = deck.family !== "tarot"; // los mazos de tarot se eligen en el selector; el Lenormand es uno solo
+}
+
+async function pickKind(kind) {
+  if (!current?.spread.altDeck || (kind === "lenormand") === (current.deck.family === "lenormand")) return;
+  hidePickers();
+  const lead = $("deck-lead");
+  const prev = lead.textContent;
+  lead.textContent = "Cargando mazo…";
+  try {
+    const d = await loadDeck(kind === "lenormand" ? current.spread.altDeck : defaultDeckId);
+    await adoptDeck(d);
+    setChip("deck", d.id);
+    prefetchDeck(d);
+    syncKindSwitch();
+  } catch {
+    flash("No pudimos cargar ese mazo. Probá de nuevo con conexión.");
+  }
+  lead.textContent = prev;
 }
 
 // ---------- selector de mazo (en la tirada, en el resultado y en el Arcano del año) ----------
@@ -785,6 +813,7 @@ function draw() {
   btn.disabled = true;
   deckEl.disabled = true;
   $("btn-deck").hidden = true; // no se cambia de mazo en medio del barajado
+  $("kind-switch").hidden = true;
   deckEl.classList.add("shuffling");
 
   const cur = current;
@@ -947,7 +976,7 @@ function renderResult(animate, keepScroll = false) {
   const multi = spread.positions.length > 1;
   $("result-title").textContent = spread.name;
   setChip("result", deck.id);
-  $("btn-deck-result").hidden = !!spread.fixedDeck;
+  $("btn-deck-result").hidden = deck.family !== "tarot";
   $("slots").className = "slots" + (multi ? " multi" : "");
   $("slots").replaceChildren(...spread.positions.map((pos, i) => makeSlot(spread, pos, picks[i], i, animate)));
   const ov = $("overall");
@@ -1211,6 +1240,7 @@ async function init() {
   setupPwa();
   $("deck").addEventListener("click", draw);
   $("btn-draw").addEventListener("click", draw);
+  document.querySelectorAll(".kind-opt").forEach((b) => b.addEventListener("click", () => pickKind(b.dataset.kind)));
   for (const key of Object.keys(PICKERS)) $(PICKERS[key].btn).addEventListener("click", () => togglePicker(key));
   $("btn-share").addEventListener("click", share);
   $("btn-again").addEventListener("click", again);

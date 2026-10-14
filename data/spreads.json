@@ -13,7 +13,8 @@
           "key": "general",
           "label": "Mensaje general"
         }
-      ]
+      ],
+      "altDeck": "lenormand"
     },
     {
       "id": "tiradas",
@@ -51,7 +52,8 @@
           "label": "Respuesta"
         }
       ],
-      "cut": false
+      "cut": false,
+      "altDeck": "lenormand"
     },
     {
       "id": "tres-cartas",
