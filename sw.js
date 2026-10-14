@@ -1,6 +1,6 @@
 // Service worker: la app funciona sin conexión.
 // IMPORTANTE: cada vez que publiques cambios, subí el número de VERSION.
-const VERSION = "v20";
+const VERSION = "v21";
 const CACHE = `oraculo-${VERSION}`;
 
 const PRECACHE = [
@@ -31,6 +31,12 @@ const PRECACHE = [
   "fonts/CormorantGaramond.woff",
   "fonts/CormorantGaramond-Italic.woff",
   "img/back.webp",
+  "img/backs/rider-waite.svg",
+  "img/backs/marsella.svg",
+  "img/backs/vieville.svg",
+  "img/backs/yinyang.svg",
+  "img/backs/luna.svg",
+  "img/backs/sol.svg",
   // Las imágenes de las cartas NO se descargan al instalar (así la app abre más rápido):
   // se guardan solas a medida que se usan y el mazo elegido se baja en segundo plano.
   "icons/icon-192.png",

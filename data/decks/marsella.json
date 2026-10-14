@@ -4,7 +4,7 @@
  "family": "tarot",
  "license": "Dominio público. Tarot de Marsella (siglos XVII-XVIII). Wikimedia Commons. Textos originales de este proyecto.",
  "version": 3,
- "back": "img/back.webp",
+ "back": "img/backs/marsella.svg",
  "aspect": [
   813,
   1536

@@ -4,7 +4,7 @@
  "family": "tarot",
  "license": "Dominio público. Pamela Colman Smith (1909). Escaneos restaurados por Steve P., steve-p.org. Textos originales de este proyecto.",
  "version": 3,
- "back": "img/back.webp",
+ "back": "img/backs/rider-waite.svg",
  "aspect": [
   1086,
   1810

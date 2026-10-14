@@ -1,6 +1,6 @@
 import { CONFIG, answersPaths, DECKS_PATH, deckPath, messagePaths, SPREADS_PATH, ARCANOS_PATH, ARCANOS_HUMAN_PATH, TRES_HUMAN_PATH } from "./config.js";
 import {
-  readDaily, writeDaily, clearDaily, readFavoriteDeck, writeFavoriteDeck,
+  readDaily, writeDaily, clearDaily, readFavoriteDeck, writeFavoriteDeck, readBack, writeBack,
   readProfile, writeProfile, clearProfile, cleanName
 } from "./storage.js";
 import { carta, arcanoDelAnio, repetidos, NUMBER_TO_CARD, label, parseBirth } from "./natal.js";
@@ -11,6 +11,7 @@ const $ = (id) => document.getElementById(id);
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const IMG_OK = /^img\/[\w\-\/]+\.(webp|png|jpg)$/; // solo imágenes propias del proyecto
 const ID_OK = /^[\w\-]+$/;
+const BACK_OK = /^img\/backs\/[\w\-]+\.svg$/; // dorsos propios del proyecto
 const SHUFFLE_MS = 1700;
 const DEFAULT_AR = [250, 429]; // proporción de carta si el mazo no indica otra
 
@@ -141,10 +142,26 @@ async function loadMessages(family) {
   return m;
 }
 
-// Proporción de las cartas del mazo (cada mazo tiene la suya).
+// Dorso de las cartas: el de cada mazo o uno de los propios (preferencia guardada en el dispositivo).
+const BACK_CHOICES = [
+  { id: "deck", name: "El de cada mazo", desc: "Cada mazo con su dorso original." },
+  { id: "yinyang", name: "Yin Yang", desc: "Blanco y negro." },
+  { id: "luna", name: "Luna y estrellas", desc: "Violeta y dorado." },
+  { id: "sol", name: "Sol", desc: "Dorado sobre noche profunda." }
+];
+let backPref = "deck";
+const ownBack = (id) => `img/backs/${id}.svg`;
+function backPath(deck) {
+  const p = backPref !== "deck" && BACK_CHOICES.some((c) => c.id === backPref) ? ownBack(backPref) : deck.back;
+  return BACK_OK.test(p) ? p : "img/back.webp";
+}
+
+// Proporción de las cartas del mazo (cada mazo tiene la suya) y dorso a usar.
 function applyDeckLook(deck) {
   const [w, h] = validAspect(deck.aspect) ? deck.aspect : DEFAULT_AR;
-  document.documentElement.style.setProperty("--card-ar", `${w} / ${h}`);
+  const root = document.documentElement.style;
+  root.setProperty("--card-ar", `${w} / ${h}`);
+  root.setProperty("--back-url", `url("${new URL(backPath(deck), location.href).href}")`);
 }
 
 // Deja las imágenes del mazo guardadas para usarlo sin conexión (de a pocas por vez).
@@ -523,6 +540,7 @@ function renderUser() {
     note.textContent = parts.length ? `${parts.join(" · ")}: su energía se vive con más intensidad en vos.` : "";
   }
   renderFavorite();
+  renderBackOptions();
   $("credits-list").replaceChildren(...decksMeta.map((m) => {
     const li = el("li");
     li.append(el("strong", "", m.short + ": "), document.createTextNode(`${m.credit || ""} ${m.license ? "(" + m.license + ")" : ""}`.trim()));
@@ -563,6 +581,32 @@ function renderFavorite() {
   box.replaceChildren(toggle, list);
 }
 
+// Dorso de las cartas (Usuario): el del mazo o uno propio. Solo cambia el diseño de atrás.
+function renderBackOptions() {
+  const deck = deckCache.get(defaultDeckId);
+  $("back-options").replaceChildren(...BACK_CHOICES.map((c) => {
+    const b = el("button", "deck-option back-option");
+    b.type = "button";
+    b.setAttribute("role", "radio");
+    b.setAttribute("aria-checked", String(c.id === backPref));
+    const img = el("img", "back-thumb");
+    img.src = c.id === "deck" ? (BACK_OK.test(deck.back) ? deck.back : "img/back.webp") : ownBack(c.id);
+    img.alt = "";
+    img.width = 40;
+    img.height = 69;
+    const txt = el("span", "back-option-text");
+    txt.append(el("span", "deck-option-name", c.name), el("span", "deck-option-desc", c.desc));
+    b.append(img, txt);
+    b.addEventListener("click", () => {
+      backPref = c.id;
+      writeBack(c.id);
+      applyDeckLook(deck);
+      renderBackOptions();
+    });
+    return b;
+  }));
+}
+
 // Arcano del año: sin barajar. La carta, su palabra y un mensaje fijo para todo el año.
 function renderYear(profile, deck = deckCache.get(defaultDeckId), keepScroll = false) {
   const year = new Date().getFullYear();
@@ -579,7 +623,7 @@ function renderYear(profile, deck = deckCache.get(defaultDeckId), keepScroll = f
   const flip = el("div", "card-flip flipped instant");
   const back = el("img", "card-face back");
   const front = el("img", "card-face front");
-  back.src = IMG_OK.test(deck.back) ? deck.back : "";
+  back.src = backPath(deck);
   back.alt = "";
   front.src = card.image;
   front.alt = card.name;
@@ -751,7 +795,7 @@ function makeSlot(spread, pos, pick, i, animate) {
   const flip = el("div", "card-flip");
   const back = el("img", "card-face back");
   const front = el("img", "card-face front" + (pick.reversed ? " reversed" : ""));
-  back.src = IMG_OK.test(deck.back) ? deck.back : "";
+  back.src = backPath(deck);
   back.alt = "";
   front.src = card.image;
   front.alt = card.name + (pick.reversed ? " (invertida)" : "");
@@ -851,7 +895,7 @@ function startFan() {
   tray.replaceChildren(...spread.positions.map((pos) => {
     const li = el("li", "fan-slot");
     const img = el("img", "fan-slot-back");
-    img.src = IMG_OK.test(deck.back) ? deck.back : "";
+    img.src = backPath(deck);
     img.alt = "";
     li.append(img, el("span", "fan-slot-label", pos.label));
     return li;
@@ -875,7 +919,7 @@ function startFan() {
 
   const els = order.map((_, i) => {
     const im = el("img", "fan-card");
-    im.src = IMG_OK.test(deck.back) ? deck.back : "";
+    im.src = backPath(deck);
     im.alt = "";
     im.draggable = false;
     im.style.setProperty("--o", `50% ${ch + P}px`);
@@ -1072,6 +1116,7 @@ async function init() {
     ]);
     if (!validDecksMeta(meta)) throw new Error("lista de mazos inválida");
     decksMeta = meta.decks;
+    backPref = readBack();
     const fav = readFavoriteDeck();
     defaultDeckId = fav && decksMetaById(fav) ? fav : meta.default;
     let d;

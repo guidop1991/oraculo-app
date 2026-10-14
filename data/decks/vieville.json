@@ -4,7 +4,7 @@
  "family": "tarot",
  "license": "Dominio público. Jacques Viéville, París, c. 1650. BnF Gallica, vía Wikimedia Commons. Textos originales de este proyecto.",
  "version": 3,
- "back": "img/back.webp",
+ "back": "img/backs/vieville.svg",
  "aspect": [
   1735,
   3051

@@ -62,6 +62,16 @@ export function writeFavoriteDeck(id) {
   return ID_OK.test(id) && save("deck:default", id);
 }
 
+// Dorso de las cartas: "deck" (el de cada mazo) o uno propio. Solo se aceptan valores conocidos.
+const BACKS_OK = ["deck", "yinyang", "luna", "sol"];
+export function readBack() {
+  const v = load("back:pref");
+  return typeof v === "string" && BACKS_OK.includes(v) ? v : "deck";
+}
+export function writeBack(id) {
+  return BACKS_OK.includes(id) && save("back:pref", id);
+}
+
 export function clearDaily(spread) {
   remove(dailyKey(spread.id));
 }

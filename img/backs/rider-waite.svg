@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 520" width="300" height="520">
+<defs>
+  <clipPath id="panel"><rect x="14" y="14" width="272" height="492" rx="12"/></clipPath>
+  <!-- flor de lis grande, estilo grabado -->
+  <g id="lis" fill="#f4eedc">
+    <path d="M23 2.5 C29.5 9 29.5 17 26 25 L20 25 C16.5 17 16.5 9 23 2.5Z"/>
+    <path d="M20.5 24 C11 24.5 3.5 19.5 3 9.5 C7 11 8.5 14.5 11.5 16.5 C14 18.2 17.5 18 21 17Z"/>
+    <path d="M25.5 24 C35 24.5 42.5 19.5 43 9.5 C39 11 37.5 14.5 34.5 16.5 C32 18.2 28.5 18 25 17Z"/>
+    <rect x="13" y="25" width="20" height="4.2" rx="1.6"/>
+    <path d="M23 30 C21 34.5 16 35.5 10.5 34 C14.5 39.5 19.5 42 23 40.5 C26.5 42 31.5 39.5 35.5 34 C30 35.5 25 34.5 23 30Z"/>
+  </g>
+  <g id="tLis"><rect width="46" height="46" fill="#2b9fd8"/><use href="#lis"/></g>
+  <!-- tiles cuadrados crema con motivo azul -->
+  <g id="marco"><rect width="46" height="46" fill="#f4eedc"/>
+    <rect x="2.2" y="2.2" width="41.6" height="41.6" fill="none" stroke="#2b9fd8" stroke-width="1.4"/></g>
+  <g id="tRosa"><use href="#marco"/>
+    <g transform="translate(23 23)"><g fill="#2b9fd8"><circle cx="0.00" cy="-12.50" r="7.4"/><circle cx="11.89" cy="-3.86" r="7.4"/><circle cx="7.35" cy="10.11" r="7.4"/><circle cx="-7.35" cy="10.11" r="7.4"/><circle cx="-11.89" cy="-3.86" r="7.4"/></g><circle cx="0.00" cy="-12.50" r="4.6" fill="#f4eedc"/><circle cx="11.89" cy="-3.86" r="4.6" fill="#f4eedc"/><circle cx="7.35" cy="10.11" r="4.6" fill="#f4eedc"/><circle cx="-7.35" cy="10.11" r="4.6" fill="#f4eedc"/><circle cx="-11.89" cy="-3.86" r="4.6" fill="#f4eedc"/>
+      <circle r="8.2" fill="#2b9fd8"/><circle r="5.4" fill="#f4eedc"/><circle r="2.4" fill="#2b9fd8"/></g></g>
+  <g id="tEstrella"><use href="#marco"/>
+    <g transform="translate(23 23)" fill="#2b9fd8"><ellipse cx="0" cy="-10" rx="3.6" ry="7.5" transform="rotate(0)"/><ellipse cx="0" cy="-10" rx="3.6" ry="7.5" transform="rotate(45)"/><ellipse cx="0" cy="-10" rx="3.6" ry="7.5" transform="rotate(90)"/><ellipse cx="0" cy="-10" rx="3.6" ry="7.5" transform="rotate(135)"/><ellipse cx="0" cy="-10" rx="3.6" ry="7.5" transform="rotate(180)"/><ellipse cx="0" cy="-10" rx="3.6" ry="7.5" transform="rotate(225)"/><ellipse cx="0" cy="-10" rx="3.6" ry="7.5" transform="rotate(270)"/><ellipse cx="0" cy="-10" rx="3.6" ry="7.5" transform="rotate(315)"/><circle r="5" fill="#f4eedc"/><circle r="2.6"/></g></g>
+  <g id="tPuntos"><use href="#marco"/>
+    <g transform="translate(23 23)" fill="#2b9fd8"><circle cx="0.00" cy="-13.00" r="3.1"/><circle cx="9.19" cy="-9.19" r="3.1"/><circle cx="13.00" cy="-0.00" r="3.1"/><circle cx="9.19" cy="9.19" r="3.1"/><circle cx="0.00" cy="13.00" r="3.1"/><circle cx="-9.19" cy="9.19" r="3.1"/><circle cx="-13.00" cy="0.00" r="3.1"/><circle cx="-9.19" cy="-9.19" r="3.1"/><circle r="7.5"/><circle r="4.4" fill="#f4eedc"/><circle r="2"/></g></g>
+</defs>
+<rect width="300" height="520" rx="18" fill="#f4eedc"/>
+<rect x="1.5" y="1.5" width="297" height="517" rx="17" fill="none" stroke="#d8cfb4" stroke-width="1"/>
+<rect x="14" y="14" width="272" height="492" rx="12" fill="#2b9fd8"/>
+<g clip-path="url(#panel)"><use href="#tLis" x="33" y="25.5"/><use href="#tRosa" x="80" y="25.5"/><use href="#tLis" x="127" y="25.5"/><use href="#tPuntos" x="174" y="25.5"/><use href="#tLis" x="221" y="25.5"/><use href="#tEstrella" x="33" y="72.5"/><use href="#tLis" x="80" y="72.5"/><use href="#tRosa" x="127" y="72.5"/><use href="#tLis" x="174" y="72.5"/><use href="#tPuntos" x="221" y="72.5"/><use href="#tLis" x="33" y="119.5"/><use href="#tEstrella" x="80" y="119.5"/><use href="#tLis" x="127" y="119.5"/><use href="#tRosa" x="174" y="119.5"/><use href="#tLis" x="221" y="119.5"/><use href="#tPuntos" x="33" y="166.5"/><use href="#tLis" x="80" y="166.5"/><use href="#tEstrella" x="127" y="166.5"/><use href="#tLis" x="174" y="166.5"/><use href="#tRosa" x="221" y="166.5"/><use href="#tLis" x="33" y="213.5"/><use href="#tPuntos" x="80" y="213.5"/><use href="#tRosa" x="127" y="213.5"/><use href="#tEstrella" x="174" y="213.5"/><use href="#tLis" x="221" y="213.5"/><use href="#tRosa" x="33" y="260.5"/><use href="#tLis" x="80" y="260.5"/><use href="#tPuntos" x="127" y="260.5"/><use href="#tLis" x="174" y="260.5"/><use href="#tEstrella" x="221" y="260.5"/><use href="#tLis" x="33" y="307.5"/><use href="#tRosa" x="80" y="307.5"/><use href="#tLis" x="127" y="307.5"/><use href="#tPuntos" x="174" y="307.5"/><use href="#tLis" x="221" y="307.5"/><use href="#tEstrella" x="33" y="354.5"/><use href="#tLis" x="80" y="354.5"/><use href="#tRosa" x="127" y="354.5"/><use href="#tLis" x="174" y="354.5"/><use href="#tPuntos" x="221" y="354.5"/><use href="#tLis" x="33" y="401.5"/><use href="#tEstrella" x="80" y="401.5"/><use href="#tLis" x="127" y="401.5"/><use href="#tRosa" x="174" y="401.5"/><use href="#tLis" x="221" y="401.5"/><use href="#tPuntos" x="33" y="448.5"/><use href="#tLis" x="80" y="448.5"/><use href="#tEstrella" x="127" y="448.5"/><use href="#tLis" x="174" y="448.5"/><use href="#tRosa" x="221" y="448.5"/></g>
+<rect x="14" y="14" width="272" height="492" rx="12" fill="none" stroke="#f4eedc" stroke-width="1.5"/></svg>
