@@ -1,6 +1,6 @@
 {
  "version": 1,
- "_ayuda": "Tirada de 3 cartas del Lenormand. Se lee como UNA sola frase que une las tres cartas en el orden en que salen: cada posición tiene una 'clause' con {N} (la frase de la carta, 'phrase' en data/decks/lenormand.json); entre cláusulas va «y» si el sentido se mantiene o «pero» si cambia (según la polaridad). Después va un cierre según el recorrido: fluid (las tres positivas), tense (las tres negativas), rising (de menos a más), falling (de más a menos) o mixed. Tu texto propio para una combinación exacta va en data/human/tres-cartas-lenormand.json, en 'conjunto' con la clave '<tema>:<id1>,<id2>,<id3>' (pisa a todo lo anterior).",
+ "_ayuda": "Tirada de 3 cartas del Lenormand, con el método del tema y el modificador: la carta 1 es el TEMA (su 'phrase' en data/decks/lenormand.json), la carta 2 lo MODIFICA (su 'mod') y la carta 3 es el DESENLACE (su 'phrase'). Frase: «<intro de cada tema> <tema> con <modificador>. <desenlace>». El conector cambia según la polaridad (positiva, mixta o negativa) de las cartas 2 y 3. Después va un cierre según el recorrido: fluid, tense, rising (de menos a más), falling (de más a menos) o mixed. Tu texto propio para una combinación exacta va en data/human/tres-cartas-lenormand.json, en 'conjunto' con la clave '<tema>:<id1>,<id2>,<id3>' (pisa a todo lo anterior).",
  "themes": [
   {
    "id": "vida",
@@ -10,20 +10,17 @@
     {
      "key": "pasado",
      "label": "Pasado",
-     "hint": "La energía cercana en el tiempo",
-     "clause": "desde el pasado viene {N}"
+     "hint": "La energía cercana en el tiempo"
     },
     {
      "key": "presente",
      "label": "Presente",
-     "hint": "Lo que está vivo ahora",
-     "clause": "en el presente aparece {N}"
+     "hint": "Lo que está vivo ahora"
     },
     {
      "key": "futuro",
      "label": "Futuro",
-     "hint": "Energía disponible para asimilar",
-     "clause": "hacia adelante se abre {N}"
+     "hint": "Energía disponible para asimilar"
     }
    ],
    "closing": {
@@ -43,7 +40,8 @@
      "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
    },
-   "mode": "flow"
+   "mode": "flow",
+   "intro": "En tu recorrido aparece"
   },
   {
    "id": "amor",
@@ -53,20 +51,17 @@
     {
      "key": "yo",
      "label": "Mi energía",
-     "hint": "Lo que aportás y sentís vos",
-     "clause": "de tu lado aparece {N}"
+     "hint": "Lo que aportás y sentís vos"
     },
     {
      "key": "vinculo",
      "label": "La energía del vínculo",
-     "hint": "Lo que se crea entre ustedes",
-     "clause": "en el vínculo se mueve {N}"
+     "hint": "Lo que se crea entre ustedes"
     },
     {
      "key": "otro",
      "label": "La energía de la otra parte",
-     "hint": "Lo que aporta la otra persona",
-     "clause": "de la otra parte llega {N}"
+     "hint": "Lo que aporta la otra persona"
     }
    ],
    "closing": {
@@ -86,7 +81,8 @@
      "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
    },
-   "mode": "flow"
+   "mode": "flow",
+   "intro": "En lo afectivo se lee"
   },
   {
    "id": "trabajo",
@@ -96,20 +92,17 @@
     {
      "key": "yo",
      "label": "Mi energía",
-     "hint": "Lo que aportás y sentís vos",
-     "clause": "en lo tuyo aparece {N}"
+     "hint": "Lo que aportás y sentís vos"
     },
     {
      "key": "relacion",
      "label": "La energía de la relación laboral",
-     "hint": "Cómo se vinculan en el trabajo",
-     "clause": "en la relación laboral se siente {N}"
+     "hint": "Cómo se vinculan en el trabajo"
     },
     {
      "key": "empresa",
      "label": "La energía de la empresa",
-     "hint": "El ambiente y el rumbo del lugar",
-     "clause": "en el rumbo del lugar se ve {N}"
+     "hint": "El ambiente y el rumbo del lugar"
     }
    ],
    "closing": {
@@ -129,7 +122,8 @@
      "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
    },
-   "mode": "flow"
+   "mode": "flow",
+   "intro": "En lo laboral se lee"
   },
   {
    "id": "autoconocimiento",
@@ -139,20 +133,17 @@
     {
      "key": "me-veo",
      "label": "Cómo me veo",
-     "hint": "Tu mirada sobre vos",
-     "clause": "te ves a través de {N}"
+     "hint": "Tu mirada sobre vos"
     },
     {
      "key": "me-ven",
      "label": "Cómo me ve el resto",
-     "hint": "La imagen que dejás en los demás",
-     "clause": "los demás perciben {N}"
+     "hint": "La imagen que dejás en los demás"
     },
     {
      "key": "consejo",
      "label": "Consejo · qué trabajar",
-     "hint": "Hacia dónde poner el foco",
-     "clause": "como foco para trabajar queda {N}"
+     "hint": "Hacia dónde poner el foco"
     }
    ],
    "closing": {
@@ -172,7 +163,8 @@
      "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
    },
-   "mode": "flow"
+   "mode": "flow",
+   "intro": "Mirándote por dentro se lee"
   },
   {
    "id": "armonizacion",
@@ -182,20 +174,17 @@
     {
      "key": "mente",
      "label": "Mente",
-     "hint": "Pensamientos y mirada",
-     "clause": "en tu mente se refleja {N}"
+     "hint": "Pensamientos y mirada"
     },
     {
      "key": "cuerpo",
      "label": "Cuerpo",
-     "hint": "Energía, descanso y sensaciones",
-     "clause": "en tu cuerpo y tu energía se refleja {N}"
+     "hint": "Energía, descanso y sensaciones"
     },
     {
      "key": "espiritu",
      "label": "Espíritu",
-     "hint": "Sentido, intuición y conexión",
-     "clause": "en tu espíritu se refleja {N}"
+     "hint": "Sentido, intuición y conexión"
     }
    ],
    "closing": {
@@ -215,7 +204,8 @@
      "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
    },
-   "mode": "flow"
+   "mode": "flow",
+   "intro": "Para tu equilibrio se lee"
   }
  ]
 }

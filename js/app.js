@@ -313,8 +313,8 @@ const validTres = (t) =>
     th && ID_OK.test(th.id) && typeof th.name === "string" &&
     Array.isArray(th.positions) && th.positions.length > 0 && th.positions.length <= 12 &&
     th.positions.every((p) => p && ID_OK.test(p.key) && typeof p.label === "string" &&
-      (th.mode === "flow" ? typeof p.clause === "string" : ["up", "rev", "lens"].every((k) => typeof p[k] === "string"))) &&
-    (th.mode === "flow" || typeof th.join === "string") &&
+      (th.mode === "flow" || ["up", "rev", "lens"].every((k) => typeof p[k] === "string"))) &&
+    (th.mode === "flow" ? typeof th.intro === "string" : typeof th.join === "string") &&
     th.closing && ["fluid", "mixed", "tense"].every((k) => Array.isArray(th.closing[k]) && th.closing[k].length > 0 &&
       th.closing[k].every((x) => typeof x === "string")));
 
@@ -823,20 +823,22 @@ function slotText(spread, i, pick) {
   return `${frame} ${pick.reversed ? card.reversed : card.meaning} ${pos.lens}`;
 }
 
-const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
-
-// Lenormand: las tres cartas se leen como UNA frase, en el orden en que salen. Entre cláusulas va «y» si el
-// sentido se mantiene o «pero» si cambia (según la polaridad). El cierre depende del recorrido de las tres.
+// Lenormand: las tres cartas se leen como UNA lectura, en el orden en que salen:
+// la 1 es el tema, la 2 lo modifica y la 3 es el desenlace. Los conectores dependen de la polaridad.
+// El cierre depende del recorrido de las tres.
 function flowReading(theme, cards) {
   const sign = (c) => (c.polarity === "positiva" ? 1 : c.polarity === "negativa" ? -1 : 0);
-  const sg = cards.map(sign);
-  const parts = theme.positions.map((p, i) => p.clause.replaceAll("{N}", cards[i].phrase || cards[i].name.toLowerCase()));
-  let lead = cap(parts[0]);
-  for (let i = 1; i < parts.length; i++) lead += `${sg[i - 1] * sg[i] < 0 ? ", pero " : i === 1 ? ", y " : "; y "}${parts[i]}`;
-  const first = sg[0], last = sg[sg.length - 1];
+  const [s1, s2, s3] = cards.map(sign);
+  const [c1, c2, c3] = cards;
+  const noun = (c) => c.phrase || c.name.toLowerCase();
+  const mod = (c) => c.mod || (c.keywords[0] || c.name).toLowerCase();
+  const link = s2 > 0 ? "con" : s2 < 0 ? (s1 > 0 ? "pero con" : "con") : "con un toque de";
+  const end = s3 > 0 ? "Todo se abre hacia" : s3 < 0 ? "Al final queda a la vista" : "Todo se orienta hacia";
+  const lead = `${theme.intro} ${noun(c1)}, ${link} ${mod(c2)}. ${end} ${noun(c3)}.`;
+  const sg = [s1, s2, s3];
   const tone = sg.every((x) => x >= 0) ? "fluid" : sg.every((x) => x <= 0) ? "tense"
-    : last > first && theme.closing.rising ? "rising" : last < first && theme.closing.falling ? "falling" : "mixed";
-  return { lead: `${lead}.`, tone };
+    : s3 > s1 && theme.closing.rising ? "rising" : s3 < s1 && theme.closing.falling ? "falling" : "mixed";
+  return { lead, tone };
 }
 
 // Cierre de las tres cartas: tu texto para esa combinación > hilo + cierre según cuántas "pesan" (invertidas en tarot, de polaridad negativa en Lenormand).
