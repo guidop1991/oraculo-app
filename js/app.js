@@ -871,7 +871,7 @@ async function loadReading() {
   if (readingData) return readingData;
   const [cfg, combos, human] = await Promise.all([
     getJSON("data/tiradas/lenormand-3.json"), getJSON("data/combos/lenormand.json"), getJSON("data/human/lenormand-3.json", true)]);
-  if (!cfg?.closing || !combos?.pairs || !combos?.frames) throw new Error("tirada inválida");
+  if (!cfg?.final || !cfg?.keys || !combos?.pairs || !combos?.frames) throw new Error("tirada inválida");
   readingData = { cfg, combos, human };
   return readingData;
 }
@@ -899,14 +899,17 @@ function lenormandReading(picks) {
   const key = picks.map((p) => p.cardId).join(",");
   const h = human?.conjunto?.[key];
   if (typeof h === "string" && h.trim()) return { hilo: "", lead: "", text: h, title: "Lectura de las tres cartas" };
-  const [s1, s2, s3] = cards.map(polarity);
-  const first = pairClause(cards[0], cards[1]);
-  const second = pairClause(cards[1], cards[2]);
-  const join = s2 * s3 < 0 ? cfg.joinFlip : cfg.joinSame;
-  const tone = [s1, s2, s3].every((x) => x >= 0) ? "fluid" : [s1, s2, s3].every((x) => x <= 0) ? "tense"
-    : s3 > s1 ? "rising" : s3 < s1 ? "falling" : "mixed";
-  const arr = cfg.closing[tone] || cfg.closing.mixed;
-  return { hilo: "", lead: `${cap(first)}. ${join ? join + second : cap(second)}.`, text: arr[picks[0].idx % arr.length], title: "Lectura de las tres cartas" };
+  const [c1, c2, c3] = cards;
+  const phrase = (c) => c.phrase || c.name.toLowerCase();
+  // Dos frases (carta 1 + 2 y carta 2 + 3) y un cierre que integra las tres en el orden en que salen:
+  // arranca en la 1, la clave es la acción de la 2 y se orienta hacia la 3.
+  const lead = `${cap(pairClause(c1, c2))}. ${cap(pairClause(c2, c3))}.`;
+  const s3 = polarity(c3);
+  const arr = cfg.final?.[s3 > 0 ? "pos" : s3 < 0 ? "neg" : "neu"] || [];
+  const k2 = cfg.keys?.[String(c2.number)] || (c2.keywords[0] || c2.name).toLowerCase();
+  const text = (arr[picks[0].idx % Math.max(arr.length, 1)] || "")
+    .replaceAll("{o1}", phrase(c1)).replaceAll("{k2}", k2).replaceAll("{o3}", phrase(c3));
+  return { hilo: "", lead, text, title: "Lectura de las tres cartas" };
 }
 
 // Cierre de las tres cartas: tu texto para esa combinación > hilo + cierre según cuántas "pesan" (invertidas en tarot, de polaridad negativa en Lenormand).

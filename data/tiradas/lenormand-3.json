@@ -1,28 +1,56 @@
 {
  "version": 1,
- "_ayuda": "Textos de cierre de la tirada de 3 del Lenormand. El cierre se elige según el recorrido de las tres cartas (por su polaridad): fluid (ninguna negativa), tense (ninguna positiva), rising (de menos a más), falling (de más a menos) o mixed. 'joinSame' y 'joinFlip' son conectores opcionales de la segunda frase (mismo sentido o cambio de sentido). Hoy van vacíos: la segunda frase va como oración aparte, porque un conector automático suena forzado cuando el texto no es un contraste.",
- "joinSame": "",
- "joinFlip": "",
- "closing": {
-  "fluid": [
-   "En conjunto, el recorrido acompaña: es un buen momento para dar el paso que tenías pensado, sin apurarte.",
-   "En conjunto, las tres cartas van en el mismo sentido: confiá en lo que ya venís construyendo."
+ "_ayuda": "Tirada de 3 del Lenormand. La lectura tiene tres partes: (1) la primera pareja (carta 1 + 2) y (2) la segunda (carta 2 + 3), que salen de data/combos/lenormand.json; (3) el cierre integrador, que une las tres cartas en el orden en que salen: {o1} es la 'phrase' de la carta 1 (el punto de partida), {k2} es la 'keys' de la carta 2 (la clave, una acción en infinitivo) y {o3} es la 'phrase' de la carta 3 (hacia dónde se orienta). Hay dos variantes por tipo de final: pos (carta 3 positiva), neu (mixta) y neg (negativa). 'phrase' está en data/decks/lenormand.json. Tu lectura propia para una combinación exacta va en data/human/lenormand-3.json ('conjunto', clave '<id1>,<id2>,<id3>') y pisa a todo lo automático.",
+ "keys": {
+  "1": "estar atenta a lo que se mueve",
+  "2": "aprovechar a tiempo lo liviano",
+  "3": "animarte a mirar más lejos",
+  "4": "cuidar tu base",
+  "5": "darle tiempo a lo que crece",
+  "6": "aclarar las dudas antes de decidir",
+  "7": "leer entre líneas",
+  "8": "soltar lo que ya cumplió su ciclo",
+  "9": "recibir lo amable sin desconfiar",
+  "10": "cortar a tiempo lo que no va",
+  "11": "bajar el tono y hablar con calma",
+  "12": "conversarlo con alguien de confianza",
+  "13": "cuidar lo nuevo sin apuro",
+  "14": "mirar los detalles con cautela",
+  "15": "usar tu fuerza sin imponerte",
+  "16": "sostener tu esperanza",
+  "17": "dejar entrar el cambio",
+  "18": "apoyarte en quienes son leales",
+  "19": "tomar distancia para ver mejor",
+  "20": "compartir con otras personas",
+  "21": "tener paciencia con el obstáculo",
+  "22": "elegir con calma",
+  "23": "atender los pequeños desgastes",
+  "24": "escuchar lo que sentís",
+  "25": "sostener lo que prometiste",
+  "26": "informarte antes de decidir",
+  "27": "comunicarte con claridad",
+  "28": "mirar con atención a ese hombre cercano (o a vos mismo)",
+  "29": "mirar con atención a esa mujer cercana (o a vos misma)",
+  "30": "cuidar los vínculos con gentileza",
+  "31": "mostrarte con claridad",
+  "32": "escuchar tu sensibilidad",
+  "33": "animarte a abrir la puerta",
+  "34": "dejar circular lo que das y lo que recibís",
+  "35": "afirmar tu base",
+  "36": "sostener con paciencia lo que pesa"
+ },
+ "final": {
+  "pos": [
+   "En conjunto, la historia arranca en {o1}; la clave está en {k2}, y eso abre el camino hacia {o3}.",
+   "En conjunto, la clave es {k2}: así lo que arranca en {o1} se encamina hacia {o3}."
   ],
-  "mixed": [
-   "En conjunto hay luces y sombras: no es un sí ni un no, sino un mapa de lo que conviene cuidar.",
-   "En conjunto, hay una parte que impulsa y otra que frena: fijate cuál de las dos pesa más y empezá por esa."
+  "neu": [
+   "En conjunto, la historia arranca en {o1}; la clave está en {k2}, y eso te orienta hacia {o3}.",
+   "En conjunto, la clave es {k2}: con eso lo que arranca en {o1} se orienta hacia {o3}."
   ],
-  "tense": [
-   "En conjunto, las cartas piden ir despacio: no es un mal augurio, sino una invitación a revisar antes de moverte.",
-   "En conjunto, el recorrido es exigente: elegí el punto que más te pesa y empezá por ahí, sin cargar con todo a la vez."
-  ],
-  "rising": [
-   "En conjunto, el recorrido mejora hacia el final: lo que pesa al principio se acomoda. Seguí a tu ritmo.",
-   "En conjunto, lo más difícil queda al comienzo y lo que viene se ve más liviano: sostené el paso sin apurarte."
-  ],
-  "falling": [
-   "En conjunto, el último tramo pide atención: cuidalo con tiempo y sin dramatizar.",
-   "En conjunto, empieza con buena energía y el final pide cuidado: no es una sentencia, es un aviso para prepararte."
+  "neg": [
+   "En conjunto, la historia arranca en {o1}; la clave está en {k2}, y así {o3} se atraviesa con más calma.",
+   "En conjunto, la clave es {k2}: así lo que arranca en {o1} puede llegar a {o3} con menos peso."
   ]
  }
 }
