@@ -581,22 +581,32 @@ function renderFavorite() {
   box.replaceChildren(toggle, list);
 }
 
-// Dorso de las cartas (Usuario): el del mazo o uno propio. Solo cambia el diseño de atrás.
+// Dorso de las cartas (Usuario): desplegable igual al del mazo favorito.
+// Arriba se ve el elegido; al desplegar, la lista muestra solo los otros.
 function renderBackOptions() {
   const deck = deckCache.get(defaultDeckId);
-  $("back-options").replaceChildren(...BACK_CHOICES.map((c) => {
-    const b = el("button", "deck-option back-option");
+  const box = $("back-options");
+  const cur = BACK_CHOICES.find((c) => c.id === backPref) || BACK_CHOICES[0];
+  const toggle = el("button", "deck-option deck-select");
+  toggle.type = "button";
+  toggle.id = "back-toggle";
+  toggle.setAttribute("aria-haspopup", "true");
+  toggle.setAttribute("aria-expanded", "false");
+  toggle.setAttribute("aria-controls", "back-list");
+  toggle.append(el("span", "deck-option-name", cur.name), el("span", "deck-option-desc", cur.desc), el("span", "select-chev"));
+  const list = el("div", "deck-options");
+  list.id = "back-list";
+  list.hidden = true;
+  toggle.addEventListener("click", () => {
+    list.hidden = !list.hidden;
+    toggle.setAttribute("aria-expanded", String(!list.hidden));
+  });
+  list.replaceChildren(...BACK_CHOICES.filter((c) => c.id !== backPref).map((c) => {
+    const b = el("button", "deck-option");
     b.type = "button";
     b.setAttribute("role", "radio");
-    b.setAttribute("aria-checked", String(c.id === backPref));
-    const img = el("img", "back-thumb");
-    img.src = c.id === "deck" ? (BACK_OK.test(deck.back) ? deck.back : "img/back.webp") : ownBack(c.id);
-    img.alt = "";
-    img.width = 40;
-    img.height = 69;
-    const txt = el("span", "back-option-text");
-    txt.append(el("span", "deck-option-name", c.name), el("span", "deck-option-desc", c.desc));
-    b.append(img, txt);
+    b.setAttribute("aria-checked", "false");
+    b.append(el("span", "deck-option-name", c.name), el("span", "deck-option-desc", c.desc));
     b.addEventListener("click", () => {
       backPref = c.id;
       writeBack(c.id);
@@ -605,6 +615,7 @@ function renderBackOptions() {
     });
     return b;
   }));
+  box.replaceChildren(toggle, list);
 }
 
 // Arcano del año: sin barajar. La carta, su palabra y un mensaje fijo para todo el año.

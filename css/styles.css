@@ -424,7 +424,7 @@ body::before {
 .select-chev { position: absolute; right: 16px; top: 50%; margin-top: -7px; width: 9px; height: 9px;
   border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold); transform: rotate(45deg); transition: transform .25s ease; }
 .deck-select[aria-expanded="true"] .select-chev { transform: rotate(-135deg); margin-top: -2px; }
-#fav-options { gap: 10px; }
+#fav-options, #back-options { gap: 10px; }
 
 
 /* ===== Aviso de versión nueva ===== */
@@ -499,13 +499,4 @@ body::before {
   .card-flip.instant .card-face { transition: none; }
   .message { animation-name: fadeIn; }
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-}
-
-
-/* ===== Dorso de las cartas (elegible en Usuario) ===== */
-.back-option { grid-template-columns: auto 1fr; align-items: center; justify-items: start; column-gap: 14px; text-align: left; }
-.back-option-text { display: grid; gap: 2px; }
-.back-thumb {
-  width: 40px; height: 69px; border-radius: 4px; object-fit: fill;
-  box-shadow: 0 0 0 1px rgba(226, 191, 106, .5), 0 3px 8px rgba(0, 0, 0, .5);
 }
