@@ -906,7 +906,7 @@ function lenormandReading(picks) {
   const tone = [s1, s2, s3].every((x) => x >= 0) ? "fluid" : [s1, s2, s3].every((x) => x <= 0) ? "tense"
     : s3 > s1 ? "rising" : s3 < s1 ? "falling" : "mixed";
   const arr = cfg.closing[tone] || cfg.closing.mixed;
-  return { hilo: "", lead: `${cap(first)}. ${join}${second}.`, text: arr[picks[0].idx % arr.length], title: "Lectura de las tres cartas" };
+  return { hilo: "", lead: `${cap(first)}. ${join ? join + second : cap(second)}.`, text: arr[picks[0].idx % arr.length], title: "Lectura de las tres cartas" };
 }
 
 // Cierre de las tres cartas: tu texto para esa combinación > hilo + cierre según cuántas "pesan" (invertidas en tarot, de polaridad negativa en Lenormand).
