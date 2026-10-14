@@ -393,7 +393,13 @@ async function openSpread(spread) {
     try { answersData = await loadAnswers(defaultDeck.family); }
     catch { showError("No pudimos cargar las respuestas. Revisá tu conexión y volvé a intentar."); return; }
   }
-  applyDeckLook(defaultDeck);
+  showDeckView();
+}
+
+// Pantalla del mazo para barajar (con el mazo y la tirada que estén en 'current').
+function showDeckView() {
+  const { spread, deck } = current;
+  applyDeckLook(deck);
   const n = spread.positions.length;
   resetDeckView();
   $("deck-title").textContent = spread.name;
@@ -401,7 +407,7 @@ async function openSpread(spread) {
     ? "Respirá, pensá en tu día y tocá el mazo."
     : `Pensá en lo que querés consultar y tocá el mazo. Vas a sacar ${n} cartas.`;
   $("btn-draw").textContent = n === 1 ? "Barajar y sacar carta" : spread.fan ? `Barajar y elegir ${n} cartas` : `Barajar y sacar ${n} cartas`;
-  setChip("deck", current.deck.id);
+  setChip("deck", deck.id);
   showView("deck");
 }
 
@@ -434,7 +440,7 @@ function togglePicker(key) {
   const open = $(p.panel).hidden;
   hidePickers();
   if (!open) return;
-  const family = key === "year" ? "tarot" : key === "result" ? current?.deck.family : null; // en el resultado y el Arcano del año solo mazos compatibles
+  const family = key === "year" ? "tarot" : null; // el Arcano del año usa las cartas del tarot
   renderDeckOptions($(p.opts), pickerCurrent[key](), (id) => pickerAction[key](id), false, family);
   $(p.panel).hidden = false;
   $(p.btn).setAttribute("aria-expanded", "true");
@@ -445,6 +451,24 @@ function flash(msg) {
   setTimeout(() => { $("error").hidden = true; }, 4000);
 }
 
+// Pasa la tirada actual a otro mazo. Si es de otra familia (tarot <-> Lenormand) cambian los textos,
+// las respuestas Sí/No y el tema de la tirada de 3 cartas; las cartas sacadas no se pueden conservar.
+async function adoptDeck(d) {
+  const data = await loadMessages(d.family);
+  let spread = current.spread;
+  if (d.family !== current.deck.family) {
+    if (spread.answer) answersData = await loadAnswers(d.family);
+    if (spread.theme) {
+      const t = await loadTres(spread.base, d.family);
+      spread = themedSpread(spread.base, t.ai.themes.find((x) => x.id === spread.theme.id) || t.ai.themes[0]);
+    }
+  }
+  current.spread = spread;
+  current.deck = d;
+  current.data = data;
+  applyDeckLook(d);
+}
+
 async function pickDeckForSpread(id) {
   hidePickers();
   if (!current || id === current.deck.id) return;
@@ -453,19 +477,7 @@ async function pickDeckForSpread(id) {
   lead.textContent = "Cargando mazo…";
   try {
     const d = await loadDeck(id);
-    const data = await loadMessages(d.family);
-    let spread = current.spread;
-    if (d.family !== current.deck.family) { // otra familia: otros textos (y otras respuestas)
-      if (spread.answer) answersData = await loadAnswers(d.family);
-      if (spread.theme) {
-        const t = await loadTres(spread.base, d.family);
-        spread = themedSpread(spread.base, t.ai.themes.find((x) => x.id === spread.theme.id) || t.ai.themes[0]);
-      }
-    }
-    current.spread = spread;
-    current.deck = d;
-    current.data = data;
-    applyDeckLook(d);
+    await adoptDeck(d);
     setChip("deck", d.id);
     prefetchDeck(d);
   } catch {
@@ -479,7 +491,15 @@ async function changeResultDeck(id) {
   if (!current?.picks || id === current.deck.id) return;
   try {
     const d = await loadDeck(id);
-    if (d.family !== current.deck.family) throw new Error("otra familia");
+    if (d.family !== current.deck.family) {
+      const ok = window.confirm(`${d.name} es un mazo de otro tipo: sus cartas y sus mensajes son distintos, así que hay que barajar de nuevo y esta tirada se reemplaza. ¿Querés continuar?`);
+      if (!ok) return;
+      await adoptDeck(d);
+      current.picks = null;
+      prefetchDeck(d);
+      showDeckView();
+      return;
+    }
     const data = await loadMessages(d.family);
     if (!current.picks.every((p) => cardIn(d, p.cardId))) throw new Error("falta una carta");
     current.deck = d;
@@ -742,6 +762,7 @@ function resetDeckView() {
   $("btn-deck").hidden = false;
   $("cut").hidden = true;
   $("fan-wrap").hidden = true;
+  $("btn-fan-random").hidden = false;
   fanState = null;
   $("cut").classList.remove("split", "picked");
   document.querySelectorAll(".pile").forEach((p) => { p.classList.remove("chosen", "other"); p.disabled = false; });
