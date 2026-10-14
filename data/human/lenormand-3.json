@@ -1,0 +1,5 @@
+{
+ "_ayuda": "Tus textos para la tirada de 3 del Lenormand. 'pairs': clave '<n° 1ª carta>><n° 2ª carta>' (ej. \"1>24\") con una cláusula en minúscula con verbo propio (ej. \"llega una noticia que toca el corazón\"); pisa a la automática. 'conjunto': clave '<id1>,<id2>,<id3>' (ej. \"len-01,len-24,len-36\", en el orden en que salen) con la lectura completa de esas tres cartas; pisa a todo lo anterior.",
+ "pairs": {},
+ "conjunto": {}
+}

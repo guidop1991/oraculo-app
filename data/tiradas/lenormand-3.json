@@ -1,0 +1,28 @@
+{
+ "version": 1,
+ "_ayuda": "Textos de cierre de la tirada de 3 del Lenormand. El cierre se elige según el recorrido de las tres cartas (por su polaridad): fluid (ninguna negativa), tense (ninguna positiva), rising (de menos a más), falling (de más a menos) o mixed. 'joinSame' y 'joinFlip' son los conectores de la segunda frase: el mismo sentido o un cambio de sentido.",
+ "joinSame": "Y de ahí, ",
+ "joinFlip": "Pero de ahí, ",
+ "closing": {
+  "fluid": [
+   "Las tres cartas van en el mismo sentido: lo que preguntás se mueve con buena energía. Confiá en el hilo que ya venís tejiendo.",
+   "Todo el recorrido acompaña. Es un buen momento para dar el paso que tenías pensado, sin apurarte."
+  ],
+  "mixed": [
+   "Hay cartas que impulsan y alguna que frena. Fijate en la que pesa: ahí está lo que conviene ajustar.",
+   "La lectura tiene luces y sombras. No es un sí ni un no: es un mapa de lo que conviene cuidar."
+  ],
+  "tense": [
+   "Las tres cartas piden ir despacio. No es un mal augurio: es una invitación a revisar antes de moverte.",
+   "El recorrido es exigente. Mirá cuál es el punto que más te pesa y empezá por ahí, sin cargar con todo a la vez."
+  ],
+  "rising": [
+   "El recorrido mejora carta a carta: lo que pesa al principio se acomoda hacia el final. Seguí a tu ritmo.",
+   "Lo difícil queda atrás y lo que viene se ve más liviano. Sostené el paso sin apurarte."
+  ],
+  "falling": [
+   "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo.",
+   "Empieza con buena energía, pero el final pide atención. Cuidá ese tramo antes de que llegue."
+  ]
+ }
+}

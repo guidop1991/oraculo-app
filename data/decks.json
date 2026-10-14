@@ -57,7 +57,8 @@
         300,
         480
       ],
-      "premium": false
+      "premium": false,
+      "hidden": true
     }
   ]
 }

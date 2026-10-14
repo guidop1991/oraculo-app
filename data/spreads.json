@@ -76,10 +76,35 @@
           "key": "c3",
           "label": "Carta 3"
         }
-      ],
-      "themesFiles": {
-        "lenormand": "data/tiradas/tres-cartas-lenormand.json"
-      }
+      ]
+    },
+    {
+      "id": "lenormand-3",
+      "name": "Lenormand · 3 cartas",
+      "description": "Una pregunta que guardás para vos. Tres cartas, una sola lectura.",
+      "enabled": true,
+      "daily": false,
+      "group": "tiradas",
+      "fixedDeck": "lenormand",
+      "reading": "lenormand",
+      "fan": true,
+      "cut": false,
+      "meta": "3 cartas · pregunta interior",
+      "lead": "Pensá tu pregunta en silencio, sin decirla, y tocá el mazo. Después vas a elegir tus tres cartas del abanico.",
+      "positions": [
+        {
+          "key": "c1",
+          "label": "El tema"
+        },
+        {
+          "key": "c2",
+          "label": "Lo que lo modifica"
+        },
+        {
+          "key": "c3",
+          "label": "Hacia dónde se orienta"
+        }
+      ]
     },
     {
       "id": "tirada-de-5-cartas",

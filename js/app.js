@@ -185,7 +185,7 @@ async function prefetchDeck(deck) {
 // 'family' limita la lista a mazos de esa familia (ej. el favorito y el Arcano del año son solo de tarot).
 const familyOfMeta = (m) => m.family || "tarot";
 function renderDeckOptions(container, selectedId, onPick, hideSelected = false, family = null) {
-  container.replaceChildren(...decksMeta.filter((m) => !(hideSelected && m.id === selectedId) && (!family || familyOfMeta(m) === family)).map((m) => {
+  container.replaceChildren(...decksMeta.filter((m) => !m.hidden && !(hideSelected && m.id === selectedId) && (!family || familyOfMeta(m) === family)).map((m) => {
     const b = el("button", "deck-option");
     b.type = "button";
     b.setAttribute("role", "radio");
@@ -313,8 +313,8 @@ const validTres = (t) =>
     th && ID_OK.test(th.id) && typeof th.name === "string" &&
     Array.isArray(th.positions) && th.positions.length > 0 && th.positions.length <= 12 &&
     th.positions.every((p) => p && ID_OK.test(p.key) && typeof p.label === "string" &&
-      (th.mode === "flow" || ["up", "rev", "lens"].every((k) => typeof p[k] === "string"))) &&
-    (th.mode === "flow" ? typeof th.intro === "string" : typeof th.join === "string") &&
+      ["up", "rev", "lens"].every((k) => typeof p[k] === "string")) &&
+    typeof th.join === "string" &&
     th.closing && ["fluid", "mixed", "tense"].every((k) => Array.isArray(th.closing[k]) && th.closing[k].length > 0 &&
       th.closing[k].every((x) => typeof x === "string")));
 
@@ -371,7 +371,11 @@ const startTheme = (spread, theme) => openSpread(themedSpread(spread, theme));
 
 async function openSpread(spread) {
   if (spread.themesFile) return openThemes(spread);
-  const defaultDeck = deckCache.get(defaultDeckId);
+  let defaultDeck = deckCache.get(defaultDeckId);
+  if (spread.fixedDeck) { // tirada con su propio mazo (Lenormand): no usa el favorito ni el selector
+    try { defaultDeck = await loadDeck(spread.fixedDeck); }
+    catch { showError("No pudimos cargar este mazo. Revisá tu conexión y volvé a intentar."); return; }
+  }
   current = { spread, deck: defaultDeck, data: null, picks: null };
 
   // Carta "del día": queda grabada con el mazo que la sacó, aunque después cambies de mazo.
@@ -389,6 +393,10 @@ async function openSpread(spread) {
   }
 
   current.data = await loadMessages(defaultDeck.family);
+  if (spread.reading) {
+    try { await loadReading(); }
+    catch { showError("No pudimos cargar esta tirada. Revisá tu conexión y volvé a intentar."); return; }
+  }
   if (spread.answer) {
     try { answersData = await loadAnswers(defaultDeck.family); }
     catch { showError("No pudimos cargar las respuestas. Revisá tu conexión y volvé a intentar."); return; }
@@ -408,6 +416,7 @@ function showDeckView() {
     : `Pensá en lo que querés consultar y tocá el mazo. Vas a sacar ${n} cartas.`;
   $("btn-draw").textContent = n === 1 ? "Barajar y sacar carta" : spread.fan ? `Barajar y elegir ${n} cartas` : `Barajar y sacar ${n} cartas`;
   setChip("deck", deck.id);
+  $("btn-deck").hidden = !!spread.fixedDeck;
   showView("deck");
 }
 
@@ -823,35 +832,61 @@ function slotText(spread, i, pick) {
   return `${frame} ${pick.reversed ? card.reversed : card.meaning} ${pos.lens}`;
 }
 
-// Lenormand: las tres cartas se leen como UNA lectura, en el orden en que salen:
-// la 1 es el tema, la 2 lo modifica y la 3 es el desenlace. Los conectores dependen de la polaridad.
-// El cierre depende del recorrido de las tres.
-function flowReading(theme, cards) {
-  const sign = (c) => (c.polarity === "positiva" ? 1 : c.polarity === "negativa" ? -1 : 0);
-  const [s1, s2, s3] = cards.map(sign);
-  const [c1, c2, c3] = cards;
-  const noun = (c) => c.phrase || c.name.toLowerCase();
-  const mod = (c) => c.mod || (c.keywords[0] || c.name).toLowerCase();
-  const link = s2 > 0 ? "con" : s2 < 0 ? (s1 > 0 ? "pero con" : "con") : "con un toque de";
-  const end = s3 > 0 ? "Todo se abre hacia" : s3 < 0 ? "Al final queda a la vista" : "Todo se orienta hacia";
-  const lead = `${theme.intro} ${noun(c1)}, ${link} ${mod(c2)}. ${end} ${noun(c3)}.`;
-  const sg = [s1, s2, s3];
-  const tone = sg.every((x) => x >= 0) ? "fluid" : sg.every((x) => x <= 0) ? "tense"
-    : s3 > s1 && theme.closing.rising ? "rising" : s3 < s1 && theme.closing.falling ? "falling" : "mixed";
-  return { lead, tone };
+// ---------- Tirada de 3 del Lenormand ----------
+// Las tres cartas se leen como una historia en el orden en que salen: la 1 es el tema y la 2 lo modifica
+// (primera frase); la 2 pasa a ser el tema y la 3 lo modifica (segunda frase). Así la carta del medio
+// es la bisagra que une las dos frases. Si una pareja no tiene texto escrito se usa el marco propio de la
+// primera carta con la palabra de la segunda.
+let readingData = null; // { cfg, combos, human }
+async function loadReading() {
+  if (readingData) return readingData;
+  const [cfg, combos, human] = await Promise.all([
+    getJSON("data/tiradas/lenormand-3.json"), getJSON("data/combos/lenormand.json"), getJSON("data/human/lenormand-3.json", true)]);
+  if (!cfg?.closing || !combos?.pairs || !combos?.frames) throw new Error("tirada inválida");
+  readingData = { cfg, combos, human };
+  return readingData;
+}
+
+const polarity = (c) => (c.polarity === "positiva" ? 1 : c.polarity === "negativa" ? -1 : 0);
+const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+
+function pairClause(a, b) {
+  const { combos, human } = readingData;
+  const key = `${a.number}>${b.number}`;
+  for (const src of [human?.pairs, combos.pairs]) {
+    const t = src?.[key];
+    if (typeof t === "string" && t.trim()) return t.trim();
+  }
+  const f = combos.frames[String(a.number)];
+  const s = polarity(b);
+  const tpl = f && (s > 0 ? f.p : s < 0 ? f.n : f.z);
+  const bare = b.mod || (b.keywords[0] || b.name).toLowerCase();
+  return typeof tpl === "string" ? tpl.replaceAll("{m}", bare).replaceAll("{M}", b.modd || bare) : "";
+}
+
+function lenormandReading(picks) {
+  const cards = picks.map((p) => cardIn(current.deck, p.cardId));
+  const { cfg, human } = readingData;
+  const key = picks.map((p) => p.cardId).join(",");
+  const h = human?.conjunto?.[key];
+  if (typeof h === "string" && h.trim()) return { hilo: "", lead: "", text: h, title: "Lectura de las tres cartas" };
+  const [s1, s2, s3] = cards.map(polarity);
+  const first = pairClause(cards[0], cards[1]);
+  const second = pairClause(cards[1], cards[2]);
+  const join = s2 * s3 < 0 ? cfg.joinFlip : cfg.joinSame;
+  const tone = [s1, s2, s3].every((x) => x >= 0) ? "fluid" : [s1, s2, s3].every((x) => x <= 0) ? "tense"
+    : s3 > s1 ? "rising" : s3 < s1 ? "falling" : "mixed";
+  const arr = cfg.closing[tone] || cfg.closing.mixed;
+  return { hilo: "", lead: `${cap(first)}. ${join}${second}.`, text: arr[picks[0].idx % arr.length], title: "Lectura de las tres cartas" };
 }
 
 // Cierre de las tres cartas: tu texto para esa combinación > hilo + cierre según cuántas "pesan" (invertidas en tarot, de polaridad negativa en Lenormand).
 function overallFor(spread, picks) {
+  if (spread.reading) return lenormandReading(picks);
   const theme = spread.theme;
   const h = tresNow()?.human?.conjunto?.[`${theme.id}:${picks.map((p) => p.cardId).join(",")}`];
   const cards = picks.map((p) => cardIn(current.deck, p.cardId));
   if (typeof h === "string" && h.trim()) return { hilo: "", lead: "", text: h };
-  if (theme.mode === "flow") {
-    const r = flowReading(theme, cards);
-    const arr = theme.closing[r.tone];
-    return { hilo: "", lead: r.lead, text: arr[picks[0].idx % arr.length], title: "Lectura de las tres cartas" };
-  }
   let hilo = theme.join;
   picks.forEach((p, i) => { hilo = hilo.replaceAll(`{w${i + 1}}`, wordFor(cards[i], p.reversed)); });
   const rev = picks.filter((p) => p.reversed).length;
@@ -896,7 +931,7 @@ function makeSlot(spread, pos, pick, i, animate) {
     const word = el("p", "card-word");
     word.append(el("span", "", wordFor(card, pick.reversed)));
     slot.insertBefore(word, meta);
-    if (spread.theme?.mode !== "flow") slot.append(el("blockquote", "message", messageFor(pick, i))); // en el Lenormand la lectura es una sola, abajo
+    if (!spread.reading) slot.append(el("blockquote", "message", messageFor(pick, i))); // en el Lenormand la lectura es una sola, abajo
   }
 
   if (animate) {
@@ -912,16 +947,17 @@ function renderResult(animate, keepScroll = false) {
   const multi = spread.positions.length > 1;
   $("result-title").textContent = spread.name;
   setChip("result", deck.id);
+  $("btn-deck-result").hidden = !!spread.fixedDeck;
   $("slots").className = "slots" + (multi ? " multi" : "");
   $("slots").replaceChildren(...spread.positions.map((pos, i) => makeSlot(spread, pos, picks[i], i, animate)));
   const ov = $("overall");
-  if (spread.theme) {
+  if (spread.theme || spread.reading) {
     const o = overallFor(spread, picks);
     ov.replaceChildren(el("h3", "overall-title", o.title || "En conjunto"), ...(o.hilo ? [el("p", "overall-hilo", o.hilo)] : []),
       ...(o.lead ? [el("p", "overall-text", o.lead)] : []), el("p", "overall-text", o.text));
     ov.hidden = false;
   } else ov.hidden = true;
-  $("come-back").textContent = spread.theme
+  $("come-back").textContent = spread.theme || spread.reading
     ? "Lectura orientativa y de entretenimiento. No reemplaza la consulta con profesionales de la salud, legales ni financieros."
     : spread.answer
     ? "Respuesta orientativa y de entretenimiento. No la uses para decidir sobre salud, dinero o temas legales."
@@ -947,9 +983,9 @@ async function share() {
     const c = cardIn(deck, p.cardId);
     const head = `${multi ? spread.positions[i].label + ": " : ""}${c.name}${p.reversed ? " (invertida)" : ""} · ${wordFor(c, p.reversed)}`;
     return spread.answer ? `${c.name}${p.reversed ? " (invertida)" : ""} · ${answerFor(p).text}`
-      : spread.theme?.mode === "flow" ? head : `${head}\n“${messageFor(p, i)}”`;
+      : spread.reading ? head : `${head}\n“${messageFor(p, i)}”`;
   });
-  if (spread.theme) {
+  if (spread.theme || spread.reading) {
     const o = overallFor(spread, picks);
     lines.push(`${o.title || "En conjunto"}\n${o.hilo ? o.hilo + " " : ""}${o.lead ? o.lead + " " : ""}${o.text}`);
   }

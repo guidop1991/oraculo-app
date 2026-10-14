@@ -3,7 +3,7 @@
  "name": "Lenormand",
  "family": "lenormand",
  "license": "Original de este proyecto. Dibujado a partir de la simbología tradicional del Lenormand; textos propios.",
- "version": 3,
+ "version": 4,
  "back": "img/backs/lenormand.svg",
  "aspect": [
   300,
@@ -33,7 +33,8 @@
    ],
    "word": "Noticia",
    "phrase": "una noticia",
-   "mod": "movimiento y novedades"
+   "mod": "movimiento y novedades",
+   "modd": "el movimiento y las novedades"
   },
   {
    "id": "len-02",
@@ -56,7 +57,8 @@
    ],
    "word": "Oportunidad",
    "phrase": "una oportunidad liviana",
-   "mod": "ligereza"
+   "mod": "ligereza",
+   "modd": "la ligereza"
   },
   {
    "id": "len-03",
@@ -79,7 +81,8 @@
    ],
    "word": "Distancia",
    "phrase": "un movimiento hacia lo lejano",
-   "mod": "distancia"
+   "mod": "distancia",
+   "modd": "la distancia"
   },
   {
    "id": "len-04",
@@ -102,7 +105,8 @@
    ],
    "word": "Hogar",
    "phrase": "el hogar",
-   "mod": "calidez de hogar"
+   "mod": "calidez de hogar",
+   "modd": "la calidez del hogar"
   },
   {
    "id": "len-05",
@@ -126,7 +130,8 @@
    ],
    "word": "Raíces",
    "phrase": "un crecimiento paciente",
-   "mod": "raíces"
+   "mod": "raíces",
+   "modd": "las raíces"
   },
   {
    "id": "len-06",
@@ -149,7 +154,8 @@
    ],
    "word": "Confusión",
    "phrase": "una etapa de confusión",
-   "mod": "confusión"
+   "mod": "confusión",
+   "modd": "la confusión"
   },
   {
    "id": "len-07",
@@ -172,7 +178,8 @@
    ],
    "word": "Rodeo",
    "phrase": "un rodeo poco claro",
-   "mod": "rodeos"
+   "mod": "rodeos",
+   "modd": "los rodeos"
   },
   {
    "id": "len-08",
@@ -194,7 +201,8 @@
    ],
    "word": "Cierre",
    "phrase": "un cierre",
-   "mod": "cierre"
+   "mod": "cierre",
+   "modd": "el cierre"
   },
   {
    "id": "len-09",
@@ -217,7 +225,8 @@
    ],
    "word": "Gesto amable",
    "phrase": "un gesto amable",
-   "mod": "amabilidad"
+   "mod": "amabilidad",
+   "modd": "la amabilidad"
   },
   {
    "id": "len-10",
@@ -240,7 +249,8 @@
    ],
    "word": "Corte",
    "phrase": "un corte o imprevisto",
-   "mod": "cortes repentinos"
+   "mod": "cortes repentinos",
+   "modd": "los cortes repentinos"
   },
   {
    "id": "len-11",
@@ -262,7 +272,8 @@
    ],
    "word": "Tensión",
    "phrase": "una tensión",
-   "mod": "tensión"
+   "mod": "tensión",
+   "modd": "la tensión"
   },
   {
    "id": "len-12",
@@ -285,7 +296,8 @@
    ],
    "word": "Conversación",
    "phrase": "una charla o una preocupación pasajera",
-   "mod": "charla y preocupación"
+   "mod": "charla y preocupación",
+   "modd": "la charla y la preocupación"
   },
   {
    "id": "len-13",
@@ -308,7 +320,8 @@
    ],
    "word": "Novedad",
    "phrase": "una novedad pequeña",
-   "mod": "frescura"
+   "mod": "frescura",
+   "modd": "la frescura"
   },
   {
    "id": "len-14",
@@ -331,7 +344,8 @@
    ],
    "word": "Cautela",
    "phrase": "una situación que pide cautela",
-   "mod": "cautela"
+   "mod": "cautela",
+   "modd": "la cautela"
   },
   {
    "id": "len-15",
@@ -354,7 +368,8 @@
    ],
    "word": "Fuerza",
    "phrase": "una fuerza protectora",
-   "mod": "fuerza"
+   "mod": "fuerza",
+   "modd": "la fuerza"
   },
   {
    "id": "len-16",
@@ -377,7 +392,8 @@
    ],
    "word": "Esperanza",
    "phrase": "una luz de esperanza",
-   "mod": "esperanza"
+   "mod": "esperanza",
+   "modd": "la esperanza"
   },
   {
    "id": "len-17",
@@ -400,7 +416,8 @@
    ],
    "word": "Cambio",
    "phrase": "un cambio o una renovación",
-   "mod": "renovación"
+   "mod": "renovación",
+   "modd": "la renovación"
   },
   {
    "id": "len-18",
@@ -422,7 +439,8 @@
    ],
    "word": "Lealtad",
    "phrase": "una lealtad",
-   "mod": "lealtad"
+   "mod": "lealtad",
+   "modd": "la lealtad"
   },
   {
    "id": "len-19",
@@ -445,7 +463,8 @@
    ],
    "word": "Perspectiva",
    "phrase": "una mirada con perspectiva",
-   "mod": "perspectiva"
+   "mod": "perspectiva",
+   "modd": "la perspectiva"
   },
   {
    "id": "len-20",
@@ -468,7 +487,8 @@
    ],
    "word": "Encuentro",
    "phrase": "un encuentro",
-   "mod": "movida social"
+   "mod": "movida social",
+   "modd": "la movida social"
   },
   {
    "id": "len-21",
@@ -490,7 +510,8 @@
    ],
    "word": "Obstáculo",
    "phrase": "un obstáculo",
-   "mod": "obstáculos"
+   "mod": "obstáculos",
+   "modd": "los obstáculos"
   },
   {
    "id": "len-22",
@@ -513,7 +534,8 @@
    ],
    "word": "Decisión",
    "phrase": "una decisión entre caminos",
-   "mod": "decisiones pendientes"
+   "mod": "decisiones pendientes",
+   "modd": "las decisiones pendientes"
   },
   {
    "id": "len-23",
@@ -535,7 +557,8 @@
    ],
    "word": "Desgaste",
    "phrase": "un desgaste",
-   "mod": "desgaste"
+   "mod": "desgaste",
+   "modd": "el desgaste"
   },
   {
    "id": "len-24",
@@ -557,7 +580,8 @@
    ],
    "word": "Afecto",
    "phrase": "un sentimiento sincero",
-   "mod": "afecto"
+   "mod": "afecto",
+   "modd": "el afecto"
   },
   {
    "id": "len-25",
@@ -580,7 +604,8 @@
    ],
    "word": "Compromiso",
    "phrase": "un compromiso",
-   "mod": "compromiso"
+   "mod": "compromiso",
+   "modd": "el compromiso"
   },
   {
    "id": "len-26",
@@ -602,7 +627,8 @@
    ],
    "word": "Secreto",
    "phrase": "un saber en reserva",
-   "mod": "secreto"
+   "mod": "secreto",
+   "modd": "el secreto"
   },
   {
    "id": "len-27",
@@ -624,7 +650,8 @@
    ],
    "word": "Mensaje",
    "phrase": "un mensaje",
-   "mod": "mensajes"
+   "mod": "mensajes",
+   "modd": "los mensajes"
   },
   {
    "id": "len-28",
@@ -645,7 +672,8 @@
    ],
    "word": "El consultante",
    "phrase": "la figura de un hombre cercano (o la tuya)",
-   "mod": "presencia masculina"
+   "mod": "presencia masculina",
+   "modd": "una presencia masculina"
   },
   {
    "id": "len-29",
@@ -666,7 +694,8 @@
    ],
    "word": "La consultante",
    "phrase": "la figura de una mujer cercana (o la tuya)",
-   "mod": "presencia femenina"
+   "mod": "presencia femenina",
+   "modd": "una presencia femenina"
   },
   {
    "id": "len-30",
@@ -689,7 +718,8 @@
    ],
    "word": "Armonía",
    "phrase": "un momento de armonía",
-   "mod": "armonía"
+   "mod": "armonía",
+   "modd": "la armonía"
   },
   {
    "id": "len-31",
@@ -712,7 +742,8 @@
    ],
    "word": "Éxito",
    "phrase": "una energía luminosa",
-   "mod": "claridad"
+   "mod": "claridad",
+   "modd": "la claridad"
   },
   {
    "id": "len-32",
@@ -735,7 +766,8 @@
    ],
    "word": "Reconocimiento",
    "phrase": "una sensibilidad creativa",
-   "mod": "sensibilidad"
+   "mod": "sensibilidad",
+   "modd": "la sensibilidad"
   },
   {
    "id": "len-33",
@@ -757,7 +789,8 @@
    ],
    "word": "Solución",
    "phrase": "una solución",
-   "mod": "salida"
+   "mod": "salida",
+   "modd": "la salida"
   },
   {
    "id": "len-34",
@@ -780,7 +813,8 @@
    ],
    "word": "Abundancia",
    "phrase": "un fluir de abundancia",
-   "mod": "abundancia"
+   "mod": "abundancia",
+   "modd": "la abundancia"
   },
   {
    "id": "len-35",
@@ -802,7 +836,8 @@
    ],
    "word": "Estabilidad",
    "phrase": "una base estable",
-   "mod": "estabilidad"
+   "mod": "estabilidad",
+   "modd": "la estabilidad"
   },
   {
    "id": "len-36",
@@ -825,7 +860,8 @@
    ],
    "word": "Peso",
    "phrase": "una prueba pesada",
-   "mod": "peso"
+   "mod": "peso",
+   "modd": "el peso"
   }
  ]
 }
