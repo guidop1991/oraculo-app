@@ -1,36 +1,29 @@
 {
  "version": 1,
- "_ayuda": "Textos de la Tirada de 3 cartas para el Lenormand. El Lenormand no se lee invertido: el cierre se elige según cuántas cartas de las tres son de polaridad negativa (fluid: ninguna, mixed: 1 o 2, tense: las tres). Las combinaciones entre cartas vecinas (1+2, 2+3 y 1+3) salen de data/combos/lenormand.json. Tus textos propios van en data/human/tres-cartas-lenormand.json y pisan a estos (mismo formato que data/human/tres-cartas.json).",
+ "_ayuda": "Tirada de 3 cartas del Lenormand. Se lee como UNA sola frase que une las tres cartas en el orden en que salen: cada posición tiene una 'clause' con {N} (la frase de la carta, 'phrase' en data/decks/lenormand.json); entre cláusulas va «y» si el sentido se mantiene o «pero» si cambia (según la polaridad). Después va un cierre según el recorrido: fluid (las tres positivas), tense (las tres negativas), rising (de menos a más), falling (de más a menos) o mixed. Tu texto propio para una combinación exacta va en data/human/tres-cartas-lenormand.json, en 'conjunto' con la clave '<tema>:<id1>,<id2>,<id3>' (pisa a todo lo anterior).",
  "themes": [
   {
    "id": "vida",
    "name": "Vida",
    "description": "Cómo se encadena tu momento.",
-   "join": "Del pasado «{w1}», pasando por el presente «{w2}», hacia «{w3}».",
    "positions": [
     {
      "key": "pasado",
      "label": "Pasado",
      "hint": "La energía cercana en el tiempo",
-     "up": "En tu pasado aparece {carta}, con la palabra «{palabra}».",
-     "rev": "En tu pasado aparece {carta}, con la palabra «{palabra}».",
-     "lens": "Es energía cercana en el tiempo: mirala como lo que te trajo hasta acá."
+     "clause": "desde el pasado viene {N}"
     },
     {
      "key": "presente",
      "label": "Presente",
      "hint": "Lo que está vivo ahora",
-     "up": "En tu presente aparece {carta}, con la palabra «{palabra}».",
-     "rev": "En tu presente aparece {carta}, con la palabra «{palabra}».",
-     "lens": "Es lo que está vivo hoy: lo que podés ver, sentir y tocar."
+     "clause": "en el presente aparece {N}"
     },
     {
      "key": "futuro",
      "label": "Futuro",
      "hint": "Energía disponible para asimilar",
-     "up": "Hacia adelante se abre {carta}, con la palabra «{palabra}».",
-     "rev": "Hacia adelante se abre {carta}, con la palabra «{palabra}».",
-     "lens": "No es una predicción: es la energía disponible para que la asimiles y decidas qué hacer con ella."
+     "clause": "hacia adelante se abre {N}"
     }
    ],
    "closing": {
@@ -42,38 +35,38 @@
     ],
     "tense": [
      "Las tres piden ir más despacio. No es un mal augurio: es una invitación a revisar antes de moverte."
+    ],
+    "rising": [
+     "El recorrido mejora carta a carta: lo que pesa al principio se acomoda hacia el final. Seguí a tu ritmo, sin apurar el paso."
+    ],
+    "falling": [
+     "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
-   }
+   },
+   "mode": "flow"
   },
   {
    "id": "amor",
    "name": "Amor",
    "description": "El vínculo visto desde sus tres puntas.",
-   "join": "Vos desde «{w1}», el vínculo desde «{w2}» y la otra parte desde «{w3}».",
    "positions": [
     {
      "key": "yo",
      "label": "Mi energía",
      "hint": "Lo que aportás y sentís vos",
-     "up": "Tu energía en el vínculo la expresa {carta}, con la palabra «{palabra}».",
-     "rev": "Tu energía en el vínculo la expresa {carta}, con la palabra «{palabra}».",
-     "lens": "Es lo que traés vos: lo que sentís, lo que das y lo que esperás."
+     "clause": "de tu lado aparece {N}"
     },
     {
      "key": "vinculo",
      "label": "La energía del vínculo",
      "hint": "Lo que se crea entre ustedes",
-     "up": "La energía que se crea entre ustedes aparece en {carta}, con la palabra «{palabra}».",
-     "rev": "La energía que se crea entre ustedes aparece en {carta}, con la palabra «{palabra}».",
-     "lens": "Es el espacio compartido, más allá de cada uno: cómo se mueven juntos."
+     "clause": "en el vínculo se mueve {N}"
     },
     {
      "key": "otro",
      "label": "La energía de la otra parte",
      "hint": "Lo que aporta la otra persona",
-     "up": "La energía de la otra parte la muestra {carta}, con la palabra «{palabra}».",
-     "rev": "La energía de la otra parte la muestra {carta}, con la palabra «{palabra}».",
-     "lens": "Es una lectura de su energía, no de lo que piensa o decide: nadie puede leerle la cabeza a otra persona."
+     "clause": "de la otra parte llega {N}"
     }
    ],
    "closing": {
@@ -85,38 +78,38 @@
     ],
     "tense": [
      "Las tres cartas muestran cansancio o distancia. Antes de decidir, escuchate y escuchá: un diálogo sincero abre más que el silencio."
+    ],
+    "rising": [
+     "El recorrido mejora carta a carta: lo que pesa al principio se acomoda hacia el final. Seguí a tu ritmo, sin apurar el paso."
+    ],
+    "falling": [
+     "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
-   }
+   },
+   "mode": "flow"
   },
   {
    "id": "trabajo",
    "name": "Trabajo",
    "description": "El clima de tu vida laboral.",
-   "join": "Vos desde «{w1}», la relación desde «{w2}» y la empresa desde «{w3}».",
    "positions": [
     {
      "key": "yo",
      "label": "Mi energía",
      "hint": "Lo que aportás y sentís vos",
-     "up": "Tu energía en lo laboral la expresa {carta}, con la palabra «{palabra}».",
-     "rev": "Tu energía en lo laboral la expresa {carta}, con la palabra «{palabra}».",
-     "lens": "Es lo que traés vos: tus ganas, tu forma de trabajar y lo que necesitás."
+     "clause": "en lo tuyo aparece {N}"
     },
     {
      "key": "relacion",
      "label": "La energía de la relación laboral",
      "hint": "Cómo se vinculan en el trabajo",
-     "up": "La energía de la relación laboral aparece en {carta}, con la palabra «{palabra}».",
-     "rev": "La energía de la relación laboral aparece en {carta}, con la palabra «{palabra}».",
-     "lens": "Es el clima con tus compañeros, jefes o clientes: cómo se mueven juntos."
+     "clause": "en la relación laboral se siente {N}"
     },
     {
      "key": "empresa",
      "label": "La energía de la empresa",
      "hint": "El ambiente y el rumbo del lugar",
-     "up": "La energía de la empresa o del proyecto la muestra {carta}, con la palabra «{palabra}».",
-     "rev": "La energía de la empresa o del proyecto la muestra {carta}, con la palabra «{palabra}».",
-     "lens": "Es el ambiente general y el rumbo del lugar. Es una lectura de energía, no una promesa sobre resultados."
+     "clause": "en el rumbo del lugar se ve {N}"
     }
    ],
    "closing": {
@@ -128,38 +121,38 @@
     ],
     "tense": [
      "El clima laboral pide cautela. Cuidá tus tiempos, ordená prioridades y no cargues con lo que no te corresponde."
+    ],
+    "rising": [
+     "El recorrido mejora carta a carta: lo que pesa al principio se acomoda hacia el final. Seguí a tu ritmo, sin apurar el paso."
+    ],
+    "falling": [
+     "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
-   }
+   },
+   "mode": "flow"
   },
   {
    "id": "autoconocimiento",
    "name": "Autoconocimiento",
    "description": "Tu imagen, por dentro y por fuera.",
-   "join": "Te ves desde «{w1}», te ven desde «{w2}» y el foco está en «{w3}».",
    "positions": [
     {
      "key": "me-veo",
      "label": "Cómo me veo",
      "hint": "Tu mirada sobre vos",
-     "up": "Cuando te mirás a vos, aparece {carta}, con la palabra «{palabra}».",
-     "rev": "Cuando te mirás a vos, aparece {carta}, con la palabra «{palabra}».",
-     "lens": "Es la imagen que tenés de vos hoy, con sus luces y sus puntos ciegos."
+     "clause": "te ves a través de {N}"
     },
     {
      "key": "me-ven",
      "label": "Cómo me ve el resto",
      "hint": "La imagen que dejás en los demás",
-     "up": "Lo que los demás perciben de vos lo muestra {carta}, con la palabra «{palabra}».",
-     "rev": "Lo que los demás perciben de vos lo muestra {carta}, con la palabra «{palabra}».",
-     "lens": "Es la imagen que llega a otros. No siempre coincide con lo que sos, pero dice algo de cómo te mostrás."
+     "clause": "los demás perciben {N}"
     },
     {
      "key": "consejo",
      "label": "Consejo · qué trabajar",
      "hint": "Hacia dónde poner el foco",
-     "up": "Como consejo para trabajar aparece {carta}, con la palabra «{palabra}».",
-     "rev": "Como consejo para trabajar aparece {carta}, con la palabra «{palabra}».",
-     "lens": "Tomalo como una invitación: un punto en el que poner atención, a tu ritmo."
+     "clause": "como foco para trabajar queda {N}"
     }
    ],
    "closing": {
@@ -171,38 +164,38 @@
     ],
     "tense": [
      "Hoy te juzgás con dureza. Tratate como tratarías a alguien que querés: el consejo apunta a ese cuidado."
+    ],
+    "rising": [
+     "El recorrido mejora carta a carta: lo que pesa al principio se acomoda hacia el final. Seguí a tu ritmo, sin apurar el paso."
+    ],
+    "falling": [
+     "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
-   }
+   },
+   "mode": "flow"
   },
   {
    "id": "armonizacion",
    "name": "Mente, cuerpo y espíritu",
    "description": "El equilibrio entre tus tres planos.",
-   "join": "Tu mente va por «{w1}», tu cuerpo por «{w2}» y tu espíritu por «{w3}».",
    "positions": [
     {
      "key": "mente",
      "label": "Mente",
      "hint": "Pensamientos y mirada",
-     "up": "Tu mente hoy la refleja {carta}, con la palabra «{palabra}».",
-     "rev": "Tu mente hoy la refleja {carta}, con la palabra «{palabra}».",
-     "lens": "Mirá qué pensamientos se repiten y cuáles te harían bien soltar."
+     "clause": "en tu mente se refleja {N}"
     },
     {
      "key": "cuerpo",
      "label": "Cuerpo",
      "hint": "Energía, descanso y sensaciones",
-     "up": "Tu cuerpo y tu energía los refleja {carta}, con la palabra «{palabra}».",
-     "rev": "Tu cuerpo y tu energía los refleja {carta}, con la palabra «{palabra}».",
-     "lens": "Escuchá cómo te sentís: descanso, movimiento, ritmo. Esto no reemplaza la consulta con profesionales de la salud."
+     "clause": "en tu cuerpo y tu energía se refleja {N}"
     },
     {
      "key": "espiritu",
      "label": "Espíritu",
      "hint": "Sentido, intuición y conexión",
-     "up": "Tu espíritu hoy lo refleja {carta}, con la palabra «{palabra}».",
-     "rev": "Tu espíritu hoy lo refleja {carta}, con la palabra «{palabra}».",
-     "lens": "Es tu sentido interno: lo que te inspira, lo que intuís y lo que te conecta."
+     "clause": "en tu espíritu se refleja {N}"
     }
    ],
    "closing": {
@@ -214,8 +207,15 @@
     ],
     "tense": [
      "Hoy los tres planos piden descanso. Bajá el ritmo y hacé solo lo esencial; lo demás puede esperar."
+    ],
+    "rising": [
+     "El recorrido mejora carta a carta: lo que pesa al principio se acomoda hacia el final. Seguí a tu ritmo, sin apurar el paso."
+    ],
+    "falling": [
+     "La luz baja hacia el último tramo. No es una sentencia: es un aviso para cuidar ese punto con tiempo y sin dramatizar."
     ]
-   }
+   },
+   "mode": "flow"
   }
  ]
 }

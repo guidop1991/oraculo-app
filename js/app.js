@@ -24,7 +24,7 @@ let arcanos = { ai: null, human: null }; // textos de la Carta natal (humano > I
 let current = null; // { spread, deck, data, picks }
 let answersData = null; // { ai, human } respuestas sí/no del mazo en uso
 const answersCache = new Map(); // family -> { ai, human }
-const tresCache = new Map();    // family -> { ai, human, combos } textos de la Tirada de 3 cartas
+const tresCache = new Map();    // family -> { ai, human } textos de la Tirada de 3 cartas
 const tresNow = () => tresCache.get(current?.deck?.family);
 let fanState = null;  // estado del abanico mientras se eligen las cartas
 let yearState = null; // { profile, deck } del Arcano del año
@@ -310,22 +310,22 @@ function goBack() {
 // ---------- Tirada de 3 cartas: primero se elige el tema ----------
 const validTres = (t) =>
   t && Array.isArray(t.themes) && t.themes.length > 0 && t.themes.every((th) =>
-    th && ID_OK.test(th.id) && typeof th.name === "string" && typeof th.join === "string" &&
+    th && ID_OK.test(th.id) && typeof th.name === "string" &&
     Array.isArray(th.positions) && th.positions.length > 0 && th.positions.length <= 12 &&
-    th.positions.every((p) => p && ID_OK.test(p.key) && ["label", "up", "rev", "lens"].every((k) => typeof p[k] === "string")) &&
+    th.positions.every((p) => p && ID_OK.test(p.key) && typeof p.label === "string" &&
+      (th.mode === "flow" ? typeof p.clause === "string" : ["up", "rev", "lens"].every((k) => typeof p[k] === "string"))) &&
+    (th.mode === "flow" || typeof th.join === "string") &&
     th.closing && ["fluid", "mixed", "tense"].every((k) => Array.isArray(th.closing[k]) && th.closing[k].length > 0 &&
       th.closing[k].every((x) => typeof x === "string")));
 
-// Textos de la tirada según la familia del mazo (tarot o Lenormand). Para el Lenormand también
-// se cargan las combinaciones entre cartas vecinas.
+// Textos de la tirada según la familia del mazo (tarot o Lenormand).
 async function loadTres(spread, family) {
   if (tresCache.has(family)) return tresCache.get(family);
   const path = spread.themesFiles?.[family] || spread.themesFile;
   const humanPath = family === "tarot" ? TRES_HUMAN_PATH : `data/human/tres-cartas-${family}.json`;
-  const extra = family === "tarot" ? [null, null] : [getJSON(`data/combos/${family}.json`, true), getJSON(`data/human/${family}-combos.json`, true)];
-  const [ai, human, cAi, cHuman] = await Promise.all([getJSON(path), getJSON(humanPath, true), ...extra]);
+  const [ai, human] = await Promise.all([getJSON(path), getJSON(humanPath, true)]);
   if (!validTres(ai)) throw new Error("tirada inválida");
-  const t = { ai, human, combos: { ai: cAi, human: cHuman } };
+  const t = { ai, human };
   tresCache.set(family, t);
   return t;
 }
@@ -823,20 +823,20 @@ function slotText(spread, i, pick) {
   return `${frame} ${pick.reversed ? card.reversed : card.meaning} ${pos.lens}`;
 }
 
-// Lenormand: lectura de dos cartas vecinas. Tu texto > texto de la pareja > plantilla según la polaridad.
-function comboText(cA, cB) {
-  const t = tresNow();
-  const key = [cA, cB].sort((x, y) => x.number - y.number).map((c) => c.id).join("-");
-  for (const src of [t?.combos?.human, t?.combos?.ai]) {
-    const x = src?.pairs?.[key];
-    if (typeof x === "string" && x.trim()) return x;
-  }
-  const pol = (c) => (c.polarity === "positiva" ? "p" : c.polarity === "negativa" ? "n" : "m");
-  const tone = pol(cA) === "m" || pol(cB) === "m" ? "m" : pol(cA) + pol(cB);
-  const tpl = t?.combos?.ai?.tones?.[tone];
-  if (typeof tpl !== "string") return "";
-  const w = (c) => (c.word || c.keywords[0] || "").toLowerCase();
-  return tpl.replaceAll("{A}", cA.name).replaceAll("{B}", cB.name).replaceAll("{a}", w(cA)).replaceAll("{b}", w(cB));
+const cap = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+
+// Lenormand: las tres cartas se leen como UNA frase, en el orden en que salen. Entre cláusulas va «y» si el
+// sentido se mantiene o «pero» si cambia (según la polaridad). El cierre depende del recorrido de las tres.
+function flowReading(theme, cards) {
+  const sign = (c) => (c.polarity === "positiva" ? 1 : c.polarity === "negativa" ? -1 : 0);
+  const sg = cards.map(sign);
+  const parts = theme.positions.map((p, i) => p.clause.replaceAll("{N}", cards[i].phrase || cards[i].name.toLowerCase()));
+  let lead = cap(parts[0]);
+  for (let i = 1; i < parts.length; i++) lead += `${sg[i - 1] * sg[i] < 0 ? ", pero " : i === 1 ? ", y " : "; y "}${parts[i]}`;
+  const first = sg[0], last = sg[sg.length - 1];
+  const tone = sg.every((x) => x >= 0) ? "fluid" : sg.every((x) => x <= 0) ? "tense"
+    : last > first && theme.closing.rising ? "rising" : last < first && theme.closing.falling ? "falling" : "mixed";
+  return { lead: `${lead}.`, tone };
 }
 
 // Cierre de las tres cartas: tu texto para esa combinación > hilo + cierre según cuántas "pesan" (invertidas en tarot, de polaridad negativa en Lenormand).
@@ -844,16 +844,18 @@ function overallFor(spread, picks) {
   const theme = spread.theme;
   const h = tresNow()?.human?.conjunto?.[`${theme.id}:${picks.map((p) => p.cardId).join(",")}`];
   const cards = picks.map((p) => cardIn(current.deck, p.cardId));
-  const combos = current.deck.family === "lenormand"
-    ? [[0, 1], [1, 2], [0, 2]].map(([i, j]) => ({ label: `${cards[i].name} + ${cards[j].name}`, text: comboText(cards[i], cards[j]) })).filter((c) => c.text)
-    : [];
-  if (typeof h === "string" && h.trim()) return { hilo: "", text: h, combos };
+  if (typeof h === "string" && h.trim()) return { hilo: "", lead: "", text: h };
+  if (theme.mode === "flow") {
+    const r = flowReading(theme, cards);
+    const arr = theme.closing[r.tone];
+    return { hilo: "", lead: r.lead, text: arr[picks[0].idx % arr.length], title: "Lectura de las tres cartas" };
+  }
   let hilo = theme.join;
   picks.forEach((p, i) => { hilo = hilo.replaceAll(`{w${i + 1}}`, wordFor(cards[i], p.reversed)); });
-  const rev = picks.filter((p, i) => p.reversed || cards[i].polarity === "negativa").length;
+  const rev = picks.filter((p) => p.reversed).length;
   const tone = rev === 0 ? "fluid" : rev === picks.length ? "tense" : "mixed";
   const arr = theme.closing[tone];
-  return { hilo, text: arr[picks[0].idx % arr.length], combos };
+  return { hilo, lead: "", text: arr[picks[0].idx % arr.length] };
 }
 
 function messageFor(pick, i = 0) {
@@ -892,7 +894,7 @@ function makeSlot(spread, pos, pick, i, animate) {
     const word = el("p", "card-word");
     word.append(el("span", "", wordFor(card, pick.reversed)));
     slot.insertBefore(word, meta);
-    slot.append(el("blockquote", "message", messageFor(pick, i)));
+    if (spread.theme?.mode !== "flow") slot.append(el("blockquote", "message", messageFor(pick, i))); // en el Lenormand la lectura es una sola, abajo
   }
 
   if (animate) {
@@ -913,12 +915,8 @@ function renderResult(animate, keepScroll = false) {
   const ov = $("overall");
   if (spread.theme) {
     const o = overallFor(spread, picks);
-    const combos = o.combos.length ? [el("h3", "overall-title", "Combinaciones"), ...o.combos.map((c) => {
-      const p = el("p", "overall-text");
-      p.append(el("strong", "", `${c.label}: `), document.createTextNode(c.text));
-      return p;
-    })] : [];
-    ov.replaceChildren(...combos, el("h3", "overall-title", "En conjunto"), ...(o.hilo ? [el("p", "overall-hilo", o.hilo)] : []), el("p", "overall-text", o.text));
+    ov.replaceChildren(el("h3", "overall-title", o.title || "En conjunto"), ...(o.hilo ? [el("p", "overall-hilo", o.hilo)] : []),
+      ...(o.lead ? [el("p", "overall-text", o.lead)] : []), el("p", "overall-text", o.text));
     ov.hidden = false;
   } else ov.hidden = true;
   $("come-back").textContent = spread.theme
@@ -946,12 +944,12 @@ async function share() {
   const lines = picks.map((p, i) => {
     const c = cardIn(deck, p.cardId);
     const head = `${multi ? spread.positions[i].label + ": " : ""}${c.name}${p.reversed ? " (invertida)" : ""} · ${wordFor(c, p.reversed)}`;
-    return spread.answer ? `${c.name}${p.reversed ? " (invertida)" : ""} · ${answerFor(p).text}` : `${head}\n“${messageFor(p, i)}”`;
+    return spread.answer ? `${c.name}${p.reversed ? " (invertida)" : ""} · ${answerFor(p).text}`
+      : spread.theme?.mode === "flow" ? head : `${head}\n“${messageFor(p, i)}”`;
   });
   if (spread.theme) {
     const o = overallFor(spread, picks);
-    if (o.combos.length) lines.push(`Combinaciones\n${o.combos.map((c) => `${c.label}: ${c.text}`).join("\n")}`);
-    lines.push(`En conjunto\n${o.hilo ? o.hilo + " " : ""}${o.text}`);
+    lines.push(`${o.title || "En conjunto"}\n${o.hilo ? o.hilo + " " : ""}${o.lead ? o.lead + " " : ""}${o.text}`);
   }
   const title = `${spread.name} · Oráculo`;
   const text = `${title}\nMazo: ${metaOf(deck.id).name}\n\n${lines.join("\n\n")}`;

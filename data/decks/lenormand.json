@@ -3,7 +3,7 @@
  "name": "Lenormand",
  "family": "lenormand",
  "license": "Original de este proyecto. Dibujado a partir de la simbología tradicional del Lenormand; textos propios.",
- "version": 1,
+ "version": 2,
  "back": "img/backs/lenormand.svg",
  "aspect": [
   300,
@@ -31,7 +31,8 @@
     "movimiento",
     "hombre joven"
    ],
-   "word": "Noticia"
+   "word": "Noticia",
+   "phrase": "una noticia"
   },
   {
    "id": "len-02",
@@ -52,7 +53,8 @@
     "alegría breve",
     "esperanza"
    ],
-   "word": "Oportunidad"
+   "word": "Oportunidad",
+   "phrase": "una oportunidad liviana"
   },
   {
    "id": "len-03",
@@ -73,7 +75,8 @@
     "comercio",
     "herencia"
    ],
-   "word": "Distancia"
+   "word": "Distancia",
+   "phrase": "un movimiento hacia lo lejano"
   },
   {
    "id": "len-04",
@@ -94,7 +97,8 @@
     "seguridad",
     "propiedad"
    ],
-   "word": "Hogar"
+   "word": "Hogar",
+   "phrase": "el hogar"
   },
   {
    "id": "len-05",
@@ -116,7 +120,8 @@
     "paciencia",
     "pasado"
    ],
-   "word": "Raíces"
+   "word": "Raíces",
+   "phrase": "un crecimiento paciente"
   },
   {
    "id": "len-06",
@@ -137,7 +142,8 @@
     "retraso",
     "duda"
    ],
-   "word": "Confusión"
+   "word": "Confusión",
+   "phrase": "una etapa de confusión"
   },
   {
    "id": "len-07",
@@ -158,7 +164,8 @@
     "astucia",
     "mujer cercana"
    ],
-   "word": "Rodeo"
+   "word": "Rodeo",
+   "phrase": "un rodeo poco claro"
   },
   {
    "id": "len-08",
@@ -178,7 +185,8 @@
     "cierre de ciclo",
     "cambio de etapa"
    ],
-   "word": "Cierre"
+   "word": "Cierre",
+   "phrase": "un cierre"
   },
   {
    "id": "len-09",
@@ -199,7 +207,8 @@
     "reconocimiento",
     "invitación"
    ],
-   "word": "Gesto amable"
+   "word": "Gesto amable",
+   "phrase": "un gesto amable"
   },
   {
    "id": "len-10",
@@ -220,7 +229,8 @@
     "riesgo",
     "rapidez"
    ],
-   "word": "Corte"
+   "word": "Corte",
+   "phrase": "un corte o imprevisto"
   },
   {
    "id": "len-11",
@@ -240,7 +250,8 @@
     "tensión",
     "conflicto"
    ],
-   "word": "Tensión"
+   "word": "Tensión",
+   "phrase": "una tensión"
   },
   {
    "id": "len-12",
@@ -261,7 +272,8 @@
     "preocupación pasajera",
     "pareja"
    ],
-   "word": "Conversación"
+   "word": "Conversación",
+   "phrase": "una charla o una preocupación pasajera"
   },
   {
    "id": "len-13",
@@ -282,7 +294,8 @@
     "algo pequeño",
     "mujer joven"
    ],
-   "word": "Novedad"
+   "word": "Novedad",
+   "phrase": "una novedad pequeña"
   },
   {
    "id": "len-14",
@@ -303,7 +316,8 @@
     "trampa",
     "adversario"
    ],
-   "word": "Cautela"
+   "word": "Cautela",
+   "phrase": "una situación que pide cautela"
   },
   {
    "id": "len-15",
@@ -324,7 +338,8 @@
     "poder",
     "celos"
    ],
-   "word": "Fuerza"
+   "word": "Fuerza",
+   "phrase": "una fuerza protectora"
   },
   {
    "id": "len-16",
@@ -345,7 +360,8 @@
     "intuición",
     "paz"
    ],
-   "word": "Esperanza"
+   "word": "Esperanza",
+   "phrase": "una luz de esperanza"
   },
   {
    "id": "len-17",
@@ -366,7 +382,8 @@
     "renovación",
     "nacimiento"
    ],
-   "word": "Cambio"
+   "word": "Cambio",
+   "phrase": "un cambio o una renovación"
   },
   {
    "id": "len-18",
@@ -386,7 +403,8 @@
     "amistad",
     "confianza"
    ],
-   "word": "Lealtad"
+   "word": "Lealtad",
+   "phrase": "una lealtad"
   },
   {
    "id": "len-19",
@@ -407,7 +425,8 @@
     "soledad",
     "protección"
    ],
-   "word": "Perspectiva"
+   "word": "Perspectiva",
+   "phrase": "una mirada con perspectiva"
   },
   {
    "id": "len-20",
@@ -428,7 +447,8 @@
     "evento social",
     "reconocimiento"
    ],
-   "word": "Encuentro"
+   "word": "Encuentro",
+   "phrase": "un encuentro"
   },
   {
    "id": "len-21",
@@ -448,7 +468,8 @@
     "bloqueo",
     "demora"
    ],
-   "word": "Obstáculo"
+   "word": "Obstáculo",
+   "phrase": "un obstáculo"
   },
   {
    "id": "len-22",
@@ -469,7 +490,8 @@
     "separación",
     "mujer cercana"
    ],
-   "word": "Decisión"
+   "word": "Decisión",
+   "phrase": "una decisión entre caminos"
   },
   {
    "id": "len-23",
@@ -489,7 +511,8 @@
     "desgaste",
     "miedo"
    ],
-   "word": "Desgaste"
+   "word": "Desgaste",
+   "phrase": "un desgaste"
   },
   {
    "id": "len-24",
@@ -509,7 +532,8 @@
     "afecto",
     "emoción"
    ],
-   "word": "Afecto"
+   "word": "Afecto",
+   "phrase": "un sentimiento sincero"
   },
   {
    "id": "len-25",
@@ -530,7 +554,8 @@
     "unión",
     "ciclo"
    ],
-   "word": "Compromiso"
+   "word": "Compromiso",
+   "phrase": "un compromiso"
   },
   {
    "id": "len-26",
@@ -550,7 +575,8 @@
     "estudio",
     "saber"
    ],
-   "word": "Secreto"
+   "word": "Secreto",
+   "phrase": "un saber en reserva"
   },
   {
    "id": "len-27",
@@ -570,7 +596,8 @@
     "mensaje",
     "documento"
    ],
-   "word": "Mensaje"
+   "word": "Mensaje",
+   "phrase": "un mensaje"
   },
   {
    "id": "len-28",
@@ -589,7 +616,8 @@
     "el consultante (hombre)",
     "la persona amada"
    ],
-   "word": "El consultante"
+   "word": "El consultante",
+   "phrase": "la figura de un hombre cercano (o la tuya)"
   },
   {
    "id": "len-29",
@@ -608,7 +636,8 @@
     "la consultante (mujer)",
     "la persona amada"
    ],
-   "word": "La consultante"
+   "word": "La consultante",
+   "phrase": "la figura de una mujer cercana (o la tuya)"
   },
   {
    "id": "len-30",
@@ -629,7 +658,8 @@
     "protección",
     "pasión"
    ],
-   "word": "Armonía"
+   "word": "Armonía",
+   "phrase": "un momento de armonía"
   },
   {
    "id": "len-31",
@@ -650,7 +680,8 @@
     "alegría",
     "optimismo"
    ],
-   "word": "Éxito"
+   "word": "Éxito",
+   "phrase": "una energía luminosa"
   },
   {
    "id": "len-32",
@@ -671,7 +702,8 @@
     "intuición",
     "creatividad"
    ],
-   "word": "Reconocimiento"
+   "word": "Reconocimiento",
+   "phrase": "una sensibilidad creativa"
   },
   {
    "id": "len-33",
@@ -691,7 +723,8 @@
     "respuesta",
     "seguridad"
    ],
-   "word": "Solución"
+   "word": "Solución",
+   "phrase": "una solución"
   },
   {
    "id": "len-34",
@@ -712,7 +745,8 @@
     "dinero",
     "prosperidad"
    ],
-   "word": "Abundancia"
+   "word": "Abundancia",
+   "phrase": "un fluir de abundancia"
   },
   {
    "id": "len-35",
@@ -732,7 +766,8 @@
     "estabilidad",
     "rutina"
    ],
-   "word": "Estabilidad"
+   "word": "Estabilidad",
+   "phrase": "una base estable"
   },
   {
    "id": "len-36",
@@ -753,7 +788,8 @@
     "prueba",
     "fe"
    ],
-   "word": "Peso"
+   "word": "Peso",
+   "phrase": "una prueba pesada"
   }
  ]
 }
