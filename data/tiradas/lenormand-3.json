@@ -1,8 +1,8 @@
 {
  "version": 1,
- "_ayuda": "Textos de cierre de la tirada de 3 del Lenormand. El cierre se elige según el recorrido de las tres cartas (por su polaridad): fluid (ninguna negativa), tense (ninguna positiva), rising (de menos a más), falling (de más a menos) o mixed. 'joinSame' y 'joinFlip' son los conectores de la segunda frase: si sigue en el mismo sentido (vacío: va como oración aparte) o si cambia de sentido.",
+ "_ayuda": "Textos de cierre de la tirada de 3 del Lenormand. El cierre se elige según el recorrido de las tres cartas (por su polaridad): fluid (ninguna negativa), tense (ninguna positiva), rising (de menos a más), falling (de más a menos) o mixed. 'joinSame' y 'joinFlip' son conectores opcionales de la segunda frase (mismo sentido o cambio de sentido). Hoy van vacíos: la segunda frase va como oración aparte, porque un conector automático suena forzado cuando el texto no es un contraste.",
  "joinSame": "",
- "joinFlip": "Sin embargo, ",
+ "joinFlip": "",
  "closing": {
   "fluid": [
    "En conjunto, el recorrido acompaña: es un buen momento para dar el paso que tenías pensado, sin apurarte.",
