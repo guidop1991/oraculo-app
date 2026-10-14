@@ -1,6 +1,6 @@
 // Service worker: la app funciona sin conexión.
 // IMPORTANTE: cada vez que publiques cambios, subí el número de VERSION.
-const VERSION = "v14";
+const VERSION = "v15";
 const CACHE = `oraculo-${VERSION}`;
 
 const PRECACHE = [
@@ -11,6 +11,7 @@ const PRECACHE = [
   "js/app.js",
   "js/config.js",
   "js/storage.js",
+  "js/admin.js",
   "js/messages.js",
   "js/natal.js",
   "data/decks.json",

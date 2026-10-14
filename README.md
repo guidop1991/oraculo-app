@@ -135,3 +135,10 @@ Si tu sistema tiene desactivadas las animaciones (Windows: Configuración → Ac
 - Respuestas de Sí o No rehechas a partir del significado de cada carta (fluido al derecho, estancado invertida), sin ajustar proporciones.
 - Se agregó SUBIR-A-GITHUB.md con los pasos para publicar en GitHub Pages y verla desde el celular.
 - sw.js VERSION v14.
+
+
+## v12
+- Administrador local con PIN (6 a 12 números) que se crea en cada dispositivo. Se entra con 5 toques seguidos en el título "Oráculo" o abriendo la dirección con `#admin`.
+- Herramientas: reiniciar la carta del día, cambiar PIN, cerrar sesión. Con la sesión abierta, la carta del día muestra "Barajar de nuevo" (se quitó el modo `?dev=1`).
+- El PIN se guarda con hash (PBKDF2-SHA256, sal propia) y hay espera tras 5 intentos fallidos. Es una protección local: no reemplaza cuentas reales con servidor.
+- sw.js VERSION v15.

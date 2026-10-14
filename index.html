@@ -36,6 +36,41 @@
       <ul id="group-menu" class="menu"></ul>
     </section>
 
+    <!-- Administrador local -->
+    <section id="view-admin" class="view" hidden>
+      <button class="back" type="button" data-go="menu">← Inicio</button>
+      <h2 class="spread-title">Administrador</h2>
+
+      <form id="admin-setup" class="form" novalidate autocomplete="off" hidden>
+        <p class="lead">Creá un PIN de 6 a 12 números para las herramientas de administrador de este dispositivo.</p>
+        <label for="admin-pin-new">PIN nuevo</label>
+        <input id="admin-pin-new" type="password" inputmode="numeric" maxlength="12" autocomplete="new-password">
+        <label for="admin-pin-new2">Repetí el PIN</label>
+        <input id="admin-pin-new2" type="password" inputmode="numeric" maxlength="12" autocomplete="new-password">
+        <p id="admin-setup-error" class="form-error" role="alert" hidden></p>
+        <button class="btn" type="submit">Guardar PIN</button>
+      </form>
+
+      <form id="admin-login" class="form" novalidate autocomplete="off" hidden>
+        <label for="admin-pin">PIN de administrador</label>
+        <input id="admin-pin" type="password" inputmode="numeric" maxlength="12" autocomplete="current-password">
+        <p id="admin-login-error" class="form-error" role="alert" hidden></p>
+        <button class="btn" type="submit">Entrar</button>
+        <button id="btn-admin-forgot" class="btn ghost" type="button">Olvidé mi PIN</button>
+      </form>
+
+      <div id="admin-panel" class="user-block" hidden>
+        <p class="lead">Herramientas para este dispositivo.</p>
+        <div class="actions">
+          <button id="btn-admin-redraw" class="btn" type="button">Reiniciar la carta del día</button>
+          <button id="btn-admin-pin" class="btn ghost" type="button">Cambiar PIN</button>
+          <button id="btn-admin-lock" class="btn ghost" type="button">Cerrar sesión de administrador</button>
+        </div>
+        <p id="admin-msg" class="come-back" role="status"></p>
+        <p class="come-back">Con la sesión abierta, la carta del día muestra el botón “Barajar de nuevo”.</p>
+      </div>
+    </section>
+
     <!-- Mazo para barajar -->
     <section id="view-deck" class="view" hidden>
       <button class="back" type="button" data-go="origin">← Inicio</button>

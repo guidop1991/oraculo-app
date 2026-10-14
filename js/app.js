@@ -5,10 +5,10 @@ import {
 } from "./storage.js";
 import { carta, arcanoDelAnio, repetidos, NUMBER_TO_CARD, label, parseBirth } from "./natal.js";
 import { resolveMessage, variantCount } from "./messages.js";
+import * as admin from "./admin.js";
 
 const $ = (id) => document.getElementById(id);
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const DEV = new URLSearchParams(location.search).get("dev") === "1";
 const IMG_OK = /^img\/[\w\-\/]+\.(webp|png|jpg)$/; // solo imágenes propias del proyecto
 const ID_OK = /^[\w\-]+$/;
 const SHUFFLE_MS = 1700;
@@ -174,7 +174,7 @@ function showView(name, keepScroll = false) {
   hidePickers();
   const group = current?.spread?.group && spreads.find((s) => s.id === current.spread.group);
   for (const b of document.querySelectorAll("[data-go='origin']")) b.textContent = group ? `← ${group.name}` : "← Inicio";
-  for (const v of ["menu", "group", "deck", "result", "profile", "user", "year"]) $("view-" + v).hidden = v !== name;
+  for (const v of ["menu", "group", "deck", "result", "profile", "user", "year", "admin"]) $("view-" + v).hidden = v !== name;
   if (!keepScroll) window.scrollTo(0, 0);
 }
 
@@ -215,6 +215,60 @@ function openGroup(group) {
   $("group-lead").textContent = group.description || "";
   $("group-menu").replaceChildren(...spreads.filter((s) => s.group === group.id).map(menuItem));
   showView("group");
+}
+
+// ---------- administrador local ----------
+function openAdmin() {
+  for (const id of ["admin-setup", "admin-login", "admin-panel"]) $(id).hidden = true;
+  for (const id of ["admin-setup-error", "admin-login-error"]) $(id).hidden = true;
+  for (const id of ["admin-pin-new", "admin-pin-new2", "admin-pin"]) $(id).value = "";
+  $("admin-msg").textContent = "";
+  if (!admin.hasPin()) $("admin-setup").hidden = false;
+  else if (!admin.isUnlocked()) $("admin-login").hidden = false;
+  else $("admin-panel").hidden = false;
+  showView("admin");
+}
+
+function fieldError(id, msg) {
+  const e = $(id);
+  e.textContent = msg;
+  e.hidden = false;
+}
+
+async function submitAdminSetup(ev) {
+  ev.preventDefault();
+  const a = $("admin-pin-new").value, b = $("admin-pin-new2").value;
+  if (!admin.validPin(a)) return fieldError("admin-setup-error", "El PIN tiene que ser de 6 a 12 números.");
+  if (a !== b) return fieldError("admin-setup-error", "Los dos PIN no coinciden.");
+  if (!(await admin.setPin(a))) return fieldError("admin-setup-error", "No pudimos guardar el PIN en este dispositivo.");
+  openAdmin();
+}
+
+async function submitAdminLogin(ev) {
+  ev.preventDefault();
+  const res = await admin.verifyPin($("admin-pin").value.trim());
+  if (res.ok) return openAdmin();
+  $("admin-pin").value = "";
+  fieldError("admin-login-error", res.wait ? `Demasiados intentos. Probá de nuevo en ${res.wait} segundos.` : "PIN incorrecto.");
+}
+
+function adminRedraw() {
+  for (const s of spreads) if (s.daily) clearDaily(s);
+  $("admin-msg").textContent = "Listo: la carta del día se reinició. Ya podés sacar una nueva.";
+}
+
+function adminForgot() {
+  if (!confirm("Se borra el PIN de este dispositivo y vas a poder crear uno nuevo. ¿Seguimos?")) return;
+  admin.resetPin();
+  openAdmin();
+}
+
+// Acceso discreto: 5 toques seguidos en el título, o abrir la dirección con #admin.
+let titleTaps = [];
+function titleTap() {
+  const now = Date.now();
+  titleTaps = titleTaps.filter((t) => now - t < 3000).concat(now);
+  if (titleTaps.length >= 5) { titleTaps = []; openAdmin(); }
 }
 
 function goBack() {
@@ -624,8 +678,8 @@ function renderResult(animate, keepScroll = false) {
     : spread.daily
     ? "Mañana te espera una nueva. Volvé a leerla cuando quieras."
     : "Tomate un momento para leer cada carta con calma.";
-  $("btn-again").textContent = spread.daily ? "Barajar de nuevo (modo prueba)" : "Nueva tirada";
-  $("btn-again").hidden = spread.daily ? !DEV : false;
+  $("btn-again").textContent = spread.daily ? "Barajar de nuevo (administrador)" : "Nueva tirada";
+  $("btn-again").hidden = spread.daily ? !admin.isUnlocked() : false;
   showView("result", keepScroll);
 }
 
@@ -703,6 +757,13 @@ async function init() {
   $("btn-edit-profile").addEventListener("click", () => showProfileForm(readProfile(), "user"));
   $("btn-delete-profile").addEventListener("click", deleteProfile);
   document.querySelectorAll("[data-go='menu']").forEach((b) => b.addEventListener("click", renderMenu));
+  document.querySelector(".brand").addEventListener("click", titleTap);
+  $("admin-setup").addEventListener("submit", submitAdminSetup);
+  $("admin-login").addEventListener("submit", submitAdminLogin);
+  $("btn-admin-forgot").addEventListener("click", adminForgot);
+  $("btn-admin-redraw").addEventListener("click", adminRedraw);
+  $("btn-admin-pin").addEventListener("click", () => { admin.lock(); admin.resetPin(); openAdmin(); });
+  $("btn-admin-lock").addEventListener("click", () => { admin.lock(); renderMenu(); });
   document.querySelectorAll("[data-go='origin']").forEach((b) => b.addEventListener("click", goBack));
 
   try {
@@ -731,6 +792,7 @@ async function init() {
   }
 
   renderMenu();
+  if (location.hash === "#admin") openAdmin();
 }
 
 init();
