@@ -1,0 +1,759 @@
+{
+ "id": "lenormand",
+ "name": "Lenormand",
+ "family": "lenormand",
+ "license": "Original de este proyecto. Dibujado a partir de la simbología tradicional del Lenormand; textos propios.",
+ "version": 1,
+ "back": "img/backs/lenormand.svg",
+ "aspect": [
+  300,
+  480
+ ],
+ "reversible": false,
+ "premium": false,
+ "cards": [
+  {
+   "id": "len-01",
+   "name": "El Jinete",
+   "number": 1,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "9H",
+   "polarity": "positiva",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/01.svg",
+   "meaning": "Algo se pone en movimiento: una noticia, una visita o un mensaje que llega para sacudir lo quieto.",
+   "reversed": "",
+   "keywords": [
+    "noticia",
+    "visita",
+    "movimiento",
+    "hombre joven"
+   ],
+   "word": "Noticia"
+  },
+  {
+   "id": "len-02",
+   "name": "El Trébol",
+   "number": 2,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "6D",
+   "polarity": "positiva",
+   "time": "1-5 días",
+   "character": false,
+   "image": "img/decks/lenormand/02.svg",
+   "meaning": "Una pequeña suerte, una oportunidad liviana que aparece y pide que la agarres a tiempo.",
+   "reversed": "",
+   "keywords": [
+    "suerte",
+    "oportunidad",
+    "alegría breve",
+    "esperanza"
+   ],
+   "word": "Oportunidad"
+  },
+  {
+   "id": "len-03",
+   "name": "El Barco",
+   "number": 3,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "10S",
+   "polarity": "positiva",
+   "time": "1 mes",
+   "character": false,
+   "image": "img/decks/lenormand/03.svg",
+   "meaning": "Un movimiento hacia lo lejano: un viaje, un intercambio, una mirada que se abre más allá de lo conocido.",
+   "reversed": "",
+   "keywords": [
+    "viaje",
+    "distancia",
+    "comercio",
+    "herencia"
+   ],
+   "word": "Distancia"
+  },
+  {
+   "id": "len-04",
+   "name": "La Casa",
+   "number": 4,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "KH",
+   "polarity": "positiva",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/04.svg",
+   "meaning": "La base: tu casa, tu familia, lo que te da refugio y estructura.",
+   "reversed": "",
+   "keywords": [
+    "hogar",
+    "familia",
+    "seguridad",
+    "propiedad"
+   ],
+   "word": "Hogar"
+  },
+  {
+   "id": "len-05",
+   "name": "El Árbol",
+   "number": 5,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "7H",
+   "polarity": "positiva",
+   "time": "otoño o 2 años",
+   "character": false,
+   "image": "img/decks/lenormand/05.svg",
+   "meaning": "Crecimiento lento y firme: lo que se cuida con paciencia da frutos con el tiempo.",
+   "reversed": "",
+   "keywords": [
+    "vitalidad",
+    "crecimiento",
+    "raíces",
+    "paciencia",
+    "pasado"
+   ],
+   "word": "Raíces"
+  },
+  {
+   "id": "len-06",
+   "name": "Las Nubes",
+   "number": 6,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "KC",
+   "polarity": "negativa",
+   "time": "invierno",
+   "character": true,
+   "image": "img/decks/lenormand/06.svg",
+   "meaning": "Un tramo con poca claridad: dudas, versiones mezcladas, algo que todavía no se termina de ver.",
+   "reversed": "",
+   "keywords": [
+    "confusión",
+    "error",
+    "retraso",
+    "duda"
+   ],
+   "word": "Confusión"
+  },
+  {
+   "id": "len-07",
+   "name": "La Serpiente",
+   "number": 7,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "QC",
+   "polarity": "mixta",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/07.svg",
+   "meaning": "El camino no es recto: hay rodeos, astucia y alguien o algo que conviene mirar con atención.",
+   "reversed": "",
+   "keywords": [
+    "rodeo",
+    "engaño",
+    "astucia",
+    "mujer cercana"
+   ],
+   "word": "Rodeo"
+  },
+  {
+   "id": "len-08",
+   "name": "El Féretro",
+   "number": 8,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "9D",
+   "polarity": "negativa",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/08.svg",
+   "meaning": "Un ciclo termina para dejar lugar a otro: soltar, cerrar, descansar de lo que ya cumplió su función.",
+   "reversed": "",
+   "keywords": [
+    "final",
+    "cierre de ciclo",
+    "cambio de etapa"
+   ],
+   "word": "Cierre"
+  },
+  {
+   "id": "len-09",
+   "name": "El Ramo",
+   "number": 9,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "QS",
+   "polarity": "positiva",
+   "time": "2 semanas",
+   "character": true,
+   "image": "img/decks/lenormand/09.svg",
+   "meaning": "Un regalo, una invitación o un reconocimiento: algo lindo que llega sin pedir nada a cambio.",
+   "reversed": "",
+   "keywords": [
+    "regalo",
+    "alegría",
+    "reconocimiento",
+    "invitación"
+   ],
+   "word": "Gesto amable"
+  },
+  {
+   "id": "len-10",
+   "name": "La Guadaña",
+   "number": 10,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "JD",
+   "polarity": "negativa",
+   "time": "rápido",
+   "character": true,
+   "image": "img/decks/lenormand/10.svg",
+   "meaning": "Algo se corta de golpe: una decisión rápida o un imprevisto que obliga a reaccionar con claridad.",
+   "reversed": "",
+   "keywords": [
+    "corte",
+    "imprevisto",
+    "riesgo",
+    "rapidez"
+   ],
+   "word": "Corte"
+  },
+  {
+   "id": "len-11",
+   "name": "Las Varas",
+   "number": 11,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "JC",
+   "polarity": "negativa",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/11.svg",
+   "meaning": "Roces, discusiones o palabras con filo: una tensión que pide bajar el tono.",
+   "reversed": "",
+   "keywords": [
+    "discusión",
+    "tensión",
+    "conflicto"
+   ],
+   "word": "Tensión"
+  },
+  {
+   "id": "len-12",
+   "name": "Los Búhos",
+   "number": 12,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "7D",
+   "polarity": "mixta",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/12.svg",
+   "meaning": "Charlas, ideas dando vueltas y una preocupación pasajera que se aclara hablando.",
+   "reversed": "",
+   "keywords": [
+    "conversación",
+    "ideas",
+    "preocupación pasajera",
+    "pareja"
+   ],
+   "word": "Conversación"
+  },
+  {
+   "id": "len-13",
+   "name": "La Niña",
+   "number": 13,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "JS",
+   "polarity": "positiva",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/13.svg",
+   "meaning": "Algo pequeño, tierno o recién nacido: un comienzo simple que conviene cuidar sin apuro.",
+   "reversed": "",
+   "keywords": [
+    "novedad",
+    "inocencia",
+    "algo pequeño",
+    "mujer joven"
+   ],
+   "word": "Novedad"
+  },
+  {
+   "id": "len-14",
+   "name": "El Zorro",
+   "number": 14,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "9C",
+   "polarity": "negativa",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/14.svg",
+   "meaning": "Astucia y cuidado: mirá bien los detalles, preguntá y no des nada por hecho.",
+   "reversed": "",
+   "keywords": [
+    "astucia",
+    "cautela",
+    "trampa",
+    "adversario"
+   ],
+   "word": "Cautela"
+  },
+  {
+   "id": "len-15",
+   "name": "El Oso",
+   "number": 15,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "10C",
+   "polarity": "positiva",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/15.svg",
+   "meaning": "Una fuerza protectora: poder, firmeza y cuidado, aunque a veces con exceso de control.",
+   "reversed": "",
+   "keywords": [
+    "fuerza",
+    "protección",
+    "poder",
+    "celos"
+   ],
+   "word": "Fuerza"
+  },
+  {
+   "id": "len-16",
+   "name": "Las Estrellas",
+   "number": 16,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "6H",
+   "polarity": "positiva",
+   "time": "la noche",
+   "character": false,
+   "image": "img/decks/lenormand/16.svg",
+   "meaning": "Claridad y guía: proyectos con buena luz, intuición despierta y un cielo despejado para soñar.",
+   "reversed": "",
+   "keywords": [
+    "proyectos",
+    "esperanza",
+    "intuición",
+    "paz"
+   ],
+   "word": "Esperanza"
+  },
+  {
+   "id": "len-17",
+   "name": "La Cigüeña",
+   "number": 17,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "QH",
+   "polarity": "positiva",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/17.svg",
+   "meaning": "Una renovación en marcha: mudanza, mejora o la llegada de algo nuevo que transforma tu rutina.",
+   "reversed": "",
+   "keywords": [
+    "cambio",
+    "mudanza",
+    "renovación",
+    "nacimiento"
+   ],
+   "word": "Cambio"
+  },
+  {
+   "id": "len-18",
+   "name": "El Perro",
+   "number": 18,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "10H",
+   "polarity": "positiva",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/18.svg",
+   "meaning": "Amistad confiable: alguien o algo en quien podés apoyarte, y también la lealtad que ofrecés.",
+   "reversed": "",
+   "keywords": [
+    "lealtad",
+    "amistad",
+    "confianza"
+   ],
+   "word": "Lealtad"
+  },
+  {
+   "id": "len-19",
+   "name": "La Torre",
+   "number": 19,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "6S",
+   "polarity": "mixta",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/19.svg",
+   "meaning": "Una mirada desde lo alto: instituciones, autoridad o un momento de aislamiento que da perspectiva.",
+   "reversed": "",
+   "keywords": [
+    "autoridad",
+    "institución",
+    "soledad",
+    "protección"
+   ],
+   "word": "Perspectiva"
+  },
+  {
+   "id": "len-20",
+   "name": "El Parque",
+   "number": 20,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "8S",
+   "polarity": "positiva",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/20.svg",
+   "meaning": "Gente, reuniones y espacios compartidos: un momento social donde mostrarte y ser visto.",
+   "reversed": "",
+   "keywords": [
+    "gente",
+    "encuentro",
+    "evento social",
+    "reconocimiento"
+   ],
+   "word": "Encuentro"
+  },
+  {
+   "id": "len-21",
+   "name": "La Montaña",
+   "number": 21,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "8C",
+   "polarity": "negativa",
+   "time": "retrasos",
+   "character": false,
+   "image": "img/decks/lenormand/21.svg",
+   "meaning": "Un tramo cuesta arriba: algo frena o demora, y pide paciencia y estrategia para rodearlo.",
+   "reversed": "",
+   "keywords": [
+    "obstáculo",
+    "bloqueo",
+    "demora"
+   ],
+   "word": "Obstáculo"
+  },
+  {
+   "id": "len-22",
+   "name": "Los Caminos",
+   "number": 22,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "QD",
+   "polarity": "mixta",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/22.svg",
+   "meaning": "Dos o más caminos abiertos: es momento de elegir con calma, sabiendo que cada opción tiene su paisaje.",
+   "reversed": "",
+   "keywords": [
+    "decisión",
+    "alternativas",
+    "separación",
+    "mujer cercana"
+   ],
+   "word": "Decisión"
+  },
+  {
+   "id": "len-23",
+   "name": "Los Ratones",
+   "number": 23,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "7C",
+   "polarity": "negativa",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/23.svg",
+   "meaning": "Algo se va comiendo la energía de a poco: preocupaciones chicas que conviene atender antes de que crezcan.",
+   "reversed": "",
+   "keywords": [
+    "pérdida",
+    "desgaste",
+    "miedo"
+   ],
+   "word": "Desgaste"
+  },
+  {
+   "id": "len-24",
+   "name": "El Corazón",
+   "number": 24,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "JH",
+   "polarity": "positiva",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/24.svg",
+   "meaning": "Lo que sentís manda: amor, ternura y emoción genuina.",
+   "reversed": "",
+   "keywords": [
+    "amor",
+    "afecto",
+    "emoción"
+   ],
+   "word": "Afecto"
+  },
+  {
+   "id": "len-25",
+   "name": "El Anillo",
+   "number": 25,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "AC",
+   "polarity": "positiva",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/25.svg",
+   "meaning": "Un pacto o un ciclo que se cierra en círculo: acuerdos, vínculos y compromisos que piden coherencia.",
+   "reversed": "",
+   "keywords": [
+    "compromiso",
+    "acuerdo",
+    "unión",
+    "ciclo"
+   ],
+   "word": "Compromiso"
+  },
+  {
+   "id": "len-26",
+   "name": "El Libro",
+   "number": 26,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "10D",
+   "polarity": "mixta",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/26.svg",
+   "meaning": "Un saber que todavía no se muestra: estudio, secretos o algo por descubrir.",
+   "reversed": "",
+   "keywords": [
+    "secreto",
+    "estudio",
+    "saber"
+   ],
+   "word": "Secreto"
+  },
+  {
+   "id": "len-27",
+   "name": "La Carta",
+   "number": 27,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "7S",
+   "polarity": "positiva",
+   "time": "1 semana",
+   "character": false,
+   "image": "img/decks/lenormand/27.svg",
+   "meaning": "Una noticia por escrito: un mensaje, un documento o una respuesta que llega.",
+   "reversed": "",
+   "keywords": [
+    "noticia escrita",
+    "mensaje",
+    "documento"
+   ],
+   "word": "Mensaje"
+  },
+  {
+   "id": "len-28",
+   "name": "El Caballero",
+   "number": 28,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "AH",
+   "polarity": "positiva",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/28.svg",
+   "meaning": "La figura masculina de la consulta: sos vos o alguien cercano a quien la tirada habla.",
+   "reversed": "",
+   "keywords": [
+    "el consultante (hombre)",
+    "la persona amada"
+   ],
+   "word": "El consultante"
+  },
+  {
+   "id": "len-29",
+   "name": "La Dama",
+   "number": 29,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "AS",
+   "polarity": "positiva",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/29.svg",
+   "meaning": "La figura femenina de la consulta: sos vos o alguien cercana a quien la tirada habla.",
+   "reversed": "",
+   "keywords": [
+    "la consultante (mujer)",
+    "la persona amada"
+   ],
+   "word": "La consultante"
+  },
+  {
+   "id": "len-30",
+   "name": "Las Flores",
+   "number": 30,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "KS",
+   "polarity": "positiva",
+   "time": "primavera",
+   "character": true,
+   "image": "img/decks/lenormand/30.svg",
+   "meaning": "Belleza y buen trato: un momento amable donde todo se acomoda con suavidad.",
+   "reversed": "",
+   "keywords": [
+    "ayuda",
+    "armonía",
+    "protección",
+    "pasión"
+   ],
+   "word": "Armonía"
+  },
+  {
+   "id": "len-31",
+   "name": "El Sol",
+   "number": 31,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "AD",
+   "polarity": "positiva",
+   "time": "verano o el día",
+   "character": false,
+   "image": "img/decks/lenormand/31.svg",
+   "meaning": "Luz clara y energía plena: alegría, vitalidad y buenos resultados a la vista.",
+   "reversed": "",
+   "keywords": [
+    "éxito",
+    "energía",
+    "alegría",
+    "optimismo"
+   ],
+   "word": "Éxito"
+  },
+  {
+   "id": "len-32",
+   "name": "La Luna",
+   "number": 32,
+   "arcana": "lenormand",
+   "suit": "H",
+   "playing": "8H",
+   "polarity": "positiva",
+   "time": "la tarde",
+   "character": false,
+   "image": "img/decks/lenormand/32.svg",
+   "meaning": "Sensibilidad y creatividad: lo que sentís pide ser visto, y vos merecés que te vean.",
+   "reversed": "",
+   "keywords": [
+    "emoción",
+    "reconocimiento",
+    "intuición",
+    "creatividad"
+   ],
+   "word": "Reconocimiento"
+  },
+  {
+   "id": "len-33",
+   "name": "La Llave",
+   "number": 33,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "8D",
+   "polarity": "positiva",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/33.svg",
+   "meaning": "Algo se abre: una respuesta, una salida, la pieza que faltaba.",
+   "reversed": "",
+   "keywords": [
+    "solución",
+    "respuesta",
+    "seguridad"
+   ],
+   "word": "Solución"
+  },
+  {
+   "id": "len-34",
+   "name": "Los Peces",
+   "number": 34,
+   "arcana": "lenormand",
+   "suit": "D",
+   "playing": "KD",
+   "polarity": "positiva",
+   "time": null,
+   "character": true,
+   "image": "img/decks/lenormand/34.svg",
+   "meaning": "Fluir de recursos y de oportunidades: lo que das y lo que recibís circulan con libertad.",
+   "reversed": "",
+   "keywords": [
+    "abundancia",
+    "negocios",
+    "dinero",
+    "prosperidad"
+   ],
+   "word": "Abundancia"
+  },
+  {
+   "id": "len-35",
+   "name": "El Ancla",
+   "number": 35,
+   "arcana": "lenormand",
+   "suit": "S",
+   "playing": "9S",
+   "polarity": "positiva",
+   "time": "1 año",
+   "character": false,
+   "image": "img/decks/lenormand/35.svg",
+   "meaning": "Un puerto firme: trabajo, constancia y la tranquilidad de tener dónde sostenerte.",
+   "reversed": "",
+   "keywords": [
+    "trabajo",
+    "estabilidad",
+    "rutina"
+   ],
+   "word": "Estabilidad"
+  },
+  {
+   "id": "len-36",
+   "name": "La Cruz",
+   "number": 36,
+   "arcana": "lenormand",
+   "suit": "C",
+   "playing": "6C",
+   "polarity": "negativa",
+   "time": null,
+   "character": false,
+   "image": "img/decks/lenormand/36.svg",
+   "meaning": "Un tramo pesado que se transita con fe: una prueba que enseña y pide paciencia.",
+   "reversed": "",
+   "keywords": [
+    "peso",
+    "destino",
+    "prueba",
+    "fe"
+   ],
+   "word": "Peso"
+  }
+ ]
+}

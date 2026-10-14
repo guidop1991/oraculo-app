@@ -1,0 +1,7 @@
+{
+ "deck": "lenormand",
+ "version": 1,
+ "source": "humano",
+ "_ayuda": "Acá van TUS mensajes para el Lenormand. Formato: \"len-01\": { \"upright\": [\"mensaje 1\", \"mensaje 2\"] }. Las cartas del Lenormand no se leen invertidas. Si una carta tiene mensaje acá, reemplaza al de la IA.",
+ "messages": {}
+}

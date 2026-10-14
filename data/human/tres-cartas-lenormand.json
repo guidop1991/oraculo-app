@@ -1,0 +1,5 @@
+{
+ "_ayuda": "Tus textos propios para la Tirada de 3 cartas del Lenormand. 'slots': clave '<tema>.<posición>.<id de carta>.up'. 'conjunto': clave '<tema>:<id1>,<id2>,<id3>'.",
+ "slots": {},
+ "conjunto": {}
+}

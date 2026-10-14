@@ -1,6 +1,6 @@
 // Service worker: la app funciona sin conexión.
 // IMPORTANTE: cada vez que publiques cambios, subí el número de VERSION.
-const VERSION = "v22";
+const VERSION = "v23";
 const CACHE = `oraculo-${VERSION}`;
 
 const PRECACHE = [
@@ -18,8 +18,16 @@ const PRECACHE = [
   "data/decks/rider-waite.json",
   "data/decks/marsella.json",
   "data/decks/vieville.json",
+  "data/decks/lenormand.json",
   "data/messages/tarot.json",
   "data/human/tarot.json",
+  "data/messages/lenormand.json",
+  "data/human/lenormand.json",
+  "data/answers/lenormand.json",
+  "data/combos/lenormand.json",
+  "data/human/lenormand-combos.json",
+  "data/tiradas/tres-cartas-lenormand.json",
+  "data/human/tres-cartas-lenormand.json",
   "data/answers/tarot.json",
   "data/human/answers.json",
   "data/spreads.json",
@@ -37,6 +45,7 @@ const PRECACHE = [
   "img/backs/yinyang.svg",
   "img/backs/luna.svg",
   "img/backs/sol.svg",
+  "img/backs/lenormand.svg",
   // Las imágenes de las cartas NO se descargan al instalar (así la app abre más rápido):
   // se guardan solas a medida que se usan y el mazo elegido se baja en segundo plano.
   "icons/icon-192.png",

@@ -76,7 +76,10 @@
           "key": "c3",
           "label": "Carta 3"
         }
-      ]
+      ],
+      "themesFiles": {
+        "lenormand": "data/tiradas/tres-cartas-lenormand.json"
+      }
     },
     {
       "id": "tirada-de-5-cartas",

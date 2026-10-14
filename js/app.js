@@ -9,7 +9,7 @@ import * as admin from "./admin.js";
 
 const $ = (id) => document.getElementById(id);
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const IMG_OK = /^img\/[\w\-\/]+\.(webp|png|jpg)$/; // solo imágenes propias del proyecto
+const IMG_OK = /^img\/[\w\-\/]+\.(webp|png|jpg|svg)$/; // solo imágenes propias del proyecto
 const ID_OK = /^[\w\-]+$/;
 const BACK_OK = /^img\/backs\/[\w\-]+\.svg$/; // dorsos propios del proyecto
 const SHUFFLE_MS = 1700;
@@ -22,8 +22,10 @@ const msgCache = new Map();   // family -> { ai, human }
 let spreads = [];
 let arcanos = { ai: null, human: null }; // textos de la Carta natal (humano > IA)
 let current = null; // { spread, deck, data, picks }
-let answersData = null; // { ai, human } respuestas sí/no (se cargan al abrir esa tirada)
-let tresData = null;  // { ai, human } textos de la Tirada de 3 cartas (se cargan al abrirla)
+let answersData = null; // { ai, human } respuestas sí/no del mazo en uso
+const answersCache = new Map(); // family -> { ai, human }
+const tresCache = new Map();    // family -> { ai, human, combos } textos de la Tirada de 3 cartas
+const tresNow = () => tresCache.get(current?.deck?.family);
 let fanState = null;  // estado del abanico mientras se eligen las cartas
 let yearState = null; // { profile, deck } del Arcano del año
 
@@ -116,11 +118,12 @@ const ANSWERS = {
 };
 
 async function loadAnswers(family) {
-  if (answersData) return answersData;
+  if (answersCache.has(family)) return answersCache.get(family);
   const p = answersPaths(family);
   const [ai, human] = await Promise.all([getJSON(p.ai, true), getJSON(p.human, true)]);
-  answersData = { ai, human };
-  return answersData;
+  const a = { ai, human };
+  answersCache.set(family, a);
+  return a;
 }
 
 // Jerarquía igual que los mensajes: tu respuesta > la de la IA > "Quizás".
@@ -179,8 +182,10 @@ async function prefetchDeck(deck) {
 }
 
 // Opciones de mazo (radios) para el selector de tirada y para "Mazo favorito".
-function renderDeckOptions(container, selectedId, onPick, hideSelected = false) {
-  container.replaceChildren(...decksMeta.filter((m) => !(hideSelected && m.id === selectedId)).map((m) => {
+// 'family' limita la lista a mazos de esa familia (ej. el favorito y el Arcano del año son solo de tarot).
+const familyOfMeta = (m) => m.family || "tarot";
+function renderDeckOptions(container, selectedId, onPick, hideSelected = false, family = null) {
+  container.replaceChildren(...decksMeta.filter((m) => !(hideSelected && m.id === selectedId) && (!family || familyOfMeta(m) === family)).map((m) => {
     const b = el("button", "deck-option");
     b.type = "button";
     b.setAttribute("role", "radio");
@@ -311,21 +316,27 @@ const validTres = (t) =>
     th.closing && ["fluid", "mixed", "tense"].every((k) => Array.isArray(th.closing[k]) && th.closing[k].length > 0 &&
       th.closing[k].every((x) => typeof x === "string")));
 
-async function loadTres(path) {
-  if (tresData) return tresData;
-  const [ai, human] = await Promise.all([getJSON(path), getJSON(TRES_HUMAN_PATH, true)]);
+// Textos de la tirada según la familia del mazo (tarot o Lenormand). Para el Lenormand también
+// se cargan las combinaciones entre cartas vecinas.
+async function loadTres(spread, family) {
+  if (tresCache.has(family)) return tresCache.get(family);
+  const path = spread.themesFiles?.[family] || spread.themesFile;
+  const humanPath = family === "tarot" ? TRES_HUMAN_PATH : `data/human/tres-cartas-${family}.json`;
+  const extra = family === "tarot" ? [null, null] : [getJSON(`data/combos/${family}.json`, true), getJSON(`data/human/${family}-combos.json`, true)];
+  const [ai, human, cAi, cHuman] = await Promise.all([getJSON(path), getJSON(humanPath, true), ...extra]);
   if (!validTres(ai)) throw new Error("tirada inválida");
-  tresData = { ai, human };
-  return tresData;
+  const t = { ai, human, combos: { ai: cAi, human: cHuman } };
+  tresCache.set(family, t);
+  return t;
 }
 
 async function openThemes(spread) {
   current = { spread, deck: deckCache.get(defaultDeckId), data: null, picks: null };
-  try { await loadTres(spread.themesFile); }
+  try { await loadTres(spread, current.deck.family); }
   catch { showError("No pudimos cargar esta tirada. Revisá tu conexión y volvé a intentar."); return; }
   $("group-title").textContent = spread.name;
   $("group-lead").textContent = "Elegí el tema de tu consulta.";
-  $("group-menu").replaceChildren(...tresData.ai.themes.map((th) => {
+  $("group-menu").replaceChildren(...tresNow().ai.themes.map((th) => {
     const li = el("li");
     const b = el("button", "menu-item");
     b.type = "button";
@@ -341,18 +352,22 @@ async function openThemes(spread) {
   showView("group");
 }
 
-function startTheme(spread, theme) {
-  const { themesFile, meta, ...rest } = spread;
-  openSpread({
+// Arma la tirada de un tema. Guarda la tirada original ('base') para poder cambiar de familia de mazo.
+function themedSpread(spread, theme) {
+  const { themesFile, themesFiles, meta, ...rest } = spread;
+  return {
     ...rest,
+    base: spread,
     id: `${spread.id}-${theme.id}`,
     name: `${spread.name} · ${theme.name}`,
     theme,
     cut: false,
     lead: "Pensá en tu consulta y tocá el mazo. Después vas a elegir tus cartas del abanico.",
     positions: theme.positions.map((p) => ({ key: p.key, label: p.label }))
-  });
+  };
 }
+
+const startTheme = (spread, theme) => openSpread(themedSpread(spread, theme));
 
 async function openSpread(spread) {
   if (spread.themesFile) return openThemes(spread);
@@ -375,7 +390,7 @@ async function openSpread(spread) {
 
   current.data = await loadMessages(defaultDeck.family);
   if (spread.answer) {
-    try { await loadAnswers(defaultDeck.family); }
+    try { answersData = await loadAnswers(defaultDeck.family); }
     catch { showError("No pudimos cargar las respuestas. Revisá tu conexión y volvé a intentar."); return; }
   }
   applyDeckLook(defaultDeck);
@@ -419,7 +434,8 @@ function togglePicker(key) {
   const open = $(p.panel).hidden;
   hidePickers();
   if (!open) return;
-  renderDeckOptions($(p.opts), pickerCurrent[key](), (id) => pickerAction[key](id));
+  const family = key === "year" ? "tarot" : key === "result" ? current?.deck.family : null; // en el resultado y el Arcano del año solo mazos compatibles
+  renderDeckOptions($(p.opts), pickerCurrent[key](), (id) => pickerAction[key](id), false, family);
   $(p.panel).hidden = false;
   $(p.btn).setAttribute("aria-expanded", "true");
 }
@@ -437,8 +453,18 @@ async function pickDeckForSpread(id) {
   lead.textContent = "Cargando mazo…";
   try {
     const d = await loadDeck(id);
+    const data = await loadMessages(d.family);
+    let spread = current.spread;
+    if (d.family !== current.deck.family) { // otra familia: otros textos (y otras respuestas)
+      if (spread.answer) answersData = await loadAnswers(d.family);
+      if (spread.theme) {
+        const t = await loadTres(spread.base, d.family);
+        spread = themedSpread(spread.base, t.ai.themes.find((x) => x.id === spread.theme.id) || t.ai.themes[0]);
+      }
+    }
+    current.spread = spread;
     current.deck = d;
-    current.data = await loadMessages(d.family);
+    current.data = data;
     applyDeckLook(d);
     setChip("deck", d.id);
     prefetchDeck(d);
@@ -453,6 +479,7 @@ async function changeResultDeck(id) {
   if (!current?.picks || id === current.deck.id) return;
   try {
     const d = await loadDeck(id);
+    if (d.family !== current.deck.family) throw new Error("otra familia");
     const data = await loadMessages(d.family);
     if (!current.picks.every((p) => cardIn(d, p.cardId))) throw new Error("falta una carta");
     current.deck = d;
@@ -577,7 +604,7 @@ function renderFavorite() {
     } catch {
       showError("No pudimos cargar ese mazo. Probá de nuevo con conexión.");
     }
-  }, true); // el mazo elegido ya se ve arriba: la lista muestra solo los otros
+  }, true, "tarot"); // el elegido ya se ve arriba; el favorito es de tarot porque la carta natal usa sus cartas
   box.replaceChildren(toggle, list);
 }
 
@@ -695,7 +722,7 @@ function deleteProfile() {
 function drawPicks(n) {
   const { deck, data } = current;
   const pool = deck.cards.map((_, i) => i);
-  const reversedPct = Math.round(CONFIG.reversedChance * 100);
+  const reversedPct = deck.reversible === false ? 0 : Math.round(CONFIG.reversedChance * 100); // el Lenormand no se lee invertido
   const picks = [];
   for (let k = 0; k < n; k++) {
     const card = deck.cards[pool.splice(randInt(pool.length), 1)[0]]; // sin repetir
@@ -768,24 +795,44 @@ function slotText(spread, i, pick) {
   const theme = spread.theme;
   const pos = theme.positions[i];
   const card = cardIn(current.deck, pick.cardId);
-  const h = tresData?.human?.slots?.[`${theme.id}.${pos.key}.${card.id}.${pick.reversed ? "rev" : "up"}`];
+  const h = tresNow()?.human?.slots?.[`${theme.id}.${pos.key}.${card.id}.${pick.reversed ? "rev" : "up"}`];
   if (typeof h === "string" && h.trim()) return h;
   const frame = (pick.reversed ? pos.rev : pos.up)
     .replaceAll("{carta}", card.name).replaceAll("{palabra}", wordFor(card, pick.reversed));
   return `${frame} ${pick.reversed ? card.reversed : card.meaning} ${pos.lens}`;
 }
 
-// Cierre de las tres cartas: tu texto para esa combinación > hilo + cierre según cuántas salieron invertidas.
+// Lenormand: lectura de dos cartas vecinas. Tu texto > texto de la pareja > plantilla según la polaridad.
+function comboText(cA, cB) {
+  const t = tresNow();
+  const key = [cA, cB].sort((x, y) => x.number - y.number).map((c) => c.id).join("-");
+  for (const src of [t?.combos?.human, t?.combos?.ai]) {
+    const x = src?.pairs?.[key];
+    if (typeof x === "string" && x.trim()) return x;
+  }
+  const pol = (c) => (c.polarity === "positiva" ? "p" : c.polarity === "negativa" ? "n" : "m");
+  const tone = pol(cA) === "m" || pol(cB) === "m" ? "m" : pol(cA) + pol(cB);
+  const tpl = t?.combos?.ai?.tones?.[tone];
+  if (typeof tpl !== "string") return "";
+  const w = (c) => (c.word || c.keywords[0] || "").toLowerCase();
+  return tpl.replaceAll("{A}", cA.name).replaceAll("{B}", cB.name).replaceAll("{a}", w(cA)).replaceAll("{b}", w(cB));
+}
+
+// Cierre de las tres cartas: tu texto para esa combinación > hilo + cierre según cuántas "pesan" (invertidas en tarot, de polaridad negativa en Lenormand).
 function overallFor(spread, picks) {
   const theme = spread.theme;
-  const h = tresData?.human?.conjunto?.[`${theme.id}:${picks.map((p) => p.cardId).join(",")}`];
-  if (typeof h === "string" && h.trim()) return { hilo: "", text: h };
+  const h = tresNow()?.human?.conjunto?.[`${theme.id}:${picks.map((p) => p.cardId).join(",")}`];
+  const cards = picks.map((p) => cardIn(current.deck, p.cardId));
+  const combos = current.deck.family === "lenormand"
+    ? [[0, 1], [1, 2], [0, 2]].map(([i, j]) => ({ label: `${cards[i].name} + ${cards[j].name}`, text: comboText(cards[i], cards[j]) })).filter((c) => c.text)
+    : [];
+  if (typeof h === "string" && h.trim()) return { hilo: "", text: h, combos };
   let hilo = theme.join;
-  picks.forEach((p, i) => { hilo = hilo.replaceAll(`{w${i + 1}}`, wordFor(cardIn(current.deck, p.cardId), p.reversed)); });
-  const rev = picks.filter((p) => p.reversed).length;
+  picks.forEach((p, i) => { hilo = hilo.replaceAll(`{w${i + 1}}`, wordFor(cards[i], p.reversed)); });
+  const rev = picks.filter((p, i) => p.reversed || cards[i].polarity === "negativa").length;
   const tone = rev === 0 ? "fluid" : rev === picks.length ? "tense" : "mixed";
   const arr = theme.closing[tone];
-  return { hilo, text: arr[picks[0].idx % arr.length] };
+  return { hilo, text: arr[picks[0].idx % arr.length], combos };
 }
 
 function messageFor(pick, i = 0) {
@@ -845,7 +892,12 @@ function renderResult(animate, keepScroll = false) {
   const ov = $("overall");
   if (spread.theme) {
     const o = overallFor(spread, picks);
-    ov.replaceChildren(el("h3", "overall-title", "En conjunto"), ...(o.hilo ? [el("p", "overall-hilo", o.hilo)] : []), el("p", "overall-text", o.text));
+    const combos = o.combos.length ? [el("h3", "overall-title", "Combinaciones"), ...o.combos.map((c) => {
+      const p = el("p", "overall-text");
+      p.append(el("strong", "", `${c.label}: `), document.createTextNode(c.text));
+      return p;
+    })] : [];
+    ov.replaceChildren(...combos, el("h3", "overall-title", "En conjunto"), ...(o.hilo ? [el("p", "overall-hilo", o.hilo)] : []), el("p", "overall-text", o.text));
     ov.hidden = false;
   } else ov.hidden = true;
   $("come-back").textContent = spread.theme
@@ -875,7 +927,11 @@ async function share() {
     const head = `${multi ? spread.positions[i].label + ": " : ""}${c.name}${p.reversed ? " (invertida)" : ""} · ${wordFor(c, p.reversed)}`;
     return spread.answer ? `${c.name}${p.reversed ? " (invertida)" : ""} · ${answerFor(p).text}` : `${head}\n“${messageFor(p, i)}”`;
   });
-  if (spread.theme) { const o = overallFor(spread, picks); lines.push(`En conjunto\n${o.hilo ? o.hilo + " " : ""}${o.text}`); }
+  if (spread.theme) {
+    const o = overallFor(spread, picks);
+    if (o.combos.length) lines.push(`Combinaciones\n${o.combos.map((c) => `${c.label}: ${c.text}`).join("\n")}`);
+    lines.push(`En conjunto\n${o.hilo ? o.hilo + " " : ""}${o.text}`);
+  }
   const title = `${spread.name} · Oráculo`;
   const text = `${title}\nMazo: ${metaOf(deck.id).name}\n\n${lines.join("\n\n")}`;
   const url = location.origin + location.pathname;
@@ -992,7 +1048,7 @@ function fanChoose(i) {
   $("btn-fan-random").hidden = true;
   $("deck-lead").textContent = "Listo. Las cartas están elegidas.";
   const { data } = current;
-  const pct = Math.round(CONFIG.reversedChance * 100);
+  const pct = current.deck.reversible === false ? 0 : Math.round(CONFIG.reversedChance * 100);
   setTimeout(() => {
     if (current !== f.cur) return;
     current.picks = f.chosen.map((cardId) => {

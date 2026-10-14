@@ -1,0 +1,295 @@
+{
+ "deck": "lenormand",
+ "version": 1,
+ "source": "ia-pregenerado",
+ "messages": {
+  "len-01": {
+   "upright": [
+    "Hoy algo viene en camino: una noticia, un mensaje o alguien que se acerca. Tené el oído atento, porque lo que llega trae movimiento.",
+    "El Jinete avisa que lo quieto se mueve. No esperes que todo llegue de golpe: empezá con la primera novedad que aparezca.",
+    "Un mensaje, una visita, un llamado. Estate disponible hoy, que lo nuevo golpea la puerta con apuro y buenas intenciones."
+   ],
+   "reversed": []
+  },
+  "len-02": {
+   "upright": [
+    "Se asoma una oportunidad chica pero luminosa. No hace falta que sea enorme: alcanza con que la reconozcas y la aproveches.",
+    "El Trébol llega con ligereza. Hoy la vida te guiña un ojo: animate a decir que sí a lo simple y bueno.",
+    "Un respiro de suerte para estos días. Agradecelo, sonreí y quedate atenta a la ventana que se abre."
+   ],
+   "reversed": []
+  },
+  "len-03": {
+   "upright": [
+    "Algo te invita a mirar más lejos: un viaje, un proyecto con horizonte o una charla con alguien de otro lugar. Largá amarras con calma.",
+    "El Barco te recuerda que no todo está acá. Salir de la rutina, aunque sea un poco, te va a dar aire y perspectiva.",
+    "Hoy conviene pensar en grande y a distancia. Lo que viene de afuera o de lejos puede traerte algo que necesitabas."
+   ],
+   "reversed": []
+  },
+  "len-04": {
+   "upright": [
+    "Volvé a tu base. Tu casa, tu gente y tus hábitos son hoy el mejor lugar para recargarte y sentirte segura.",
+    "La Casa habla de cimientos. Antes de seguir sumando, cuidá lo que ya tenés: ese refugio es el que te sostiene.",
+    "Hoy el bienestar está puertas adentro. Ordená, abrigate y hacé tu espacio un lugar donde dé gusto quedarse."
+   ],
+   "reversed": []
+  },
+  "len-05": {
+   "upright": [
+    "Lo bueno crece despacio. Regá tus raíces con constancia y confiá en que el tiempo está trabajando a tu favor.",
+    "El Árbol te pide paciencia: no se apura una cosecha. Mirá lo que ya echó raíces en tu vida y cuidalo.",
+    "Tu historia te sostiene. Apoyate en lo aprendido y dejá que lo nuevo crezca sin forzarlo."
+   ],
+   "reversed": []
+  },
+  "len-06": {
+   "upright": [
+    "Hay neblina en el panorama. No decidas con la cabeza llena de ruido: esperá a que aclare y preguntá lo que no entendés.",
+    "Las Nubes no son un mal presagio: son una pausa para ver mejor. Hoy conviene suspender las conclusiones apuradas.",
+    "Se mezclan versiones y sensaciones. Respirá, escribí lo que sabés con certeza y dejá el resto para cuando abra el cielo."
+   ],
+   "reversed": []
+  },
+  "len-07": {
+   "upright": [
+    "Algo no va en línea recta. Fijate en los detalles y en lo que no se dice: a veces el rodeo es parte de lo que hay que entender.",
+    "La Serpiente pide ojo fino. No se trata de desconfiar de todos, sino de leer entre líneas antes de dar un paso.",
+    "Hoy hay más de lo que se ve. Cuidá tus palabras, escuchá más de lo que hablás y andá con inteligencia, no con miedo."
+   ],
+   "reversed": []
+  },
+  "len-08": {
+   "upright": [
+    "Algo llegó a su fin y está bien que así sea. Soltar no es perder: es hacer lugar para lo que viene.",
+    "El Féretro habla de cierres, no de desgracias. Despedite de lo que ya dio todo y dejá que la etapa nueva respire.",
+    "Hoy toca cerrar un capítulo con respeto. Agradecé lo vivido y animate a dar vuelta la página."
+   ],
+   "reversed": []
+  },
+  "len-09": {
+   "upright": [
+    "Llega algo lindo: un gesto, una invitación, un reconocimiento. Recibilo sin vueltas, que lo mereciste.",
+    "El Ramo trae alegría chiquita y sincera. Hoy regalate un momento bonito, o regalale uno a alguien.",
+    "Se abre un momento de agrado y armonía. Dejá que la ternura entre y respondé con tu mejor sonrisa."
+   ],
+   "reversed": []
+  },
+  "len-10": {
+   "upright": [
+    "Puede aparecer un imprevisto o una decisión que no admite demora. Mantené la calma y actuá con precisión, sin dramatizar.",
+    "La Guadaña corta lo que ya estaba flojo. Duele un instante, pero despeja el campo para lo que de verdad importa.",
+    "Hoy todo va más rápido de lo que querés. Frená un segundo, respirá y elegí qué cortar y qué cuidar."
+   ],
+   "reversed": []
+  },
+  "len-11": {
+   "upright": [
+    "Hay clima de roce. Antes de responder, contá hasta diez: no toda discusión merece tu energía.",
+    "Las Varas hablan de palabras que pegan. Elegí cómo decir lo que sentís: la claridad no necesita gritar.",
+    "Un malentendido puede crecer si lo dejás. Hablalo a tiempo, con calma y sin buscar ganar."
+   ],
+   "reversed": []
+  },
+  "len-12": {
+   "upright": [
+    "La cabeza hace ruido, pero hablarlo lo aclara. Compartí lo que te preocupa con alguien de confianza.",
+    "Los Búhos son charla, ideas y noches de pensar. Lo que hoy parece grande, dicho en voz alta se achica.",
+    "Hay una conversación pendiente. Tené ese diálogo: ordena la mente y te devuelve el sueño."
+   ],
+   "reversed": []
+  },
+  "len-13": {
+   "upright": [
+    "Algo empieza chiquito y con mucha frescura. Cuidalo como a un brote: sin apuro y con curiosidad.",
+    "La Niña invita a mirar con ojos nuevos. Hoy una cosa simple puede alegrarte más de lo que esperás.",
+    "Soltá la solemnidad un rato. Jugar, probar y preguntar también son formas de avanzar."
+   ],
+   "reversed": []
+  },
+  "len-14": {
+   "upright": [
+    "Hoy ayuda ser prudente: revisá detalles, preguntá y no des nada por sentado. La astucia es tu aliada.",
+    "El Zorro te pide atención. No es para sospechar de todo, sino para no regalar información ni confianza sin pensar.",
+    "Algo no es tan simple como parece. Mirá dos veces antes de comprometerte y confiá en tu olfato."
+   ],
+   "reversed": []
+  },
+  "len-15": {
+   "upright": [
+    "Tenés más fuerza de la que creés. Usala para proteger lo importante, sin pasarte de control.",
+    "El Oso habla de firmeza tranquila. Hoy podés poner un límite sano o contar con alguien que te cuide.",
+    "Cuidar y mandar no son lo mismo. Si te toca liderar, hacelo con paciencia, como quien abriga."
+   ],
+   "reversed": []
+  },
+  "len-16": {
+   "upright": [
+    "Hay buena luz sobre tus proyectos. Mirá hacia arriba, soñá en grande y confiá en tu intuición.",
+    "Las Estrellas despejan el cielo. Lo que venís imaginando tiene dirección: seguí esa luz con paso tranquilo.",
+    "Una calma lúcida te acompaña. Es un buen momento para planear y para pedir un deseo sin culpa."
+   ],
+   "reversed": []
+  },
+  "len-17": {
+   "upright": [
+    "Algo se renueva. Puede ser un lugar, un hábito o una etapa: dejá que el cambio llegue con suavidad.",
+    "La Cigüeña trae movimiento amable. Lo nuevo ya viene en camino, preparale un lugarcito.",
+    "Hoy conviene cambiar algo chico: una costumbre, un orden, una mirada. Esa grieta deja entrar aire fresco."
+   ],
+   "reversed": []
+  },
+  "len-18": {
+   "upright": [
+    "Tenés quien te acompañe. Apoyate en esa lealtad y devolvela con cariño: es de las cosas que más valen.",
+    "El Perro habla de confianza y buen vínculo. Hoy un amigo o un hábito fiel te hace bien.",
+    "Ser fiel a vos también cuenta. Rodeate de lo que te trata bien y cuidá a quienes te cuidan."
+   ],
+   "reversed": []
+  },
+  "len-19": {
+   "upright": [
+    "Subir a la torre da vista. Tomate distancia para ver el panorama completo antes de actuar.",
+    "Hay una estructura o autoridad en juego. Respetá las reglas del lugar y cuidá tu espacio propio.",
+    "Un rato de soledad te sienta bien. Desde lejos, lo que parecía enredado se ordena."
+   ],
+   "reversed": []
+  },
+  "len-20": {
+   "upright": [
+    "Se viene un encuentro: gente, charla y un ambiente donde podés lucirte sin forzarte.",
+    "El Parque es el lugar de todos. Salí, compartí y dejá que lo social te traiga novedades.",
+    "Hoy conviene mostrarte. Un evento o una salida pueden abrirte una puerta que no esperabas."
+   ],
+   "reversed": []
+  },
+  "len-21": {
+   "upright": [
+    "Hay una cuesta que subir. No es un no definitivo: es un tiempo más largo y un paso a paso más cuidado.",
+    "La Montaña frena, pero también fortalece. Buscá otra ruta o más herramientas, y avanzá a tu ritmo.",
+    "Lo que se demora no está perdido. Usá este tiempo para prepararte mejor."
+   ],
+   "reversed": []
+  },
+  "len-22": {
+   "upright": [
+    "Hay más de un camino y todos llevan a algún lado. Elegí el que se parezca más a quien querés ser.",
+    "Los Caminos piden decisión. No hay opción perfecta: preguntate cuál te deja más en paz.",
+    "Estás en una encrucijada linda: tenés opciones. Tomate un día, hacé una lista y escuchá tu intuición."
+   ],
+   "reversed": []
+  },
+  "len-23": {
+   "upright": [
+    "Hay pequeñas cosas que te roen la energía. Detectalas y arreglalas una por una, antes de que se acumulen.",
+    "Los Ratones avisan: el desgaste silencioso también cuenta. Hoy soltá una preocupación que no te corresponde.",
+    "Ordená lo pendiente. Lo chico sin atender pesa más de lo que parece, y resolverlo te devuelve aire."
+   ],
+   "reversed": []
+  },
+  "len-24": {
+   "upright": [
+    "Hoy manda el corazón. Dejá que lo que sentís se note: la ternura sincera nunca sobra.",
+    "El Corazón es afecto y verdad emocional. Si algo te hace bien, acercate; si algo te duele, cuidate.",
+    "Hay amor a la vista, en cualquiera de sus formas. Animate a decir lo que sentís con palabras simples."
+   ],
+   "reversed": []
+  },
+  "len-25": {
+   "upright": [
+    "Se habla de acuerdos y de lazos. Sostené lo que prometiste y animate a pactar lo que de verdad querés.",
+    "El Anillo es un círculo que se cierra. Hoy un compromiso, de cualquier tipo, pide coherencia y claridad.",
+    "Un vínculo se fortalece cuando hay palabra y presencia. Elegí a qué o a quién le decís que sí."
+   ],
+   "reversed": []
+  },
+  "len-26": {
+   "upright": [
+    "Hay algo que todavía no se ve del todo. Estudiá, preguntá y respetá los tiempos de lo que se revela.",
+    "El Libro guarda un secreto. Quizá es información que te falta o algo tuyo que aún no mostrás: mirá con paciencia.",
+    "Hoy es un buen día para aprender. Lo que investigues en silencio te va a dar ventaja más adelante."
+   ],
+   "reversed": []
+  },
+  "len-27": {
+   "upright": [
+    "Llega un mensaje o una respuesta. Leelo con calma y contestá sin apuro.",
+    "La Carta trae palabra escrita: un mail, un aviso, un papel. Estate atenta a lo que se comunica.",
+    "Hoy conviene poner las cosas por escrito. Lo que quedó claro en palabras evita confusiones."
+   ],
+   "reversed": []
+  },
+  "len-28": {
+   "upright": [
+    "Esta carta te representa a vos, o a un hombre importante en tu consulta. Mirá qué cartas lo rodean: ahí está su clima.",
+    "El Caballero marca a la persona en el centro de la pregunta. Lo que tiene al lado cuenta cómo se siente y qué lo acompaña.",
+    "Quien consulta, o alguien muy cercano, está en escena. Dejá que las cartas vecinas completen la historia."
+   ],
+   "reversed": []
+  },
+  "len-29": {
+   "upright": [
+    "Esta carta te representa a vos, o a una mujer importante en tu consulta. Las cartas de al lado dicen cómo está.",
+    "La Dama marca a la persona en el centro de la pregunta. Lo que tiene alrededor cuenta qué siente y qué la rodea.",
+    "Quien consulta, o alguien muy cercana, está en escena. Leé a sus vecinas para entender el momento."
+   ],
+   "reversed": []
+  },
+  "len-30": {
+   "upright": [
+    "Un momento de calma y buen trato. Disfrutá de lo bello y dejá que la armonía haga su trabajo.",
+    "Las Flores aparecen cuando las cosas florecen sin forzarse. Cuidá tus vínculos con detalles y gentileza.",
+    "Hay suavidad en el aire. Hoy un gesto amable, un perfume o una charla tranquila pueden ser el mejor plan."
+   ],
+   "reversed": []
+  },
+  "len-31": {
+   "upright": [
+    "Brilla el sol sobre tu camino. Tenés energía, claridad y ganas: usalas sin pedir permiso.",
+    "El Sol trae alegría franca. Lo que venís haciendo da buenos frutos: reconocelo y celebralo.",
+    "Hoy todo se ve más nítido y cálido. Aprovechá la luz para encarar eso que venías postergando."
+   ],
+   "reversed": []
+  },
+  "len-32": {
+   "upright": [
+    "Tu sensibilidad es una fortaleza. Dejá salir lo creativo y aceptá el reconocimiento que llega.",
+    "La Luna ilumina lo que sentís. Escuchá tus emociones y buscá la manera de expresarlas con belleza.",
+    "Hoy lo íntimo pide espacio. Un momento a solas, un dibujo, una canción o un rato de silencio te reordenan."
+   ],
+   "reversed": []
+  },
+  "len-33": {
+   "upright": [
+    "Aparece la llave que buscabas. Lo que parecía cerrado puede abrirse si probás con calma.",
+    "La Llave trae una respuesta clara. Confiá en que hay salida y en que ya tenés buena parte de la solución.",
+    "Una puerta se abre. Entrá con seguridad: lo que se resuelve hoy te alivia a largo plazo."
+   ],
+   "reversed": []
+  },
+  "len-34": {
+   "upright": [
+    "Lo que das y lo que recibís circulan. Cuidá ese intercambio y agradecé lo que ya tenés a mano.",
+    "Los Peces hablan de fluir con libertad. Hoy conviene moverte con flexibilidad y generosidad.",
+    "Hay abundancia de ideas y de posibilidades. Elegí en qué querés poner tu energía para que rinda más."
+   ],
+   "reversed": []
+  },
+  "len-35": {
+   "upright": [
+    "Encontrás firmeza. Tu constancia te da un puerto seguro: seguí, sin apuro y sin soltar el ritmo.",
+    "El Ancla habla de sostener. Hoy valen más los hábitos serenos que las grandes apuestas.",
+    "Hay estabilidad al alcance. Cuidá tu rutina y tu trabajo: son el piso desde donde se ve más lejos."
+   ],
+   "reversed": []
+  },
+  "len-36": {
+   "upright": [
+    "Hay una carga que se siente pesada. No tenés que cargarla sola: pedí ayuda y confiá en que pasa.",
+    "La Cruz habla de pruebas que enseñan. Lo que hoy cuesta, mañana te hace más fuerte. Andá despacio.",
+    "Un tramo difícil, pero con sentido. Buscá en tu fe, tu gente o tu rutina un apoyo para sostenerte."
+   ],
+   "reversed": []
+  }
+ }
+}

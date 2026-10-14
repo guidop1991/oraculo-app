@@ -14,7 +14,8 @@
         1086,
         1810
       ],
-      "premium": false
+      "premium": false,
+      "family": "tarot"
     },
     {
       "id": "marsella",
@@ -27,7 +28,8 @@
         813,
         1536
       ],
-      "premium": false
+      "premium": false,
+      "family": "tarot"
     },
     {
       "id": "vieville",
@@ -39,6 +41,21 @@
       "aspect": [
         1735,
         3051
+      ],
+      "premium": false,
+      "family": "tarot"
+    },
+    {
+      "id": "lenormand",
+      "name": "Lenormand",
+      "short": "Lenormand",
+      "family": "lenormand",
+      "description": "36 cartas con la baraja francesa. Se leen por combinaciones, sin invertidas.",
+      "credit": "Dibujado para este proyecto, a partir de la simbología tradicional del Lenormand.",
+      "license": "Original del proyecto",
+      "aspect": [
+        300,
+        480
       ],
       "premium": false
     }

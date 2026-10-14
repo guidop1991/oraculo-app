@@ -1,0 +1,117 @@
+{
+ "deck": "lenormand",
+ "version": 1,
+ "source": "ia-pregenerado",
+ "_criterio": "El Lenormand no usa cartas invertidas: cada carta tiene un único código, según su polaridad y su rol. Sol, Trébol, Llave y Ramo abren (sí); Cruz cierra (no); Montaña y Nubes frenan (todavía no); Caminos, Libro, Búhos y las cartas de persona dejan abierta la pregunta (quizás).",
+ "_codigos": "si=Sí, ps=Probablemente sí, qs=Quizás sí, q=Quizás, tn=Todavía no, pn=Probablemente no, n=No",
+ "answers": {
+  "len-01": {
+   "upright": "ps"
+  },
+  "len-02": {
+   "upright": "si"
+  },
+  "len-03": {
+   "upright": "ps"
+  },
+  "len-04": {
+   "upright": "ps"
+  },
+  "len-05": {
+   "upright": "ps"
+  },
+  "len-06": {
+   "upright": "tn"
+  },
+  "len-07": {
+   "upright": "pn"
+  },
+  "len-08": {
+   "upright": "pn"
+  },
+  "len-09": {
+   "upright": "si"
+  },
+  "len-10": {
+   "upright": "pn"
+  },
+  "len-11": {
+   "upright": "pn"
+  },
+  "len-12": {
+   "upright": "q"
+  },
+  "len-13": {
+   "upright": "ps"
+  },
+  "len-14": {
+   "upright": "pn"
+  },
+  "len-15": {
+   "upright": "ps"
+  },
+  "len-16": {
+   "upright": "ps"
+  },
+  "len-17": {
+   "upright": "ps"
+  },
+  "len-18": {
+   "upright": "ps"
+  },
+  "len-19": {
+   "upright": "qs"
+  },
+  "len-20": {
+   "upright": "ps"
+  },
+  "len-21": {
+   "upright": "tn"
+  },
+  "len-22": {
+   "upright": "q"
+  },
+  "len-23": {
+   "upright": "pn"
+  },
+  "len-24": {
+   "upright": "ps"
+  },
+  "len-25": {
+   "upright": "ps"
+  },
+  "len-26": {
+   "upright": "q"
+  },
+  "len-27": {
+   "upright": "qs"
+  },
+  "len-28": {
+   "upright": "q"
+  },
+  "len-29": {
+   "upright": "q"
+  },
+  "len-30": {
+   "upright": "ps"
+  },
+  "len-31": {
+   "upright": "si"
+  },
+  "len-32": {
+   "upright": "ps"
+  },
+  "len-33": {
+   "upright": "si"
+  },
+  "len-34": {
+   "upright": "ps"
+  },
+  "len-35": {
+   "upright": "ps"
+  },
+  "len-36": {
+   "upright": "n"
+  }
+ }
+}
