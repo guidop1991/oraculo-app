@@ -159,8 +159,8 @@ async function prefetchDeck(deck) {
 }
 
 // Opciones de mazo (radios) para el selector de tirada y para "Mazo favorito".
-function renderDeckOptions(container, selectedId, onPick) {
-  container.replaceChildren(...decksMeta.map((m) => {
+function renderDeckOptions(container, selectedId, onPick, hideSelected = false) {
+  container.replaceChildren(...decksMeta.filter((m) => !(hideSelected && m.id === selectedId)).map((m) => {
     const b = el("button", "deck-option");
     b.type = "button";
     b.setAttribute("role", "radio");
@@ -502,7 +502,7 @@ function renderFavorite() {
     } catch {
       showError("No pudimos cargar ese mazo. Probá de nuevo con conexión.");
     }
-  });
+  }, true); // el mazo elegido ya se ve arriba: la lista muestra solo los otros
   box.replaceChildren(toggle, list);
 }
 

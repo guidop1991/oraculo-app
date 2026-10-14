@@ -150,3 +150,6 @@ Si tu sistema tiene desactivadas las animaciones (Windows: Configuración → Ac
 - Mazo favorito (Usuario) ahora es un desplegable: muestra solo el elegido con una flecha.
 - Sí o No: la carta aparece directo al terminar de barajar (sin cortar el mazo). Se controla con `"cut": false` en data/spreads.json.
 - sw.js VERSION v16.
+
+## v14
+- Mazo favorito: la lista del desplegable muestra solo los mazos que no están elegidos. sw.js VERSION v17.
